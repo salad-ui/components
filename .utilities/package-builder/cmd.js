@@ -12,7 +12,7 @@ const srcDirRelativeToRootDir = path.relative(`../..`, './src');
 
 async function moveTypes() {
   await fs.copy(`${distDir}/${srcDirRelativeToRootDir}`, distDir, {
-    overwrite: true
+    overwrite: true,
   });
   await fs.remove(`${distDir}/${srcDirRelativeToRootDir.split(path.sep)[0]}`);
 }
@@ -21,7 +21,10 @@ function createInputOptions() {
   const pkg = require(path.resolve('package.json'));
   return {
     input: 'src/index.tsx',
-    external: [...Object.keys(pkg.dependencies || {}), ...Object.keys(pkg.peerDependencies || {})],
+    external: [
+      ...Object.keys(pkg.dependencies || {}),
+      ...Object.keys(pkg.peerDependencies || {}),
+    ],
     plugins: [
       resolve(),
       typescript({
@@ -30,20 +33,20 @@ function createInputOptions() {
           compilerOptions: {
             declaration: true,
             target: 'esnext',
-            outDir: distDir
-          }
+            outDir: distDir,
+          },
         },
-      })
-    ]
+      }),
+    ],
   };
 }
 
 async function createBundles() {
   const bundle = await rollup(createInputOptions());
   await Promise.all([
-    await bundle.write({ file: `${distDir}/index.cjs.js`, format: 'cjs' }),
-    await bundle.write({ file: `${distDir}/index.esm.js`, format: 'es' })
-  ])
+    await bundle.write({file: `${distDir}/index.cjs.js`, format: 'cjs'}),
+    await bundle.write({file: `${distDir}/index.esm.js`, format: 'es'}),
+  ]);
 }
 
 (async () => {
