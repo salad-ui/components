@@ -11,6 +11,9 @@ jobs:
     executor: node
     steps:
       - checkout
+      - run:
+          name: ⬇️ Installing...
+          command: yarn
       - run: 
           name: 🏁 Check formatting...
           command: .ci/check_formating.sh
@@ -28,6 +31,9 @@ jobs:
     executor: node
     steps:
       - checkout
+      - run:
+          name: ⬇️ Installing...
+          command: yarn
       - run: 
           name: 🏗 Building
           command: .ci/build.sh
