@@ -3,7 +3,7 @@ version: 2.1
 executors:
   node:
     docker:
-      image: circleci/node:latest
+      - image: circleci/node:latest
 
 jobs:
 
