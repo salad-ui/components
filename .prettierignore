@@ -1,1 +1,3 @@
-.cache
+website/.cache
+website/public
+playground/storybook-static

@@ -1,3 +1,3 @@
-#!/usr/bin/env
+#!/usr/bin/env bash
 
 yarn run types
