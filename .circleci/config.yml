@@ -1,0 +1,19 @@
+version: 2.1
+
+jobs:
+
+  check_formating:
+    steps:
+      - .circleci/scripts/check_formating.sh
+
+  check_linting:
+    steps:
+      - .circleci/scripts/check_linting.sh
+
+  check_types:
+    steps:
+      - .circleci/scripts/check_types.sh
+
+  check_tests:
+    steps:
+      - .circleci/scripts/check_tests.sh
