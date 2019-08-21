@@ -10,21 +10,16 @@ jobs:
   check:
     executor: node
     steps:
-
       - checkout
-
       - run: 
-        name: 🏁 Check formatting...
-        command: .ci/check_formating.sh
-
+          name: 🏁 Check formatting...
+          command: .ci/check_formating.sh
       - run: 
           name: 📋 Check linting...
           command: .ci/check_linting.sh
-        
       - run: 
           name: 🔳 Check types...
           command: .ci/check_types.sh
-
       - run: 
           name: ✅ Check tests...
           command: .ci/check_tests.sh
