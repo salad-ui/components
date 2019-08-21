@@ -6,28 +6,30 @@ executors:
       - image: circleci/node:latest
 
 jobs:
+  
+  check:
 
-  check_formating:
-    executor: node
     steps:
-      - run: .ci/check_formating.sh
 
-  check_linting:
-    executor: node
-    steps:
-      - run: .ci/check_linting.sh
+      - run: 
+        name: 🏁 Check formatting...
+        command: .ci/check_formating.sh
 
-  check_types:
-    executor: node
-    steps:
-      - run: .ci/check_types.sh
+      - run: 
+          name: 📋 Check linting...
+          command: .ci/check_linting.sh
+        
+      - run: 
+          name: 🔳 Check types...
+          command: .ci/check_types.sh
 
-  check_tests:
-    executor: node
-    steps:
-      - run: .ci/check_tests.sh
+      - run: 
+          name: ✅ Check tests...
+          command: .ci/check_tests.sh
 
   build:
     executor: node
     steps:
-      - run: .ci/build.sh
+      - run: 
+          name: 🏗 Building
+          command: .ci/build.sh
