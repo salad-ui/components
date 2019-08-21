@@ -1,8 +1,18 @@
 {
   "name": "@dse/button",
   "version": "1.0.0",
-  "scripts": {
-    "build": "echo '\"build\" not implemented yet!!!'"
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "peerDependencies": {
+    "react": "^16.9.0"
   },
-  "license": "MIT"
+  "devDependencies": {
+    "@dse/package-builder": "^1.0.0"
+  },
+  "scripts": {
+    "build": "package-builder"
+  },
+  "license": "MIT",
+  "dependencies": {}
 }

@@ -3,6 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "workspaces": [
+    ".utilities/*",
     "packages/*",
     "playground",
     "website"
@@ -17,6 +18,7 @@
     "eslint": "^6.2.1",
     "husky": "^3.0.4",
     "jest": "^24.9.0",
+    "lerna": "^3.16.4",
     "lint-staged": "^9.2.3",
     "prettier": "^1.18.2",
     "ts-jest": "^24.0.2"
@@ -26,7 +28,7 @@
     "type": "tsc --noEmit",
     "lint": "eslint \"**/*.ts\" \"**/*.tsx\" --fix",
     "test": "jest --config .jestrc.js",
-    "build": "yarn workspaces run build"
+    "build": "lerna run build"
   },
   "lint-staged": {
     "**/*.{json,md}": [

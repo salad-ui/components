@@ -1,0 +1,4 @@
+{
+  "packages": [".utilities/*", "packages/*", "playground", "website"],
+  "version": "0.0.0"
+}
