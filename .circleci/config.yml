@@ -1,23 +1,33 @@
 version: 2.1
 
+executors:
+  node:
+    docker:
+      image: circleci/node:latest
+
 jobs:
 
   check_formating:
+    executor: node
     steps:
       - .circleci/scripts/check_formating.sh
 
   check_linting:
+    executor: node
     steps:
       - .circleci/scripts/check_linting.sh
 
   check_types:
+    executor: node
     steps:
       - .circleci/scripts/check_types.sh
 
   check_tests:
+    executor: node
     steps:
       - .circleci/scripts/check_tests.sh
 
   build:
+    executor: node
     steps:
       - .circleci/scripts/build.sh
