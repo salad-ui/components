@@ -11,9 +11,18 @@ jobs:
     executor: node
     steps:
       - checkout
+      - restore_cache:
+          name: Restore Yarn Cache
+          keys:
+            - yarn-packages-{{ checksum "yarn.lock" }}
       - run:
           name: ⬇️ Installing...
           command: yarn
+      - save_cache:
+          name: Save Yarn Cache
+          key: yarn-packages-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
       - run: 
           name: 🏁 Check formatting...
           command: .ci/check_formating.sh
@@ -31,9 +40,18 @@ jobs:
     executor: node
     steps:
       - checkout
+      - restore_cache:
+          name: Restore Yarn Cache
+          keys:
+            - yarn-packages-{{ checksum "yarn.lock" }}
       - run:
           name: ⬇️ Installing...
           command: yarn
+      - save_cache:
+          name: Save Yarn Cache
+          key: yarn-packages-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
       - run: 
           name: 🏗 Building
           command: .ci/build.sh
