@@ -17,3 +17,7 @@ jobs:
   check_tests:
     steps:
       - .circleci/scripts/check_tests.sh
+
+  build:
+    steps:
+      - .circleci/scripts/build.sh

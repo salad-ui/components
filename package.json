@@ -24,7 +24,8 @@
   "scripts": {
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
     "lint": "eslint \"**/*.ts\" \"**/*.tsx\" --fix",
-    "test": "jest --config .jestrc.js"
+    "test": "jest --config .jestrc.js",
+    "build": "yarn workspaces run build"
   },
   "lint-staged": {
     "**/*.{json,md}": [

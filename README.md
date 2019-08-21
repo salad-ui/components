@@ -1,3 +1,3 @@
 # design-system-example
 
-An example of how I'd like to setup a design system.
+An example repository for a Design System built on React.

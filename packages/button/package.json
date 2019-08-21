@@ -1,4 +1,8 @@
 {
   "name": "@dse/button",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "scripts": {
+    "build": "echo '\"build\" not implemented yet!!!'"
+  },
+  "license": "MIT"
 }
