@@ -1,0 +1,24 @@
+{
+  "name": "@dse/playground",
+  "private": true,
+  "version": "1.0.0",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@storybook/addon-actions": "^5.1.11",
+    "@storybook/addon-links": "^5.1.11",
+    "@storybook/addons": "^5.1.11",
+    "@storybook/react": "^5.1.11",
+    "@types/storybook__react": "^4.0.2",
+    "babel-loader": "^8.0.6",
+    "react-docgen-typescript-loader": "^3.1.1",
+    "ts-loader": "^6.0.4",
+    "tsconfig-paths-webpack-plugin": "^3.2.0",
+    "typescript": "^3.5.3"
+  },
+  "scripts": {
+    "start": "start-storybook",
+    "build": "build-storybook"
+  }
+}
