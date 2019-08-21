@@ -8,8 +8,10 @@ executors:
 jobs:
   
   check:
-
+    executor: node
     steps:
+
+      - checkout
 
       - run: 
         name: 🏁 Check formatting...
@@ -30,6 +32,7 @@ jobs:
   build:
     executor: node
     steps:
+      - checkout
       - run: 
           name: 🏗 Building
           command: .ci/build.sh
