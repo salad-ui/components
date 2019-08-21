@@ -23,6 +23,7 @@
   },
   "scripts": {
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
+    "type": "tsc --noEmit",
     "lint": "eslint \"**/*.ts\" \"**/*.tsx\" --fix",
     "test": "jest --config .jestrc.js",
     "build": "yarn workspaces run build"
