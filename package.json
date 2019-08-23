@@ -8,6 +8,14 @@
     "playground",
     "website"
   ],
+  "bolt": {
+    "workspaces": [
+      ".utilities/*",
+      "packages/*",
+      "playground",
+      "website"
+    ]
+  },
   "devDependencies": {
     "@atlaskit/build-releases": "^3.0.5",
     "@jameslnewell/editor-config": "^1.0.1",
@@ -29,7 +37,8 @@
     "type": "tsc --noEmit",
     "lint": "eslint \"**/*.ts\" \"**/*.tsx\" --fix",
     "test": "jest --config .jestrc.js",
-    "build": "lerna run build"
+    "build": "lerna run build",
+    "changeset": "build-releases changeset"
   },
   "lint-staged": {
     "**/*.{json,md}": [
