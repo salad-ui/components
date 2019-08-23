@@ -53,6 +53,12 @@ A good way to have a bunch of test cases setup for both development and manual t
 
 v5.2 is going to be :awesome: https://medium.com/storybookjs/component-story-format-66f4c32366df
 
+### Typescript
+
+Documention
+Type checking
+Automatic prop type tables
+
 TODO:
 
 - prettier
