@@ -1,6 +1,16 @@
 module.exports = {
   siteMetadata: {
     title: `Design System Example`,
+    menuLinks: [
+      {
+        name: 'home',
+        href: '/',
+      },
+      {
+        name: 'Button',
+        href: '/components/button',
+      },
+    ],
   },
   plugins: [
     {
