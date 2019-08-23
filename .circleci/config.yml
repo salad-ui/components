@@ -85,6 +85,7 @@ workflows:
   version: 2
   default:
     jobs:
+      - install
       - check:
           requires: 
             - install
