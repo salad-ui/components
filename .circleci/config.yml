@@ -75,14 +75,9 @@ workflows:
   default:
     jobs:
       - check:
-          requires: 
-            - install
       - build:
-          requires: 
-            - install
       - publish:
           requires: 
-            - install
             - check
             - build
           filters:
