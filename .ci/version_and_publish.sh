@@ -4,8 +4,6 @@ source ".ci/utils/strict.sh"
 # configure NPM
 echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc 
 
-EOF
-
 # configure GIT
 git config user.email "ci-server@example.com"
 git config user.name "CI Server"
