@@ -4,10 +4,10 @@
 
 A demonstration of the tooling setup for a React based Design System.
 
-|            |                                                                                   |
-| ---------- | --------------------------------------------------------------------------------- |
-| Website    | [dse-website.jameslnewell.now.sh](https://dse-website.jameslnewell.now.sh/)       |
-| Playground | [dse-playground.jameslnewell.now.sh](https://dse-playground.jameslnewell.now.sh/) |
+|            |                                                                                                                       |
+| ---------- | --------------------------------------------------------------------------------------------------------------------- |
+| Website    | [design-system-example-website.jameslnewell.now.sh](https://design-system-example-website.jameslnewell.now.sh/)       |
+| Playground | [design-system-example-playground.jameslnewell.now.sh](https://design-system-example-playground.jameslnewell.now.sh/) |
 
 ## Installation
 

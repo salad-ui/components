@@ -41,8 +41,8 @@
     "test": "jest --config .jestrc.js",
     "build": "lerna run build",
     "changeset": "build-releases changeset",
-    "start:website": "yarn workspace @dse/website run start",
-    "start:playground": "yarn workspace @dse/playground run start"
+    "start:website": "yarn workspace @design-system-example/website run start",
+    "start:playground": "yarn workspace @design-system-example/playground run start"
   },
   "lint-staged": {
     "**/*.{json,md}": [

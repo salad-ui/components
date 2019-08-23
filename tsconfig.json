@@ -13,7 +13,7 @@
     /* load source files rather than compile files */
     "baseUrl": ".",
     "paths": {
-      "@dse/*": ["packages/*/src"]
+      "@design-system-example/*": ["packages/*/src"]
     }
   }
 }

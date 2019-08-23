@@ -1,9 +1,9 @@
 {
-  "name": "@dse/website",
+  "name": "@design-system-example/website",
   "private": true,
   "version": "1.0.0",
   "dependencies": {
-    "@dse/button": "^1.0.0",
+    "@design-system-example/button": "^1.0.0",
     "@types/node": "^12.7.2",
     "@types/react": "^16.9.2",
     "@types/react-dom": "^16.9.0",

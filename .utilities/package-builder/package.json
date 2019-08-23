@@ -1,5 +1,5 @@
 {
-  "name": "@dse/package-builder",
+  "name": "@design-system-example/package-builder",
   "private": true,
   "version": "1.0.0",
   "bin": {
