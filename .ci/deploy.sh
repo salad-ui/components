@@ -2,9 +2,9 @@
 source ".ci/utils/strict.sh"
 
 if [ "${CIRCLE_BRANCH}" == "master" ]; then
-    yarn now --token $ZEIT_TOKEN --prod --local-config="./.now.json" website/public
-    yarn now --token $ZEIT_TOKEN --prod --local-config="./.now.json" playground/storybook-static
+    cd website/public && yarn now --token $ZEIT_TOKEN --prod --local-config="../now.json" && cd ..
+    cd playground/storybook-static && yarn now --token $ZEIT_TOKEN --prod --local-config="../now.json" && cd ..
 else
-    yarn now --token $ZEIT_TOKEN --local-config="./.now.json" website/public
-    yarn now --token $ZEIT_TOKEN --local-config="./.now.json" playground/storybook-static
+    cd website/public && yarn now --token $ZEIT_TOKEN --local-config="../now.json" && cd ..
+    cd playground/storybook-static && yarn now --token $ZEIT_TOKEN --local-config="../now.json" && cd ..
 fi
