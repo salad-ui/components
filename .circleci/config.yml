@@ -5,10 +5,13 @@ executors:
     docker:
       - image: circleci/node:latest
 
-commands:
+jobs:
+
   install:
-    description: "Install dependencies"
+    executor: node
     steps:
+      - attach_workspace:
+	        at: .
       - checkout
       - restore_cache:
           name: Restore Yarn Cache
@@ -22,13 +25,16 @@ commands:
           key: yarn-packages-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
+      - persist_to_workspace:
+	        root: .
+	        paths: .
 
-jobs:
 
   check:
     executor: node
     steps:
-      - install
+      - attach_workspace:
+	        at: .
       - restore_cache:
           name: Restore Yarn Cache
           keys:
@@ -49,7 +55,8 @@ jobs:
   build:
     executor: node
     steps:
-      - install
+      - attach_workspace:
+	        at: .
       - restore_cache:
           name: Restore Yarn Cache
           keys:
@@ -57,13 +64,15 @@ jobs:
       - run: 
           name: 🏗 Building
           command: .ci/build.sh
-      - store_artifacts:
-          path: /tmp/screenshots
+      - persist_to_workspace:
+	        root: .
+	        paths: .
 
   publish:
     executor: node
     steps:
-      - install
+      - attach_workspace
+	      at: .
       - restore_cache:
           name: Restore Yarn Cache
           keys:
@@ -76,8 +85,12 @@ workflows:
   version: 2
   default:
     jobs:
-      - check
-      - build
+      - check:
+          requires: 
+            - install
+      - build:
+          requires: 
+            - install
       - publish:
           requires: 
             - check
