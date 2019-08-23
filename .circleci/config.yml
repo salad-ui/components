@@ -11,7 +11,7 @@ jobs:
     executor: node
     steps:
       - attach_workspace:
-	        at: .
+          at: .
       - checkout
       - restore_cache:
           name: Restore Yarn Cache
@@ -26,15 +26,15 @@ jobs:
           paths:
             - ~/.cache/yarn
       - persist_to_workspace:
-	        root: .
-	        paths: .
+          root: .
+          paths: .
 
 
   check:
     executor: node
     steps:
       - attach_workspace:
-	        at: .
+          at: .
       - restore_cache:
           name: Restore Yarn Cache
           keys:
@@ -56,7 +56,7 @@ jobs:
     executor: node
     steps:
       - attach_workspace:
-	        at: .
+          at: .
       - restore_cache:
           name: Restore Yarn Cache
           keys:
@@ -65,14 +65,14 @@ jobs:
           name: 🏗 Building
           command: .ci/build.sh
       - persist_to_workspace:
-	        root: .
-	        paths: .
+          root: .
+          paths: .
 
   publish:
     executor: node
     steps:
       - attach_workspace
-	      at: .
+          at: .
       - restore_cache:
           name: Restore Yarn Cache
           keys:
