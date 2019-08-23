@@ -4,6 +4,11 @@
 
 An example repository for a Design System built on React.
 
+|            |                                    |
+| ---------- | ---------------------------------- |
+| Website    | dse-website.jameslnewell.now.sh    |
+| Playground | dse-playground.jameslnewell.now.sh |
+
 ## Installation
 
 To install the necessary dependencies run:

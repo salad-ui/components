@@ -70,7 +70,7 @@ jobs:
           at: .
       - run: 
           name: 🚀 Deploy
-          command: .ci/version_and_publish.sh
+          command: .ci/deploy.sh
 
   publish:
     executor: node
