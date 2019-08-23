@@ -62,7 +62,7 @@ jobs:
           root: .
           paths: .
 
-  publish:
+  deploy:
     executor: node
     steps:
       - checkout
