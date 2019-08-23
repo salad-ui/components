@@ -2,8 +2,8 @@
 source ".ci/utils/strict.sh"
 
 # configure NPM
-cat < .npmrc
-//registry.npmjs.org/:_authToken=$NPM_AUTH_TOKEN
+echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc 
+
 EOF
 
 # configure GIT
