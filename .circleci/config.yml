@@ -71,7 +71,7 @@ jobs:
   publish:
     executor: node
     steps:
-      - attach_workspace
+      - attach_workspace:
           at: .
       - restore_cache:
           name: Restore Yarn Cache
