@@ -29,12 +29,14 @@ jobs:
           root: .
           paths: .
 
-
   check:
     executor: node
     steps:
       - attach_workspace:
           at: .
+      - run: 
+          name: ☣️ Check danger...
+          command: .ci/check_danger.sh
       - run: 
           name: 🏁 Check formatting...
           command: .ci/check_formating.sh
