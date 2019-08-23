@@ -5,10 +5,9 @@ executors:
     docker:
       - image: circleci/node:latest
 
-jobs:
-
+commands:
   install:
-    executor: node
+    description: "Install dependencies"
     steps:
       - checkout
       - restore_cache:
@@ -24,10 +23,12 @@ jobs:
           paths:
             - ~/.cache/yarn
 
+jobs:
+
   check:
     executor: node
     steps:
-      - checkout
+      - install
       - restore_cache:
           name: Restore Yarn Cache
           keys:
@@ -48,7 +49,7 @@ jobs:
   build:
     executor: node
     steps:
-      - checkout
+      - install
       - restore_cache:
           name: Restore Yarn Cache
           keys:
@@ -60,7 +61,7 @@ jobs:
   publish:
     executor: node
     steps:
-      - checkout
+      - install
       - restore_cache:
           name: Restore Yarn Cache
           keys:
@@ -73,7 +74,6 @@ workflows:
   version: 2
   default:
     jobs:
-      - install
       - check:
           requires: 
             - install
