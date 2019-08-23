@@ -49,3 +49,10 @@ To run the tests run:
 ```
 yarn run test
 ```
+
+## To Do
+
+- visual regression testing
+- bundle size comparison
+- prop tables generated from typescript types
+- notifications back to github e.g. dangerjs messages, bundle size, deployment urls

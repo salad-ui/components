@@ -62,9 +62,3 @@ Automatic prop type tables
 ### @atlaskit/build-releases
 
 Automates versioning, changelog generation and publishing of components. Avoids conflicts when two devs bump the same package and smart enough to figure it out.
-
-TODO:
-
-- prettier
-- eslint
-- typechecking
