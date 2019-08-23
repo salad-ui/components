@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+git remote set-url origin https://github.com/jameslnewell/design-system-example.git
+
 git config user.email "ci-server@example.com"
 git config user.name "CI Server"
 
