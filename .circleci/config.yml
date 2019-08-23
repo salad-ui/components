@@ -69,6 +69,16 @@ jobs:
       - attach_workspace:
           at: .
       - run: 
+          name: 🚀 Deploy
+          command: .ci/version_and_publish.sh
+
+  publish:
+    executor: node
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - run: 
           name: ⬆️ Publishing
           command: .ci/version_and_publish.sh
 
@@ -83,6 +93,10 @@ workflows:
       - build:
           requires: 
             - install
+      - deploy:
+          requires: 
+            - check
+            - build
       - publish:
           requires: 
             - check
