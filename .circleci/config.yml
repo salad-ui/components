@@ -35,10 +35,6 @@ jobs:
     steps:
       - attach_workspace:
           at: .
-      - restore_cache:
-          name: Restore Yarn Cache
-          keys:
-            - yarn-packages-{{ checksum "yarn.lock" }}
       - run: 
           name: 🏁 Check formatting...
           command: .ci/check_formating.sh
@@ -57,10 +53,6 @@ jobs:
     steps:
       - attach_workspace:
           at: .
-      - restore_cache:
-          name: Restore Yarn Cache
-          keys:
-            - yarn-packages-{{ checksum "yarn.lock" }}
       - run: 
           name: 🏗 Building
           command: .ci/build.sh
@@ -73,10 +65,6 @@ jobs:
     steps:
       - attach_workspace:
           at: .
-      - restore_cache:
-          name: Restore Yarn Cache
-          keys:
-            - yarn-packages-{{ checksum "yarn.lock" }}
       - run: 
           name: ⬆️ Publishing
           command: .ci/version_and_publish.sh
