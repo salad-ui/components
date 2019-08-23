@@ -79,11 +79,11 @@ workflows:
     jobs:
       - install
       - check:
-        - requires: 
-          - install
+          - requires: 
+            - install
       - build:
-        - requires: 
-          - install
+          - requires: 
+            - install
       - publish:
-        - requires: 
-          - install
+          - requires: 
+            - install
