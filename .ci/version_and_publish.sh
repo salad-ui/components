@@ -6,6 +6,7 @@ source ".ci/utils/strict.sh"
 git config user.email "ci-server@example.com"
 git config user.name "CI Server"
 
+git pull
 yarn build-releases version --commit
 git push origin master
 yarn build-releases publish --public
