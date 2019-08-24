@@ -1,9 +1,12 @@
 version: 2.1
 
+orbs:
+  percy: percy/agent@volatile
+
 executors:
   node:
     docker:
-      - image: circleci/node:latest
+      - image: circleci/node:latest-browsers
 
 jobs:
 
@@ -105,6 +108,9 @@ workflows:
       - snapshot:
           requires:
             - build
+     - percy/finalize_all:
+         requires:
+           - snapshot
       - deploy:
           requires: 
             - check
