@@ -108,7 +108,6 @@ workflows:
       - snapshot:
           requires:
             - build
-      
       - percy/finalize_all:
           requires:
             - snapshot
@@ -116,12 +115,12 @@ workflows:
           requires: 
             - check
             - build
-            - snapshot
+            - percy/finalize_all
       - publish:
           requires: 
             - check
             - build
-            - snapshot
+            - percy/finalize_all
           filters:
             branches:
               only:
