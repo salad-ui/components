@@ -62,6 +62,15 @@ jobs:
           root: .
           paths: .
 
+  snapshot:
+    executor: node
+    steps:
+      - attach_workspace:
+          at: .
+      - run: 
+          name: 📷 Snapshotting
+          command: .ci/snapshot.sh
+
   deploy:
     executor: node
     steps:
@@ -93,14 +102,19 @@ workflows:
       - build:
           requires: 
             - install
+      - snapshot:
+          requires:
+            - build
       - deploy:
           requires: 
             - check
             - build
+            - snapshot
       - publish:
           requires: 
             - check
             - build
+            - snapshot
           filters:
             branches:
               only:
