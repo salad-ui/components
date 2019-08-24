@@ -109,8 +109,8 @@ workflows:
           requires:
             - build
      - percy/finalize_all:
-         requires:
-           - snapshot
+          requires:
+            - snapshot
       - deploy:
           requires: 
             - check
