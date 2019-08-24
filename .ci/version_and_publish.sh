@@ -2,7 +2,7 @@
 source ".ci/utils/strict.sh"
 
 # configure NPM
-echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc 
+yarn lerna exec echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc 
 
 # configure GIT
 git config user.email "ci-server@example.com"
