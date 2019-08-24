@@ -108,7 +108,7 @@ workflows:
       - snapshot:
           requires:
             - build
-     - percy/finalize_all:
+      - percy/finalize_all:
           requires:
             - snapshot
       - deploy:
