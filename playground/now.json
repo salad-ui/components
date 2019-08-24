@@ -1,4 +1,5 @@
 {
   "name": "design-system-example-playground",
-  "alias": ["design-system-example-playground.now.sh"]
+  "alias": ["design-system-example-playground.now.sh"],
+  "routes": [{"src": "^/(.*)", "dest": "/storybook-static/$1"}]
 }
