@@ -14,6 +14,7 @@ A demonstration of the tooling setup for a React based Design System.
 To install the necessary dependencies run:
 
 ```
+nvm use
 yarn
 ```
 
@@ -31,6 +32,12 @@ To start the documentation website run:
 
 ```
 yarn run start:website
+```
+
+Then browse to:
+
+```
+http://localhost:8000/
 ```
 
 ## Linting
