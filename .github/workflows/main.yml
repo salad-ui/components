@@ -14,10 +14,10 @@ jobs:
     - name: ⬇️ Installing...
       run: yarn install --frozen-lockfile
 
-  test:
-    needs: setup
-    runs-on: ubuntu-latest
-    steps:
+  # test:
+  #   needs: setup
+  #   runs-on: ubuntu-latest
+  #   steps:
 
     - name: ☣️ Check danger...
       run: .ci/check_danger.sh
@@ -34,10 +34,10 @@ jobs:
     - name: ✅ Check formatting...
       run: .ci/check_tests.sh
 
-  build:
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
+  # build:
+  #   needs: test
+  #   runs-on: ubuntu-latest
+  #   steps:
     - name: 🏗 Building
       run: .ci/build.sh
     
