@@ -1,0 +1,38 @@
+name: CI
+
+on: [push]
+
+jobs:
+
+  install:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: ⬇️ Installing...
+      run: yarn install --frozen-lockfile
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: ☣️ Check danger...
+      script: .ci/check_danger.sh
+
+    - name: 🏁 Check formatting...
+      script: .ci/check_formating.sh
+
+    - name: 📋 Check linting...
+      script: .ci/check_linting.sh
+
+    - name: 🔳 Check types...
+      script: .ci/check_types.sh
+
+    - name: ✅ Check formatting...
+      script: .ci/check_tests.sh
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🏗 Building
+      run: .ci/build.sh
+    
