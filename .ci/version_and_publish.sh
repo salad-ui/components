@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 source ".ci/utils/strict.sh"
-echo "Branch: ${GITHUB_REF}"
+
 if [ "${GITHUB_REF}" == "refs/heads/master" ]; then
 
   # configure NPM

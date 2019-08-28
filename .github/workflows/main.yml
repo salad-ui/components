@@ -7,11 +7,11 @@ jobs:
   setup:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - uses: actions/setup-node@v1
-      with:
-        node-version: '12.x'
-    - name: ⬇️ Installing...
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - uses: actions/checkout@v1
+      - name: ⬇️ Installing...
       run: yarn install --frozen-lockfile
 
   # test:
