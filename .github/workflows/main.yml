@@ -53,8 +53,8 @@ jobs:
     - name: 🚀 Deploy
       run: .ci/deploy.sh
       env:
-        ZEIT_TOKEN: ${{ secrets.ZEIT_TOKEN }}
         GITHUB_BRANCH: ${{ github.head_ref }}
+        ZEIT_TOKEN: ${{ secrets.ZEIT_TOKEN }}
 
   # publish:
   #   needs: build
@@ -63,4 +63,7 @@ jobs:
     - name: ⬆️ Publishing
       run: .ci/version_and_publish.sh
       env:
+        GITHUB_REPO: ${{ github.repository }}
+        GITHUB_ACTOR: ${{ github.actor }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
