@@ -3,6 +3,7 @@ import {fail, danger} from 'danger';
 function assertChangsetExistsWhenAnyPackagesHaveBeenTouched(): void {
   // if the user has run `yarn changeset` then we're all good!
   console.log('danger: ', Object.keys(danger.git));
+  console.log('danger: ', Object.keys(danger.github));
   const changeset = danger.git.fileMatch('.changeset/**');
   if (
     changeset.created ||
