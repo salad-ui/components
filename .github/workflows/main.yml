@@ -21,6 +21,8 @@ jobs:
 
     - name: ☣️ Check danger...
       run: .ci/check_danger.sh
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: 🏁 Check formatting...
       run: .ci/check_formating.sh
