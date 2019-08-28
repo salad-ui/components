@@ -43,3 +43,24 @@ jobs:
     - name: 🏗 Building
       run: .ci/build.sh
     
+    # - name: 📷 Snapshotting
+    #   run: .ci/snapshot.sh
+
+  # deploy:
+  #   needs: build
+  #   runs-on: ubuntu-latest
+  #   steps:
+    - name: 🚀 Deploy
+      run: .ci/deploy.sh
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_BRANCH: ${{ github.head_ref }}
+
+  # publish:
+  #   needs: build
+  #   runs-on: ubuntu-latest
+  #   steps:
+      - name: ⬆️ Publishing
+        run: .ci/version_and_publish.sh
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
