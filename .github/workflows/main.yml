@@ -18,7 +18,6 @@ jobs:
   #   needs: setup
   #   runs-on: ubuntu-latest
   #   steps:
-
     - name: ☣️ Check danger...
       run: .ci/check_danger.sh
       env:
