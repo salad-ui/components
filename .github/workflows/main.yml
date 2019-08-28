@@ -19,6 +19,7 @@ jobs:
   #   runs-on: ubuntu-latest
   #   steps:
     - name: ☣️ Check danger...
+      if: github.event_name == 'pull_request'
       run: .ci/check_danger.sh
       env:
         DANGER_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -60,6 +61,7 @@ jobs:
   #   runs-on: ubuntu-latest
   #   steps:
     - name: ⬆️ Publishing
+      if: github.ref == 'refs/heads/master'
       run: .ci/version_and_publish.sh
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
