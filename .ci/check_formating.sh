@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 source ".ci/utils/strict.sh"
 
-yarn run format
+yarn prettier --check \"**/*.{ts,tsx,js,jsx,json,md}\"
