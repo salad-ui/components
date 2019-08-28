@@ -11,6 +11,7 @@ git config user.email "$(git --no-pager log --format=format:'%ae' -n 1)"
 # version and publish
 git pull
 yarn build-releases version --commit
+echo "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPO.git"
 git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPO.git" master
 yarn build-releases publish --public
 git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPO.git" --follow-tags
