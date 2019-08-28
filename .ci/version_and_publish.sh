@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 source ".ci/utils/strict.sh"
 echo "Branch: ${GITHUB_REF}"
-if [ "${GITHUB_REF}" == "master" ]; then
+if [ "${GITHUB_REF}" == "refs/heads/master" ]; then
 
   # configure NPM
   yarn lerna exec echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc 
