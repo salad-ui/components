@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 source ".ci/utils/strict.sh"
 
-if [ "${GITHUB_BRANCH}" == "master" ]; then
+if [ "${GITHUB_REF}" == "master" ]; then
     yarn now --token $ZEIT_TOKEN --prod website
     yarn now --token $ZEIT_TOKEN --prod playground
 else
