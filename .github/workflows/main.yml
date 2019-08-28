@@ -16,19 +16,19 @@ jobs:
     steps:
 
     - name: ☣️ Check danger...
-      script: .ci/check_danger.sh
+      run: .ci/check_danger.sh
 
     - name: 🏁 Check formatting...
-      script: .ci/check_formating.sh
+      run: .ci/check_formating.sh
 
     - name: 📋 Check linting...
-      script: .ci/check_linting.sh
+      run: .ci/check_linting.sh
 
     - name: 🔳 Check types...
-      script: .ci/check_types.sh
+      run: .ci/check_types.sh
 
     - name: ✅ Check formatting...
-      script: .ci/check_tests.sh
+      run: .ci/check_tests.sh
 
   build:
     runs-on: ubuntu-latest
