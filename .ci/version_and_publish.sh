@@ -10,7 +10,7 @@ git config user.email "$(git --no-pager log --format=format:'%ae' -n 1)"
 git remote set-url origin "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPO.git"
 
 # version and publish
-git pull
+git checkout master
 yarn build-releases version --commit
 git push
 yarn build-releases publish --public
