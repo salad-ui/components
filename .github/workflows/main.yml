@@ -12,7 +12,7 @@ jobs:
         node-version: '12.x'
     - uses: actions/checkout@v1
     - name: ⬇️ Installing...
-    run: yarn install --frozen-lockfile
+      run: yarn install --frozen-lockfile
 
   # test:
   #   needs: setup
