@@ -1,5 +1,7 @@
 # @wordpress/components
 
+[![GithubActions](https://github.com/Automattic/wordpress-components/workflows/CI/badge.svg)](https://github.com/Automattic/wordpress-components/actions)
+
 Components for building UI/UX for `wp-admin` and `wp-admin` plugins.
 
 |            |                                                                                                                       |
