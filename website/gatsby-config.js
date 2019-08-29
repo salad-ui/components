@@ -1,6 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `Design System Example`,
+    title: `WordPress Design System`,
+    description: `An Open Design System for WordPress and Beyond`,
+    social: {
+      github: 'wordpress',
+      twitter: 'wordpress',
+    },
     menuLinks: [
       {
         name: 'home',
@@ -17,7 +22,7 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         defaultLayouts: {
-          default: require.resolve('./src/components/Layout/index.tsx'),
+          default: require.resolve('./src/layouts/BaseLayout/index.tsx'),
         },
       },
     },
