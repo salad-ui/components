@@ -1,8 +1,6 @@
-# design-system-example
+# @wordpress/components
 
-[![CircleCI](https://circleci.com/gh/jameslnewell/design-system-example.svg?style=svg)](https://circleci.com/gh/jameslnewell/design-system-example)
-
-A demonstration of the tooling setup for a React based Design System.
+Components for building UI/UX for `wp-admin` and `wp-admin` plugins.
 
 |            |                                                                                                                       |
 | ---------- | --------------------------------------------------------------------------------------------------------------------- |
