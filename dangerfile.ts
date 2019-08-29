@@ -22,7 +22,9 @@ function assertChangsetExistsWhenAnyPackagesHaveBeenTouched(): void {
     packages.modified ||
     packages.deleted
   ) {
-    fail('One or more packages have changed. Please run `yarn run changeset`.');
+    fail(
+      'One or more packages have changed but have not been marked for release. Please run `yarn run changeset` to mark a package for release.',
+    );
   }
 }
 
