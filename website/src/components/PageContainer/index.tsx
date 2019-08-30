@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import Typography from '../Typography';
 
-export const PageContainer: React.FC = (props = {} as any) => {
+export const PageContainer: React.FC = props => {
   const {children} = props;
 
   return (

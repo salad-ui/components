@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 import {Link} from 'gatsby';
-
-import {COLOR} from '../../constants';
 import {darken, lighten, rgba} from 'polished';
+
+import {ButtonBaseProps} from './Button.types';
+import {COLOR} from '../../constants';
 
 export const config = {
   boxShadow: `
@@ -36,7 +37,7 @@ export const config = {
   },
 };
 
-export const ButtonBase = styled.button`
+export const ButtonBase = styled.button<ButtonBaseProps>`
   appearance: none;
   border-radius: 4px;
   border: none;

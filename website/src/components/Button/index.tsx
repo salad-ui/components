@@ -1,22 +1,31 @@
 import * as React from 'react';
 import classnames from 'classnames';
+
+import {ButtonProps} from './Button.types';
 import {ButtonBase, ButtonExternalLink, ButtonLink} from './Button.styles';
 
-export const Button: React.FC<any> = (props = Button.defaultProps as any) => {
-  const {className, href, isBlock, to, ...additionalProps} = props;
-  const classes = classnames(className, isBlock && 'is-block');
-
-  const Component = to ? ButtonLink : href ? ButtonExternalLink : ButtonBase;
-
-  return (
-    <Component {...additionalProps} className={classes} href={href} to={to} />
-  );
-};
-
-Button.defaultProps = {
+const defaultProps = {
   isBlock: false,
   variant: 'default',
   size: 'md',
+};
+
+export const Button: React.FC<ButtonProps> = props => {
+  const mergedProps = {...defaultProps, ...props};
+
+  const {className, href, isBlock, to, ...additionalProps} = mergedProps;
+  const classes = classnames(className, isBlock && 'is-block');
+
+  const componentProps = {...additionalProps, className: classes};
+
+  if (to) {
+    return <ButtonLink {...componentProps} to={to} />;
+  }
+  if (href) {
+    return <ButtonExternalLink {...componentProps} href={href} />;
+  }
+
+  return <ButtonBase {...componentProps} />;
 };
 
 export default Button;

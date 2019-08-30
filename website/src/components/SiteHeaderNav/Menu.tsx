@@ -2,6 +2,11 @@ import * as React from 'react';
 import {Link} from 'gatsby';
 import styled from 'styled-components';
 
+interface NavLinkBaseProps {
+  children: React.ReactNode;
+  to: string;
+}
+
 export const Menu: React.FC = () => {
   return (
     <Nav>
@@ -11,7 +16,7 @@ export const Menu: React.FC = () => {
   );
 };
 
-export const NavLinkBase: React.FC<any> = (props = {} as any) => {
+export const NavLinkBase: React.FC<NavLinkBaseProps> = props => {
   return <Link {...props} activeClassName="is-active" />;
 };
 

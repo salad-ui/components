@@ -8,7 +8,7 @@ import SiteHeaderNav from '../../components/SiteHeaderNav';
 import '../../styles/variables.css';
 import '../../styles/global.css';
 
-const Layout: React.FC = (props: any = {}) => {
+const Layout: React.FC = (props = {} as any) => {
   const {children, title} = props;
 
   return (
@@ -17,6 +17,7 @@ const Layout: React.FC = (props: any = {}) => {
         <SEO title={title} />
         <SiteHeaderNav />
         <FadeIn>
+          ANOTHER THIing
           <Content>{children}</Content>
         </FadeIn>
         <SiteFooter />

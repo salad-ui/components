@@ -2,6 +2,25 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import {StaticQuery, graphql} from 'gatsby';
 
+export interface SEOMetaEntry {
+  name: string;
+  content: any;
+  property?: undefined;
+}
+
+export interface SEOProps {
+  description?: string;
+  meta?: SEOMetaEntry[];
+  slug?: string;
+  title?: string;
+}
+
+const defaultProps = {
+  meta: [],
+  title: '',
+  slug: '',
+};
+
 const query = graphql`
   query GetSiteMetadata {
     site {
@@ -17,8 +36,9 @@ const query = graphql`
   }
 `;
 
-export const SEO: React.FC<any> = (props = {} as any) => {
-  const {meta, title, description, slug} = props;
+export const SEO: React.FC<SEOProps> = props => {
+  const mergedProps = {...defaultProps, ...props};
+  const {meta, title, description, slug} = mergedProps;
 
   return (
     <StaticQuery
@@ -80,12 +100,6 @@ export const SEO: React.FC<any> = (props = {} as any) => {
       }}
     />
   );
-};
-
-SEO.defaultProps = {
-  meta: [],
-  title: '',
-  slug: '',
 };
 
 export default SEO;

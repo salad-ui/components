@@ -19,7 +19,6 @@ const Typography = styled.div`
 
     h1 {
       font-size: 2.5em;
-      font-weight: normal;
       margin-top: 0.2em;
       max-width: calc(100% - 30px);
 
@@ -65,6 +64,7 @@ const Typography = styled.div`
     }
 
     p {
+      line-height: 1.65;
       margin: 0 0 1em;
     }
   }

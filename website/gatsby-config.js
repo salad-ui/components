@@ -19,10 +19,28 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pages`,
+        path: `${__dirname}/src/pages/`,
+        ignore: [`components/**/*`],
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `components`,
+        path: `${__dirname}/src/pages/components/`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-mdx`,
       options: {
         defaultLayouts: {
           default: require.resolve('./src/layouts/BaseLayout/index.tsx'),
+          components: require.resolve(
+            './src/layouts/ComponentsLayout/index.tsx',
+          ),
         },
       },
     },
