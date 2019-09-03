@@ -31,7 +31,7 @@
   "scripts": {
     "generate-types": "graphql-codegen",
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "develop": "gatsby develop -p 8001",
     "start": "npm run develop",
     "serve": "gatsby serve"
   }
