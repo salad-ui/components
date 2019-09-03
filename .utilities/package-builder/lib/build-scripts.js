@@ -6,15 +6,15 @@ const commonjs = require('rollup-plugin-commonjs');
 const typescript = require('rollup-plugin-typescript2');
 const {getSourceDirectory, getBuildDirectory} = require('./build-utilities');
 
- /* Use TSDX instead of this package when it supports monorepos to save repeating configuration in every single package */
+/* Use TSDX instead of this package when it supports monorepos to save repeating configuration in every single package */
 
- const buildDirectory = getBuildDirectory();
+const buildDirectory = getBuildDirectory();
 const sourceDirectoryRelativeToCurrentDirectory = path.relative(
   `../..`,
   './src',
 );
 
- const inputFile = fs.existsSync(`${getSourceDirectory()}/index.tsx`)
+const inputFile = fs.existsSync(`${getSourceDirectory()}/index.tsx`)
   ? `${getSourceDirectory()}/index.tsx`
   : fs.existsSync(`${getSourceDirectory()}/index.ts`)
   ? `${getSourceDirectory()}/index.tsx`
@@ -23,7 +23,7 @@ const sourceDirectoryRelativeToCurrentDirectory = path.relative(
   : `${getSourceDirectory()}/index.js`;
 const outputFile = `${getBuildDirectory()}/index`;
 
- // exclude dependencies which may be imported like `uuid` or `uuid/v4`
+// exclude dependencies which may be imported like `uuid` or `uuid/v4`
 const pkg = require(path.resolve('package.json'));
 const deps = [
   ...Object.keys(pkg.dependencies || {}),
@@ -32,7 +32,7 @@ const deps = [
 const regexps = deps.map(dep => new RegExp(`^${dep}($|\/)`));
 const external = id => regexps.some(regexp => regexp.test(id));
 
- function createRollupOptions() {
+function createRollupOptions() {
   return {
     input: inputFile,
     external,
@@ -59,7 +59,7 @@ const external = id => regexps.some(regexp => regexp.test(id));
   };
 }
 
- async function createRollupBundles() {
+async function createRollupBundles() {
   const bundle = await rollup(createRollupOptions());
   await Promise.all([
     await bundle.write({file: `${outputFile}.cjs.js`, format: 'cjs'}),
@@ -67,7 +67,7 @@ const external = id => regexps.some(regexp => regexp.test(id));
   ]);
 }
 
- async function moveTypescriptTypes() {
+async function moveTypescriptTypes() {
   const nestedTypesDirectory = `${buildDirectory}/${sourceDirectoryRelativeToCurrentDirectory}`;
   if (!fs.existsSync()) {
     return;
@@ -82,7 +82,7 @@ const external = id => regexps.some(regexp => regexp.test(id));
   );
 }
 
- module.exports.bundle = async () => {
+module.exports.bundle = async () => {
   await createRollupBundles();
   await moveTypescriptTypes();
 };

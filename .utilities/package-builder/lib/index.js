@@ -2,7 +2,7 @@
 const utilities = require('./build-utilities');
 const scripts = require('./build-scripts');
 
- (async () => {
+(async () => {
   try {
     await utilities.ensureDirectoryExists(utilities.getBuildDirectory());
     await scripts.bundle();
