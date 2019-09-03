@@ -51,7 +51,7 @@
       "yarn run format",
       "git add"
     ],
-    "**/*.{ts,tsx}": [
+    "**/*.{js,jsx,ts,tsx}": [
       "yarn run format",
       "yarn run lint",
       "git add"
