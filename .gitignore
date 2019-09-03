@@ -1,5 +1,7 @@
 .npmrc
 node_modules
 
-packages/*/.tsc_cache
-packages/*/dist
+/packages/*/.tsc_cache
+/packages/*/dist
+
+ .eslintcache

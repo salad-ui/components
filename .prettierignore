@@ -1,3 +1,4 @@
-website/.cache
-website/public
-playground/storybook-static
+/packages/*/dist
+/website/.cache
+/website/public
+/playground/storybook-static

@@ -38,6 +38,7 @@ export const Button = React.forwardRef<
     // isDestructive,
     // className,
     disabled,
+    children,
     ...additionalProps
   } = props;
 
@@ -64,7 +65,9 @@ export const Button = React.forwardRef<
         {...additionalProps}
         className={classes}
         ref={ref as React.Ref<HTMLAnchorElement>}
-      />
+      >
+        {children}
+      </a>
     );
   } else {
     return (
@@ -73,7 +76,9 @@ export const Button = React.forwardRef<
         {...additionalProps}
         className={classes}
         ref={ref as React.Ref<HTMLButtonElement>}
-      />
+      >
+        {children}
+      </button>
     );
   }
 });
