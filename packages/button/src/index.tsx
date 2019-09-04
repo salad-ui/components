@@ -1,20 +1,15 @@
 import * as React from 'react';
-// import classnames from 'classnames';
+import {StyledAnchor, StyledButton} from './index.style';
+import {ButtonVariant, ButtonSize} from './types';
 
 export interface ButtonProps {
+  variant?: ButtonVariant;
+  size?: ButtonSize;
+  isBusy?: boolean;
+  isDisabled?: boolean;
+  className?: string;
   href?: string;
   target?: string;
-  isPrimary?: boolean;
-  isLarge?: boolean;
-  isSmall?: boolean;
-  isTertiary?: boolean;
-  isToggled?: boolean;
-  isBusy?: boolean;
-  isDefault?: boolean;
-  isLink?: boolean;
-  isDestructive?: boolean;
-  className?: string;
-  disabled?: boolean;
   onClick?: () => void;
   children: React.ReactNode;
 }
@@ -25,60 +20,43 @@ export const Button = React.forwardRef<
   ButtonProps
 >((props, ref) => {
   const {
+    variant = 'secondary',
+    size = 'md',
     href,
     target,
-    // isPrimary,
-    // isLarge,
-    // isSmall,
-    // isTertiary,
-    // isToggled,
-    // isBusy,
-    // isDefault,
-    // isLink,
-    // isDestructive,
-    // className,
-    disabled,
+    isBusy = false,
+    isDisabled = false,
     children,
-    ...additionalProps
+    ...otherProps
   } = props;
-
-  // const classes = classnames( 'components-button', className, {
-  // 	'is-button': isDefault || isPrimary || isLarge || isSmall,
-  // 	'is-default': isDefault || ( ! isPrimary && ( isLarge || isSmall ) ),
-  // 	'is-primary': isPrimary,
-  // 	'is-large': isLarge,
-  // 	'is-small': isSmall,
-  // 	'is-tertiary': isTertiary,
-  // 	'is-toggled': isToggled,
-  // 	'is-busy': isBusy,
-  // 	'is-link': isLink,
-  // 	'is-destructive': isDestructive,
-  // } );
-  const classes = '';
-
-  const tag = href !== undefined && !disabled ? 'a' : 'button';
-
-  if (tag === 'a') {
+  const useAnchorElement = href !== undefined && !isDisabled;
+  if (useAnchorElement) {
     return (
-      <a
-        {...{href, target}}
-        {...additionalProps}
-        className={classes}
+      <StyledAnchor
+        variant={variant}
+        size={size}
+        isBusy={isBusy}
+        href={href}
+        target={target}
+        {...otherProps}
         ref={ref as React.Ref<HTMLAnchorElement>}
       >
         {children}
-      </a>
+      </StyledAnchor>
     );
   } else {
     return (
-      <button
-        {...{type: 'button', disabled}}
-        {...additionalProps}
-        className={classes}
+      <StyledButton
+        variant={variant}
+        size={size}
+        isBusy={isBusy}
+        type="button"
+        disabled={isDisabled}
+        {...otherProps}
         ref={ref as React.Ref<HTMLButtonElement>}
       >
         {children}
-      </button>
+      </StyledButton>
     );
   }
 });

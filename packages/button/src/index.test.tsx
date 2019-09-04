@@ -7,7 +7,7 @@ const href = 'http://wordpress.com/';
 describe('Button', () => {
   test('it renders an anchor when there is a href and it is not disabled', () => {
     const {getByText} = render(
-      <Button href={href} disabled={false}>
+      <Button href={href} isDisabled={false}>
         Click me!
       </Button>,
     );
@@ -17,7 +17,7 @@ describe('Button', () => {
 
   test('it renders a button when there is a href and it is disabled', () => {
     const {getByText} = render(
-      <Button href={href} disabled>
+      <Button href={href} isDisabled>
         Click me!
       </Button>,
     );

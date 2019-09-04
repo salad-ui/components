@@ -2,6 +2,6 @@ module.exports = {
   preset: `ts-jest`,
   testMatch: [`**/*.test.ts?(x)`],
   moduleNameMapper: {
-    // '^@wordpress/(.*)$': '<rootDir>/src/$1'
+    '^@design-system-example/(.*)$': '<rootDir>/packages/$1/src',
   },
 };
