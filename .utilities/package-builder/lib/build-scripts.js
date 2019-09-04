@@ -17,7 +17,7 @@ const sourceDirectoryRelativeToCurrentDirectory = path.relative(
 const inputFile = fs.existsSync(`${getSourceDirectory()}/index.tsx`)
   ? `${getSourceDirectory()}/index.tsx`
   : fs.existsSync(`${getSourceDirectory()}/index.ts`)
-  ? `${getSourceDirectory()}/index.tsx`
+  ? `${getSourceDirectory()}/index.ts`
   : fs.existsSync(`${getSourceDirectory()}/index.jsx`)
   ? `${getSourceDirectory()}/index.jsx`
   : `${getSourceDirectory()}/index.js`;
