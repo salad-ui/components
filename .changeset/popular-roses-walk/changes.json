@@ -1,0 +1,12 @@
+{
+  "releases": [
+    {"name": "@design-system-example/package-builder", "type": "patch"},
+    {"name": "@design-system-example/button", "type": "patch"},
+    {"name": "@design-system-example/color", "type": "patch"},
+    {"name": "@design-system-example/theme", "type": "patch"},
+    {"name": "@design-system-example/typography", "type": "patch"},
+    {"name": "@design-system-example/playground", "type": "patch"},
+    {"name": "@design-system-example/website", "type": "patch"}
+  ],
+  "dependents": []
+}

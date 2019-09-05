@@ -44,7 +44,7 @@
     "test:debug": "node --inspect-brk node_modules/.bin/jest --config .jestrc.js --runInBand",
     "start:website": "yarn workspace @design-system-example/website run start",
     "start:playground": "yarn workspace @design-system-example/playground run start",
-    "changeset": "changeset"
+    "changeset": "changeset --commit"
   },
   "lint-staged": {
     "**/*.{json,md}": [
