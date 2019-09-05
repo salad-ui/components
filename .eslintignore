@@ -2,4 +2,6 @@ node_modules
 /packages/*/.tsc_cache
 /packages/*/dist
 /website/public
+/website/gatsby-config.js
+/website/gatsby-node.js
 /playground/storybook-static

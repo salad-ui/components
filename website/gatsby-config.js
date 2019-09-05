@@ -23,7 +23,7 @@ module.exports = {
       options: {
         name: `pages`,
         path: `${__dirname}/src/pages/`,
-        ignore: [`components/**/*`],
+        ignore: [`${__dirname}/src/pages/components/**/*`],
       },
     },
     {
@@ -37,7 +37,7 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         defaultLayouts: {
-          default: require.resolve('./src/layouts/BaseLayout/index.tsx'),
+          pages: require.resolve('./src/layouts/BaseLayout/index.tsx'),
           components: require.resolve(
             './src/layouts/ComponentsLayout/index.tsx',
           ),

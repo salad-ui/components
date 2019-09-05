@@ -2,13 +2,13 @@ import {lighten} from 'polished';
 
 export const COLOR = {
   // Main
-  brand: '#05f',
+  brand: '#2271b1',
   text: 'black',
   textPrimary: 'white',
 
   // UI
   uiBackground: '#fff',
-  uiBackgroundPrimary: '#05f',
+  uiBackgroundPrimary: '#2271b1',
   focus: '#00BFFF',
 
   // Shades

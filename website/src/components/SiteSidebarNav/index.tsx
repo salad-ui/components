@@ -17,3 +17,5 @@ const Sidebar = styled.div`
   padding-left: calc((100% - 1448px) / 2);
   flex-direction: column;
 `;
+
+export default SiteSidebarNav;

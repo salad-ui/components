@@ -1,18 +1,23 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import SEO from '../../components/SEO';
-import FadeIn from '../../components/FadeIn';
-import SiteFooter from '../../components/SiteFooter';
-import SiteHeaderNav from '../../components/SiteHeaderNav';
+import {
+  AppProvider,
+  FadeIn,
+  SiteFooter,
+  SiteHeaderNav,
+  SEO,
+} from '../../components';
+import {getTitle} from '../utils';
 import '../../styles/variables.css';
 import '../../styles/global.css';
 
-const Layout: React.FC = (props: any = {}) => {
-  const {children, title} = props;
+const Layout: React.FC = props => {
+  const {children} = props;
+  const title = getTitle(props);
 
   return (
-    <>
+    <AppProvider>
       <Wrapper>
         <SEO title={title} />
         <SiteHeaderNav />
@@ -21,7 +26,7 @@ const Layout: React.FC = (props: any = {}) => {
         </FadeIn>
         <SiteFooter />
       </Wrapper>
-    </>
+    </AppProvider>
   );
 };
 

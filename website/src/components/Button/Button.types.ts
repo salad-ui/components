@@ -4,11 +4,13 @@ export type ButtonVariant = 'default' | 'primary';
 export interface ButtonProps {
   className?: string;
   children?: React.ReactNode;
-  isBlock: boolean;
+  isBlock?: boolean;
   href?: string;
   size: ButtonSize;
+  rel?: string;
+  target?: string;
   to?: string;
-  variant: ButtonVariant;
+  variant?: ButtonVariant;
 }
 
 export interface ButtonBaseProps {

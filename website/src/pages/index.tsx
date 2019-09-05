@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Layout from '../layouts/BaseLayout';
-import HeroHome from '../components/HeroHome';
+import {HeroHome} from '../components';
 
 export const HomePage: React.FC = () => {
   return (

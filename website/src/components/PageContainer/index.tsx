@@ -15,7 +15,7 @@ export const PageContainer: React.FC = props => {
 
 const Content = styled.div`
   max-width: 720px;
-  margin: 4em 0 10em;
+  margin: 5em 0 10em;
   width: 100%;
 `;
 

@@ -3,13 +3,37 @@ import {StyledAnchor, StyledButton} from './index.style';
 import {ButtonVariant, ButtonSize} from './types';
 
 export interface ButtonProps {
+  /**
+   * The variant to use.
+   */
   variant?: ButtonVariant;
+  /**
+   * The size of the button.
+   */
   size?: ButtonSize;
+  /**
+   * Renders a busy state.
+   */
   isBusy?: boolean;
+  /**
+   * Renders a busy state.
+   */
   isDisabled?: boolean;
+  /**
+   * Renders an anchor element.
+   */
   href?: string;
+  /**
+   * Adjusts the anchor element target.
+   */
   target?: string;
+  /**
+   * Callback when clicked.
+   */
   onClick?: () => void;
+  /**
+   * Custom component className.
+   */
   className?: string;
   children: React.ReactNode;
 }

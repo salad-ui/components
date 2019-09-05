@@ -1,9 +1,16 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-export const Logo: React.FC = () => {
+export interface LogoProps {
+  width?: number;
+}
+
+export const Logo: React.FC<LogoProps> = props => {
+  const {width = 20} = props;
+  const style = {width};
+
   return (
-    <IconWrapper>
+    <IconWrapper style={style}>
       <WordPressLogoIcon />
     </IconWrapper>
   );
@@ -20,7 +27,6 @@ export const WordPressLogoIcon: React.FC = () => {
 
 const IconWrapper = styled.span`
   display: block;
-  width: 20px;
 
   svg {
     display: block;

@@ -29,6 +29,7 @@ code {
 
 a {
   color: #2271b1;
+  text-decoration: none;
 }
 a:hover {
   color: #5198d9;
