@@ -7,10 +7,10 @@ export interface ButtonProps {
   size?: ButtonSize;
   isBusy?: boolean;
   isDisabled?: boolean;
-  className?: string;
   href?: string;
   target?: string;
   onClick?: () => void;
+  className?: string;
   children: React.ReactNode;
 }
 
@@ -29,7 +29,9 @@ export const Button = React.forwardRef<
     children,
     ...otherProps
   } = props;
+
   const useAnchorElement = href !== undefined && !isDisabled;
+
   if (useAnchorElement) {
     return (
       <StyledAnchor

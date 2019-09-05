@@ -17,7 +17,9 @@ const commonStyle = `
 	border: 0;
 	cursor: pointer;
 	-webkit-appearance: none;
-	background: none;
+  background: none;
+  border-radius: 3px;
+  white-space: nowrap;
 `;
 
 interface SizeStyleProps {
@@ -35,13 +37,9 @@ const sizeStyle = ({size}: SizeStyleProps): string => {
       `;
     case 'md':
       return `
-        padding: 0 10px 1px;
+        height: 28px; 
         line-height: 26px;
-        height: 28px;
-        border-radius: 3px;
-        white-space: nowrap;
-        border-width: 1px;
-        border-style: solid;
+        padding: 0 10px 1px;
       `;
     case 'lg':
       return `
@@ -57,6 +55,11 @@ interface VariantStyleProps {
   isBusy: boolean;
 }
 
+const buttonStyle = css`
+  border-width: 1px;
+  border-style: solid;
+`;
+
 const primaryVariantStyle = css<VariantStyleProps>`
   color: ${colors.white};
   ${bg('button')}
@@ -71,14 +74,14 @@ const primaryVariantStyle = css<VariantStyleProps>`
     0 1px 1px ${shade('button', 0.3)},
     -1px 0 1px ${shade('button', 0.3)};
 
-  :hover,
+  :hover:enabled,
   :focus:enabled {
     color: ${colors.white};
     ${bg(shade('button', 0.05))}
     border-color: ${shade('button', 0.5)};
   }
 
-  :hover {
+  :hover:enabled {
     box-shadow: inset 0 -1px 0 ${shade('button', 0.5)};
   }
 
@@ -95,21 +98,12 @@ const primaryVariantStyle = css<VariantStyleProps>`
     box-shadow: inset 0 1px 0 ${shade('button', 0.5)};
   }
 
-  :disabled,
-  :disabled:active:enabled {
+  :disabled {
     ${fg(tint('button', 0.4))}
     ${bg('button')}
     border-color: ${shade('button', 0.07)};
     box-shadow: none;
     text-shadow: none;
-
-    :focus:enabled {
-      color: ${tint('button', 0.4)};
-      border-color: ${shade('button', 0.07)};
-      box-shadow:
-        0 0 0 1px ${colors.white},
-        0 0 0 3px ${colors['blue-medium-focus']};
-    }
   }
 
   ${({isBusy}) =>
@@ -138,7 +132,7 @@ const secondaryVariantStyle = css`
   box-shadow: inset 0 -1px 0 #ccc;
   vertical-align: top;
 
-  :hover {
+  :hover:enabled {
     background: #fafafa;
     border-color: #999;
     box-shadow: inset 0 -1px 0 #999;
@@ -172,61 +166,20 @@ const secondaryVariantStyle = css`
 `;
 
 const tertiaryVariantStyle = css`
-  margin: 0;
-  padding: 0;
-  box-shadow: none;
-  border: 0;
-  border-radius: 0;
-  background: none;
-  outline: none;
-  text-align: left;
-
-  /* Mimics the default link style in common.css */
-  color: #0073aa;
-  text-decoration: underline;
-  transition-property: border, background, color;
-  transition-duration: 0.05s;
-  transition-timing-function: ease-in-out;
-  @include reduce-motion('transition');
-
-  :hover,
-  :active {
-    color: #00a0d2;
-  }
-
-  :focus {
-    color: #124964;
-    box-shadow: 0 0 0 1px #5b9dd9, 0 0 2px 1px rgba(30, 140, 190, 0.8);
-  }
-
-  &.is-destructive {
-    color: $alert-red;
-  }
-
-  color: theme(outlines);
-
-  // Matches default button in hit area. See line 11.
-  padding: 0 10px;
-  line-height: 26px;
-  height: 28px;
-
-  &:active:focus:enabled {
-    box-shadow: none;
-  }
-
-  &:not(:disabled):not([aria-disabled='true']):not(.is-default):hover {
-    color: color(theme(outlines) shade(25%));
+  ${fg('outlines')}
+  :hover:enabled {
+    ${fg(shade('outlines', 0.25))}
   }
 `;
 
 const variantStyle = ({variant}: VariantStyleProps) => {
   switch (variant) {
     case 'primary':
-      return primaryVariantStyle;
+      return [buttonStyle, primaryVariantStyle];
     case 'secondary':
-      return secondaryVariantStyle;
+      return [buttonStyle, secondaryVariantStyle];
     case 'tertiary':
-      return tertiaryVariantStyle;
+      return [tertiaryVariantStyle];
   }
 };
 
@@ -256,11 +209,11 @@ export interface StyledAnchorProps {
   variant: ButtonVariant;
   size: ButtonSize;
   isBusy: boolean;
+  // isDestructive: boolean;
 }
 
 export const StyledAnchor = styled.a<StyledAnchorProps>`
   ${commonStyle}
-  ${busyStyle}
   ${sizeStyle}
   ${variantStyle}
 `;

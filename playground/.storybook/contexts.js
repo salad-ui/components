@@ -17,6 +17,7 @@ addDecorator(
             theme: {
               ...wordpress,
               color: {
+                ...wordpress.color,
                 button: '#008710',
               },
             },
@@ -28,6 +29,7 @@ addDecorator(
             theme: {
               ...wordpress,
               color: {
+                ...wordpress.color,
                 button: '#c9356e',
               },
             },
