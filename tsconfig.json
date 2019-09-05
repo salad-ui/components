@@ -15,5 +15,6 @@
     "paths": {
       "@design-system-example/*": ["packages/*/src"]
     }
-  }
+  },
+  "include": ["**/*.ts", "**/*.tsx", "**/*.d.ts"]
 }

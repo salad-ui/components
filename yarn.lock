@@ -2267,6 +2267,17 @@
     react-inspector "^3.0.2"
     uuid "^3.3.2"
 
+"@storybook/addon-contexts@^5.1.11":
+  version "5.1.11"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-contexts/-/addon-contexts-5.1.11.tgz#356bd909d1c0cb12879c3e7cf9d2ed835581f884"
+  integrity sha512-1htbjhk4yu4CEEFo0Id4pbmk+G27ipTXbsg9OLfcXqh9Qe/KYgcpmTAC8Cmdun7NF8Si61FpKH/aSWx0HQx/9w==
+  dependencies:
+    "@storybook/addons" "5.1.11"
+    "@storybook/api" "5.1.11"
+    "@storybook/components" "5.1.11"
+    "@storybook/core-events" "5.1.11"
+    core-js "^3.0.1"
+
 "@storybook/addon-links@^5.1.11":
   version "5.1.11"
   resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-5.1.11.tgz#3a245f30480d586094bdda8f4658c5d328ac39b9"
