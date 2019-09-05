@@ -7,7 +7,13 @@
   "files": [
     "dist"
   ],
+  "dependencies": {
+    "@design-system-example/typography": "^1.0.0"
+  },
   "peerDependencies": {
+    "@types/react": "^16.9.2",
+    "@types/styled-components": "^4.1.18",
+    "styled-components": "^4.3.2",
     "react": "^16.9.0"
   },
   "devDependencies": {
@@ -16,6 +22,5 @@
   "scripts": {
     "build": "package-builder"
   },
-  "license": "MIT",
-  "dependencies": {}
+  "license": "MIT"
 }

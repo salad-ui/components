@@ -1,0 +1,21 @@
+{
+  "name": "@design-system-example/color",
+  "version": "1.0.0",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "@types/styled-components": "^4.1.18",
+    "styled-components": "^4.3.2"
+  },
+  "devDependencies": {
+    "@design-system-example/package-builder": "^1.0.0"
+  },
+  "scripts": {
+    "build": "package-builder"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,5 @@
+node_modules
+/packages/*/.tsc_cache
+/packages/*/dist
+/website/public
+/playground/storybook-static

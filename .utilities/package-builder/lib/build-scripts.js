@@ -1,0 +1,88 @@
+const path = require('path');
+const fs = require('fs-extra');
+const {rollup} = require('rollup');
+const resolve = require('rollup-plugin-node-resolve');
+const commonjs = require('rollup-plugin-commonjs');
+const typescript = require('rollup-plugin-typescript2');
+const {getSourceDirectory, getBuildDirectory} = require('./build-utilities');
+
+/* Use TSDX instead of this package when it supports monorepos to save repeating configuration in every single package */
+
+const buildDirectory = getBuildDirectory();
+const sourceDirectoryRelativeToCurrentDirectory = path.relative(
+  `../..`,
+  './src',
+);
+
+const inputFile = fs.existsSync(`${getSourceDirectory()}/index.tsx`)
+  ? `${getSourceDirectory()}/index.tsx`
+  : fs.existsSync(`${getSourceDirectory()}/index.ts`)
+  ? `${getSourceDirectory()}/index.ts`
+  : fs.existsSync(`${getSourceDirectory()}/index.jsx`)
+  ? `${getSourceDirectory()}/index.jsx`
+  : `${getSourceDirectory()}/index.js`;
+const outputFile = `${getBuildDirectory()}/index`;
+
+// exclude dependencies which may be imported like `uuid` or `uuid/v4`
+const pkg = require(path.resolve('package.json'));
+const deps = [
+  ...Object.keys(pkg.dependencies || {}),
+  ...Object.keys(pkg.peerDependencies || {}),
+];
+const regexps = deps.map(dep => new RegExp(`^${dep}($|\/)`));
+const external = id => regexps.some(regexp => regexp.test(id));
+
+function createRollupOptions() {
+  return {
+    input: inputFile,
+    external,
+    plugins: [
+      resolve({
+        browser: true,
+      }),
+      commonjs({include: /node_modules/}),
+      typescript({
+        cacheRoot: `.tsc_cache`,
+        include: [
+          'src/**/*.ts+(|x)',
+          'src/**/*.js+(|x)', // compile JS while we're transitioning @wordpress/components to typescript
+        ],
+        tsconfigOverride: {
+          compilerOptions: {
+            // declaration: true, // declarations are not supported while we're transitioning @wordpress/components to typescript
+            target: 'esnext',
+            outDir: buildDirectory,
+          },
+        },
+      }),
+    ],
+  };
+}
+
+async function createRollupBundles() {
+  const bundle = await rollup(createRollupOptions());
+  await Promise.all([
+    await bundle.write({file: `${outputFile}.cjs.js`, format: 'cjs'}),
+    await bundle.write({file: `${outputFile}.esm.js`, format: 'es'}),
+  ]);
+}
+
+async function moveTypescriptTypes() {
+  const nestedTypesDirectory = `${buildDirectory}/${sourceDirectoryRelativeToCurrentDirectory}`;
+  if (!fs.existsSync()) {
+    return;
+  }
+  await fs.copy(nestedTypesDirectory, buildDirectory, {
+    overwrite: true,
+  });
+  await fs.remove(
+    `${buildDirectory}/${
+      sourceDirectoryRelativeToCurrentDirectory.split(path.sep)[0]
+    }`,
+  );
+}
+
+module.exports.bundle = async () => {
+  await createRollupBundles();
+  await moveTypescriptTypes();
+};

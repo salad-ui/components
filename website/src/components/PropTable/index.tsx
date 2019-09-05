@@ -7,6 +7,7 @@ interface DocGenInfo {
     [name: string]: {
       name: string;
       description?: string;
+      /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
       defaultValue?: any;
       required: boolean;
       type: {
@@ -17,11 +18,13 @@ interface DocGenInfo {
 }
 
 export interface PropTableProps {
+  /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
   component: React.ComponentType<any>;
 }
 
 export const PropTable: React.FC<PropTableProps> = ({component}) => {
   // `.__docgenInfo` is a property added by "react-docgen-typescript-loader"
+  /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
   const docgenInfo: DocGenInfo = (component as any).__docgenInfo;
 
   if (!docgenInfo) {

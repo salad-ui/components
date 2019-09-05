@@ -11,7 +11,7 @@ git remote set-url origin "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHU
 
 # version and publish
 git checkout master
-yarn build-releases version --commit
+yarn changeset bump --commit
 git push
-yarn build-releases publish --public
+yarn changeset release --public
 git push --tags

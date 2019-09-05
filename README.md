@@ -26,6 +26,10 @@ To start the component playground run:
 yarn run start:playground
 ```
 
+```
+http://localhost:8000/
+```
+
 ## Documentation website
 
 To start the documentation website run:
@@ -37,7 +41,7 @@ yarn run start:website
 Then browse to:
 
 ```
-http://localhost:8000/
+http://localhost:8001/
 ```
 
 ## Linting
