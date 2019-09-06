@@ -2,7 +2,10 @@
 source ".ci/utils/strict.sh"
 
 # configure GIT - deploy key
+mkdir ~/.ssh
+chmod 700 ~/.ssh
 echo "$GITHUB_DEPLOY_KEY" > ~/.ssh/id_rsa
+chmod 600 ~/.ssh/id_rsa
 ssh -T git@github.com
 
 # configure GIT - set git user to the commit we are building from
