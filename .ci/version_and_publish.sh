@@ -14,7 +14,7 @@ git config user.name "$(git --no-pager log --format=format:'%an' -n 1)"
 git config user.email "$(git --no-pager log --format=format:'%ae' -n 1)"
 git remote set-url origin "git@github.com:$GITHUB_REPOSITORY.git"
 
-# configure NPM
+# configure NPM - create a .npmrc file in every package
 yarn lerna exec echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc 
 
 # version and publish
