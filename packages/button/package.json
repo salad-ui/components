@@ -1,6 +1,6 @@
 {
   "name": "@design-system-example/button",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
@@ -8,7 +8,7 @@
     "dist"
   ],
   "dependencies": {
-    "@design-system-example/typography": "^1.0.0"
+    "@design-system-example/typography": "^1.0.1"
   },
   "peerDependencies": {
     "@types/react": "^16.9.2",
@@ -17,7 +17,7 @@
     "react": "^16.9.0"
   },
   "devDependencies": {
-    "@design-system-example/package-builder": "^1.0.0"
+    "@design-system-example/package-builder": "^1.0.1"
   },
   "scripts": {
     "build": "package-builder"
