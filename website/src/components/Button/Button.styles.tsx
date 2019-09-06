@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import {Link} from 'gatsby';
 import {darken, lighten, rgba} from 'polished';
 
-import {ButtonBaseProps} from './Button.types';
+import {ButtonSize, ButtonVariant} from './Button.types';
 import {COLOR} from '../../constants';
 
 export const config = {
@@ -36,6 +36,11 @@ export const config = {
     },
   },
 };
+
+export interface ButtonBaseProps {
+  size: ButtonSize;
+  variant: ButtonVariant;
+}
 
 export const ButtonBase = styled.button<ButtonBaseProps>`
   appearance: none;
