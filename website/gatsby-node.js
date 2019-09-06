@@ -15,7 +15,14 @@ exports.onCreateWebpackConfig = ({actions}) => {
         {
           test: /\.tsx?$/,
           include: /\/packages\/[^\/]+\/src\//,
-          use: ['react-docgen-typescript-loader'],
+          use: [
+            {
+              loader: 'react-docgen-typescript-loader',
+              options: {
+                shouldExtractLiteralValuesFromEnum: true,
+              },
+            },
+          ],
         },
       ],
     },
