@@ -86,3 +86,14 @@ export const Button = React.forwardRef<
     );
   }
 });
+
+/*
+  Having to duplicate defaults for docs since typings fail when using forwardRef()
+  @see https://github.com/microsoft/TypeScript/issues/27425#issuecomment-473848082
+*/
+Button.defaultProps = {
+  variant: 'secondary',
+  size: 'md',
+  isBusy: false,
+  isDisabled: false,
+};
