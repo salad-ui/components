@@ -6,6 +6,7 @@ git config user.name "$(git --no-pager log --format=format:'%an' -n 1)"
 git config user.email "$(git --no-pager log --format=format:'%ae' -n 1)"
 
 # using a machine user who is an admin of this repo so we can get around the branch restrictions
+echo "https://jameslnewell-bot:$GITHUB_BOT_TOKEN@github.com/$GITHUB_REPOSITORY.git"
 git remote set-url origin "https://jameslnewell-bot:$GITHUB_BOT_TOKEN@github.com/$GITHUB_REPOSITORY.git"
 
 # configure NPM
