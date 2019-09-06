@@ -65,4 +65,4 @@ jobs:
       run: .ci/version_and_publish.sh
       env:
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        GITHUB_BOT_TOKEN: ${{ secrets.GITHUB_BOT_TOKEN }}
+        GITHUB_DEPLOY_KEY: ${{ secrets.GITHUB_DEPLOY_KEY }}
