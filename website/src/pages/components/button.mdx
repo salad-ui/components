@@ -1,12 +1,52 @@
+---
+title: Button
+---
+
 import {Button} from '@design-system-example/button';
-import {PropTable} from '../../components/PropTable';
+import {Example, PropTable} from '../../components';
 
-# Button
+Buttons let users take actions and make choices with a single click or tap.
 
-A button!
+### Example
 
-Here's an example:
+<Example>
+  <Button variant="tertiary">Save Draft</Button>{' '}
+  <Button variant="secondary">Preview</Button>{' '}
+  <Button variant="primary">Publish</Button>
+</Example>
 
-<Button>Buy now!</Button>
+### Sizes
 
-<PropTable component={Button}/>
+<Example>
+  <Button variant="tertiary" size="lg">
+    Save Draft
+  </Button>{' '}
+  <Button variant="secondary" size="lg">
+    Preview
+  </Button>{' '}
+  <Button variant="primary" size="lg">
+    Publish
+  </Button>
+  <br />
+  <br />
+  <Button variant="tertiary" size="md">
+    Save Draft
+  </Button> <Button variant="secondary" size="md">
+    Preview
+  </Button> <Button variant="primary" size="md">
+    Publish
+  </Button>
+  <br />
+  <br />
+  <Button variant="tertiary" size="sm">
+    Save Draft
+  </Button>{' '}
+  <Button variant="secondary" size="sm">
+    Preview
+  </Button>{' '}
+  <Button variant="primary" size="sm">
+    Publish
+  </Button>
+</Example>
+
+<PropTable component={Button} />
