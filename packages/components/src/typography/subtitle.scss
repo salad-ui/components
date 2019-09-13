@@ -1,0 +1,22 @@
+@import "./common";
+
+@mixin wp-typography-subtitle-size-lg() {
+}
+
+@mixin wp-typography-subtitle-size-md() {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@mixin wp-typography-subtitle-size-sm() {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+@mixin wp-typography-button($size: "md") {
+  color: currentColor;
+  font-family: $wp-typography-fontFamily;
+  font-weight: 550; /* TODO: how do we want to handle semibold? can't really use another font variant since using system fonts?? */
+  letter-spacing: 0;
+  @include wp-typography-subtitle-size-md();
+}

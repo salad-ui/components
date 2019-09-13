@@ -1,0 +1,24 @@
+@import "./common";
+
+@mixin wp-typography-display-lg() {
+  font-size: 32px;
+  line-height: 40px;
+}
+
+@mixin wp-typography-display-md() {
+  font-size: 24px;
+  line-height: 32px;
+}
+
+@mixin wp-typography-display-md() {
+  font-size: 20px;
+  line-height: 28px;
+}
+
+@mixin wp-typography-display() {
+  color: currentColor;
+  font-weight: normal;
+  font: $wp-typography-fontFamily;
+  letter-spacing: 0;
+  @include wp-typography-display-md();
+}

@@ -21,7 +21,7 @@ export const PropTable: React.FC<PropTableProps> = ({component}) => {
   /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
   const docgenInfo: DocGen = (component as any).__docgenInfo;
 
-  if (!docgenInfo) {
+  if (!docgenInfo || !Object.keys(docgenInfo.props).length) {
     return <>Component has no props!</>;
   }
 

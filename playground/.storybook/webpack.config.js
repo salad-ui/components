@@ -4,6 +4,7 @@ const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const tsconfigPath = '../tsconfig.json';
 
 module.exports = ({config}) => {
+  // add support for typescript
   config.module.rules.push({
     test: /\.(ts|tsx)$/,
     use: [
@@ -23,5 +24,12 @@ module.exports = ({config}) => {
     new TsconfigPathsPlugin({configFile: tsconfigPath}),
   ];
   config.plugins.push(new ForkTsCheckerWebpackPlugin({tsconfig: tsconfigPath}));
+
+  // add support for SASS
+  config.module.rules.push({
+    test: /\.scss$/,
+    use: ['style-loader', 'css-loader', 'sass-loader'],
+  });
+
   return config;
 };

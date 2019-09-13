@@ -1,0 +1,61 @@
+
+$wp-spacings: ("xs": 0.25em, "sm": 0.5em, "md": 0.5em, "lg": 1em, "xl": 2em);
+
+@function wp-spacing($size) {
+  @if map-has-key($wp-spacings, $size) == false {
+    @error "wp-spacing does not have key #{$size}"
+  }
+  @return map-get($wp-spacings, $size);
+}
+
+@mixin wp-spacing-my($size) {
+  margin-top: wp-spacing($size);
+  margin-bottom: wp-spacing($size);
+}
+
+@mixin wp-spacing-mx($size) {
+  margin-left: wp-spacing($size);
+  margin-right: wp-spacing($size);
+}
+
+@mixin wp-spacing-mt($size) {
+  margin-top: wp-spacing($size);
+}
+
+@mixin wp-spacing-mr($size) {
+  margin-right: wp-spacing($size);
+}
+
+@mixin wp-spacing-mb($size) {
+  margin-bottom: wp-spacing($size);
+}
+
+@mixin wp-spacing-ml($size) {
+  margin-left: wp-spacing($size);
+}
+
+@mixin wp-spacing-py($size) {
+  padding-top: wp-spacing($size);
+  padding-bottom: wp-spacing($size);
+}
+
+@mixin wp-spacing-px($size) {
+  padding-left: wp-spacing($size);
+  padding-right: wp-spacing($size);
+}
+
+@mixin wp-spacing-pt($size) {
+  padding-top: wp-spacing($size);
+}
+
+@mixin wp-spacing-pr($size) {
+  padding-right: wp-spacing($size);
+}
+
+@mixin wp-spacing-pb($size) {
+  padding-bottom: wp-spacing($size);
+}
+
+@mixin wp-spacing-pl($size) {
+  padding-left: wp-spacing($size);
+}
