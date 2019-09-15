@@ -21,7 +21,7 @@ export const HeroHome: React.FC = () => {
             <Flexy.Item>
               <Button
                 size="lg"
-                href="https://github.com/Automattic/wordpress-components"
+                href="https://github.com/jameslnewell/design-system-example"
                 target="_blank"
                 rel="noreferrer noopener"
               >

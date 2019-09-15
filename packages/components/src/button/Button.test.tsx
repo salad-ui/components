@@ -2,7 +2,7 @@ import * as React from 'react';
 import {render} from '@testing-library/react';
 import {Button} from './Button';
 
-const href = 'http://wordpress.com/';
+const href = 'http://example.com/';
 
 describe('Button', () => {
   test('it renders an anchor when there is a href and it is not disabled', () => {

@@ -18,10 +18,6 @@ const inputFile = fs.existsSync(`${getSourceDirectory()}/index.tsx`)
   ? `${getSourceDirectory()}/index.tsx`
   : fs.existsSync(`${getSourceDirectory()}/index.ts`)
   ? `${getSourceDirectory()}/index.ts`
-  : fs.existsSync(`${getSourceDirectory()}/index.jsx`)
-  ? `${getSourceDirectory()}/index.jsx`
-  : fs.existsSync(`${getSourceDirectory()}/index.js`)
-  ? `${getSourceDirectory()}/index.js`
   : undefined;
 const outputFile = `${getBuildDirectory()}/index`;
 
@@ -45,13 +41,10 @@ function createRollupOptions() {
       commonjs({include: /node_modules/}),
       typescript({
         cacheRoot: `.tsc_cache`,
-        include: [
-          'src/**/*.ts+(|x)',
-          'src/**/*.js+(|x)', // compile JS while we're transitioning @wordpress/components to typescript
-        ],
+        include: ['src/**/*.ts+(|x)'],
         tsconfigOverride: {
           compilerOptions: {
-            // declaration: true, // declarations are not supported while we're transitioning @wordpress/components to typescript
+            declaration: true,
             target: 'esnext',
             outDir: buildDirectory,
           },

@@ -2,7 +2,7 @@ import * as React from 'react';
 import {render} from '@testing-library/react';
 import {ButtonGroup} from './ButtonGroup';
 
-const href = 'http://wordpress.com/';
+const href = 'http://example.com/';
 
 describe('ButtonGroup', () => {
   test('it renders buttons', () => {
