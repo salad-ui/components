@@ -5,7 +5,9 @@
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "src",
+    "index.scss"
   ],
   "dependencies": {
     "@types/classnames": "^2.2.9",

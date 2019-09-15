@@ -93,11 +93,3 @@ $wp-color-green-100: #001C05 !default;
 @function wp-color-shade($color, $percentage) {
   @return mix(black, $color, $percentage);
 }
-
-// :root {
-//   --wp-primary-color: blue;
-//   --wp-secondary-color: grey;
-//   --wp-error-color: red;
-//   --wp-warning-color: orange;
-//   --wp-success-color: green;
-// }
