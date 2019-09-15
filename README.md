@@ -2,7 +2,7 @@
 
 [![GithubActions](https://github.com/jameslnewell/design-system-example/workflows/CI/badge.svg)](https://github.com/jameslnewell/design-system-example/actions)
 
-Components for building UI/UX for `wp-admin` and `wp-admin` plugins.
+Components for building UI/UX.
 
 |            |                                                                                                                       |
 | ---------- | --------------------------------------------------------------------------------------------------------------------- |
