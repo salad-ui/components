@@ -1,0 +1,21 @@
+@import "../../color/index.scss";
+
+@keyframes wp-button-busy {
+  0%   { background-position: 200px 0; }
+}
+
+@mixin wp-button-busy {
+  &,
+  &:disabled {
+    animation: wp-button-busy 2500ms infinite linear;
+    background-size: 100px 100%;
+    background-image: repeating-linear-gradient(
+      -45deg,
+      $wp-color-grey-50,
+      $wp-color-white 11px,
+      $wp-color-white 10px,
+      $wp-color-grey-50 20px
+    );
+    opacity: 1;
+  }
+}

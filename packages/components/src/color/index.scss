@@ -1,0 +1,95 @@
+
+/**
+  Questions:
+    - are colors able to be themed
+      e.g. primary, secondary, error, warning, success
+*/
+
+$wp-color-white: #ffffff !default;
+$wp-color-black: #000000 !default;
+
+$wp-color-grey-0: #F6F7F7 !default;
+$wp-color-grey-5: #DCDCDE !default;
+$wp-color-grey-10: #C3C4C7 !default;
+$wp-color-grey-20: #A7AAAD !default;
+$wp-color-grey-30: #8E9196 !default;
+$wp-color-grey-40: #787C82 !default;
+$wp-color-grey-50: #646970 !default;
+$wp-color-grey-60: #50575E !default;
+$wp-color-grey-70: #3C434A !default;
+$wp-color-grey-80: #2C3338 !default;
+$wp-color-grey-90: #1D2327 !default;
+$wp-color-grey-100: #101517 !default;
+
+$wp-color-blue-0: #EFF3F7 !default;
+$wp-color-blue-5: #C6DEF6 !default;
+$wp-color-blue-10: #9AC6F0 !default;
+$wp-color-blue-20: #72AEE6 !default;
+$wp-color-blue-30: #5198D9 !default;
+$wp-color-blue-40: #3582C4 !default;
+$wp-color-blue-50: #2271B1 !default;
+$wp-color-blue-60: #135E96 !default;
+$wp-color-blue-70: #0A4B78 !default;
+$wp-color-blue-80: #043959 !default;
+$wp-color-blue-90: #01263A !default;
+$wp-color-blue-100: #00131C !default;
+
+$wp-color-red-0: #F7EDEE !default;
+$wp-color-red-5: #FFCCD0 !default;
+$wp-color-red-10: #FFA6AB !default;
+$wp-color-red-20: #FF8085 !default;
+$wp-color-red-30: #F86368 !default;
+$wp-color-red-40: #E65054 !default;
+$wp-color-red-50: #D63638 !default;
+$wp-color-red-60: #B32D2E !default;
+$wp-color-red-70: #8A2424 !default;
+$wp-color-red-80: #691C1C !default;
+$wp-color-red-90: #451313 !default;
+$wp-color-red-100: #240A0A !default;
+
+$wp-color-orange-0: #F7F0EA !default;
+$wp-color-orange-5: #FCD7BA !default;
+$wp-color-orange-10: #FFBF86 !default;
+$wp-color-orange-20: #FAA754 !default;
+$wp-color-orange-30: #E68B28 !default;
+$wp-color-orange-40: #D67709 !default;
+$wp-color-orange-50: #B26200 !default;
+$wp-color-orange-60: #8A4D00 !default;
+$wp-color-orange-70: #704000 !default;
+$wp-color-orange-80: #543100 !default;
+$wp-color-orange-90: #361F00 !default;
+$wp-color-orange-100: #1F1200 !default;
+
+$wp-color-yellow-0: #F7F2E6 !default;
+$wp-color-yellow-5: #F7E1AE !default;
+$wp-color-yellow-10: #F2CF75 !default;
+$wp-color-yellow-20: #F0C443 !default;
+$wp-color-yellow-30: #DBAE17 !default;
+$wp-color-yellow-40: #B69000 !default;
+$wp-color-yellow-50: #907300 !default;
+$wp-color-yellow-60: #705B00 !default;
+$wp-color-yellow-70: #5C4B00 !default;
+$wp-color-yellow-80: #453900 !default;
+$wp-color-yellow-90: #302800 !default;
+$wp-color-yellow-100: #1C1700 !default;
+
+$wp-color-green-0: #EBF7F1 !default;
+$wp-color-green-5: #A4F5C8 !default;
+$wp-color-green-10: #59E38F !default;
+$wp-color-green-20: #1ED15A !default;
+$wp-color-green-30: #00BA37 !default;
+$wp-color-green-40: #00A32A !default;
+$wp-color-green-50: #008A20 !default;
+$wp-color-green-60: #007017 !default;
+$wp-color-green-70: #005C12 !default;
+$wp-color-green-80: #00450C !default;
+$wp-color-green-90: #003008 !default;
+$wp-color-green-100: #001C05 !default;
+
+@function wp-color-tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+@function wp-color-shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}

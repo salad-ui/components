@@ -20,7 +20,9 @@ const inputFile = fs.existsSync(`${getSourceDirectory()}/index.tsx`)
   ? `${getSourceDirectory()}/index.ts`
   : fs.existsSync(`${getSourceDirectory()}/index.jsx`)
   ? `${getSourceDirectory()}/index.jsx`
-  : `${getSourceDirectory()}/index.js`;
+  : fs.existsSync(`${getSourceDirectory()}/index.js`)
+  ? `${getSourceDirectory()}/index.js`
+  : undefined;
 const outputFile = `${getBuildDirectory()}/index`;
 
 // exclude dependencies which may be imported like `uuid` or `uuid/v4`
@@ -83,6 +85,9 @@ async function moveTypescriptTypes() {
 }
 
 module.exports.bundle = async () => {
+  if (!inputFile) {
+    return;
+  }
   await createRollupBundles();
   await moveTypescriptTypes();
 };

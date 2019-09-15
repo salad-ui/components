@@ -1,14 +1,9 @@
 import * as React from 'react';
-import {wordpress} from '@design-system-example/theme';
-import {ThemeProvider} from 'styled-components';
+import '@design-system-example/components/index.scss';
 
 const AppProvider: React.FC = props => {
   const {children} = props;
-  return (
-    <ThemeProvider theme={wordpress}>
-      <>{children}</>
-    </ThemeProvider>
-  );
+  return <>{children}</>;
 };
 
 export default AppProvider;

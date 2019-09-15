@@ -36,6 +36,7 @@
     "typescript": "^3.6.0"
   },
   "scripts": {
+    "clean": "lerna run clean && rm -rf packages/*/dist",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
     "type": "tsc --noEmit",
     "lint": "eslint \"**/*.ts\" \"**/*.tsx\" --fix",

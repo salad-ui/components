@@ -1,0 +1,9 @@
+{
+  "releases": [
+    {"name": "@design-system-example/package-builder", "type": "patch"},
+    {"name": "@design-system-example/components", "type": "patch"},
+    {"name": "@design-system-example/playground", "type": "patch"},
+    {"name": "@design-system-example/website", "type": "patch"}
+  ],
+  "dependents": []
+}

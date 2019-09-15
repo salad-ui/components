@@ -1,0 +1,55 @@
+@import "../typography/index.scss";
+@import "../spacing/index.scss";
+@import "./style/busy";
+@import "./style/size";
+@import "./style/variant";
+
+.wp-button {
+  @include wp-typography-button();
+  display: inline-flex;
+	text-decoration: none;
+	margin: 0;
+	border: 0;
+	cursor: pointer;
+	-webkit-appearance: none;
+  background: none;
+  border-radius: 3px;
+  white-space: nowrap;
+
+  &--busy {
+    @include wp-button-busy();
+  }
+
+  &--size-lg {
+    @include wp-button-size-lg();
+  }
+  
+  &--size-md {
+    @include wp-button-size-md();
+  }
+   
+  &--size-sm {
+    @include wp-button-size-sm();
+  }
+
+  &--variant-primary {
+    @include wp-button-variant-primary();
+  }
+  
+  &--variant-secondary {
+    @include wp-button-variant-secondary();
+  }
+   
+  &--variant-tertiary {
+    @include wp-button-variant-tertiary();
+  }
+
+  &__before {
+    @include wp-spacing-mr(xs);
+  }
+
+  &__after {
+    @include wp-spacing-ml(xs);
+  }
+
+}
