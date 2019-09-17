@@ -17,6 +17,7 @@ module.exports.bundle = async () => {
         file: inputFile,
         sourceMap: true,
         outFile: `${outputFile}.css`,
+        includePaths: [`${__dirname}/../../../node_modules/`],
       },
       (error, result) => {
         if (error) {
