@@ -1,7 +1,7 @@
 {
-  "name": "@design-system-example/package-builder",
+  "name": "@carrot-components/package-builder",
   "private": true,
-  "version": "1.0.1",
+  "version": "1.0.0",
   "bin": {
     "package-builder": "lib/index.js"
   },
@@ -13,5 +13,5 @@
     "rollup-plugin-typescript2": "^0.22.1",
     "typescript": "^3.5.3"
   },
-  "license": "MIT"
+  "license": "GPL-2.0-or-later"
 }

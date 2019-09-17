@@ -1,9 +1,9 @@
 {
-  "name": "@design-system-example/website",
+  "name": "@carrot-components/website",
   "private": true,
   "version": "1.0.1",
   "dependencies": {
-    "@design-system-example/components": "^1.0.0",
+    "@carrot-components/button": "^1.0.0",
     "@types/classnames": "2.2.9",
     "@types/lodash": "4.14.138",
     "@types/node": "^12.7.2",
@@ -45,5 +45,6 @@
     "develop": "gatsby develop -p 8001",
     "start": "npm run develop",
     "serve": "gatsby serve"
-  }
+  },
+  "license": "GPL-2.0-or-later"
 }

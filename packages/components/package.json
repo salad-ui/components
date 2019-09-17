@@ -1,5 +1,5 @@
 {
-  "name": "@design-system-example/components",
+  "name": "@carrot-components/button",
   "version": "1.0.0",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -20,10 +20,10 @@
     "styled-components": "^4.3.2"
   },
   "devDependencies": {
-    "@design-system-example/package-builder": "^1.0.1"
+    "@carrot-components/package-builder": "^1.0.1"
   },
   "scripts": {
     "build": "package-builder"
   },
-  "license": "MIT"
+  "license": "GPL-2.0-or-later"
 }

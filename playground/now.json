@@ -1,5 +1,5 @@
 {
-  "name": "design-system-example-playground",
-  "alias": ["design-system-example-playground.now.sh"],
+  "name": "carrot-components-playground",
+  "alias": ["carrot-components-playground.now.sh"],
   "routes": [{"src": "^/(.*)", "dest": "/storybook-static/$1"}]
 }

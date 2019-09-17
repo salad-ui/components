@@ -1,5 +1,5 @@
 {
-  "name": "design-system-example-website",
-  "alias": ["design-system-example-website.now.sh"],
+  "name": "carrot-components-website",
+  "alias": ["carrot-components-website.now.sh"],
   "routes": [{"src": "^/(.*)", "dest": "/public/$1"}]
 }

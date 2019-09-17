@@ -1,13 +1,13 @@
-# design-system-example
+# carrot
 
-[![GithubActions](https://github.com/jameslnewell/design-system-example/workflows/CI/badge.svg)](https://github.com/jameslnewell/design-system-example/actions)
+[![GithubActions](https://github.com/carrot-components/carrot/workflows/CI/badge.svg)](https://github.com/carrot-components/carrot/actions)
 
-Components for building UI/UX.
+A set of components for building UI/UX. 🥕
 
-|            |                                                                                                                       |
-| ---------- | --------------------------------------------------------------------------------------------------------------------- |
-| Website    | [design-system-example-website.jameslnewell.now.sh](https://design-system-example-website.jameslnewell.now.sh/)       |
-| Playground | [design-system-example-playground.jameslnewell.now.sh](https://design-system-example-playground.jameslnewell.now.sh/) |
+|            |                                                                                         |
+| ---------- | --------------------------------------------------------------------------------------- |
+| Website    | [carrot-website.jameslnewell.now.sh](https://carrot-website.jameslnewell.now.sh/)       |
+| Playground | [carrot-playground.jameslnewell.now.sh](https://carrot-playground.jameslnewell.now.sh/) |
 
 ## Installation
 

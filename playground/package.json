@@ -1,8 +1,7 @@
 {
-  "name": "@design-system-example/playground",
+  "name": "@carrot-components/playground",
   "private": true,
   "version": "1.0.1",
-  "license": "MIT",
   "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.5.5",
@@ -27,5 +26,6 @@
     "start": "start-storybook -p 8000",
     "build": "build-storybook",
     "snapshot": "percy-storybook --widths=320,1280"
-  }
+  },
+  "license": "GPL-2.0-or-later"
 }

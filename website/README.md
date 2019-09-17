@@ -1,6 +1,6 @@
-# @design-system-example/website
+# @carrot-components/website
 
-A website for the Design System Example.
+A website for the carrot-components.
 
 ## Development
 

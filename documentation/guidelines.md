@@ -1,0 +1,3 @@
+- avoid using custom tooling and libraries not commonly used in the JavaScript community
+  - to keep the components/tooling accessible/approachable in contributing
+  - to keep the components/tooling easy to upgrade to changes in the JavaScript community

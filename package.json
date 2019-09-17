@@ -1,5 +1,5 @@
 {
-  "name": "design-system-example",
+  "name": "carrot-components",
   "private": true,
   "version": "1.0.0",
   "workspaces": [
@@ -43,8 +43,8 @@
     "build": "lerna run build",
     "test": "jest --config .jestrc.js",
     "test:debug": "node --inspect-brk node_modules/.bin/jest --config .jestrc.js --runInBand",
-    "start:website": "yarn workspace @design-system-example/website run start",
-    "start:playground": "yarn workspace @design-system-example/playground run start",
+    "start:website": "yarn workspace @carrot-components/website run start",
+    "start:playground": "yarn workspace @carrot-components/playground run start",
     "changeset": "changeset --commit"
   },
   "lint-staged": {
@@ -63,5 +63,5 @@
       "pre-commit": "lint-staged"
     }
   },
-  "license": "MIT"
+  "license": "GPL-2.0-or-later"
 }
