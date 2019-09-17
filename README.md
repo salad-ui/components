@@ -1,67 +1,20 @@
-# carrot
+# carrot 🥕
 
 [![GithubActions](https://github.com/carrot-components/carrot/workflows/default/badge.svg)](https://github.com/carrot-components/carrot/actions)
 
-A set of components for building UI/UX. 🥕
+A set of components for building UI/UX.
 
-|            |                                                                                     |
-| ---------- | ----------------------------------------------------------------------------------- |
-| Website    | [carrot-components-website.now.sh](https://carrot-components-website.now.sh/)       |
-| Playground | [carrot-components-playground.now.sh](https://carrot-components-playground.now.sh/) |
+|                                                                                                          |                                                                     |
+| -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| **Website** <br/> [carrot-components-website.now.sh](https://carrot-components-website.now.sh/)          | The website for describing how to get started using the components. |
+| **Playground** <br/> [carrot-components-playground.now.sh](https://carrot-components-playground.now.sh/) | A playground for viewing and testing various component states.      |
 
-## Installation
+---
 
-To install the necessary dependencies run:
+### 👀📦 Are you looking to use the components?
 
-```
-nvm use
-yarn
-```
+Visit our [website](https://carrot-components-website.now.sh/) to learn about installing and using the components.
 
-> Required software:
->
-> - A NodeJS version manager e.g. [nvm](https://github.com/nvm-sh/nvm)
-> - The [Yarn](https://yarnpkg.com/lang/en/) package manager
+### 👀🏗 Are you looking to contribute to the components?
 
-## Component playground
-
-To start the component playground run:
-
-```
-yarn start:playground
-```
-
-```
-http://localhost:8000/
-```
-
-## Documentation website
-
-To start the documentation website run:
-
-```
-yarn start:website
-```
-
-Then browse to:
-
-```
-http://localhost:8001/
-```
-
-## Linting
-
-To run the lint and type checks run:
-
-```
-yarn lint
-yarn type
-```
-
-## Testing
-
-To run the tests run:
-
-```
-yarn test
-```
+Read our [contributing guide](./CONTRIBUTING.md) to learn how to design, develop and contribute to the components and documentation.
