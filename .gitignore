@@ -1,7 +1,13 @@
+
+# operating system
+.DS_Store
+
+# package manager
 .npmrc
 node_modules
 
+# temporary/generated directories
+.eslintcache
 /packages/*/.tsc_cache
 /packages/*/dist
-
- .eslintcache
+ 

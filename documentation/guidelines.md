@@ -1,3 +1,3 @@
-- avoid using custom tooling and libraries not commonly used in the JavaScript community
+- use standard tooling/libraries/technologies avoiding building/using custom tooling/libraries/technologies not commonly used by the JavaScript community
   - to keep the components/tooling accessible/approachable in contributing
   - to keep the components/tooling easy to upgrade to changes in the JavaScript community
