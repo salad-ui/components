@@ -1,0 +1,69 @@
+name: default
+
+on: [push, pull_request]
+
+jobs:
+
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+    - uses: actions/checkout@v1
+    - name: ⬇️ Installing...
+      run: yarn install --frozen-lockfile
+
+  # # test:
+  # #   needs: setup
+  # #   runs-on: ubuntu-latest
+  # #   steps:
+    - name: ☣️ Check danger...
+      if: github.event_name == 'pull_request'
+      run: .ci/check_danger.sh
+      env:
+        DANGER_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: 🏁 Check formatting...
+      run: .ci/check_formating.sh
+
+    - name: 📋 Check linting...
+      run: .ci/check_linting.sh
+
+    - name: 🔳 Check types...
+      run: .ci/check_types.sh
+
+    - name: ✅ Check tests...
+      run: .ci/check_tests.sh
+
+  # # build:
+  # #   needs: test
+  # #   runs-on: ubuntu-latest
+  # #   steps:
+    - name: 🏗 Building
+      run: .ci/build.sh
+    
+  #   # - name: 📷 Snapshotting
+  #   #   run: .ci/snapshot.sh
+
+  # # deploy:
+  # #   needs: build
+  # #   runs-on: ubuntu-latest
+  # #   steps:
+    - name: 🚀 Deploy
+      run: .ci/deploy.sh
+      env:
+        ZEIT_TOKEN: ${{ secrets.ZEIT_TOKEN }}
+
+  # publish:
+  #   needs: build
+  #   runs-on: ubuntu-latest
+  #   steps:
+    - name: ⬆️ Publishing
+      if: github.ref == 'refs/heads/master'
+      run: .ci/version_and_publish.sh
+      env:
+        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        GITHUB_DEPLOY_KEY: ${{ secrets.GITHUB_DEPLOY_KEY }}
+ 
