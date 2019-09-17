@@ -1,6 +1,6 @@
 # carrot
 
-[![GithubActions](https://github.com/carrot-components/carrot/workflows/CI/badge.svg)](https://github.com/carrot-components/carrot/actions)
+[![GithubActions](https://github.com/carrot-components/carrot/workflows/default/badge.svg)](https://github.com/carrot-components/carrot/actions)
 
 A set of components for building UI/UX. 🥕
 
@@ -18,12 +18,17 @@ nvm use
 yarn
 ```
 
+> Required software:
+>
+> - A NodeJS version manager e.g. [nvm](https://github.com/nvm-sh/nvm)
+> - The [Yarn](https://yarnpkg.com/lang/en/) package manager
+
 ## Component playground
 
 To start the component playground run:
 
 ```
-yarn run start:playground
+yarn start:playground
 ```
 
 ```
@@ -35,7 +40,7 @@ http://localhost:8000/
 To start the documentation website run:
 
 ```
-yarn run start:website
+yarn start:website
 ```
 
 Then browse to:
@@ -49,8 +54,8 @@ http://localhost:8001/
 To run the lint and type checks run:
 
 ```
-yarn run lint
-yarn run type
+yarn lint
+yarn type
 ```
 
 ## Testing
@@ -58,11 +63,5 @@ yarn run type
 To run the tests run:
 
 ```
-yarn run test
+yarn test
 ```
-
-## To Do
-
-- bundle size comparison
-- prop tables generated from typescript types - https://www.npmjs.com/package/gatsby-transformer-react-docgen
-- notifications back to github e.g. dangerjs messages, bundle size, deployment urls
