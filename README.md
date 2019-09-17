@@ -4,10 +4,10 @@
 
 A set of components for building UI/UX. 🥕
 
-|            |                                                                                         |
-| ---------- | --------------------------------------------------------------------------------------- |
-| Website    | [carrot-website.jameslnewell.now.sh](https://carrot-website.jameslnewell.now.sh/)       |
-| Playground | [carrot-playground.jameslnewell.now.sh](https://carrot-playground.jameslnewell.now.sh/) |
+|            |                                                                                     |
+| ---------- | ----------------------------------------------------------------------------------- |
+| Website    | [carrot-components-website.now.sh](https://carrot-components-website.now.sh/)       |
+| Playground | [carrot-components-playground.now.sh](https://carrot-components-playground.now.sh/) |
 
 ## Installation
 
