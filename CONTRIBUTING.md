@@ -10,6 +10,10 @@
 - ESLint
 - MDX
 
+## Directory structure
+
+## Tooling
+
 ## Installation
 
 To install the necessary dependencies run:

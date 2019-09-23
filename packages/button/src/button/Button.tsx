@@ -1,116 +1,124 @@
 import * as React from 'react';
 import classnames from 'classnames';
+import * as typography from '@carrot-components/typography';
+import * as spacing from '@carrot-components/spacing';
 import {ButtonVariant, ButtonSize} from './types';
+import * as styles from './Button.treat';
 
 export interface ButtonProps {
-  /**
+    /**
    * Content displayed before the button children
    */
-  before?: React.ReactNode;
+    before?: React.ReactNode;
 
-  /**
+    /**
    * Content displayed after the button children
    */
-  after?: React.ReactNode;
+    after?: React.ReactNode;
 
-  /**
+    /**
    * The variant to use.
    */
-  variant?: ButtonVariant;
-  /**
+    variant?: ButtonVariant;
+    /**
    * The size of the button.
    */
-  size?: ButtonSize;
-  /**
+    size?: ButtonSize;
+    /**
    * Renders a busy state.
    */
-  isBusy?: boolean;
-  /**
+    isBusy?: boolean;
+    /**
    * Renders a busy state.
    */
-  isDisabled?: boolean;
-  /**
+    isDisabled?: boolean;
+    /**
    * Renders an anchor element.
    */
-  href?: string;
-  /**
+    href?: string;
+    /**
    * Adjusts the anchor element target.
    */
-  target?: string;
-  /**
+    target?: string;
+    /**
    * Callback when clicked.
    */
-  onClick?: () => void;
-  /**
+    onClick?: () => void;
+    /**
    * Custom component className.
    */
-  className?: string;
-  children: React.ReactNode;
+    className?: string;
+    children: React.ReactNode;
 }
 
 /* eslint-disable-next-line react/display-name */
 export const Button = React.forwardRef<
-  HTMLAnchorElement | HTMLButtonElement,
-  ButtonProps
+HTMLAnchorElement | HTMLButtonElement,
+ButtonProps
 >((props, ref) => {
-  const {
-    before,
-    after,
-    variant = 'secondary',
-    size = 'md',
-    href,
-    target,
-    isBusy = false,
-    isDisabled = false,
-    className,
-    children,
-    ...otherProps
-  } = props;
+    const {
+        before,
+        after,
+        variant = 'secondary',
+        size = 'medium',
+        href,
+        target,
+        isBusy = false,
+        isDisabled = false,
+        className,
+        children,
+        ...otherProps
+    } = props;
 
-  const useAnchorElement = href !== undefined && !isDisabled;
+    const useAnchorElement = href !== undefined && !isDisabled;
 
-  const classes = classnames(
-    'wp-button',
-    [`wp-button--size-${size}`, `wp-button--variant-${variant}`],
-    {
-      'wp-button--busy': isBusy,
-    },
-    className,
-  );
+    const classes = classnames(
+        spacing.usePaddingLeft('sm'),
+        typography.useButton({size}),
+        styles.common,
+        (variant === 'primary' || variant === 'secondary') &&
+      styles.variants[variant],
+        variant === 'tertiary' && typography.useLink(),
+        styles.sizes[size],
+        {[styles.busy]: isBusy},
+        className,
+    );
 
-  const content = (
+    const content = (
     <>
-      {before && <span className="wp-button__before">{before}</span>}
+      {before && (
+          <span className={spacing.useMarginRight('xxs')}>{before}</span>
+      )}
       {children}
-      {after && <span className="wp-button__after">{after}</span>}
+      {after && <span className={spacing.useMarginLeft('xxs')}>{after}</span>}
     </>
-  );
+    );
 
-  if (useAnchorElement) {
-    return (
-      <a
-        {...otherProps}
-        href={href}
-        target={target}
-        className={classes}
-        ref={ref as React.Ref<HTMLAnchorElement>}
-      >
-        {content}
-      </a>
-    );
-  } else {
-    return (
-      <button
-        {...otherProps}
-        type="button"
-        disabled={isDisabled}
-        className={classes}
-        ref={ref as React.Ref<HTMLButtonElement>}
-      >
-        {content}
-      </button>
-    );
-  }
+    if (useAnchorElement) {
+        return (
+            <a
+                {...otherProps}
+                href={href}
+                target={target}
+                className={classes}
+                ref={ref as React.Ref<HTMLAnchorElement>}
+            >
+                {content}
+            </a>
+        );
+    } else {
+        return (
+            <button
+                {...otherProps}
+                type="button"
+                disabled={isDisabled}
+                className={classes}
+                ref={ref as React.Ref<HTMLButtonElement>}
+            >
+                {content}
+            </button>
+        );
+    }
 });
 
 /*
@@ -118,8 +126,8 @@ export const Button = React.forwardRef<
   @see https://github.com/microsoft/TypeScript/issues/27425#issuecomment-473848082
 */
 Button.defaultProps = {
-  variant: 'secondary',
-  size: 'md',
-  isBusy: false,
-  isDisabled: false,
+    variant: 'secondary',
+    size: 'medium',
+    isBusy: false,
+    isDisabled: false,
 };

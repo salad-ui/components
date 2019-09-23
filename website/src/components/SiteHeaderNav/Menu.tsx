@@ -4,12 +4,12 @@ import styled from 'styled-components';
 import {NavLink as NavLinkBase} from '../';
 
 export const Menu: React.FC = () => {
-  return (
-    <Nav>
-      <NavLink to="/get-started">Get Started</NavLink>
-      <NavLink to="/components">Components</NavLink>
-    </Nav>
-  );
+    return (
+        <Nav>
+            <NavLink to="/get-started">Get Started</NavLink>
+            <NavLink to="/components">Components</NavLink>
+        </Nav>
+    );
 };
 
 const Nav = styled.nav`

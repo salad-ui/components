@@ -22,6 +22,7 @@ module.exports.bundle = async () => {
       (error, result) => {
         if (error) {
           reject(error);
+          return;
         }
         Promise.all([
           fs.writeFile(`${outputFile}.css`, result.css),

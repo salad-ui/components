@@ -7,35 +7,35 @@ import Flexy from '../Flexy';
 import WordPressLogo from '../WordPressLogo';
 
 export const HeroHome: React.FC = () => {
-  return (
-    <HeroBase>
-      <Container>
-        <Content>
-          <Title>An Open Design System for WordPress and Beyond</Title>
-          <Flexy justify="center">
-            <Flexy.Item>
-              <Button size="lg" variant="primary" to="/get-started">
+    return (
+        <HeroBase>
+            <Container>
+                <Content>
+                    <Title>An Open Design System for WordPress and Beyond</Title>
+                    <Flexy justify="center">
+                        <Flexy.Item>
+                            <Button size="lg" variant="primary" to="/get-started">
                 Get Started
-              </Button>
-            </Flexy.Item>
-            <Flexy.Item>
-              <Button
-                size="lg"
-                href="https://github.com/jameslnewell/carrot-components"
-                target="_blank"
-                rel="noreferrer noopener"
-              >
+                            </Button>
+                        </Flexy.Item>
+                        <Flexy.Item>
+                            <Button
+                                size="lg"
+                                href="https://github.com/jameslnewell/carrot-components"
+                                target="_blank"
+                                rel="noreferrer noopener"
+                            >
                 Github
-              </Button>
-            </Flexy.Item>
-          </Flexy>
-        </Content>
-        <LogoGraphic>
-          <WordPressLogo width={400} />
-        </LogoGraphic>
-      </Container>
-    </HeroBase>
-  );
+                            </Button>
+                        </Flexy.Item>
+                    </Flexy>
+                </Content>
+                <LogoGraphic>
+                    <WordPressLogo width={400} />
+                </LogoGraphic>
+            </Container>
+        </HeroBase>
+    );
 };
 
 const HeroBase = styled.div`

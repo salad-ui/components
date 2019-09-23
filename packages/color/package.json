@@ -1,0 +1,19 @@
+{
+  "name": "@carrot-components/color",
+  "version": "1.0.0",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {},
+  "peerDependencies": {},
+  "devDependencies": {
+    "@carrot-components/package-builder": "^1.0.0"
+  },
+  "scripts": {
+    "build": "package-builder"
+  },
+  "license": "GPL-2.0-or-later"
+}

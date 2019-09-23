@@ -5,24 +5,24 @@ import {useLinksFromQuery} from './utils';
 import {Link} from '../../components';
 
 const Navigation: React.FC = () => {
-  const links = useLinksFromQuery();
+    const links = useLinksFromQuery();
 
-  return (
-    <Wrapper>
-      <Nav>
-        <ul>
-          <li>
-            <Link to="/components">Get Started</Link>
-          </li>
-          {links.map(link => (
-            <li key={link.id}>
-              <Link to={link.url}>{link.title}</Link>
-            </li>
-          ))}
-        </ul>
-      </Nav>
-    </Wrapper>
-  );
+    return (
+        <Wrapper>
+            <Nav>
+                <ul>
+                    <li>
+                        <Link to="/components">Get Started</Link>
+                    </li>
+                    {links.map(link => (
+                        <li key={link.id}>
+                            <Link to={link.url}>{link.title}</Link>
+                        </li>
+                    ))}
+                </ul>
+            </Nav>
+        </Wrapper>
+    );
 };
 
 const Wrapper = styled.div`

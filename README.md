@@ -11,10 +11,10 @@ A set of components for building UI/UX.
 
 ---
 
-### 👀📦 Are you looking to use the components?
+### 👀📦 Are you looking to use our components?
 
 Visit our [website](https://carrot-components-website.now.sh/) to learn how to install and use the components.
 
-### 👀🏗 Are you looking to contribute to the components?
+### 👀🏗 Are you looking to contribute to our components?
 
 Read our [contributing guide](./CONTRIBUTING.md) to learn how to design, develop and contribute to the components and their documentation.

@@ -2,7 +2,7 @@ import * as React from 'react';
 import {ButtonSize} from '../button';
 
 interface ButtonGroupContext {
-  size?: ButtonSize;
+    size?: ButtonSize;
 }
 
 export const ButtonGroupContext = React.createContext<ButtonGroupContext>({});

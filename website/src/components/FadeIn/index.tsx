@@ -4,21 +4,21 @@ import styled from 'styled-components';
 const {useState, useEffect} = React;
 
 const FadeIn: React.FC = (props = {}) => {
-  const {children} = props;
-  const [isReady, setReady] = useState(false);
+    const {children} = props;
+    const [isReady, setReady] = useState(false);
 
-  useEffect(() => {
-    window.requestAnimationFrame(() => {
-      setReady(true);
-    });
-    return () => {
-      setReady(false);
-    };
-  }, [setReady]);
+    useEffect(() => {
+        window.requestAnimationFrame(() => {
+            setReady(true);
+        });
+        return () => {
+            setReady(false);
+        };
+    }, [setReady]);
 
-  const classes = isReady ? 'is-ready' : '';
+    const classes = isReady ? 'is-ready' : '';
 
-  return <FadeUI className={classes}>{children}</FadeUI>;
+    return <FadeUI className={classes}>{children}</FadeUI>;
 };
 
 const FadeUI = styled.div`
