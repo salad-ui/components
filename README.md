@@ -7,8 +7,8 @@ A set of components for building rich user interfaces within wp-admin.
 <table>
   <tbody>
     <tr>
-      <td>📘 <strong>Learn</strong></td>
-      <td><a href="https://salad-ui.now.sh/">salad-ui.now.sh</a></td>
+      <td width="125px">📘 <strong>Learn</strong></td>
+      <td width="200px"><a href="https://salad-ui.now.sh/">salad-ui.now.sh</a></td>
       <td>Learn how to use the components.</td>
     </tr>
     <tr>
