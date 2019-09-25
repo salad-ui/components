@@ -1,5 +1,5 @@
 {
-  "name": "carrot-components-website",
-  "alias": ["carrot-components-website.now.sh"],
+  "name": "salad-ui",
+  "alias": ["salad-ui.now.sh"],
   "routes": [{"src": "^/(.*)", "dest": "/public/$1"}]
 }

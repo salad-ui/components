@@ -21,7 +21,7 @@ export const HeroHome: React.FC = () => {
                         <Flexy.Item>
                             <Button
                                 size="lg"
-                                href="https://github.com/jameslnewell/carrot-components"
+                                href="https://github.com/salad-ui/components"
                                 target="_blank"
                                 rel="noreferrer noopener"
                             >

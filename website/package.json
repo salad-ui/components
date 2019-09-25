@@ -1,9 +1,9 @@
 {
-  "name": "@carrot-components/website",
+  "name": "@salad-ui/website",
   "private": true,
   "version": "1.0.1",
   "dependencies": {
-    "@carrot-components/button": "^1.0.0",
+    "@salad-ui/button": "^1.0.0",
     "@types/classnames": "2.2.9",
     "@types/lodash": "4.14.138",
     "@types/node": "^12.7.2",

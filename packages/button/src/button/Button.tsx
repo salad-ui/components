@@ -1,7 +1,7 @@
 import * as React from 'react';
 import classnames from 'classnames';
-import * as typography from '@carrot-components/typography';
-import * as spacing from '@carrot-components/spacing';
+import * as typography from '@salad-ui/typography';
+import * as spacing from '@salad-ui/spacing';
 import {ButtonVariant, ButtonSize} from './types';
 import * as styles from './Button.treat';
 

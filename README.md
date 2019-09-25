@@ -1,20 +1,25 @@
-# carrot 🥕
+# salad-ui 🥗
 
-[![GithubActions](https://github.com/carrot-components/carrot/workflows/default/badge.svg)](https://github.com/carrot-components/carrot/actions)
+[![GithubActions](https://github.com/salad-ui/components/workflows/default/badge.svg)](https://github.com/salad-ui/components/actions)
 
-A set of components for building UI/UX.
+A set of components for building rich user interfaces within wp-admin.
 
-|                                                                                                          |                                                                    |
-| -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
-| **Website** <br/> [carrot-components-website.now.sh](https://carrot-components-website.now.sh/)          | Our website for learning how to get started with the components.   |
-| **Playground** <br/> [carrot-components-playground.now.sh](https://carrot-components-playground.now.sh/) | Our playground for viewing and testing different component states. |
-
----
-
-### 👀📦 Are you looking to use our components?
-
-Visit our [website](https://carrot-components-website.now.sh/) to learn how to install and use the components.
-
-### 👀🏗 Are you looking to contribute to our components?
-
-Read our [contributing guide](./CONTRIBUTING.md) to learn how to design, develop and contribute to the components and their documentation.
+<table>
+  <tbody>
+    <tr>
+      <td>📘 <strong>Learn</strong></td>
+      <td><a href="https://salad-ui.now.sh/">salad-ui.now.sh</a></td>
+      <td>Learn how to use the components.</td>
+    </tr>
+    <tr>
+      <td>▶️ <strong>Play</strong></td>
+      <td><a href="https://salad-ui-playground.now.sh/">salad-ui-playground.now.sh</a></td>
+      <td>View and test different component states.</td>
+    </tr>
+    <tr>
+      <td>🏗 <strong>Contribute</strong></td>
+      <td><a href="./CONTRIBUTING.md">CONTRIBUTING.md</a></td>
+      <td>Learn how to design, develop and contribute to the components and their documentation. </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,9 +1,5 @@
 import {style, CSSProperties} from 'treat';
-import {
-    BreakpointName,
-    breakpoints,
-    breakpointNames,
-} from '@carrot-components/media';
+import {BreakpointName, breakpoints, breakpointNames} from '@salad-ui/media';
 import {SpacingName, spacings, spacingNames} from './types';
 
 export type SpacingClasses = Record<

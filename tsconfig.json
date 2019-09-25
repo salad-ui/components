@@ -13,7 +13,7 @@
     /* load source files rather than compile files */
     "baseUrl": ".",
     "paths": {
-      "@carrot-components/*": ["packages/*/src"]
+      "@salad-ui/*": ["packages/*/src"]
     }
   },
   "include": ["**/*.ts", "**/*.tsx", "**/*.d.ts"]

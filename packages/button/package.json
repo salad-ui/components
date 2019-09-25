@@ -1,5 +1,5 @@
 {
-  "name": "@carrot-components/button",
+  "name": "@salad-ui/button",
   "version": "1.0.0",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -11,9 +11,9 @@
   ],
   "dependencies": {
     "@types/classnames": "^2.2.9",
-    "@carrot-components/typography": "^1.0.0",
-    "@carrot-components/spacing": "^1.0.0",
-    "@carrot-components/color": "^1.0.0",
+    "@salad-ui/typography": "^1.0.0",
+    "@salad-ui/spacing": "^1.0.0",
+    "@salad-ui/color": "^1.0.0",
     "classnames": "^2.2.6",
     "polished": "^3.4.1"
   },
@@ -23,7 +23,7 @@
     "treat": "^1.1.3"
   },
   "devDependencies": {
-    "@carrot-components/package-builder": "^1.0.0"
+    "@salad-ui/package-builder": "^1.0.0"
   },
   "scripts": {
     "build": "package-builder"

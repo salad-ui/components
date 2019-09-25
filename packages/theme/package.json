@@ -1,5 +1,5 @@
 {
-  "name": "@carrot-components/theme",
+  "name": "@salad-ui/theme",
   "version": "1.0.0",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -16,7 +16,7 @@
     "treat": "^1.1.3"
   },
   "devDependencies": {
-    "@carrot-components/package-builder": "^1.0.0"
+    "@salad-ui/package-builder": "^1.0.0"
   },
   "scripts": {
     "build": "package-builder"

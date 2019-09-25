@@ -1,5 +1,5 @@
 {
-  "name": "carrot-components-playground",
-  "alias": ["carrot-components-playground.now.sh"],
+  "name": "salad-ui-playground",
+  "alias": ["salad-ui-playground.now.sh"],
   "routes": [{"src": "^/(.*)", "dest": "/storybook-static/$1"}]
 }

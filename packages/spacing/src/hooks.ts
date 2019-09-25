@@ -1,6 +1,6 @@
 import {useStyles} from 'react-treat';
 import classnames from 'classnames';
-import {BreakpointName} from '@carrot-components/media';
+import {BreakpointName} from '@salad-ui/media';
 import {SpacingName} from './types';
 import {margin, padding} from './hooks.treat';
 

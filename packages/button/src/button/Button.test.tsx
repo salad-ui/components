@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Theme} from '@carrot-components/theme';
+import {Theme} from '@salad-ui/theme';
 import {render} from '@testing-library/react';
 import {Button} from './Button';
 

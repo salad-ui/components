@@ -1,5 +1,5 @@
 {
-  "name": "@carrot-components/media",
+  "name": "@salad-ui/media",
   "version": "1.0.0",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -10,7 +10,7 @@
   "dependencies": {},
   "peerDependencies": {},
   "devDependencies": {
-    "@carrot-components/package-builder": "^1.0.0"
+    "@salad-ui/package-builder": "^1.0.0"
   },
   "scripts": {
     "build": "package-builder"

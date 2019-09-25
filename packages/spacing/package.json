@@ -1,5 +1,5 @@
 {
-  "name": "@carrot-components/spacing",
+  "name": "@salad-ui/spacing",
   "version": "1.0.0",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -8,13 +8,13 @@
     "dist"
   ],
   "dependencies": {
-    "@carrot-components/media": "^1.0.0",
+    "@salad-ui/media": "^1.0.0",
     "classnames": "^2.2.6",
     "react-treat": "^1.1.3"
   },
   "peerDependencies": {},
   "devDependencies": {
-    "@carrot-components/package-builder": "^1.0.0"
+    "@salad-ui/package-builder": "^1.0.0"
   },
   "scripts": {
     "build": "package-builder"

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {render} from '@testing-library/react';
-import {Theme} from '@carrot-components/theme';
+import {Theme} from '@salad-ui/theme';
 import {ButtonGroup} from './ButtonGroup';
 
 const href = 'http://example.com/';

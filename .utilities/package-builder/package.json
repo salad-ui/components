@@ -1,5 +1,5 @@
 {
-  "name": "@carrot-components/package-builder",
+  "name": "@salad-ui/package-builder",
   "private": true,
   "version": "1.0.0",
   "bin": {

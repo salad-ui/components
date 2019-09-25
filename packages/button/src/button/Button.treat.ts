@@ -1,6 +1,6 @@
 import {style, styleMap} from 'treat';
 import {shade, tint} from 'polished';
-import * as colors from '@carrot-components/color';
+import * as colors from '@salad-ui/color';
 
 const primary = colors.blue50;
 

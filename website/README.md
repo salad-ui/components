@@ -1,6 +1,6 @@
-# @carrot-components/website
+# @salad-ui/website
 
-A website for the carrot-components.
+A website for the salad-ui components.
 
 ## Development
 
