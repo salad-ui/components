@@ -1,19 +1,18 @@
 {
   "name": "@salad-ui/button",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist",
-    "src",
-    "index.scss"
+    "src"
   ],
   "dependencies": {
     "@types/classnames": "^2.2.9",
-    "@salad-ui/typography": "^1.0.0",
-    "@salad-ui/spacing": "^1.0.0",
-    "@salad-ui/color": "^1.0.0",
+    "@salad-ui/typography": "^0.1.0",
+    "@salad-ui/spacing": "^0.1.0",
+    "@salad-ui/color": "^0.1.0",
     "polished": "^3.4.1"
   },
   "peerDependencies": {
@@ -23,7 +22,7 @@
     "styled-components": "^4.4.0"
   },
   "devDependencies": {
-    "@salad-ui/package-builder": "^1.0.0"
+    "@salad-ui/package-builder": "^0.1.0"
   },
   "scripts": {
     "build": "package-builder"

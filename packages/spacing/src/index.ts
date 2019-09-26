@@ -1,4 +1,4 @@
-import {map} from '@salad-ui/media';
+import {map} from '@salad-ui/breakpoint/srcpoint';
 
 export type Spacing = 'none' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
 

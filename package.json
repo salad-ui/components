@@ -63,5 +63,12 @@
       "pre-commit": "lint-staged"
     }
   },
-  "license": "GPL-2.0-or-later"
+  "license": "GPL-2.0-or-later",
+  "dependencies": {
+    "@types/react": "^16.9.3",
+    "@types/styled-components": "^4.1.19",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "styled-components": "^4.4.0"
+  }
 }
