@@ -1,12 +1,15 @@
 import React from 'react';
-import {useLink} from './useLink';
+import {link} from './link';
+import styled from 'styled-components';
 
 export default {title: 'typography/link'};
 
+const Link = styled.a`
+  ${link()}
+`;
+
 export const Sizes = () => (
   <>
-    <a href="#nowhere" className={useLink()}>
-      default
-    </a>
+    <Link href="#nowhere">default</Link>
   </>
 );

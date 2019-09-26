@@ -50,7 +50,5 @@ module.exports = {
     },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-typescript`,
-    `gatsby-plugin-sass`,
-    `gatsby-plugin-treat`,
   ],
 };

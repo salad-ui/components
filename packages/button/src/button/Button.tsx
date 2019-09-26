@@ -1,9 +1,6 @@
 import * as React from 'react';
-import classnames from 'classnames';
-import * as typography from '@salad-ui/typography';
-import * as spacing from '@salad-ui/spacing';
 import {ButtonVariant, ButtonSize} from './types';
-import * as styles from './Button.treat';
+import {Before, After, AnchorWrapper, ButtonWrapper} from './Button.style';
 
 export interface ButtonProps {
     /**
@@ -65,58 +62,49 @@ ButtonProps
         target,
         isBusy = false,
         isDisabled = false,
-        className,
         children,
         ...otherProps
     } = props;
 
-    const useAnchorElement = href !== undefined && !isDisabled;
+    const useAnchorWrapper = href !== undefined && !isDisabled;
 
-    const classes = classnames(
-        spacing.usePaddingLeft('sm'),
-        typography.useButton({size}),
-        styles.common,
-        (variant === 'primary' || variant === 'secondary') &&
-      styles.variants[variant],
-        variant === 'tertiary' && typography.useLink(),
-        styles.sizes[size],
-        {[styles.busy]: isBusy},
-        className,
-    );
+    const commonProps = {
+        size,
+        variant,
+        isBusy,
+    };
 
     const content = (
     <>
-      {before && (
-          <span className={spacing.useMarginRight('xxs')}>{before}</span>
-      )}
+      {before && <Before>{before}</Before>}
       {children}
-      {after && <span className={spacing.useMarginLeft('xxs')}>{after}</span>}
+      {after && <After>{after}</After>}
     </>
     );
 
-    if (useAnchorElement) {
+    if (useAnchorWrapper) {
         return (
-            <a
+            <AnchorWrapper
                 {...otherProps}
+                {...commonProps}
                 href={href}
                 target={target}
-                className={classes}
                 ref={ref as React.Ref<HTMLAnchorElement>}
             >
                 {content}
-            </a>
+            </AnchorWrapper>
         );
     } else {
         return (
-            <button
+            <ButtonWrapper
                 {...otherProps}
+                {...commonProps}
                 type="button"
                 disabled={isDisabled}
-                className={classes}
                 ref={ref as React.Ref<HTMLButtonElement>}
             >
                 {content}
-            </button>
+            </ButtonWrapper>
         );
     }
 });

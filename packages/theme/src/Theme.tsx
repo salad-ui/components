@@ -1,7 +1,15 @@
 import * as React from 'react';
-import {TreatProvider} from 'react-treat';
-import {theme} from './Theme.treat';
+import {ThemeProvider} from 'styled-components';
+
+export const theme = {
+    color: {
+        primary: 'red',
+        secondary: 'green',
+    },
+};
 
 export const Theme: React.FC = ({children}) => (
-    <TreatProvider theme={theme}>{children}</TreatProvider>
+    <ThemeProvider theme={theme}>
+    <>{children}</>
+    </ThemeProvider>
 );

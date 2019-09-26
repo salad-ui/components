@@ -1,11 +1,17 @@
 import React from 'react';
-import {useButton} from './useButton';
+import styled from 'styled-components';
+import {button} from './button';
 
 export default {title: 'typography/button'};
 
-export const Sizes = () => (
+const Button = styled.button`
+  ${button}
+`;
+
+export const sizes = () => (
   <>
-    <button className={useButton({size: 'large'})}>Large</button>
-    <button className={useButton({size: 'small'})}>Small</button>
+    <Button size="large">Large</Button>
+    <Button size="medium">Medium</Button>
+    <Button size="small">Small</Button>
   </>
 );

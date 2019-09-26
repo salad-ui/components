@@ -1,11 +1,18 @@
 import React from 'react';
-import {useBody} from './useBody';
+import styled from 'styled-components';
+import {body} from './body';
 
 export default {title: 'typography/body'};
 
-export const Sizes: React.FC = () => (
+const Body = styled.h1`
+  ${body}
+`;
+
+export const sizes: React.FC = () => (
   <>
-    <h1 className={useBody({size: 'large'})}>Large</h1>
-    <h2 className={useBody({size: 'small'})}>Small</h2>
+    <Body size="large">Large</Body>
+    <Body size="small" as="h2">
+      Small
+    </Body>
   </>
 );

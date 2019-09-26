@@ -7,10 +7,7 @@
   "files": [
     "dist"
   ],
-  "dependencies": {
-    "@types/classnames": "^2.2.9",
-    "classnames": "^2.2.6"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@salad-ui/package-builder": "^1.0.0"
   },

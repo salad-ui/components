@@ -1,14 +1,13 @@
-import {TreatProvider} from 'react-treat';
 import {addDecorator} from '@storybook/react';
 import {withContexts} from '@storybook/addon-contexts/react';
-import {theme} from './theme.treat';
+import {Theme} from '@salad-ui/theme';
 
 addDecorator(
   withContexts([
     {
       title: 'Themes',
-      components: [TreatProvider],
-      params: [{name: 'Default Theme', props: {theme}}],
+      components: [Theme],
+      params: [{name: 'Default Theme', props: {}}],
     },
   ]),
 );

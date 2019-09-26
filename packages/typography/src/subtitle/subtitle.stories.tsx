@@ -1,11 +1,18 @@
 import React from 'react';
-import {useSubtitle} from './useSubtitle';
+import styled from 'styled-components';
+import {subtitle} from './subtitle';
 
 export default {title: 'typography/subtitle'};
 
-export const Sizes = () => (
+const SubTitle = styled.h1`
+  ${subtitle}
+`;
+
+export const sizes = () => (
   <>
-    <h1 className={useSubtitle({size: 'large'})}>Large</h1>
-    <h1 className={useSubtitle({size: 'small'})}>Small</h1>
+    <SubTitle size="large">Large</SubTitle>
+    <SubTitle size="small" as="h2">
+      Small
+    </SubTitle>
   </>
 );

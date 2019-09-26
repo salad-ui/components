@@ -1,10 +1,15 @@
 import React from 'react';
-import {useTitle} from './useTitle';
+import styled from 'styled-components';
+import {title} from './title';
 
 export default {title: 'typography/title'};
 
-export const Sizes = () => (
+const Title = styled.h1`
+  ${title()}
+`;
+
+export const sizes = () => (
   <>
-    <span className={useTitle()}>default</span>
+    <Title>default</Title>
   </>
 );

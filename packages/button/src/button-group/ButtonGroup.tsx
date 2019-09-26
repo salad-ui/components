@@ -1,9 +1,8 @@
 import * as React from 'react';
-import classnames from 'classnames';
 import {ButtonSize} from '../button';
 import {ButtonGroupContext} from './ButtonGroupContext';
 import {ButtonGroupButton} from './ButtonGroupButton';
-import * as styles from './ButtonGroup.treat';
+import {Wrapper} from './ButtonGroup.style';
 
 interface ButtonGroupStatic {
     Button: typeof ButtonGroupButton;
@@ -17,13 +16,13 @@ export interface ButtonGroupProps {
 
 export const ButtonGroup: React.FC<ButtonGroupProps> & ButtonGroupStatic = ({
     size,
-    className,
     children,
+    ...otherProps
 }) => (
     <ButtonGroupContext.Provider value={{size}}>
-        <div className={classnames(styles.common, className)} role="group">
+        <Wrapper {...otherProps} role="group">
             {children}
-        </div>
+        </Wrapper>
     </ButtonGroupContext.Provider>
 );
 
