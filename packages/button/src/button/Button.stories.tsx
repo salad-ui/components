@@ -3,7 +3,7 @@ import {action} from '@storybook/addon-actions';
 import {Button} from '.';
 
 export default {
-    title: 'Button',
+    title: 'components/Button',
 };
 
 export const variant = () => (
@@ -20,43 +20,7 @@ export const variant = () => (
   </>
 );
 
-export const size = () => (
-  <>
-    <Button variant="tertiary" size="large" onClick={action('Save Draft')}>
-      Save Draft
-    </Button>{' '}
-    <Button variant="secondary" size="large" onClick={action('Preview')}>
-      Preview
-    </Button>{' '}
-    <Button variant="primary" size="large" onClick={action('Publish')}>
-      Publish
-    </Button>
-    <br />
-    <br />
-    <Button variant="tertiary" size="medium" onClick={action('Save Draft')}>
-      Save Draft
-    </Button>{' '}
-    <Button variant="secondary" size="medium" onClick={action('Preview')}>
-      Preview
-    </Button>{' '}
-    <Button variant="primary" size="medium" onClick={action('Publish')}>
-      Publish
-    </Button>
-    <br />
-    <br />
-    <Button variant="tertiary" size="small" onClick={action('Save Draft')}>
-      Save Draft
-    </Button>{' '}
-    <Button variant="secondary" size="small" onClick={action('Preview')}>
-      Preview
-    </Button>{' '}
-    <Button variant="primary" size="small" onClick={action('Publish')}>
-      Publish
-    </Button>
-  </>
-);
-
-export const isDisabled = () => (
+export const disabled = () => (
   <>
     <Button variant="tertiary" isDisabled onClick={action('Save Draft')}>
       Save Draft
@@ -65,20 +29,6 @@ export const isDisabled = () => (
       Preview
     </Button>{' '}
     <Button variant="primary" isDisabled onClick={action('Publish')}>
-      Publish
-    </Button>
-  </>
-);
-
-export const isBusy = () => (
-  <>
-    <Button variant="tertiary" isBusy onClick={action('Save Draft')}>
-      Save Draft
-    </Button>{' '}
-    <Button variant="secondary" isBusy onClick={action('Preview')}>
-      Preview
-    </Button>{' '}
-    <Button variant="primary" isBusy onClick={action('Publish')}>
       Publish
     </Button>
   </>

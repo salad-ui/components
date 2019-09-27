@@ -1,171 +1,80 @@
-import styled, {keyframes, css} from 'styled-components';
-import {shade, tint} from 'polished';
-import * as colors from '@salad-ui/color';
-import {mr, ml} from '@salad-ui/spacing';
-import {button, link} from '@salad-ui/typography';
-import {ButtonSize, ButtonVariant} from './types';
-
-const primary = colors.blue50;
+import styled, {css} from 'styled-components';
+import {mr, ml, px} from '@salad-ui/spacing';
+import {button} from '@salad-ui/typography';
+import {ButtonVariant} from './types';
 
 const commonStyle = css`
-  display: inline-flex;
-  text-decoration: none;
-  border: 0;
+  ${button()}
+  ${px(2)}
+  box-sizing: border-box;
+  height: 32px;
   cursor: pointer;
-  background: none;
+  border: 0;
   border-radius: 3px;
-  white-space: nowrap;
+  background: none;
 
   :disabled {
-    cursor: default;
-    opacity: 0.3;
+    cursor: not-allowed;
   }
-`;
-
-const sizeStyles = ({size}: {size: ButtonSize}) => {
-    switch (size) {
-        case 'small':
-            return `
-        height: 24px;
-        line-height: 22px;
-        padding: 0 8px 1px;
-        font-size: 11px;
-      `;
-        case 'medium':
-            return `
-        height: 28px;
-        line-height: 26px;
-        padding: 0 10px 1px;
-      `;
-        case 'large':
-            return `
-        height: 30px;
-        line-height: 28px;
-        padding: 0 12px 2px;
-      `;
-    }
-};
-
-const raisedStyle = `
-  border-width: 1px;
-  border-style: solid;
 `;
 
 const primaryStyle = css`
-  ${raisedStyle}
-  color: ${colors.white};
-  background: ${primary};
-  border-color: ${shade(0.2, primary)} ${shade(0.25, primary)} ${shade(
-    0.25,
-    primary,
-)};
-  box-shadow: inset 0 -1px 0 ${shade(0.25, primary)};
-  text-shadow: 
-    0 -1px 1px ${shade(0.3, primary)},
-    1px 0 1px ${shade(0.3, primary)},
-    0 1px 1px ${shade(0.3, primary)},
-    -1px 0 1px ${shade(0.3, primary)}
-  ;
+  color: ${({theme}) => theme.color.onPrimary};
+  background-color: ${({theme}) => theme.color.primary.medium};
 
-  :hover:enabled {
-    box-shadow: inset 0 -1px 0 ${shade(0.5, primary)};
-  }
-
+  :hover:enabled,
   :focus:enabled {
-    box-shadow:
-      inset 0 -1px 0 ${shade(0.5, primary)},
-      0 0 0 1px ${colors.white},
-      0 0 0 3px ${shade(0.5, primary)}
-    ;
-  }
-
-  :hover:enabled, &:focus:enabled {
-    color: ${colors.white};
-    background: ${shade(0.05, primary)};
-    border-color: ${shade(0.5, primary)};
+    background-color: ${({theme}) => theme.color.primary.dark};
   }
 
   :active:enabled {
-    background: ${shade(0.2, primary)};
-    border-color: ${shade(0.5, primary)};
-    box-shadow: inset 0 1px 0 ${shade(0.5, primary)};
+    background-color: ${({theme}) => theme.color.primary.light};
   }
 
   :disabled {
-    color: ${tint(0.4, primary)};
-    background: ${primary};
-    border-color: ${shade(0.07, primary)};
-    box-shadow: none;
-    text-shadow: none;
+    color: ${({theme}) => theme.color.border.dark};
+    background-color: ${({theme}) => theme.color.border.light};
   }
-
-  ${({isBusy}: {isBusy: boolean}) =>
-        isBusy &&
-    `
-    &, &:disabled {
-      color: ${colors.white};
-      border-color: ${shade(0.5, primary)};
-      background-size: 100px 100%;
-      background-image: linear-gradient(
-        -45deg,
-        ${primary} 28%,
-        ${shade(0.3, primary)} 28%,
-        ${shade(0.3, primary)} 72%,
-        ${primary} 72%
-      );
-    }
-  `}
-
 `;
 
 const secondaryStyle = css`
-  ${raisedStyle}
-  color: #555;
-  border-color: #ccc;
-  background: #f7f7f7;
-  box-shadow: inset 0 -1px 0 #ccc;
-  vertical-align: top;
+  color: ${({theme}) => theme.color.primary.medium};
+  border-color: ${({theme}) => theme.color.primary.medium};
+  border-style: solid;
+  border-width: 1px;
 
-  :hover:enabled {
-    background: #fafafa;
-    border-color: #999;
-    box-shadow: inset 0 -1px 0 #999;
-    color: #23282d;
-    text-decoration: none;
-  }
-
+  :hover:enabled,
   :focus:enabled {
-    background: #fafafa;
-    color: #23282d;
-    border-color: #999;
-    box-shadow: inset 0 -1px 0 #999, 0 0 0 1px ${colors.white},
-      0 0 0 3px ${primary};
-    text-decoration: none;
+    color: ${({theme}) => theme.color.primary.dark};
+    border-color: ${({theme}) => theme.color.primary.dark};
   }
 
   :active:enabled {
-    background: #eee;
-    border-color: #999;
-    box-shadow: inset 0 1px 0 #999;
+    color: ${({theme}) => theme.color.primary.light};
+    border-color: ${({theme}) => theme.color.primary.light};
   }
 
   :disabled {
-    color: #a0a5aa;
-    border-color: #ddd;
-    background: #f7f7f7;
-    box-shadow: none;
-    text-shadow: 0 1px 0 #fff;
-    transform: none;
+    color: ${({theme}) => theme.color.border.light};
+    border-color: ${({theme}) => theme.color.border.light};
   }
 `;
 
-const tertiaryStyle = `
-    ${link()}
-    
-    :hover:enabled, :focus:enabled, :active:enabled {
-      background: none;
-    }
-  
+const tertiaryStyle = css`
+  color: ${({theme}) => theme.color.primary.medium};
+
+  :hover:enabled,
+  :focus:enabled {
+    color: ${({theme}) => theme.color.primary.dark};
+  }
+
+  :active:enabled {
+    color: ${({theme}) => theme.color.primary.light};
+  }
+
+  :disabled {
+    color: ${({theme}) => theme.color.border.light};
+  }
 `;
 
 const variantStyles = ({variant}: {variant: ButtonVariant}) => {
@@ -179,56 +88,24 @@ const variantStyles = ({variant}: {variant: ButtonVariant}) => {
     }
 };
 
-const busyKeyframes = keyframes`
-  from {
-    background-position: 200px 0;
-  }
-`;
-
-export const busyStyle = ({isBusy}: {isBusy: boolean}) =>
-    isBusy &&
-  css`
-    &,
-    &:disabled {
-      animation: ${busyKeyframes} 2500ms infinite linear;
-      background-size: 100px 100%;
-      background-image: repeating-linear-gradient(
-        -45deg,
-        ${colors.grey50},
-        ${colors.white} 11px,
-        ${colors.white} 10px,
-        ${colors.grey50} 20px
-      );
-      opacity: 1;
-    }
-  `;
-
 export interface WrapperProps {
-    size: ButtonSize;
     variant: ButtonVariant;
-    isBusy: boolean;
 }
 
 export const AnchorWrapper = styled.a<WrapperProps>`
-  ${({size}) => button({size})}
   ${commonStyle}
-  ${busyStyle}
-  ${sizeStyles}
   ${variantStyles}
 `;
 
 export const ButtonWrapper = styled.button<WrapperProps>`
-  ${({size}) => button({size})}
   ${commonStyle}
-  ${busyStyle}
-  ${sizeStyles}
   ${variantStyles}
 `;
 
 export const Before = styled.span`
-  ${mr('xxs')}
+  ${mr(0.5)}
 `;
 
 export const After = styled.span`
-  ${ml('xxs')}
+  ${ml(0.5)}
 `;

@@ -1,11 +1,11 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import {Spacing, p, px, py, pt, pr, pb, pl} from '.';
+import {Spacing, p, px, py, pt, pr, pb, pl, spacings} from '.';
 
 type SpacingFunction = typeof p;
 
 interface SpacingExampleProps {
-    size: Spacing | Spacing[];
+    size: Spacing /*| Spacing[]*/;
     fn: SpacingFunction;
 }
 
@@ -36,19 +36,25 @@ const PaddingExample: React.FC<SpacingExampleProps> = ({
     </PaddingOuter>
 );
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
+// Object.keys() always returns a string[]
 const PaddingStory = ({fn}: {fn: SpacingFunction}) => (
   <>
-    <PaddingExample fn={fn} size="xs">
-      Static
-    </PaddingExample>
-    <PaddingExample fn={fn} size={['xs', 'md', 'xl']}>
+    {((Object.keys(spacings).sort() as any) as Spacing[]).map(spacing => (
+        <PaddingExample key={spacing} fn={fn} size={spacing}>
+            {spacing}
+        </PaddingExample>
+    ))}
+    {/* TODO: <br/>
+    <PaddingExample fn={fn} size={{}}>
       Responsive
-    </PaddingExample>
+    </PaddingExample> */}
   </>
 );
+/* eslint-enable @typescript-eslint/no-explicit-any */
 
 export default {
-    title: 'spacing/padding',
+    title: 'foundations/spacing/padding',
 };
 
 export const padding = () => <PaddingStory fn={p} />;

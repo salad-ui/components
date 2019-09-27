@@ -1,31 +1,39 @@
-import {map} from '@salad-ui/breakpoint/srcpoint';
+// import {map} from '@salad-ui/breakpoint';
 
-export type Spacing = 'none' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
+export type Spacing = 0 | 0.5 | 1 | 1.5 | 2 | 3 | 4 | 5 | 6;
 
 export const spacings: {[s in Spacing]: string} = {
-    none: '0',
-    xxs: '0.25em',
-    xs: '0.5em',
-    sm: '1em',
-    md: '1.5em',
-    lg: '2em',
-    xl: '4em',
-    xxl: '8em',
+    0: '0',
+    0.5: '4px',
+    1: '8px',
+    1.5: '12px',
+    2: '16px',
+    3: '24px',
+    4: '32px',
+    5: '40px',
+    6: '48px',
 };
 
 // FIXME: type properties as CSSProperty
 // FIXME: check size exists
 // FIXME: make responsive
-const createMixin = (properties: string[]) => (sizes: Spacing | Spacing[]) =>
-    map(sizes, size =>
-        properties.reduce(
-            (style, property) => ({
-                ...style,
-                [property]: spacings[size],
-            }),
-            {},
-        ),
+const createMixin = (properties: string[]) => (size: Spacing) =>
+    properties.reduce(
+        (style, property) => ({
+            ...style,
+            [property]: spacings[size],
+        }),
+        {},
     );
+// map(sizes, size =>
+//     properties.reduce(
+//         (style, property) => ({
+//             ...style,
+//             [property]: spacings[size],
+//         }),
+//         {},
+//     ),
+// );
 
 export const m = createMixin(['margin']);
 export const my = createMixin(['marginTop', 'marginBottom']);

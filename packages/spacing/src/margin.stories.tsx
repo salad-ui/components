@@ -1,11 +1,11 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import {Spacing, m, mx, my, mt, mr, mb, ml} from '.';
+import {Spacing, m, mx, my, mt, mr, mb, ml, spacings} from '.';
 
 type SpacingFunction = typeof m;
 
 interface SpacingExampleProps {
-    size: Spacing | Spacing[];
+    size: Spacing /* | Spacing[] */;
     fn: SpacingFunction;
 }
 
@@ -34,19 +34,25 @@ const MarginExample: React.FC<SpacingExampleProps> = ({fn, size, children}) => (
     </MarginOuter>
 );
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
+// Object.keys() always returns a string[]
 const MarginStory = ({fn}: {fn: SpacingFunction}) => (
   <>
-    <MarginExample fn={fn} size="xs">
-      Static
-    </MarginExample>
-    <MarginExample fn={fn} size={['xs', 'md', 'xl']}>
+    {((Object.keys(spacings).sort() as any) as Spacing[]).map(spacing => (
+        <MarginExample key={spacing} fn={fn} size={spacing}>
+            {spacing}
+        </MarginExample>
+    ))}
+    {/* TODO: <br/>
+    <MarginExample fn={fn} size={{}}>
       Responsive
-    </MarginExample>
+    </MarginExample> */}
   </>
 );
+/* eslint-enable @typescript-eslint/no-explicit-any */
 
 export default {
-    title: 'spacing/margin',
+    title: 'foundations/spacing/margin',
 };
 
 export const margin = () => <MarginStory fn={m} />;
