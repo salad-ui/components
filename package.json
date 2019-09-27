@@ -48,13 +48,8 @@
     "changeset": "changeset --commit"
   },
   "lint-staged": {
-    "**/*.{json,md}": [
+    "**/*.{js,jsx,ts,tsx,md,json}": [
       "yarn run format",
-      "git add"
-    ],
-    "**/*.{js,jsx,ts,tsx}": [
-      "yarn run format",
-      "yarn run lint",
       "git add"
     ]
   },
