@@ -1,6 +1,6 @@
 # salad-ui 🥗
 
-[![GithubActions](https://github.com/salad-ui/components/workflows/default/badge.svg)](https://github.com/salad-ui/components/actions)
+[![GithubActions](https://github.com/salad-ui/components/workflows/main/badge.svg)](https://github.com/salad-ui/components/actions)
 
 > ⚠️ This project is an experimental proof-of-concept. Please don't use it it production.
 
