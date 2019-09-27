@@ -10,6 +10,10 @@
   "dependencies": {
     "@salad-ui/spacing": "^0.1.0"
   },
+  "peerDependencies": {
+    "@types/styled-components": "^4.1.19",
+    "styled-components": "^4.4.0"
+  },
   "devDependencies": {
     "@salad-ui/package-builder": "^0.1.0"
   },
