@@ -9,34 +9,51 @@ import {Container, PageContainer} from '../../components';
 
 # Get Started
 
-This packages includes a library of generic WordPress components to be used for creating common UI elements shared between screens and features of the WordPress dashboard.
+🥗 `salad-ui` is a set of components for building rich user interfaces within `wp-admin`.
 
 ## Installation
 
-Install the module
+### In WordPress
+
+> ⏲ Coming soon!
+
+### In a bundled application
+
+Each component exists as a seperately isntallable NPM package allowing you to upgrade as desired. 
+Most packages have a peer dependency on `react` and `styled-components` so make sure you install them
+alongside any `@salad-ui/*` packages you choose to use.
+
+NPM
 
 ```bash
-npm install @wordpress/components --save
+npm install react styled-components @salad-ui/button --save
 ```
 
-_This package assumes that your code will run in an **ES2015+** environment. If you're using an environment that has limited or no support for ES2015+ such as lower versions of IE then using [core-js](https://github.com/zloirock/core-js) or [@babel/polyfill](https://babeljs.io/docs/en/next/babel-polyfill) will add support for these methods. Learn more about it in [Babel docs](https://babeljs.io/docs/en/next/caveats)._
+Yarn
+
+```bash
+yarn add react styled-components @salad-ui/button
+```
+
+_`salad-ui` assumes your code will run in an **ES2015+** environment. If you're using an environment that has limited or no support for ES2015+ such as lower versions of IE then using [core-js](https://github.com/zloirock/core-js) or [@babel/polyfill](https://babeljs.io/docs/en/next/babel-polyfill) will add support for these methods. Learn more about it in [Babel docs](https://babeljs.io/docs/en/next/caveats)._
 
 ## Usage
 
-Within Gutenberg, these components can be accessed by importing from the `components` root directory:
+Import the components necessary to build your user interfaces.
 
 ```jsx
-/**
- * WordPress dependencies
- */
-import {Button} from '@wordpress/components';
+import {Button} from '@salad-ui/button';
 
-export default function MyButton() {
-  return <Button>Click Me!</Button>;
+export const App = () => {
+  const save = () => alert('Saved!');
+  return (
+    <>
+      <Button variant="primary" onClick={save}>Save</Button>
+    </>  
+  );
 }
-```
 
-Many components also include styles which will need to be output in order to appear correctly. Within WordPress, you can [add the `carrot-components` stylesheet as a dependency of your plugin's stylesheet](https://developer.wordpress.org/reference/functions/wp_enqueue_style/#parameters). In other projects, you can link to the `build-style/style.css` file directly.
+```
 
 </PageContainer>
 </Container>
