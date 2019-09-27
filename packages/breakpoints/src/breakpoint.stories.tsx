@@ -73,7 +73,7 @@ const LessThanExample = styled.div`
 `;
 
 export default {
-    title: 'foundations/breakpoint',
+  title: 'foundations/breakpoint',
 };
 
 export const greaterThanOrEqualTo = () => (

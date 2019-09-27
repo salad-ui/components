@@ -3,21 +3,21 @@ import {m} from '@salad-ui/spacing';
 import {fontFamily, fontWeightSemibold} from '../common';
 
 export interface SubtitleOptions {
-    isSmall?: boolean;
+  isSmall?: boolean;
 }
 
 const sizes = ({isSmall}: SubtitleOptions) => {
-    if (isSmall) {
-        return `
+  if (isSmall) {
+    return `
       font-size: 14px;
       line-height: 20px;
     `;
-    } else {
-        return `
+  } else {
+    return `
       font-size: 16px;
       line-height: 24px;
     `;
-    }
+  }
 };
 
 export const subtitle = ({isSmall}: SubtitleOptions) => `

@@ -78,18 +78,18 @@ const tertiaryStyle = css`
 `;
 
 const variantStyles = ({variant}: {variant: ButtonVariant}) => {
-    switch (variant) {
-        case 'primary':
-            return primaryStyle;
-        case 'secondary':
-            return secondaryStyle;
-        case 'tertiary':
-            return tertiaryStyle;
-    }
+  switch (variant) {
+    case 'primary':
+      return primaryStyle;
+    case 'secondary':
+      return secondaryStyle;
+    case 'tertiary':
+      return tertiaryStyle;
+  }
 };
 
 export interface WrapperProps {
-    variant: ButtonVariant;
+  variant: ButtonVariant;
 }
 
 export const AnchorWrapper = styled.a<WrapperProps>`

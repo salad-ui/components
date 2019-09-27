@@ -6,24 +6,24 @@ import Flexy from '../Flexy';
 import WordPressLogo from '../WordPressLogo';
 
 export const SiteFooter: React.FC = () => {
-    const year = new Date().getFullYear();
+  const year = new Date().getFullYear();
 
-    return (
-        <Wrapper>
-            <Container>
-                <Flexy justify="center">
-                    <Flexy.Item>
-                        <LogoWrapper>
-                            <WordPressLogo />
-                        </LogoWrapper>
-                    </Flexy.Item>
-                    <Flexy.Item>
-                        <Text>&copy; {year}. Code is Poetry.</Text>
-                    </Flexy.Item>
-                </Flexy>
-            </Container>
-        </Wrapper>
-    );
+  return (
+    <Wrapper>
+      <Container>
+        <Flexy justify="center">
+          <Flexy.Item>
+            <LogoWrapper>
+              <WordPressLogo />
+            </LogoWrapper>
+          </Flexy.Item>
+          <Flexy.Item>
+            <Text>&copy; {year}. Code is Poetry.</Text>
+          </Flexy.Item>
+        </Flexy>
+      </Container>
+    </Wrapper>
+  );
 };
 
 export default SiteFooter;

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export interface AnchorProps {
-    isSubtle?: boolean;
+  isSubtle?: boolean;
 }
 
 const subtle = ({isSubtle}: AnchorProps) => isSubtle && `color: currentColor;`;

@@ -2,8 +2,8 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 const Example: React.FC = props => {
-    const {children} = props;
-    return <Wrapper>{children}</Wrapper>;
+  const {children} = props;
+  return <Wrapper>{children}</Wrapper>;
 };
 
 const Wrapper = styled.div`

@@ -6,40 +6,40 @@ import {ButtonSize, ButtonVariant} from './Button.types';
 import {COLOR} from '../../constants';
 
 export const config = {
-    boxShadow: `
+  boxShadow: `
     0 0 0 1px rgba(0,0,0,.03), 0 1px 0 rgba(0,0,0,.05), 0 1px 3px rgba(0,0,0,.1)
   `,
-    boxShadowHover: `
+  boxShadowHover: `
     0 0 0 1px rgba(0,0,0,.03), 0 1px 0 rgba(0,0,0,.08), 0 3px 8px rgba(0,0,0,.1)
   `,
-    focusBorderSize: '3px',
-    focusColor: COLOR.focus,
-    default: {
-        backgroundColor: COLOR.uiBackground,
-        color: COLOR.text,
-        focus: COLOR.brand,
+  focusBorderSize: '3px',
+  focusColor: COLOR.focus,
+  default: {
+    backgroundColor: COLOR.uiBackground,
+    color: COLOR.text,
+    focus: COLOR.brand,
+  },
+  primary: {
+    backgroundColor: COLOR.uiBackgroundPrimary,
+    color: COLOR.textPrimary,
+    focus: COLOR.brand,
+  },
+  size: {
+    lg: {
+      padding: '15px 30px',
     },
-    primary: {
-        backgroundColor: COLOR.uiBackgroundPrimary,
-        color: COLOR.textPrimary,
-        focus: COLOR.brand,
+    md: {
+      padding: '10px 20px',
     },
-    size: {
-        lg: {
-            padding: '15px 30px',
-        },
-        md: {
-            padding: '10px 20px',
-        },
-        sm: {
-            padding: '6px 15px',
-        },
+    sm: {
+      padding: '6px 15px',
     },
+  },
 };
 
 export interface ButtonBaseProps {
-    size: ButtonSize;
-    variant: ButtonVariant;
+  size: ButtonSize;
+  variant: ButtonVariant;
 }
 
 export const ButtonBase = styled.button<ButtonBaseProps>`

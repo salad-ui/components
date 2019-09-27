@@ -5,14 +5,14 @@ import styled from 'styled-components';
 import WordPressLogo from '../WordPressLogo';
 
 export const Logo: React.FC = () => {
-    return (
-        <LogoLink to="/">
-            <IconWrapper>
-                <WordPressLogo />
-            </IconWrapper>
-            <Title>Design System</Title>
-        </LogoLink>
-    );
+  return (
+    <LogoLink to="/">
+      <IconWrapper>
+        <WordPressLogo />
+      </IconWrapper>
+      <Title>Design System</Title>
+    </LogoLink>
+  );
 };
 
 const LogoLink = styled(Link)`

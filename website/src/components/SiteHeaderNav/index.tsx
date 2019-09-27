@@ -7,20 +7,20 @@ import Menu from './Menu';
 import Logo from './Logo';
 
 export const SiteHeaderNav: React.FC = () => {
-    return (
-        <HeaderNav>
-            <Container>
-                <Flexy>
-                    <Flexy.Item>
-                        <Logo />
-                    </Flexy.Item>
-                    <Flexy.Block>
-                        <Menu />
-                    </Flexy.Block>
-                </Flexy>
-            </Container>
-        </HeaderNav>
-    );
+  return (
+    <HeaderNav>
+      <Container>
+        <Flexy>
+          <Flexy.Item>
+            <Logo />
+          </Flexy.Item>
+          <Flexy.Block>
+            <Menu />
+          </Flexy.Block>
+        </Flexy>
+      </Container>
+    </HeaderNav>
+  );
 };
 
 export const HeaderNav = styled.div`

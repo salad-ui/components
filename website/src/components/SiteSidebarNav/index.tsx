@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 export const SiteSidebarNav: React.FC = () => {
-    return <Sidebar />;
+  return <Sidebar />;
 };
 
 const Sidebar = styled.div`

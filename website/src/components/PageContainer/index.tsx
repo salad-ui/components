@@ -4,13 +4,13 @@ import styled from 'styled-components';
 import Typography from '../Typography';
 
 export const PageContainer: React.FC = props => {
-    const {children} = props;
+  const {children} = props;
 
-    return (
-        <Content>
-            <Typography>{children}</Typography>
-        </Content>
-    );
+  return (
+    <Content>
+      <Typography>{children}</Typography>
+    </Content>
+  );
 };
 
 const Content = styled.div`

@@ -3,21 +3,21 @@ import {m} from '@salad-ui/spacing';
 import {fontFamily, fontWeightNormal} from '../common';
 
 export interface BodyOptions {
-    isSmall?: boolean;
+  isSmall?: boolean;
 }
 
 export const sizes = ({isSmall = false}: BodyOptions) => {
-    if (isSmall) {
-        return `
+  if (isSmall) {
+    return `
       font-size: 14px;
       line-height: 20px;
     `;
-    } else {
-        return `
+  } else {
+    return `
       font-size: 16px;
       line-height: 24px;
     `;
-    }
+  }
 };
 
 export const body = ({isSmall}: BodyOptions) => `

@@ -3,28 +3,28 @@
 export type Spacing = 0 | 0.5 | 1 | 1.5 | 2 | 3 | 4 | 5 | 6;
 
 export const spacings: {[s in Spacing]: string} = {
-    0: '0',
-    0.5: '4px',
-    1: '8px',
-    1.5: '12px',
-    2: '16px',
-    3: '24px',
-    4: '32px',
-    5: '40px',
-    6: '48px',
+  0: '0',
+  0.5: '4px',
+  1: '8px',
+  1.5: '12px',
+  2: '16px',
+  3: '24px',
+  4: '32px',
+  5: '40px',
+  6: '48px',
 };
 
 // FIXME: type properties as CSSProperty
 // FIXME: check size exists
 // FIXME: make responsive
 const createMixin = (properties: string[]) => (size: Spacing) =>
-    properties.reduce(
-        (style, property) => ({
-            ...style,
-            [property]: spacings[size],
-        }),
-        {},
-    );
+  properties.reduce(
+    (style, property) => ({
+      ...style,
+      [property]: spacings[size],
+    }),
+    {},
+  );
 // map(sizes, size =>
 //     properties.reduce(
 //         (style, property) => ({

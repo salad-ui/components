@@ -5,8 +5,8 @@ import {Spacing, p, px, py, pt, pr, pb, pl, spacings} from '.';
 type SpacingFunction = typeof p;
 
 interface SpacingExampleProps {
-    size: Spacing /*| Spacing[]*/;
-    fn: SpacingFunction;
+  size: Spacing /*| Spacing[]*/;
+  fn: SpacingFunction;
 }
 
 const PaddingInner = styled.div`
@@ -27,13 +27,13 @@ const PaddingOuter = styled.div<SpacingExampleProps>`
 `;
 
 const PaddingExample: React.FC<SpacingExampleProps> = ({
-    fn,
-    size,
-    children,
+  fn,
+  size,
+  children,
 }) => (
-    <PaddingOuter fn={fn} size={size}>
-        <PaddingInner>{children}</PaddingInner>
-    </PaddingOuter>
+  <PaddingOuter fn={fn} size={size}>
+    <PaddingInner>{children}</PaddingInner>
+  </PaddingOuter>
 );
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
@@ -41,9 +41,9 @@ const PaddingExample: React.FC<SpacingExampleProps> = ({
 const PaddingStory = ({fn}: {fn: SpacingFunction}) => (
   <>
     {((Object.keys(spacings).sort() as any) as Spacing[]).map(spacing => (
-        <PaddingExample key={spacing} fn={fn} size={spacing}>
-            {spacing}
-        </PaddingExample>
+      <PaddingExample key={spacing} fn={fn} size={spacing}>
+        {spacing}
+      </PaddingExample>
     ))}
     {/* TODO: <br/>
     <PaddingExample fn={fn} size={{}}>
@@ -54,7 +54,7 @@ const PaddingStory = ({fn}: {fn: SpacingFunction}) => (
 /* eslint-enable @typescript-eslint/no-explicit-any */
 
 export default {
-    title: 'foundations/spacing/padding',
+  title: 'foundations/spacing/padding',
 };
 
 export const padding = () => <PaddingStory fn={p} />;

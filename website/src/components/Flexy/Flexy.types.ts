@@ -13,8 +13,8 @@ export type FlexyJustify =
   | 'space-between';
 
 export interface FlexyProps {
-    align?: FlexyAlign;
-    className?: string;
-    children?: React.ReactNode;
-    justify?: FlexyJustify;
+  align?: FlexyAlign;
+  className?: string;
+  children?: React.ReactNode;
+  justify?: FlexyJustify;
 }

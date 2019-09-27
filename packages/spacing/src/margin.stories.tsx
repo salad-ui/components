@@ -5,8 +5,8 @@ import {Spacing, m, mx, my, mt, mr, mb, ml, spacings} from '.';
 type SpacingFunction = typeof m;
 
 interface SpacingExampleProps {
-    size: Spacing /* | Spacing[] */;
-    fn: SpacingFunction;
+  size: Spacing /* | Spacing[] */;
+  fn: SpacingFunction;
 }
 
 const MarginInner = styled.div<SpacingExampleProps>`
@@ -27,11 +27,11 @@ const MarginOuter = styled.div`
 `;
 
 const MarginExample: React.FC<SpacingExampleProps> = ({fn, size, children}) => (
-    <MarginOuter>
-        <MarginInner fn={fn} size={size}>
-            {children}
-        </MarginInner>
-    </MarginOuter>
+  <MarginOuter>
+    <MarginInner fn={fn} size={size}>
+      {children}
+    </MarginInner>
+  </MarginOuter>
 );
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
@@ -39,9 +39,9 @@ const MarginExample: React.FC<SpacingExampleProps> = ({fn, size, children}) => (
 const MarginStory = ({fn}: {fn: SpacingFunction}) => (
   <>
     {((Object.keys(spacings).sort() as any) as Spacing[]).map(spacing => (
-        <MarginExample key={spacing} fn={fn} size={spacing}>
-            {spacing}
-        </MarginExample>
+      <MarginExample key={spacing} fn={fn} size={spacing}>
+        {spacing}
+      </MarginExample>
     ))}
     {/* TODO: <br/>
     <MarginExample fn={fn} size={{}}>
@@ -52,7 +52,7 @@ const MarginStory = ({fn}: {fn: SpacingFunction}) => (
 /* eslint-enable @typescript-eslint/no-explicit-any */
 
 export default {
-    title: 'foundations/spacing/margin',
+  title: 'foundations/spacing/margin',
 };
 
 export const margin = () => <MarginStory fn={m} />;

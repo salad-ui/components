@@ -3,7 +3,7 @@ import {action} from '@storybook/addon-actions';
 import {Button} from '.';
 
 export default {
-    title: 'components/Button',
+  title: 'components/Button',
 };
 
 export const variant = () => (
@@ -49,5 +49,5 @@ export const beforeAfter = () => (
 );
 
 beforeAfter.story = {
-    name: 'before/after',
+  name: 'before/after',
 };

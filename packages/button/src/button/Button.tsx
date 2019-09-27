@@ -3,85 +3,85 @@ import {ButtonVariant} from './types';
 import {Before, After, AnchorWrapper, ButtonWrapper} from './Button.style';
 
 export interface ButtonProps {
-    /**
+  /**
    * Content displayed before the button children
    */
-    before?: React.ReactNode;
+  before?: React.ReactNode;
 
-    /**
+  /**
    * Content displayed after the button children
    */
-    after?: React.ReactNode;
+  after?: React.ReactNode;
 
-    /**
+  /**
    * The variant to use.
    */
-    variant: ButtonVariant;
+  variant: ButtonVariant;
 
-    /**
+  /**
    * Renders a busy state.
    */
-    isDisabled?: boolean;
+  isDisabled?: boolean;
 
-    /**
+  /**
    * Renders an anchor element.
    */
-    href?: string;
+  href?: string;
 
-    /**
+  /**
    * Adjusts the anchor element target.
    */
-    target?: string;
+  target?: string;
 
-    /**
+  /**
    * Callback when clicked.
    */
-    onClick?: () => void;
+  onClick?: () => void;
 
-    /**
+  /**
    * Custom component className.
    */
-    className?: string;
-    children: React.ReactNode;
+  className?: string;
+  children: React.ReactNode;
 }
 
 export const Button = (props: ButtonProps) => {
-    const {
-        before,
-        after,
-        href,
-        target,
-        isDisabled = false,
-        children,
-        ...otherProps
-    } = props;
+  const {
+    before,
+    after,
+    href,
+    target,
+    isDisabled = false,
+    children,
+    ...otherProps
+  } = props;
 
-    const useAnchorWrapper = href !== undefined && !isDisabled;
+  const useAnchorWrapper = href !== undefined && !isDisabled;
 
-    const content = (
+  const content = (
     <>
       {before && <Before>{before}</Before>}
       {children}
       {after && <After>{after}</After>}
     </>
-    );
+  );
 
-    if (useAnchorWrapper) {
-        return (
-            <AnchorWrapper {...otherProps} href={href} target={target}>
-                {content}
-            </AnchorWrapper>
-        );
-    } else {
-        return (
-            <ButtonWrapper {...otherProps} type="button" disabled={isDisabled}>
-                {content}
-            </ButtonWrapper>
-        );
-    }
+  if (useAnchorWrapper) {
+    return (
+      <AnchorWrapper {...otherProps} href={href} target={target}>
+        {content}
+      </AnchorWrapper>
+    );
+  } else {
+    return (
+      <ButtonWrapper {...otherProps} type="button" disabled={isDisabled}>
+        {content}
+      </ButtonWrapper>
+    );
+  }
 };
 
 Button.defaultProps = {
-    variant: 'secondary',
-    isDisabled: false,
+  variant: 'secondary',
+  isDisabled: false,
 };
