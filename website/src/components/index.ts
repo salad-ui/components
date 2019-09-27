@@ -1,4 +1,4 @@
-export {default as AppProvider} from './AppProvider';
+export * from './AppProvider';
 export {default as Button} from './Button';
 export {default as Container} from './Container';
 export {default as Example} from './Example';

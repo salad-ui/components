@@ -19,7 +19,7 @@ export interface ButtonProps {
   variant: ButtonVariant;
 
   /**
-   * Renders a busy state.
+   * Renders a disabled state.
    */
   isDisabled?: boolean;
 

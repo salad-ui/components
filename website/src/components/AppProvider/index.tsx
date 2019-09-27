@@ -1,8 +1,11 @@
 import * as React from 'react';
+import {Theme} from '@salad-ui/theme';
 
-const AppProvider: React.FC = props => {
+export const AppProvider: React.FC = props => {
   const {children} = props;
-  return <>{children}</>;
+  return (
+    <Theme>
+      <>{children}</>
+    </Theme>
+  );
 };
-
-export default AppProvider;
