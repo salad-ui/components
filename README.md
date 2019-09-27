@@ -2,9 +2,9 @@
 
 [![GithubActions](https://github.com/salad-ui/components/workflows/default/badge.svg)](https://github.com/salad-ui/components/actions)
 
-A set of components for building rich user interfaces within wp-admin.
-
 > ⚠️ This project is an experimental proof-of-concept. Please don't use it it production.
+
+A set of components for building rich user interfaces within wp-admin.
 
 ---
 
