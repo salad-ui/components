@@ -4,6 +4,10 @@
 
 A set of components for building rich user interfaces within wp-admin.
 
+> ⚠️ This project is an experimental proof-of-concept. Please don't use it it production.
+
+---
+
 <table>
   <tbody>
     <tr>
