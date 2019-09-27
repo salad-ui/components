@@ -14,7 +14,7 @@ jobs:
         node-version: '12.x'
 
     - uses: actions/checkout@v1
-    
+
     - name: ⬇️ Installing...
       run: yarn install --frozen-lockfile
 
@@ -48,10 +48,10 @@ jobs:
       env:
         ZEIT_TOKEN: ${{ secrets.ZEIT_TOKEN }}
 
-    # - name: ⬆️ Publishing
-    #   if: github.ref == 'refs/heads/master'
-    #   run: .ci/version_and_publish.sh
-    #   env:
-    #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-    #     GITHUB_DEPLOY_KEY: ${{ secrets.GITHUB_DEPLOY_KEY }}
+    - name: ⬆️ Publishing
+      if: github.ref == 'refs/heads/master'
+      run: .ci/version_and_publish.sh
+      env:
+        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        GITHUB_DEPLOY_KEY: ${{ secrets.GITHUB_DEPLOY_KEY }}
  
