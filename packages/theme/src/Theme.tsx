@@ -4,50 +4,50 @@ import {ThemeProvider, DefaultTheme} from 'styled-components';
 export const theme = {
   color: {
     border: {
-      light: '#cfcfcf',
-      medium: '#828282',
-      dark: '#363636',
+      light: '#DCDCDE',
+      medium: '#C3C4C7',
+      dark: '#8B8E93',
     },
 
-    background: '#f2f2f2',
+    background: '#F6F7F7',
     onBackground: {
-      normal: 'black',
-      subtle: '#444',
+      normal: '#3C434A',
+      subtle: '#646970',
     },
 
-    surface: 'white',
+    surface: '#fff',
     onSurface: {
-      normal: 'black',
-      subtle: '#444',
+      normal: '#3C434A',
+      subtle: '#646970',
     },
 
     primary: {
-      light: '#6ab3d0',
-      medium: '#006088',
-      dark: '#002c40',
+      light: '#4B94D8',
+      medium: '#2271B1',
+      dark: '#0A4B78',
     },
-    onPrimary: 'white',
+    onPrimary: '#fff',
 
     success: {
-      light: '#51ed6d',
-      medium: '#21b83c',
-      dark: '#029c1e',
+      light: '#00BA37',
+      medium: '#008A20',
+      dark: '#005C12',
     },
-    onSuccess: 'white',
+    onSuccess: '#fff',
 
     warning: {
-      light: '#ffc738',
-      medium: '#d6a118',
-      dark: '#ad7f09',
+      light: '#DBAE17',
+      medium: '#907300',
+      dark: '#5C4B00',
     },
-    onWarning: 'white',
+    onWarning: '#fff',
 
     error: {
-      light: '#f56262',
-      medium: '#e60e0e',
-      dark: '#750101',
+      light: '#F86368',
+      medium: '#D63638',
+      dark: '#8A2424',
     },
-    onError: 'white',
+    onError: '#fff',
   },
 };
 
