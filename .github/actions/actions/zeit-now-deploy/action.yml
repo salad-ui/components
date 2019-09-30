@@ -1,4 +1,4 @@
-name: 'jameslnewell/zeit-now-deploy'
+name: 'zeit-now-deploy'
 description: 'Deploy a project using now.sh'
 
 inputs:
