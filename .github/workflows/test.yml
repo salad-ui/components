@@ -1,0 +1,25 @@
+name: test
+
+on: [push]
+
+jobs:
+
+  # FIXME: split into multiple jobs and parallelise :allthethings:
+  all-the-things:
+    runs-on: ubuntu-latest
+    steps:
+
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+
+    - uses: actions/checkout@v1
+
+    - name: ⬇️ Installing...
+      run: yarn install --frozen-lockfile
+
+    - name: 🚀 Deploy
+      uses: ./.github/actions/zeit-now-deploy
+      with:
+          path: website
+          token: ${{ secrets.ZEIT_TOKEN }}

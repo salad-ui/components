@@ -1,0 +1,9 @@
+{
+  "name": "@jameslnewell/zeit-now-deploy",
+  "version": "1.0.0",
+  "dependencies": {
+    "@actions/core": "^1.1.1",
+    "execa": "^2.0.4",
+    "now": "^16.2.0"
+  }
+}

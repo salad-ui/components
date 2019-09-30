@@ -47,6 +47,9 @@ jobs:
       run: .ci/deploy.sh
       env:
         ZEIT_TOKEN: ${{ secrets.ZEIT_TOKEN }}
+    
+    - name: 🚀 Deploy
+      uses: ./.github/actions/zeit-now
 
     - name: ⬆️ Publishing
       if: github.ref == 'refs/heads/master'

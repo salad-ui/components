@@ -1,0 +1,25 @@
+name: 'jameslnewell/zeit-now-deploy'
+description: 'Deploy a project using now.sh'
+
+inputs:
+
+  path: 
+    description: 'Deploy a custom path'
+    required: false
+
+  prod:
+    description: 'Create a production deployment'
+    required: false
+    default: true
+
+  token:
+    description: 'Login token'
+    required: true
+
+outputs:
+  url:
+    description: 'The time we greeted you'
+
+runs:
+  using: 'node12'
+  main: 'index.js'
