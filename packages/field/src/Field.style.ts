@@ -3,9 +3,7 @@ import {button, caption} from '@salad-ui/typography';
 import {color} from '@salad-ui/color';
 import {m, mt, mb} from '@salad-ui/spacing';
 
-export interface LabelProps {}
-
-export const Label = styled.label<LabelProps>`
+export const Label = styled.label`
   display: block;
   ${mb(0.5)}
   ${button()}

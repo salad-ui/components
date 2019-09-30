@@ -9,6 +9,8 @@ export interface FieldProps {
   children?: React.ReactNode;
 }
 
+// TODO: add aria-describedby to inputs describing `help`
+
 export const Field = ({id, label, help, error, children}: FieldProps) => {
   return (
     <>

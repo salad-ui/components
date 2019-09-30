@@ -6,7 +6,7 @@ export default {
   title: 'components/Field',
 };
 
-export const normal = () => (
+export const Normal = () => (
   <>
     <Field
       id="username"
@@ -18,7 +18,7 @@ export const normal = () => (
   </>
 );
 
-export const error = () => {
+export const Error: React.FC = () => {
   const [username, setUsername] = useState('john.smith');
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) =>
     setUsername(event.target.value);

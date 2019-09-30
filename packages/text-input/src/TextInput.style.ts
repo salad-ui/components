@@ -3,9 +3,7 @@ import {px} from '@salad-ui/spacing';
 import {getColor, color, borderColor} from '@salad-ui/color';
 import {body} from '@salad-ui/typography';
 
-export interface InputProps {}
-
-export const Input = styled.input<InputProps>`
+export const Input = styled.input`
   display: block;
   ${px(2)}
   ${color('onSurface.normal')}
