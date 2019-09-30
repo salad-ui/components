@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {color} from '@salad-ui/color';
 
 export interface AnchorProps {
   isSubtle?: boolean;
@@ -7,17 +8,16 @@ export interface AnchorProps {
 const subtle = ({isSubtle}: AnchorProps) => isSubtle && `color: currentColor;`;
 
 export const Anchor = styled.a<AnchorProps>`
-  color: ${({theme}) => theme.color.primary.normal};
-  ${subtle}
+  ${color('primary.normal')};
   cursor: pointer;
   text-decoration: underline;
+  ${subtle}
 
-  :hover {
+  :hover, :focus {
+    ${color('primary.dark')};
   }
 
   :active {
-  }
-
-  :focus {
+    ${color('primary.light')};
   }
 `;
