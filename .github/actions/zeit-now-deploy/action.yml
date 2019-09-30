@@ -1,10 +1,10 @@
-name: 'zeit-now-deploy'
+name: 'ZEIT Now - Deploy'
 description: 'Deploy a project using ZEIT Now.'
 
 inputs:
 
   path: 
-    description: 'Deploy a custom path'
+    description: 'The project path.'
     required: false
 
   prod:
@@ -13,12 +13,12 @@ inputs:
     default: true
 
   token:
-    description: 'Login token'
+    description: 'The ZEIT token.'
     required: true
 
 outputs:
   url:
-    description: 'The time we greeted you'
+    description: 'The URL that the project was deployed to.'
 
 runs:
   using: 'node12'
