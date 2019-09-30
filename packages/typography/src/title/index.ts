@@ -32,7 +32,6 @@ export const title = ({size}: TitleOptions) => `
   ${fontFamily}
   ${fontWeightNormal}
   ${sizes({size})}
-  color: currentColor;
   letter-spacing: 0;
 `;
 

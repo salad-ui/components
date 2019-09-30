@@ -24,7 +24,6 @@ export const subtitle = ({isSmall}: SubtitleOptions) => `
   ${fontFamily}
   ${fontWeightSemibold}
   ${sizes({isSmall})}
-  color: currentColor;
   letter-spacing: 0;
 `;
 

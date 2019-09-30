@@ -20,15 +20,14 @@ export const sizes = ({isSmall = false}: BodyOptions) => {
   }
 };
 
-export const body = ({isSmall}: BodyOptions) => `
+export const body = ({isSmall}: BodyOptions = {}) => `
   ${fontFamily}
   ${fontWeightNormal}
   ${sizes({isSmall})}
-  color: currentColor;
   letter-spacing: 0;
 `;
 
-export const Body = styled.p`
+export const Body = styled.p<BodyOptions>`
   ${m(0)}
   ${body}
 `;
