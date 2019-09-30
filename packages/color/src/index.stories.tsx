@@ -17,7 +17,7 @@ const ColorSquare = styled.li<{fg: string; bg: string}>`
   height: 200px;
   color: ${({fg}) => fg};
   background-color: ${({bg}) => bg};
-  border: 1px solid #ccc;
+  border: 1px solid ${({theme}) => theme.color.border.normal};
   border-radius: 3px;
   ${mr(2)}
   :last-of-type {
