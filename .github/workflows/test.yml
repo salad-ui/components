@@ -19,7 +19,7 @@ jobs:
     #   run: yarn install --frozen-lockfile
 
     - name: 🚀 Deploy
-      uses: jameslnewell/zeit-now-deploy
+      uses: jameslnewell/zeit-now-deploy@v1
       with:
           path: website
           token: ${{ secrets.ZEIT_TOKEN }}
