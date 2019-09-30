@@ -19,7 +19,7 @@ jobs:
     #   run: yarn install --frozen-lockfile
 
     - name: ls
-      run: ls -la
+      run: ls -la ./.github/action
 
     - name: 🚀 Deploy
       uses: ./.github/actions/zeit-now-deploy
