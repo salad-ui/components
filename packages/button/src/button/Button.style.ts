@@ -1,6 +1,7 @@
 import styled, {css} from 'styled-components';
 import {mr, ml, px} from '@salad-ui/spacing';
 import {button} from '@salad-ui/typography';
+import {color, backgroundColor, borderColor} from '@salad-ui/color';
 import {ButtonVariant} from './types';
 
 const commonStyle = css`
@@ -19,61 +20,61 @@ const commonStyle = css`
 `;
 
 const primaryStyle = css`
-  color: ${({theme}) => theme.color.onPrimary};
-  background-color: ${({theme}) => theme.color.primary.normal};
+  ${color('onPrimary')}
+  ${backgroundColor('primary.normal')}
 
   :hover:enabled,
   :focus:enabled {
-    background-color: ${({theme}) => theme.color.primary.dark};
+    ${backgroundColor('primary.dark')}
   }
 
   :active:enabled {
-    background-color: ${({theme}) => theme.color.primary.light};
+    ${backgroundColor('primary.light')}
   }
 
   :disabled {
-    color: ${({theme}) => theme.color.border.dark};
-    background-color: ${({theme}) => theme.color.border.light};
+    ${color('border.dark')}
+    ${backgroundColor('border.light')}
   }
 `;
 
 const secondaryStyle = css`
-  color: ${({theme}) => theme.color.primary.normal};
-  border-color: ${({theme}) => theme.color.primary.normal};
+  ${color('primary.normal')}
+  ${borderColor('primary.normal')};
   border-style: solid;
   border-width: 1px;
 
   :hover:enabled,
   :focus:enabled {
-    color: ${({theme}) => theme.color.primary.dark};
-    border-color: ${({theme}) => theme.color.primary.dark};
+    ${color('primary.dark')};
+    ${borderColor('primary.dark')};
   }
 
   :active:enabled {
-    color: ${({theme}) => theme.color.primary.light};
-    border-color: ${({theme}) => theme.color.primary.light};
+    ${color('primary.light')};
+    ${borderColor('primary.light')};
   }
 
   :disabled {
-    color: ${({theme}) => theme.color.border.light};
-    border-color: ${({theme}) => theme.color.border.light};
+    ${color('border.light')};
+    ${borderColor('border.light')};
   }
 `;
 
 const tertiaryStyle = css`
-  color: ${({theme}) => theme.color.primary.normal};
+  ${color('primary.normal')};
 
   :hover:enabled,
   :focus:enabled {
-    color: ${({theme}) => theme.color.primary.dark};
+    ${color('primary.dark')};
   }
 
   :active:enabled {
-    color: ${({theme}) => theme.color.primary.light};
+    ${color('primary.light')};
   }
 
   :disabled {
-    color: ${({theme}) => theme.color.border.light};
+    ${color('border.light')};
   }
 `;
 

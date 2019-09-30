@@ -7,7 +7,10 @@
   "files": [
     "dist"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "@types/lodash-es": "^4.17.3",
+    "lodash-es": "^4.17.15"
+  },
   "peerDependencies": {},
   "devDependencies": {
     "@salad-ui/package-builder": "^0.1.0"
