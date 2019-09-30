@@ -36,9 +36,27 @@ function createRollupOptions() {
     external,
     plugins: [
       resolve({
-        browser: true,
+        mainFields: ['module', 'main', 'browser'],
       }),
-      commonjs({include: /node_modules/}),
+      commonjs({
+        include: /node_modules/,
+        // 😢@see https://github.com/reduxjs/react-redux/issues/643#issuecomment-364064645
+        // 😢@see https://github.com/styled-components/styled-components/issues/1654
+        namedExports: {
+          '../../node_modules/react/index.js': [
+            'cloneElement',
+            'createContext',
+            'Component',
+            'createElement',
+          ],
+          '../../node_modules/react-dom/index.js': ['render', 'hydrate'],
+          '../../node_modules/react-is/index.js': [
+            'isElement',
+            'isValidElementType',
+            'ForwardRef',
+          ],
+        },
+      }),
       typescript({
         cacheRoot: `.tsc_cache`,
         include: ['src/**/*.ts+(|x)'],
