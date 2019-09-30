@@ -4,7 +4,7 @@ type Color = string;
 
 interface BackgroundColorMap {
   light: Color;
-  medium: Color;
+  normal: Color;
   dark: Color;
 }
 

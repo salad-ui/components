@@ -7,7 +7,7 @@ export interface AnchorProps {
 const subtle = ({isSubtle}: AnchorProps) => isSubtle && `color: currentColor;`;
 
 export const Anchor = styled.a<AnchorProps>`
-  color: ${({theme}) => theme.color.primary.medium};
+  color: ${({theme}) => theme.color.primary.normal};
   ${subtle}
   cursor: pointer;
   text-decoration: underline;

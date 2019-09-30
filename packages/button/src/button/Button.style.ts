@@ -20,7 +20,7 @@ const commonStyle = css`
 
 const primaryStyle = css`
   color: ${({theme}) => theme.color.onPrimary};
-  background-color: ${({theme}) => theme.color.primary.medium};
+  background-color: ${({theme}) => theme.color.primary.normal};
 
   :hover:enabled,
   :focus:enabled {
@@ -38,8 +38,8 @@ const primaryStyle = css`
 `;
 
 const secondaryStyle = css`
-  color: ${({theme}) => theme.color.primary.medium};
-  border-color: ${({theme}) => theme.color.primary.medium};
+  color: ${({theme}) => theme.color.primary.normal};
+  border-color: ${({theme}) => theme.color.primary.normal};
   border-style: solid;
   border-width: 1px;
 
@@ -61,7 +61,7 @@ const secondaryStyle = css`
 `;
 
 const tertiaryStyle = css`
-  color: ${({theme}) => theme.color.primary.medium};
+  color: ${({theme}) => theme.color.primary.normal};
 
   :hover:enabled,
   :focus:enabled {

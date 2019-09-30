@@ -1,11 +1,11 @@
 import * as React from 'react';
 import {ThemeProvider, DefaultTheme} from 'styled-components';
 
-export const theme = {
+export const theme: DefaultTheme = {
   color: {
     border: {
+      normal: '#C3C4C7',
       light: '#DCDCDE',
-      medium: '#C3C4C7',
       dark: '#8B8E93',
     },
 
@@ -22,29 +22,29 @@ export const theme = {
     },
 
     primary: {
+      normal: '#2271B1',
       light: '#4B94D8',
-      medium: '#2271B1',
       dark: '#0A4B78',
     },
     onPrimary: '#fff',
 
     success: {
+      normal: '#008A20',
       light: '#00BA37',
-      medium: '#008A20',
       dark: '#005C12',
     },
     onSuccess: '#fff',
 
     warning: {
+      normal: '#907300',
       light: '#DBAE17',
-      medium: '#907300',
       dark: '#5C4B00',
     },
     onWarning: '#fff',
 
     error: {
+      normal: '#D63638',
       light: '#F86368',
-      medium: '#D63638',
       dark: '#8A2424',
     },
     onError: '#fff',
