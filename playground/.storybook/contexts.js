@@ -19,7 +19,7 @@ addDecorator(
                 primary: {
                   ...theme.color.primary,
                   light: '#f283aa',
-                  medium: '#c9356e',
+                  normal: '#c9356e',
                   dark: '#700f3b',
                 },
               },
