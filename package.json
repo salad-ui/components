@@ -60,6 +60,8 @@
   },
   "license": "GPL-2.0-or-later",
   "dependencies": {
+    "@babel/core": "^7.6.2",
+    "@babel/preset-env": "^7.6.2",
     "@types/react": "^16.9.3",
     "@types/styled-components": "^4.1.19",
     "react": "^16.9.0",
