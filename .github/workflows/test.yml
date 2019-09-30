@@ -18,11 +18,8 @@ jobs:
     # - name: ⬇️ Installing...
     #   run: yarn install --frozen-lockfile
 
-    - name: ls
-      run: ls -la ./.github/actions/
-
     - name: 🚀 Deploy
-      uses: ./.github/actions/zeit-now-deploy
+      uses: jameslnewell/zeit-now-deploy
       with:
           path: website
           token: ${{ secrets.ZEIT_TOKEN }}
