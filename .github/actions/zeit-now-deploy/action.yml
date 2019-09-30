@@ -1,5 +1,5 @@
 name: 'zeit-now-deploy'
-description: 'Deploy a project using now.sh'
+description: 'Deploy a project using ZEIT Now.'
 
 inputs:
 
