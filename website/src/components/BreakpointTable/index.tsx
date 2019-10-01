@@ -45,7 +45,7 @@ const Emoji = ({glyph, label}: {glyph: string; label: string}) => (
   </Icon>
 );
 
-export const Table = () => (
+export const BreakpointTable = () => (
   <>
     <Breakpoints>
       <Breakpoint
