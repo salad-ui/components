@@ -7,7 +7,9 @@
   "files": [
     "dist"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "styled-components-breakpoint": "^3.0.0-preview.8"
+  },
   "peerDependencies": {
     "@types/styled-components": "^4.1.19",
     "styled-components": "^4.4.0"

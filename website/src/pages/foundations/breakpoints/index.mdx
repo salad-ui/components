@@ -1,0 +1,54 @@
+---
+title: Breakpoints
+---
+import {Table} from './Table';
+
+Practice [mobile-first design](https://bradfrost.com/blog/post/mobile-first-responsive-web-design/).
+
+The screen sizes that we have chosen to design, implement and support are:
+
+<Table/>
+
+Most utilities and components have properties which can be configured responsively based on the screen size. We also provide a 
+number of utilities to apply your own styles at breakpoints.
+
+# Utilities
+
+## breakpoint
+
+A utility function used to apply styles at a single breakpoint.
+
+```jsx
+import styled from 'styled-components';
+import breakpoint from '@salad-ui/breakpoint';
+
+const Heading = styled.h1`
+  ${breakpoint('mobile')`
+    color: green;
+  `}
+  ${breakpoint('tablet')`
+    color: red;
+  `}
+  ${breakpoint('desktop')`
+    color: blue;
+  `}
+`;
+
+```
+
+## map
+
+A utility function used to apply styles across multiple breakpoints.
+
+```jsx
+import styled from 'styled-components';
+import {map} from '@salad-ui/breakpoint';
+
+const Heading = styled.h1`
+  ${map(
+    {mobile: 'red', tablet: 'green', desktop: 'blue'}, 
+    color => `color: ${color};`
+  )}
+`;
+
+```

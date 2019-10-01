@@ -1,11 +1,15 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import {gte, gt, lte, lt} from '.';
+import {breakpoint, map} from '.';
 
 const style = `
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
   margin: 1em;
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
 `;
 
 const Red = styled.span`
@@ -20,92 +24,54 @@ const Blue = styled.span`
   color: blue;
 `;
 
-const GreaterThanOrEqualToExample = styled.div`
-  ${style}
-  ${gte('mobile')`
-    background-color: red;
-  `}
-  ${gte('tablet')`
-    background-color: green;
-  `}
-  ${gte('desktop')`
-    background-color: blue;
-  `}
-`;
-
 const GreaterThanExample = styled.div`
   ${style}
-  ${gt('mobile')`
+  ${breakpoint('mobile')`
     background-color: red;
   `}
-  ${gt('tablet')`
+  ${breakpoint('tablet')`
     background-color: green;
   `}
-  ${gt('desktop')`
+  ${breakpoint('desktop')`
     background-color: blue;
   `}
 `;
 
-const LessThanOrEqualToExample = styled.div`
+const BetweenExample = styled.div`
   ${style}
-  ${lte('mobile')`
+  background-color: blue;
+  ${breakpoint('mobile', 'tablet')`
     background-color: red;
   `}
-  ${lte('tablet')`
+  ${breakpoint('tablet', 'desktop')`
     background-color: green;
-  `}
-  ${lte('desktop')`
-    background-color: blue;
   `}
 `;
 
-const LessThanExample = styled.div`
+const MapExample = styled.div`
   ${style}
-  ${lt('mobile')`
-    background-color: red;
-  `}
-  ${lt('tablet')`
-    background-color: green;
-  `}
-  ${lt('desktop')`
-    background-color: blue;
-  `}
+  ${map(
+    {mobile: 'red', tablet: 'green', desktop: 'blue'},
+    color => `background-color: ${color}`,
+  )}
 `;
 
 export default {
   title: 'foundations/breakpoint',
 };
 
-export const greaterThanOrEqualTo = () => (
+export const Breakpoint = () => (
   <>
     <Red>Red</Red> on <code>mobile</code>, <Green>green</Green> on{' '}
     <code>tablet</code> and <Blue>blue</Blue> on <code>desktop</code>.
-    <GreaterThanOrEqualToExample />
-  </>
-);
-
-export const greaterThan = () => (
-  <>
-    <Red>Red</Red> on <code>mobile</code>, <Green>green</Green> on{' '}
-    <code>tablet</code> and <Blue>blue</Blue> on <code>desktop</code>.
-    <GreaterThanExample />
-  </>
-);
-
-// FIXME:
-export const lessThanOrEqualTo = () => (
-  <>
-    <Red>Red</Red> on <code>mobile</code>, <Green>green</Green> on{' '}
-    <code>tablet</code> and <Blue>blue</Blue> on <code>desktop</code>.
-    <LessThanOrEqualToExample />
-  </>
-);
-
-// FIXME:
-export const lessThan = () => (
-  <>
-    <Red>Red</Red> on <code>mobile</code>, <Green>green</Green> on{' '}
-    <code>tablet</code> and <Blue>blue</Blue> on <code>desktop</code>.
-    <LessThanExample />
+    <GreaterThanExample>
+      <code>breakpoint(&lt;a&gt;)``</code>
+    </GreaterThanExample>
+    <BetweenExample>
+      <code>breakpoint(&lt;a&gt;, &lt;b&gt;)``</code>
+    </BetweenExample>
+    <MapExample>
+      <code>map(&lt;values&gt;, &lt;fn&gt;)</code>
+    </MapExample>
   </>
 );
