@@ -23,7 +23,7 @@ export const theme: DefaultTheme = {
 
     primary: {
       main: '#1D2327',
-      light: '#2c2c2c',
+      light: '#444b4f',
       dark: '#000000',
     },
     onPrimary: '#fff',
