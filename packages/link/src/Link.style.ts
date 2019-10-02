@@ -8,16 +8,16 @@ export interface AnchorProps {
 const subtle = ({isSubtle}: AnchorProps) => isSubtle && `color: currentColor;`;
 
 export const Anchor = styled.a<AnchorProps>`
-  ${color('primary.normal')};
+  ${color('secondary.main')};
   cursor: pointer;
   text-decoration: underline;
   ${subtle}
 
   :hover, :focus {
-    ${color('primary.dark')};
+    ${color('secondary.dark')};
   }
 
   :active {
-    ${color('primary.light')};
+    ${color('secondary.light')};
   }
 `;

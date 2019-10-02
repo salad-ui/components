@@ -4,46 +4,53 @@ import {ThemeProvider, DefaultTheme} from 'styled-components';
 export const theme: DefaultTheme = {
   color: {
     border: {
-      normal: '#C3C4C7',
+      main: '#C3C4C7',
       light: '#DCDCDE',
       dark: '#8B8E93',
     },
 
     background: '#F6F7F7',
     onBackground: {
-      normal: '#3C434A',
+      main: '#3C434A',
       subtle: '#646970',
     },
 
     surface: '#fff',
     onSurface: {
-      normal: '#3C434A',
+      main: '#3C434A',
       subtle: '#646970',
     },
 
     primary: {
-      normal: '#2271B1',
-      light: '#4B94D8',
-      dark: '#0A4B78',
+      main: '#1D2327',
+      light: '#2c2c2c',
+      dark: '#000000',
     },
     onPrimary: '#fff',
 
+    secondary: {
+      main: '#2271B1',
+      light: '#4B94D8',
+      dark: '#0A4B78',
+    },
+    onSecondary: '#fff',
+
     success: {
-      normal: '#008A20',
+      main: '#008A20',
       light: '#00BA37',
       dark: '#005C12',
     },
     onSuccess: '#fff',
 
     warning: {
-      normal: '#907300',
+      main: '#907300',
       light: '#DBAE17',
       dark: '#5C4B00',
     },
     onWarning: '#fff',
 
     error: {
-      normal: '#D63638',
+      main: '#D63638',
       light: '#F86368',
       dark: '#8A2424',
     },

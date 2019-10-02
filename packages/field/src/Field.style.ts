@@ -7,7 +7,7 @@ export const Label = styled.label`
   display: block;
   ${mb(0.5)}
   ${button()}
-  ${color('onSurface.normal')}
+  ${color('onSurface.main')}
 `;
 
 export interface HelpProps {
@@ -20,5 +20,5 @@ export const Help = styled.p<HelpProps>`
   ${mt(0.5)}
   ${color('onSurface.subtle')}
   ${caption()}
-  ${({isError}) => isError && color('error.normal')}
+  ${({isError}) => isError && color('error.main')}
 `;

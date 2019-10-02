@@ -6,15 +6,15 @@ import {body} from '@salad-ui/typography';
 export const Input = styled.input`
   display: block;
   ${px(2)}
-  ${color('onSurface.normal')}
+  ${color('onSurface.main')}
   ${body()}
-  ${borderColor('border.normal')}
+  ${borderColor('border.main')}
   border-width: 1px;
   border-style: solid;
   border-radius: 4px;
 
   :focus {
-    ${borderColor('primary.normal')}
-    box-shadow: 0 0 0 1px ${getColor('primary.normal')};
+    ${borderColor('secondary.main')}
+    box-shadow: 0 0 0 1px ${getColor('secondary.main')};
   }
 `;

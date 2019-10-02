@@ -62,7 +62,7 @@ export const BreakpointTable = () => (
       <Breakpoint
         breakpoint="tablet"
         unmatchedColor=""
-        matchedColor="primary.normal"
+        matchedColor="primary.main"
       >
         <Name>
           <strong>Tablet</strong> &mdash; <code>737px</code>

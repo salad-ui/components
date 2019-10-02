@@ -20,16 +20,16 @@ const commonStyle = css`
 `;
 
 const primaryStyle = css`
-  ${color('onPrimary')}
-  ${backgroundColor('primary.normal')}
+  ${color('onSecondary')}
+  ${backgroundColor('secondary.main')}
 
   :hover:enabled,
   :focus:enabled {
-    ${backgroundColor('primary.dark')}
+    ${backgroundColor('secondary.dark')}
   }
 
   :active:enabled {
-    ${backgroundColor('primary.light')}
+    ${backgroundColor('secondary.light')}
   }
 
   :disabled {
@@ -39,20 +39,20 @@ const primaryStyle = css`
 `;
 
 const secondaryStyle = css`
-  ${color('primary.normal')}
-  ${borderColor('primary.normal')};
+  ${color('secondary.main')}
+  ${borderColor('secondary.main')};
   border-style: solid;
   border-width: 1px;
 
   :hover:enabled,
   :focus:enabled {
-    ${color('primary.dark')};
-    ${borderColor('primary.dark')};
+    ${color('secondary.dark')};
+    ${borderColor('secondary.dark')};
   }
 
   :active:enabled {
-    ${color('primary.light')};
-    ${borderColor('primary.light')};
+    ${color('secondary.light')};
+    ${borderColor('secondary.light')};
   }
 
   :disabled {
@@ -62,19 +62,19 @@ const secondaryStyle = css`
 `;
 
 const tertiaryStyle = css`
-  ${color('primary.normal')};
+  ${color('secondary.main')};
 
   :hover:enabled,
   :focus:enabled {
-    ${color('primary.dark')};
+    ${color('secondary.dark')};
   }
 
   :active:enabled {
-    ${color('primary.light')};
+    ${color('secondary.light')};
   }
 
   :disabled {
-    ${color('border.light')};
+    ${color('secondary.light')};
   }
 `;
 

@@ -18,7 +18,7 @@ const ColorSquare = styled.li<{fg: string; bg: string}>`
   height: 200px;
   ${({fg}) => color(fg)}
   ${({bg}) => backgroundColor(bg)}
-  border: 1px solid ${borderColor('border.normal')};
+  border: 1px solid ${borderColor('border.main')};
   border-radius: 3px;
   ${mr(2)}
   :last-of-type {
@@ -42,8 +42,8 @@ export const Color = () => {
       <ColorVariable>
         <Title size="large">Primary</Title>
         <ColorSquares>
-          <ColorSquare bg="primary.normal" fg="onPrimary">
-            primary.normal
+          <ColorSquare bg="primary.main" fg="onPrimary">
+            primary.main
           </ColorSquare>
           <ColorSquare bg="primary.light" fg="onPrimary">
             primary.light
@@ -51,7 +51,24 @@ export const Color = () => {
           <ColorSquare bg="primary.dark" fg="onPrimary">
             primary.dark
           </ColorSquare>
-          <ColorSquare bg="onPrimary" fg="primary.normal">
+          <ColorSquare bg="onPrimary" fg="primary.main">
+            onPrimary
+          </ColorSquare>
+        </ColorSquares>
+      </ColorVariable>
+      <ColorVariable>
+        <Title size="large">Secondary</Title>
+        <ColorSquares>
+          <ColorSquare bg="secondary.main" fg="onSecondary">
+            primary.main
+          </ColorSquare>
+          <ColorSquare bg="secondary.light" fg="onSecondary">
+            primary.light
+          </ColorSquare>
+          <ColorSquare bg="secondary.dark" fg="onSecondary">
+            primary.dark
+          </ColorSquare>
+          <ColorSquare bg="onSecondary" fg="secondary.main">
             onPrimary
           </ColorSquare>
         </ColorSquares>
@@ -59,8 +76,8 @@ export const Color = () => {
       <ColorVariable>
         <Title size="large">Success</Title>
         <ColorSquares>
-          <ColorSquare bg="success.normal" fg="onSuccess">
-            success.normal
+          <ColorSquare bg="success.main" fg="onSuccess">
+            success.main
           </ColorSquare>
           <ColorSquare bg="success.light" fg="onSuccess">
             success.light
@@ -68,7 +85,7 @@ export const Color = () => {
           <ColorSquare bg="success.dark" fg="onSuccess">
             success.dark
           </ColorSquare>
-          <ColorSquare bg="onSuccess" fg="success.normal">
+          <ColorSquare bg="onSuccess" fg="success.main">
             onSuccess
           </ColorSquare>
         </ColorSquares>
@@ -76,8 +93,8 @@ export const Color = () => {
       <ColorVariable>
         <Title size="large">Warning</Title>
         <ColorSquares>
-          <ColorSquare bg="warning.normal" fg="onWarning">
-            warning.normal
+          <ColorSquare bg="warning.main" fg="onWarning">
+            warning.main
           </ColorSquare>
           <ColorSquare bg="warning.light" fg="onWarning">
             warning.light
@@ -85,7 +102,7 @@ export const Color = () => {
           <ColorSquare bg="warning.dark" fg="onWarning">
             warning.dark
           </ColorSquare>
-          <ColorSquare bg="onWarning" fg="warning.normal">
+          <ColorSquare bg="onWarning" fg="warning.main">
             onWarning
           </ColorSquare>
         </ColorSquares>
@@ -93,8 +110,8 @@ export const Color = () => {
       <ColorVariable>
         <Title size="large">Alert</Title>
         <ColorSquares>
-          <ColorSquare bg="error.normal" fg="onError">
-            error.normal
+          <ColorSquare bg="error.main" fg="onError">
+            error.main
           </ColorSquare>
           <ColorSquare bg="error.light" fg="onError">
             error.light
@@ -102,7 +119,7 @@ export const Color = () => {
           <ColorSquare bg="error.dark" fg="onError">
             error.dark
           </ColorSquare>
-          <ColorSquare bg="onError" fg="error.normal">
+          <ColorSquare bg="onError" fg="error.main">
             onError
           </ColorSquare>
         </ColorSquares>
@@ -110,11 +127,11 @@ export const Color = () => {
       <ColorVariable>
         <Title size="large">Surface</Title>
         <ColorSquares>
-          <ColorSquare bg="surface" fg="onSurface.normal">
+          <ColorSquare bg="surface" fg="onSurface.main">
             surface
           </ColorSquare>
-          <ColorSquare bg="onSurface.normal" fg="surface">
-            onSurface.normal
+          <ColorSquare bg="onSurface.main" fg="surface">
+            onSurface.main
           </ColorSquare>
           <ColorSquare bg="onSurface.subtle" fg="surface">
             onSurface.subtle
@@ -124,11 +141,11 @@ export const Color = () => {
       <ColorVariable>
         <Title size="large">Background</Title>
         <ColorSquares>
-          <ColorSquare bg="background" fg="onBackground.normal">
+          <ColorSquare bg="background" fg="onBackground.main">
             background
           </ColorSquare>
-          <ColorSquare bg="onBackground.normal" fg="background">
-            onBackground.normal
+          <ColorSquare bg="onBackground.main" fg="background">
+            onBackground.main
           </ColorSquare>
           <ColorSquare bg="onBackground.subtle" fg="background">
             onBackground.subtle
@@ -138,13 +155,13 @@ export const Color = () => {
       <ColorVariable>
         <Title size="large">Border</Title>
         <ColorSquares>
-          <ColorSquare bg="border.normal" fg="onSurface.normal">
-            border.normal
+          <ColorSquare bg="border.main" fg="onSurface.main">
+            border.main
           </ColorSquare>
-          <ColorSquare bg="border.light" fg="onSurface.normal">
+          <ColorSquare bg="border.light" fg="onSurface.main">
             border.light
           </ColorSquare>
-          <ColorSquare bg="border.dark" fg="onSurface.normal">
+          <ColorSquare bg="border.dark" fg="onSurface.main">
             border.dark
           </ColorSquare>
         </ColorSquares>

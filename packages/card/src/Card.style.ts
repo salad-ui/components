@@ -4,7 +4,7 @@ import {color, backgroundColor, borderColor} from '@salad-ui/color';
 
 export const Card = styled.div`
   ${p(2)}
-  ${color('onSurface.normal')}
+  ${color('onSurface.main')}
   ${backgroundColor('surface')}
   ${borderColor('border.light')}
   border-width: 1px;

@@ -3,13 +3,13 @@ import 'styled-components';
 type Color = string;
 
 interface BackgroundColorMap {
+  main: Color;
   light: Color;
-  normal: Color;
   dark: Color;
 }
 
 interface ForegroundColorMap {
-  normal: Color;
+  main: Color;
   subtle: Color;
 }
 
@@ -26,6 +26,9 @@ declare module 'styled-components' {
 
       primary: BackgroundColorMap;
       onPrimary: Color;
+
+      secondary: BackgroundColorMap;
+      onSecondary: Color;
 
       success: BackgroundColorMap;
       onSuccess: Color;
