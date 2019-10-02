@@ -8,7 +8,7 @@ export interface Link {
   category?: string;
 }
 
-graphql`
+export const query = graphql`
   fragment LinkInfo on SitePageConnection {
     edges {
       node {

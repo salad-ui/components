@@ -14,20 +14,7 @@ const query = graphql`
       }
       sort: {fields: context___frontmatter___title}
     ) {
-      edges {
-        node {
-          id
-          fields {
-            uri
-            category
-          }
-          context {
-            frontmatter {
-              title
-            }
-          }
-        }
-      }
+      ...LinkInfo
     }
   }
 `;
