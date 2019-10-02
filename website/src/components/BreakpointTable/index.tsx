@@ -21,7 +21,7 @@ const Breakpoint = styled.li<{
   ${({breakpoint: name, unmatchedColor, matchedColor}) => css`
     background-color: ${unmatchedColor};
     ${breakpoint(name)`
-      ${color('onPrimary')}
+      ${color('onSecondary')}
       ${backgroundColor(matchedColor)}
     `}
   `}
@@ -51,7 +51,7 @@ export const BreakpointTable = () => (
       <Breakpoint
         breakpoint="mobile"
         unmatchedColor=""
-        matchedColor="primary.light"
+        matchedColor="secondary.light"
       >
         <Name>
           <strong>Mobile</strong> &mdash; <code>0px</code>
@@ -62,7 +62,7 @@ export const BreakpointTable = () => (
       <Breakpoint
         breakpoint="tablet"
         unmatchedColor=""
-        matchedColor="primary.main"
+        matchedColor="secondary.main"
       >
         <Name>
           <strong>Tablet</strong> &mdash; <code>737px</code>
@@ -75,7 +75,7 @@ export const BreakpointTable = () => (
       <Breakpoint
         breakpoint="desktop"
         unmatchedColor=""
-        matchedColor="primary.dark"
+        matchedColor="secondary.dark"
       >
         <Name>
           <strong>Desktop</strong> &mdash; <code>1195px</code>

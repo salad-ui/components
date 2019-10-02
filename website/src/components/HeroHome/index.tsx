@@ -2,9 +2,9 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 import Button from '../Button';
-import Container from '../Container';
 import Flexy from '../Flexy';
 import WordPressLogo from '../WordPressLogo';
+import {container} from '../../mixins/container';
 
 export const HeroHome: React.FC = () => {
   return (
@@ -42,6 +42,10 @@ const HeroBase = styled.div`
   padding: calc(30vh - 1em) 0 8em;
   position: relative;
   text-align: center;
+`;
+
+const Container = styled.div`
+  ${container}
 `;
 
 const Title = styled.h1`

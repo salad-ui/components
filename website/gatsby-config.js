@@ -25,25 +25,27 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `pages`,
-        path: `${__dirname}/src/pages/`,
-        ignore: [`${__dirname}/src/pages/components/**/*`],
+        name: `foundations`,
+        path: `${__dirname}/src/pages/foundations`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `components`,
-        path: `${__dirname}/src/pages/components/`,
+        path: `${__dirname}/src/pages/components`,
       },
     },
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
         defaultLayouts: {
-          pages: require.resolve('./src/layouts/BaseLayout/index.tsx'),
+          default: require.resolve('./src/layouts/DefaultLayout/index.tsx'),
+          foundations: require.resolve(
+            './src/layouts/FoundationLayout/index.tsx',
+          ),
           components: require.resolve(
-            './src/layouts/ComponentsLayout/index.tsx',
+            './src/layouts/ComponentLayout/index.tsx',
           ),
         },
       },

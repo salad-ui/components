@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import {NavLink as NavLinkBase} from '../';
+import {NavLink as NavLinkBase} from '../..';
 
 export const Menu: React.FC = () => {
   return (

@@ -1,11 +1,11 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import Container from '../Container';
-import Flexy from '../Flexy';
-import WordPressLogo from '../WordPressLogo';
+import {Container} from '../Container';
+import Flexy from '../../Flexy';
+import WordPressLogo from '../../WordPressLogo';
 
-export const SiteFooter: React.FC = () => {
+export const Footer: React.FC = () => {
   const year = new Date().getFullYear();
 
   return (
@@ -25,8 +25,6 @@ export const SiteFooter: React.FC = () => {
     </Wrapper>
   );
 };
-
-export default SiteFooter;
 
 const Wrapper = styled.div`
   background: #f8f8f8;

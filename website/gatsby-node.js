@@ -1,3 +1,4 @@
+const path = require(`path`);
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 exports.onCreateWebpackConfig = ({actions}) => {
@@ -29,32 +30,18 @@ exports.onCreateWebpackConfig = ({actions}) => {
   });
 };
 
-exports.onCreateNode = ({node, actions}) => {
+exports.onCreateNode = ({node, getNode, actions}) => {
   const {createNodeField} = actions;
-
-  if (node.internal.type === `Mdx`) {
+  if (node.internal.type === 'SitePage') {
     createNodeField({
-      name: 'id',
       node,
-      value: node.id,
+      name: `uri`,
+      value: node.path,
     });
-
     createNodeField({
-      name: 'title',
       node,
-      value: node.frontmatter.title,
-    });
-
-    createNodeField({
-      name: 'description',
-      node,
-      value: node.frontmatter.description,
-    });
-
-    createNodeField({
-      name: 'slug',
-      node,
-      value: node.frontmatter.slug,
+      name: `category`,
+      value: node.path.split('/')[1],
     });
   }
 };

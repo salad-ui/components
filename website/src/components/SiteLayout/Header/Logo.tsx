@@ -2,15 +2,11 @@ import * as React from 'react';
 import {Link} from 'gatsby';
 import styled from 'styled-components';
 
-import WordPressLogo from '../WordPressLogo';
-
 export const Logo: React.FC = () => {
   return (
     <LogoLink to="/">
-      <IconWrapper>
-        <WordPressLogo />
-      </IconWrapper>
-      <Title>Design System</Title>
+      <IconWrapper>🥗</IconWrapper>
+      <Title>salad-ui</Title>
     </LogoLink>
   );
 };
