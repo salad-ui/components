@@ -5,8 +5,26 @@ export default {
   title: 'components/TextInput',
 };
 
-export const normal = () => (
+export const Minimal = () => (
   <>
-    <TextInput id="username" />
+    <TextInput />
+  </>
+);
+
+export const IsCompact = () => (
+  <>
+    <TextInput isCompact />
+  </>
+);
+
+export const IsFullWidth = () => (
+  <>
+    <TextInput isFullWidth />
+  </>
+);
+
+export const IsInvalid = () => (
+  <>
+    <TextInput isInvalid />
   </>
 );

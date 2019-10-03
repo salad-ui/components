@@ -6,31 +6,34 @@ export default {
   title: 'components/Field',
 };
 
-export const Normal = () => (
+const label = 'Username';
+const help = 'Choose a unique handle to go by.';
+const error = 'Username already taken.';
+
+export const Minimal = () => (
   <>
-    <Field
-      id="username"
-      label="Username"
-      help="Choose a unique handle to go by."
-    >
-      <TextInput id="username" />
+    <Field label={label}>
+      <TextInput />
     </Field>
   </>
 );
 
-export const Error: React.FC = () => {
+export const WithHelp = () => (
+  <>
+    <Field label={label} help={help}>
+      <TextInput />
+    </Field>
+  </>
+);
+
+export const WithError: React.FC = () => {
   const [username, setUsername] = useState('john.smith');
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) =>
     setUsername(event.target.value);
   return (
     <>
-      <Field
-        id="username"
-        label="Username"
-        help="Choose a unique handle to go by."
-        error={username && `"${username}" is already taken.`}
-      >
-        <TextInput id="username" value={username} onChange={handleChange} />
+      <Field label={label} help={help} error={username && error}>
+        <TextInput value={username} onChange={handleChange} />
       </Field>
     </>
   );

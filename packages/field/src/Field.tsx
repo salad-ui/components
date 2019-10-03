@@ -1,24 +1,96 @@
 import * as React from 'react';
-import {Label, Help} from './Field.style';
+import {useUIDSeed} from 'react-uid';
+import {Wrapper, Label, Message} from './Field.style';
+
+/**
+ *
+ * @private
+ */
+export const __USE_FIELDSET_PROP = '__useFieldset';
+
+export interface BasicInputProps {
+  id?: string;
+  required?: boolean;
+  'aria-labelledby'?: string;
+  'aria-describedby'?: string;
+}
+
+export interface CustomInputProps {
+  id?: string;
+  isRequired?: boolean;
+  isInvalid?: boolean;
+  'aria-labelledby'?: string;
+  'aria-describedby'?: string;
+}
 
 export interface FieldProps {
-  id: string;
   label: React.ReactNode;
   help?: React.ReactNode;
   error?: React.ReactNode;
-  children?: React.ReactNode;
+  isRequired?: boolean;
+  children?: React.ReactElement<BasicInputProps | CustomInputProps>;
 }
 
-// TODO: add aria-describedby to inputs describing `help`
+export const Field = ({
+  label,
+  help,
+  error,
+  isRequired,
+  children,
+}: FieldProps) => {
+  const seed = useUIDSeed();
+  const inputId = seed('input');
+  const labelID = seed('label');
+  const descriptionID = seed('description');
 
-export const Field = ({id, label, help, error, children}: FieldProps) => {
+  // ensure there is a single input element provided
+  const child = React.Children.only(children);
+  if (!React.isValidElement<BasicInputProps | CustomInputProps>(child)) {
+    throw new Error('<Field/> expects an input.');
+  }
+
+  // pass props down to the input - filter props based child on type to avoid react warnings
+  const inputProps =
+    typeof child.type === 'string'
+      ? {
+          id: inputId,
+          required: isRequired,
+          'aria-labelledby': labelID,
+          'aria-describedby': descriptionID,
+        }
+      : {
+          id: inputId,
+          isRequired: isRequired,
+          isInvalid: Boolean(error),
+          'aria-labelledby': labelID,
+          'aria-describedby': descriptionID,
+        };
+  const inputWithProps = React.cloneElement(child, {
+    ...child.props,
+    ...inputProps,
+  });
+
+  // decide whether we need to display a fieldset (for grouped inputs like a RadioGroup)
+  const useFieldset =
+    typeof child.type !== 'string' &&
+    (child.type as any)[__USE_FIELDSET_PROP] === true;
+
   return (
-    <>
-      <Label htmlFor={id}>{label}</Label>
-      {children}
+    <Wrapper as={useFieldset ? 'fieldset' : 'div'}>
+      <Label
+        isError={Boolean(error)}
+        id={labelID}
+        htmlFor={inputId}
+        as={useFieldset ? 'legend' : 'label'}
+      >
+        {label}
+      </Label>
+      {inputWithProps}
       {(help || error) && (
-        <Help isError={Boolean(error)}>{error ? error : help}</Help>
+        <Message id={descriptionID} aria-live="polite" isError={Boolean(error)}>
+          {error ? error : help}
+        </Message>
       )}
-    </>
+    </Wrapper>
   );
 };
