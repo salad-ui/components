@@ -24,9 +24,13 @@ export interface CustomInputProps {
 }
 
 export interface FieldProps {
+  /** The field label. */
   label: React.ReactNode;
+  /** A message to assist the user in completing the field. */
   help?: React.ReactNode;
+  /** An error message describing why the field is invalid and how to fix it. */
   error?: React.ReactNode;
+  /** Whether the field is required. */
   isRequired?: boolean;
   children?: React.ReactElement<BasicInputProps | CustomInputProps>;
 }

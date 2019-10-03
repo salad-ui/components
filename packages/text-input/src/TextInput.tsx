@@ -5,17 +5,26 @@ import {Input} from './TextInput.style';
 type Attributes = React.InputHTMLAttributes<HTMLInputElement>;
 
 export interface InputProps {
-  // value
+  /** The value */
   value?: string;
+
+  /** The change handler. */
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+
+  /** The default value */
   defaultValue?: string;
 
-  // validation
+  /** Whether the value is required. */
   isRequired?: boolean;
+
+  /** Whether the value is invalid. */
   isInvalid?: boolean;
 
   // size/layout
+  /** Whether to use a more compact input. */
   isCompact?: boolean;
+
+  /** Whether the input should stretch the width of the container. */
   isFullWidth?: boolean;
 
   // accessibility

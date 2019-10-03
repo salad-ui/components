@@ -1,0 +1,19 @@
+---
+title: Field
+---
+
+import {Field} from '@salad-ui/field';
+import {TextInput} from '@salad-ui/text-input';
+import {Example, PropTable} from '../../components';
+
+Fields provide users with assistance and feedback as they enter data.
+
+### Example
+
+<Example>
+  <Field label="Email" help={<>We'll contact you from time-to-time with progress on <code>salad-ui</code>.</>}>
+    <TextInput placeholder="john.smith@example.com" isFullWidth/>
+  </Field>
+</Example>
+
+<PropTable component={Field} />
