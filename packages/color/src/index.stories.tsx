@@ -6,7 +6,7 @@ import {body} from '@salad-ui/typography';
 import {color, backgroundColor, borderColor} from '@salad-ui/color';
 
 export default {
-  title: 'foundations',
+  title: 'foundations/colors',
 };
 
 const ColorSquare = styled.li<{fg: string; bg: string}>`

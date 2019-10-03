@@ -8,7 +8,7 @@
     "dist"
   ],
   "dependencies": {
-    "styled-components-breakpoint": "^3.0.0-preview.8"
+    "styled-components-breakpoint": "^3.0.0-preview.12"
   },
   "peerDependencies": {
     "@types/styled-components": "^4.1.19",

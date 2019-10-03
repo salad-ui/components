@@ -5,3 +5,4 @@ node_modules
 /website/gatsby-config.js
 /website/gatsby-node.js
 /playground/storybook-static
+yarn-error.log

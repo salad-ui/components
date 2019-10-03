@@ -17146,10 +17146,10 @@ styled-components-breakpoint@^2.0.1:
   resolved "https://registry.yarnpkg.com/styled-components-breakpoint/-/styled-components-breakpoint-2.1.1.tgz#37c1b92b0e96c1bbc5d293724d7a114daaa15fca"
   integrity sha512-PkS7p3MkPJx/v930Q3MPJU8llfFJTxk8o009jl0p+OUFmVb2AlHmVclX1MBHSXk8sZYGoVTTVIPDuZCELi7QIg==
 
-styled-components-breakpoint@^3.0.0-preview.8:
-  version "3.0.0-preview.8"
-  resolved "https://registry.yarnpkg.com/styled-components-breakpoint/-/styled-components-breakpoint-3.0.0-preview.8.tgz#e8eeb9c8526cb32b0f33ef7d933f8458a32e24af"
-  integrity sha512-HDNB8o+Bp3S1vpITVRGn9363TeQraoPS0HyB7E+9A+tNlD2rIKFSAua0f5xXItxgSm0ZPGwPWyg46Fbnn9LEVQ==
+styled-components-breakpoint@^3.0.0-preview.12:
+  version "3.0.0-preview.12"
+  resolved "https://registry.yarnpkg.com/styled-components-breakpoint/-/styled-components-breakpoint-3.0.0-preview.12.tgz#49e48e25c84cbe83d35aa0b258b41a07d75be73e"
+  integrity sha512-LC//GAWaoJ1THrCKiXrmGrLI8U8NH4E84u0IeF2/uH7poqBNF3olsQ9GPNEbI1HocGHD8FlXRje0NO0T5zCydw==
 
 styled-components-spacing@^3.1.1:
   version "3.1.1"

@@ -5,7 +5,11 @@ import styled from 'styled-components';
 export const Logo: React.FC = () => {
   return (
     <LogoLink to="/">
-      <IconWrapper>🥗</IconWrapper>
+      <IconWrapper>
+        <span role="img" aria-label="salad bowl emoji">
+          🥗
+        </span>
+      </IconWrapper>
       <Title>salad-ui</Title>
     </LogoLink>
   );

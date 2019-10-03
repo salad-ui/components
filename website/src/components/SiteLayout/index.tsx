@@ -1,7 +1,9 @@
 import * as React from 'react';
+import {MDXProvider} from '@mdx-js/react';
 import {Theme} from '@salad-ui/theme';
 import {Header} from './Header';
 import {Footer} from './Footer';
+import {components} from './components';
 import {
   Wrapper,
   BodyWrapper,
@@ -17,16 +19,16 @@ export interface SiteLayoutProps {
 export const SiteLayout: React.FC<SiteLayoutProps> = ({sidebar, children}) => {
   return (
     <Theme>
-      <Wrapper>
-        <Header />
-        <BodyWrapper>
-          {sidebar && <SidebarWrapper>{sidebar}</SidebarWrapper>}
-          <ContentWrapper isFullWidth={!Boolean(sidebar)}>
-            {children}
-          </ContentWrapper>
-        </BodyWrapper>
-        <Footer />
-      </Wrapper>
+      <MDXProvider components={components}>
+        <Wrapper>
+          <Header />
+          <BodyWrapper>
+            {sidebar && <SidebarWrapper>{sidebar}</SidebarWrapper>}
+            <ContentWrapper isFullWidth={!sidebar}>{children}</ContentWrapper>
+          </BodyWrapper>
+          <Footer />
+        </Wrapper>
+      </MDXProvider>
     </Theme>
   );
 };

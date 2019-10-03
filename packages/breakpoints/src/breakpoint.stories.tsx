@@ -57,7 +57,7 @@ const MapExample = styled.div`
 `;
 
 export default {
-  title: 'foundations',
+  title: 'foundations/breakpoints',
 };
 
 export const Breakpoint = () => (
