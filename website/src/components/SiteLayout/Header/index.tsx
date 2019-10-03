@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import {Container} from '../Container';
 import Flexy from '../../Flexy';
 import Menu from './Menu';
-import Logo from './Logo';
+import {Logo} from './Logo';
 
 export const Header: React.FC = () => {
   return (

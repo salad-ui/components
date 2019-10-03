@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {Title} from '@salad-ui/typography';
 import {DocGen} from './types';
 import {formatType} from './formatType';
 import {
@@ -28,7 +29,7 @@ export const PropTable: React.FC<PropTableProps> = ({component}) => {
   const {props} = docgenInfo;
   return (
     <>
-      <h3>Props</h3>
+      <Title size="medium">Props</Title>
       <Props>
         {Object.keys(props)
           .filter(name => props[name].name !== 'key')

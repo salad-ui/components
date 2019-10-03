@@ -5,6 +5,7 @@ import {Header} from './Header';
 import {Footer} from './Footer';
 import {components} from './components';
 import {
+  GlobalStyle,
   Wrapper,
   BodyWrapper,
   SidebarWrapper,
@@ -19,16 +20,19 @@ export interface SiteLayoutProps {
 export const SiteLayout: React.FC<SiteLayoutProps> = ({sidebar, children}) => {
   return (
     <Theme>
-      <MDXProvider components={components}>
-        <Wrapper>
-          <Header />
-          <BodyWrapper>
-            {sidebar && <SidebarWrapper>{sidebar}</SidebarWrapper>}
-            <ContentWrapper isFullWidth={!sidebar}>{children}</ContentWrapper>
-          </BodyWrapper>
-          <Footer />
-        </Wrapper>
-      </MDXProvider>
+      <>
+        <GlobalStyle />
+        <MDXProvider components={components}>
+          <Wrapper>
+            <Header />
+            <BodyWrapper>
+              {sidebar && <SidebarWrapper>{sidebar}</SidebarWrapper>}
+              <ContentWrapper isFullWidth={!sidebar}>{children}</ContentWrapper>
+            </BodyWrapper>
+            <Footer />
+          </Wrapper>
+        </MDXProvider>
+      </>
     </Theme>
   );
 };

@@ -1,5 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import {button} from '@salad-ui/typography';
+import {p} from '@salad-ui/spacing';
 
 import {NavLink as NavLinkBase} from '../..';
 
@@ -20,9 +22,10 @@ const Nav = styled.nav`
 `;
 
 const NavLink = styled(NavLinkBase)`
+  ${button()}
   color: currentColor;
   opacity: 0.5;
-  padding: 10px;
+  ${p(1)}
   text-decoration: none;
 
   &:hover {

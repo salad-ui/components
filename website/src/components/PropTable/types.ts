@@ -10,7 +10,6 @@ export interface DocGen {
     [name: string]: {
       name: string;
       description?: string;
-      /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
       defaultValue?: DocGenType;
       required: boolean;
       type: DocGenType;

@@ -1,6 +1,14 @@
-import styled from 'styled-components';
+import styled, {createGlobalStyle} from 'styled-components';
 import {container} from '../../mixins/container';
 import {fadeIn} from '../../mixins/fadeIn';
+import {m, p} from '@salad-ui/spacing';
+
+export const GlobalStyle = createGlobalStyle`
+  html, body {
+    ${m(0)};
+    ${p(0)}
+  }
+`;
 
 export const Wrapper = styled.div`
   display: grid;
