@@ -19,6 +19,16 @@ export interface ButtonProps {
   variant: ButtonVariant;
 
   /**
+   * Renders a compact button.
+   */
+  isCompact?: boolean;
+
+  /**
+   * Renders a destructive button.
+   */
+  isDestructive?: boolean;
+
+  /**
    * Renders a disabled state.
    */
   isDisabled?: boolean;

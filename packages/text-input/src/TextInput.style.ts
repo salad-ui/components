@@ -1,13 +1,8 @@
-import styled, {css} from 'styled-components';
+import styled from 'styled-components';
 import {px} from '@salad-ui/spacing';
-import {getColor, color, borderColor} from '@salad-ui/color';
+import {color, borderColor} from '@salad-ui/color';
 import {body} from '@salad-ui/typography';
-
-const focusStyle = (colorName: string) => css`
-  outline: none;
-  ${borderColor(colorName)}
-  box-shadow: 0 0 0 1px ${getColor(colorName)};
-`;
+import {focusStyle} from '@salad-ui/utils';
 
 export interface InputProps {
   isCompact?: boolean;
@@ -32,12 +27,15 @@ export const Input = styled.input<InputProps>`
     ${borderColor('border.dark')}
   }
 
-  :focus {
-    ${focusStyle('secondary.main')}
-  }
-
   &[aria-invalid="true"] {
     ${color('error.main')}
+    ${borderColor('error.main')}
     ${focusStyle('error.main')}
   }
+  
+  :focus {
+    ${focusStyle()}
+    ${borderColor('error.main')}
+  }
+
 `;
