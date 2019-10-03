@@ -6,7 +6,7 @@ import {NavLink as NavLinkBase} from '../..';
 export const Menu: React.FC = () => {
   return (
     <Nav>
-      <NavLink to="/get-started">Get Started</NavLink>
+      <NavLink to="/getting-started">Getting Started</NavLink>
       <NavLink to="/foundations">Foundations</NavLink>
       <NavLink to="/components">Components</NavLink>
     </Nav>

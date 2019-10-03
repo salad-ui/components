@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import {p} from '@salad-ui/spacing';
 import {color, backgroundColor, borderColor} from '@salad-ui/color';
 
-export const Card = styled.div`
+export const Wrapper = styled.div`
   ${p(2)}
   ${color('onSurface.main')}
   ${backgroundColor('surface')}

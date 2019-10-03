@@ -3,7 +3,8 @@ import {useUIDSeed} from 'react-uid';
 import {Wrapper, Label, Message} from './Field.style';
 
 /**
- *
+ * Hacky property used to determine if an input should be rendered inside a
+ * fieldset or regular label for accessibility reasons e.g. appicable for RadioGroup and CheckboxGroup
  * @private
  */
 export const __USE_FIELDSET_PROP = '__useFieldset';

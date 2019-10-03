@@ -18,7 +18,7 @@ export const Footer: React.FC = () => {
             </LogoWrapper>
           </Flexy.Item>
           <Flexy.Item>
-            <Text>&copy; {year}. Code is Poetry.</Text>
+            <Text>&copy; {year}. Salad is good for you!</Text>
           </Flexy.Item>
         </Flexy>
       </Container>
