@@ -34,7 +34,7 @@ export const Link: Link = (props: LinkProps): React.ReactElement => {
   // render an anchor
   if (isAnchorProps(props)) {
     const {...otherProps} = props;
-    return <Element {...otherProps} as="a" />;
+    return <Element {...otherProps} />;
   }
 
   // render a button

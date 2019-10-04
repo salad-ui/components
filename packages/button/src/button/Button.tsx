@@ -53,7 +53,7 @@ export interface Button {
   (props: ButtonButtonProps): React.ReactElement;
 }
 
-function isAnchorProps(props: any): props is ButtonAnchorProps {
+function isAnchorProps(props: ButtonProps): props is ButtonAnchorProps {
   return (props as ButtonAnchorProps).href !== undefined;
 }
 
@@ -61,7 +61,7 @@ function isAnchorProps(props: any): props is ButtonAnchorProps {
 // TODO: handle focus for third-party component???
 
 export const Button: Button = (props: ButtonProps): React.ReactElement => {
-  const {before, after, children, ...otherProps} = props;
+  const {before, after, children, isDisabled, ...otherProps} = props;
 
   const content = (
     <>
@@ -71,26 +71,34 @@ export const Button: Button = (props: ButtonProps): React.ReactElement => {
     </>
   );
 
-  // render an anchor
   if (isAnchorProps(otherProps)) {
-    const {...anchorProps} = props;
-    return (
-      <Element {...anchorProps} role="button" as="a">
-        {content}
-      </Element>
-    );
+    if (isDisabled) {
+      // render a button when the isDisabled
+      /* eslint-disable @typescript-eslint/no-unused-vars */
+      // omitting props
+      const {href, ...anchorProps} = otherProps;
+      /* eslint-enable @typescript-eslint/no-unused-vars */
+      return (
+        <Element {...anchorProps} disabled={isDisabled}>
+          {content}
+        </Element>
+      );
+    } else {
+      // render an anchor
+      const {...anchorProps} = otherProps;
+      return (
+        <Element {...anchorProps} role="button" as="a">
+          {content}
+        </Element>
+      );
+    }
   }
 
   // render a button
-  const {isDisabled, ...buttonProps} = otherProps;
+  const {...buttonProps} = otherProps;
   return (
-    <Element {...buttonProps} disabled={isDisabled} as="button">
+    <Element {...buttonProps} disabled={isDisabled}>
       {content}
     </Element>
   );
 };
-
-// Button.defaultProps = {
-//   variant: 'secondary',
-//   isDisabled: false,
-// };
