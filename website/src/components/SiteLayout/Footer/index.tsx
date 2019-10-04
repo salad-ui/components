@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import {Container} from '../Container';
+import {Container} from '@salad-ui/container';
 import Flexy from '../../Flexy';
 import WordPressLogo from '../../WordPressLogo';
 
@@ -18,7 +18,7 @@ export const Footer: React.FC = () => {
             </LogoWrapper>
           </Flexy.Item>
           <Flexy.Item>
-            <Text>&copy; {year}. Salad is healthy!</Text>
+            <Text>&copy; {year}. Salad will keep you healthy!</Text>
           </Flexy.Item>
         </Flexy>
       </Container>

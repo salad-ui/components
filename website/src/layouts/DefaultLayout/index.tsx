@@ -1,13 +1,13 @@
 import * as React from 'react';
+import Helmet from 'react-helmet';
 import {getPageTitle} from '../../utils/getPageTitle';
-import {SEO} from '../../components/SEO';
 import {SiteLayout} from '../../components/SiteLayout';
 
 const DefaultLayout: React.FC = ({children, ...otherProps}) => {
   const title = getPageTitle(otherProps);
   return (
     <>
-      <SEO title={title} />
+      <Helmet title={title} />
       <SiteLayout>{children}</SiteLayout>
     </>
   );

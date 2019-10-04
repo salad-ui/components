@@ -10,9 +10,18 @@ Buttons let users take actions and make choices with a single click or tap.
 ### Example
 
 <Example>
-  <Button variant="tertiary">Save Draft</Button>{' '}
-  <Button variant="secondary">Preview</Button>{' '}
-  <Button variant="primary">Publish</Button>
+  <Button variant="tertiary" onClick={() => alert('saving')}>Save Draft</Button>{' '}
+  <Button variant="secondary" href="/preview">Preview</Button>{' '}
+  <Button variant="primary" onClick={() => alert('publishing')}>Publish</Button>
 </Example>
+
+### Usage with ReactRouter, Gatsby and other frameworks that use their own `<Link/>` component
+
+```tsx
+import {Link} from 'react-router-dom';
+import {Button} from '@salad-ui/button'
+
+<Link to="/other-page" component={Button}>Perfom the action!</Link>
+```
 
 <PropTable component={Button} />

@@ -1,8 +1,8 @@
 import * as React from 'react';
 import {ButtonVariant} from './types';
-import {Before, After, AnchorWrapper, ButtonWrapper} from './Button.style';
+import {Element, Before, After} from './Button.style';
 
-export interface ButtonProps {
+interface ButtonCommonProps {
   /**
    * Content displayed before the button children
    */
@@ -33,40 +33,35 @@ export interface ButtonProps {
    */
   isDisabled?: boolean;
 
-  /**
-   * Renders an anchor element.
-   */
-  href?: string;
-
-  /**
-   * Adjusts the anchor element target.
-   */
-  target?: string;
-
-  /**
-   * Callback when clicked.
-   */
-  onClick?: () => void;
-
-  /**
-   * Custom component className.
-   */
-  className?: string;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
-export const Button = (props: ButtonProps) => {
-  const {
-    before,
-    after,
-    href,
-    target,
-    isDisabled = false,
-    children,
-    ...otherProps
-  } = props;
+interface ButtonAnchorProps extends ButtonCommonProps {
+  href: string;
+  className?: string;
+}
 
-  const useAnchorWrapper = href !== undefined && !isDisabled;
+interface ButtonButtonProps extends ButtonCommonProps {
+  onClick: () => void;
+  className?: string;
+}
+
+export type ButtonProps = ButtonAnchorProps | ButtonButtonProps;
+
+export interface Button {
+  (props: ButtonAnchorProps): React.ReactElement;
+  (props: ButtonButtonProps): React.ReactElement;
+}
+
+function isAnchorProps(props: any): props is ButtonAnchorProps {
+  return (props as ButtonAnchorProps).href !== undefined;
+}
+
+// TODO: handle space
+// TODO: handle focus for third-party component???
+
+export const Button: Button = (props: ButtonProps): React.ReactElement => {
+  const {before, after, children, ...otherProps} = props;
 
   const content = (
     <>
@@ -76,22 +71,26 @@ export const Button = (props: ButtonProps) => {
     </>
   );
 
-  if (useAnchorWrapper) {
+  // render an anchor
+  if (isAnchorProps(otherProps)) {
+    const {...anchorProps} = props;
     return (
-      <AnchorWrapper {...otherProps} href={href} target={target}>
+      <Element {...anchorProps} role="button" as="a">
         {content}
-      </AnchorWrapper>
-    );
-  } else {
-    return (
-      <ButtonWrapper {...otherProps} type="button" disabled={isDisabled}>
-        {content}
-      </ButtonWrapper>
+      </Element>
     );
   }
+
+  // render a button
+  const {isDisabled, ...buttonProps} = otherProps;
+  return (
+    <Element {...buttonProps} disabled={isDisabled} as="button">
+      {content}
+    </Element>
+  );
 };
 
-Button.defaultProps = {
-  variant: 'secondary',
-  isDisabled: false,
-};
+// Button.defaultProps = {
+//   variant: 'secondary',
+//   isDisabled: false,
+// };

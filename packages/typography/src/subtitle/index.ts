@@ -20,14 +20,14 @@ const sizes = ({isSmall}: SubtitleOptions) => {
   }
 };
 
-export const subtitle = ({isSmall}: SubtitleOptions) => `
+export const subtitle = ({isSmall}: SubtitleOptions = {}) => `
   ${fontFamily}
   ${fontWeightSemibold}
   ${sizes({isSmall})}
   letter-spacing: 0;
 `;
 
-export const Subtitle = styled.h1`
+export const Subtitle = styled.h1<SubtitleOptions>`
   ${m(0)}
   ${subtitle}
 `;

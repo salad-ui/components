@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Design System Example`,
+    title: `salad-ui`,
     description: `An example design system.`,
     social: {
       github: 'wordpress',

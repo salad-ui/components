@@ -1,7 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
-
-import {Container} from '../Container';
+import {Container} from '@salad-ui/container';
 import Flexy from '../../Flexy';
 import Menu from './Menu';
 import {Logo} from './Logo';

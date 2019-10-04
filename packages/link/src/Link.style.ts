@@ -1,14 +1,20 @@
 import styled from 'styled-components';
+import {p} from '@salad-ui/spacing';
 import {color} from '@salad-ui/color';
 
-export interface AnchorProps {
+export interface ElementProps {
   isSubtle?: boolean;
 }
 
-const subtle = ({isSubtle}: AnchorProps) => isSubtle && `color: currentColor;`;
+const subtle = ({isSubtle}: ElementProps) => isSubtle && `color: currentColor;`;
 
-export const Anchor = styled.a<AnchorProps>`
+export const Element = styled.a`
+  display: inline-flex;
+  ${p(0)}
+  font-size: inherit;
+  font-family: inherit;
   ${color('secondary.main')};
+  border: none;
   cursor: pointer;
   text-decoration: underline;
   ${subtle}
@@ -20,4 +26,4 @@ export const Anchor = styled.a<AnchorProps>`
   :active {
     ${color('secondary.light')};
   }
-`;
+` as any;

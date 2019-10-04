@@ -1,6 +1,5 @@
 export * from './AppProvider';
 export {default as Button} from './Button';
-export {Container} from './SiteLayout/Container';
 export {default as Example} from './Example';
 export {default as Flexy} from './Flexy';
 export {default as HeroHome} from './HeroHome';

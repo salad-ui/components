@@ -1,14 +1,42 @@
 import * as React from 'react';
-import {Anchor} from './Link.style';
+import {Element} from './Link.style';
 
-export interface LinkProps {
+interface LinkCommonProps {
   isSubtle?: boolean;
-  href?: HTMLAnchorElement['href'];
-  target?: HTMLAnchorElement['target'];
-  rel?: HTMLAnchorElement['rel'];
   children?: React.ReactNode;
 }
 
-export const Link = ({children, ...otherProps}: LinkProps) => {
-  return <Anchor {...otherProps}>{children}</Anchor>;
+interface LinkAnchorProps extends LinkCommonProps {
+  href: string;
+  className?: string;
+}
+
+interface LinkButtonProps extends LinkCommonProps {
+  onClick: () => void;
+  className?: string;
+}
+
+export type LinkProps = LinkAnchorProps | LinkButtonProps;
+
+export interface Link {
+  (props: LinkAnchorProps): React.ReactElement;
+  (props: LinkButtonProps): React.ReactElement;
+}
+
+function isAnchorProps(props: any): props is LinkAnchorProps {
+  return (props as LinkAnchorProps).href !== undefined;
+}
+
+// TODO: handle space
+// TODO: handle focus for third-party component???
+
+export const Link: Link = (props: LinkProps): React.ReactElement => {
+  // render an anchor
+  if (isAnchorProps(props)) {
+    const {...otherProps} = props;
+    return <Element {...otherProps} as="a" />;
+  }
+
+  // render a button
+  return <Element {...props} role="link" as="button" />;
 };

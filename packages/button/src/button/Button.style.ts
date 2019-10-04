@@ -12,14 +12,17 @@ export interface WrapperProps {
 }
 
 const commonStyle = css`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   ${button()}
   ${px(2)}
   box-sizing: border-box;
-  height: 32px;
   cursor: pointer;
   border: 0;
   border-radius: 3px;
   background: none;
+  text-decoration: none;
 
   :focus {
     ${focusStyle('secondary.light')}
@@ -31,7 +34,7 @@ const commonStyle = css`
 `;
 
 const spacingStyle = ({isCompact}: WrapperProps) =>
-  isCompact ? `height: 32px;` : `height: 40px`;
+  isCompact ? `height: 32px;` : `height: 40px;`;
 
 const primaryStyle = ({isDestructive}: WrapperProps) => css`
   ${color(isDestructive ? 'onError' : 'onSecondary')}
@@ -116,22 +119,18 @@ const variantStyles = ({variant}: {variant: ButtonVariant}) => {
   }
 };
 
-export const AnchorWrapper = styled.a<WrapperProps>`
-  ${commonStyle}
-  ${spacingStyle}
-  ${variantStyles}
-`;
-
-export const ButtonWrapper = styled.button<WrapperProps>`
+export const Element = styled.button<WrapperProps>`
   ${commonStyle}
   ${spacingStyle}
   ${variantStyles}
 `;
 
 export const Before = styled.span`
+  display: flex;
   ${mr(0.5)}
 `;
 
 export const After = styled.span`
+  display: flex;
   ${ml(0.5)}
 `;

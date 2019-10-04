@@ -45,3 +45,18 @@ export const Examples = () => (
     </tbody>
   </table>
 );
+
+export const Element = () => (
+  <table>
+    <thead>
+      <tr>
+        <th>as</th>
+        <th>demo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <Example title="a" props={{href: 'https://www.example.com'}} />
+      <Example title="button" props={{onClick: action('Clicked')}} />
+    </tbody>
+  </table>
+);

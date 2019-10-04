@@ -15,6 +15,19 @@ Learn <Link href="https://theoatmeal.com/comics/pony" rel="nofollow">How to Ride
 
 Visit our <Link isSubtle href="https://www.nib.com.au/contact-us" rel="nofollow">Contact Us</Link> page to find retail centres, opening hours and more.
 
+A <Link onClick={() => action('foo')}>button that looks like a link</Link>.
+
 </Example>
+
+Avoid using buttons that look like links (`<Link onClick={...}>`) as they may not behave as the user expected i.e. they can't be ctl-clicked and opened in a new tab.
+
+### Usage with ReactRouter, Gatsby and other frameworks that use their own `<Link/>` component
+
+```tsx
+import {Link} from 'react-router-dom';
+import {Link as StyledLink} from '@salad-ui/link'
+
+<Link to="/other-page" component={StyledLink}>Go to the other page!</Link>
+```
 
 <PropTable component={Link} />

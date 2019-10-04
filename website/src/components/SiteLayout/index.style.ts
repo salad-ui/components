@@ -1,5 +1,5 @@
 import styled, {createGlobalStyle} from 'styled-components';
-import {container} from '../../mixins/container';
+import {container} from '@salad-ui/container';
 import {fadeIn} from '../../mixins/fadeIn';
 import {m, p} from '@salad-ui/spacing';
 

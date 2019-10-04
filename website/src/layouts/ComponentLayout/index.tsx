@@ -1,8 +1,8 @@
 import * as React from 'react';
+import Helmet from 'react-helmet';
 import {graphql, useStaticQuery} from 'gatsby';
 import {getPageTitle} from '../../utils/getPageTitle';
 import {getLinksFromQuery} from '../../utils/getLinksFromQuery';
-import {SEO} from '../../components/SEO';
 import {SiteLayout} from '../../components/SiteLayout';
 import {SidebarNavigation} from '../../components/SidebarNavigation';
 
@@ -24,7 +24,7 @@ const ComponentLayout: React.FC = ({children, ...otherProps}) => {
   const links = getLinksFromQuery(useStaticQuery(query));
   return (
     <>
-      <SEO title={title} />
+      <Helmet title={title} />
       <SiteLayout sidebar={<SidebarNavigation links={links} />}>
         <h1>{title}</h1>
         {children}
