@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled, {css} from 'styled-components';
-import breakpoint, {BreakpointName} from '@salad-ui/breakpoints';
+import breakpoint, {BreakpointName} from '@salad-ui/breakpoint';
 import {p, mr} from '@salad-ui/spacing';
 import {color, backgroundColor} from '@salad-ui/color';
 

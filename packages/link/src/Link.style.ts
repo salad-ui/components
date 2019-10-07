@@ -8,7 +8,7 @@ export interface ElementProps {
 
 const subtle = ({isSubtle}: ElementProps) => isSubtle && `color: currentColor;`;
 
-export const Element = styled.a`
+export const Element = styled.a<ElementProps>`
   display: inline-flex;
   ${p(0)}
   font-size: inherit;

@@ -8,7 +8,8 @@
     "dist"
   ],
   "dependencies": {
-    "@salad-ui/breakpoint": "^0.1.0"
+    "@salad-ui/breakpoint": "^0.1.0",
+    "styled-components-spacing": "^4.0.0-preview.1"
   },
   "peerDependencies": {
     "@types/react": "^16.9.2",

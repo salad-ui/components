@@ -35,7 +35,7 @@ export const title = ({size}: TitleOptions) => `
   letter-spacing: 0;
 `;
 
-export const Title = styled.h1`
+export const Title = styled.h1<TitleOptions>`
   ${m(0)}
   ${title}
 `;

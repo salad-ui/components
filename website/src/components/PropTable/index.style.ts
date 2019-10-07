@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {m, mb, mx, p, px, py} from 'styled-components-spacing';
+import {m, mb, mx, p, px, py} from '@salad-ui/spacing';
 
 const codeStyle = `
   ${p(0)}
