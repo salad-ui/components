@@ -1,15 +1,6 @@
 {
-  "extends": "./node_modules/@jameslnewell/typescript-config/tsconfig.json",
+  "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
-    "jsx": "react",
-    "lib": ["esnext", "dom"],
-
-    /* most things are using babel so support interop */
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-
     /* load source files rather than compile files */
     "baseUrl": ".",
     "paths": {

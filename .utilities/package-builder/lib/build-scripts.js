@@ -58,13 +58,16 @@ function createRollupOptions() {
         },
       }),
       typescript({
+        tsconfig: 'tsconfig.json',
         cacheRoot: `.tsc_cache`,
-        include: ['src/**/*.ts+(|x)'],
+        include: ['*.ts+(|x)', '**/*.ts+(|x)'],
+        exclude: ['.stories.ts+(|x)', '.test.ts+(|x)'],
         tsconfigOverride: {
           compilerOptions: {
             declaration: true,
             target: 'esnext',
             outDir: buildDirectory,
+            paths: {},
           },
         },
       }),
