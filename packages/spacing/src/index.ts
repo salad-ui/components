@@ -45,3 +45,20 @@ export const pt = createPaddingTop(map, spacings);
 export const pr = createPaddingRight(map, spacings);
 export const pb = createPaddingBottom(map, spacings);
 export const pl = createPaddingLeft(map, spacings);
+
+export {
+  m as margin,
+  mx as marginX,
+  my as marginY,
+  mt as marginTop,
+  mr as marginRight,
+  mb as marginBottom,
+  ml as marginLeft,
+  p as padding,
+  px as paddingX,
+  py as paddingY,
+  pt as paddingTop,
+  pr as paddingRight,
+  pb as paddingBottom,
+  pl as paddingLeft,
+};

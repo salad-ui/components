@@ -11,6 +11,7 @@ export const Menu: React.FC = () => {
       <NavLink to="/getting-started">Getting Started</NavLink>
       <NavLink to="/foundations">Foundations</NavLink>
       <NavLink to="/components">Components</NavLink>
+      <NavLink to="/guides">Guides</NavLink>
     </Nav>
   );
 };

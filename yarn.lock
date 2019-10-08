@@ -5448,6 +5448,11 @@ cli-width@^2.0.0:
   resolved "https://registry.yarnpkg.com/cli-width/-/cli-width-2.2.0.tgz#ff19ede8a9a5e579324147b0c11f0fbcbabed639"
   integrity sha1-/xnt6Kml5XkyQUewwR8PvLq+1jk=
 
+clipboard-copy@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/clipboard-copy/-/clipboard-copy-3.1.0.tgz#4c59030a43d4988990564a664baeafba99f78ca4"
+  integrity sha512-Xsu1NddBXB89IUauda5BIq3Zq73UWkjkaQlPQbLNvNsd5WBMnTWPNKYR6HGaySOxGYZ+BKxP2E9X4ElnI3yiPA==
+
 clipboard@^2.0.0:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/clipboard/-/clipboard-2.0.4.tgz#836dafd66cf0fea5d71ce5d5b0bf6e958009112d"
@@ -17163,17 +17168,17 @@ style-to-object@0.2.3, style-to-object@^0.2.1, style-to-object@^0.2.3:
   dependencies:
     inline-style-parser "0.1.1"
 
-styled-components-breakpoint@^3.0.0-preview.12:
-  version "3.0.0-preview.12"
-  resolved "https://registry.yarnpkg.com/styled-components-breakpoint/-/styled-components-breakpoint-3.0.0-preview.12.tgz#49e48e25c84cbe83d35aa0b258b41a07d75be73e"
-  integrity sha512-LC//GAWaoJ1THrCKiXrmGrLI8U8NH4E84u0IeF2/uH7poqBNF3olsQ9GPNEbI1HocGHD8FlXRje0NO0T5zCydw==
+styled-components-breakpoint@^3.0.0-preview.13:
+  version "3.0.0-preview.13"
+  resolved "https://registry.yarnpkg.com/styled-components-breakpoint/-/styled-components-breakpoint-3.0.0-preview.13.tgz#de6a9ac1c3b03c8f42c3f55f2bbca4c5a3c1ed33"
+  integrity sha512-Fn9CoIzsN97MOVtG9wnNq/EFlncYQvq7C23tk/V88Byn0fZ5m7RTehQwK1I2aDZVg9h49osTx17mq2gGSW7WNg==
 
-styled-components-spacing@^4.0.0-preview.1:
-  version "4.0.0-preview.1"
-  resolved "https://registry.yarnpkg.com/styled-components-spacing/-/styled-components-spacing-4.0.0-preview.1.tgz#c0ce6ddb5d79ebbf1cdd02e59836b30292e71420"
-  integrity sha512-gf7sMoFl9FXG209vhHM9n80mKEngQsvxEmP0vsJg3GVOaP4i7ANR3eWnpB/zUsy5O2BHmNKe0UrFqt6bDz2ypg==
+styled-components-spacing@^4.0.0-preview.2:
+  version "4.0.0-preview.2"
+  resolved "https://registry.yarnpkg.com/styled-components-spacing/-/styled-components-spacing-4.0.0-preview.2.tgz#7992dfe6229c900f5203e69537cd52cc14f7e3f3"
+  integrity sha512-HNwjlLdEriTT9HapyGTX7C6kjiRZ221wR0c9m/BZQfQR3PHxbYF/rvb06kw70u6+9/pBGa5YlkxUixaDhUy64g==
   dependencies:
-    styled-components-breakpoint "^3.0.0-preview.12"
+    styled-components-breakpoint "^3.0.0-preview.13"
 
 styled-components@^4.3.2, styled-components@^4.4.0:
   version "4.4.0"

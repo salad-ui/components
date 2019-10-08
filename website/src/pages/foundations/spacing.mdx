@@ -2,8 +2,67 @@
 title: Spacing
 ---
 
-Here be spacing
+The spacing values are based on a multiple of 8px. Use the predefined spacing sizes wherever possible.
 
-Demonstrate use of css prop and macros
+|Size|Value    |
+|----|---------|
+|`0`   |`0px`  |
+|`0.5` |`4px`  |
+|`1`   |`8px`  |
+|`1.5` |`12px` |
+|`2`   |`16px` |
+|`3`   |`24px` |
+|`4`   |`32px` |
+|`5`   |`40px` |
+|`6`   |`48px` |
 
-https://www.styled-components.com/docs/tooling#babel-macro
+### Using the mixins
+
+`salad-ui` provides a number of mixins for applying spacing values. Each mixin can take a single value applied at 
+all breakpoints or a map of values at the desired breakpoint.
+
+```jsx
+import styled from 'styled-components';
+import {paddingX, paddingY} from '@salad-ui/spacing';
+
+const HeroPanel = styled.div`
+  ${paddingX(2)}
+  ${paddingY({mobile: 3, desktop: 6)}
+`;
+
+```
+
+#### Mixins for margin
+
+- `margin` or `m` - applies margin on all sides
+- `marginX` or `mx` - applies margin on the left and right
+- `marginY` or `my` - applies margin on the top and bottom
+- `marginTop` or `mt` - applies margin on the top
+- `marginRight` or `mr` - applies margin on the right
+- `marginBottom` or `mb` - applies margin on the bottom
+- `marginLeft` or `ml` - applies margin on the left
+
+#### Mixins for padding
+
+- `padding` or `p` - applies padding on all sides
+- `paddingX` or `px` - applies padding on the left and right
+- `paddingY` or `py` - applies padding on the top and bottom
+- `paddingTop` or `pt` - applies padding on the top
+- `paddingRight` or `pr` - applies padding on the right
+- `paddingBottom` or `pb` - applies padding on the bottom
+- `paddingLeft` or `pl` - applies padding on the left
+
+### Using the `css` prop
+
+There are often times when you will need to apply a one-off spacing value to a component. Rather than create a whole
+new styled component, you can use\* the [`css` prop](https://medium.com/styled-components/announcing-native-support-for-the-css-prop-in-styled-components-245ca5252feb).
+
+```jsx
+import {Heading} from '@salad-ui/typography';
+import {marginBottom} from '@salad-ui/spacing';
+
+<Heading size="large" css={marginBottom(3)}>Design System</Heading>
+
+```
+
+\* The `css` prop requires the `babel-styled-components` plugin.

@@ -1,25 +1,11 @@
 module.exports = {
   siteMetadata: {
     title: `salad-ui`,
-    description: `An example design system.`,
+    description: `A set of components for building rich user interfaces within wp-admin.`,
     social: {
       github: 'wordpress',
       twitter: 'wordpress',
     },
-    menuLinks: [
-      {
-        name: 'home',
-        href: '/',
-      },
-      {
-        name: 'Button',
-        href: '/components/button',
-      },
-      {
-        name: 'ButtonGroup',
-        href: '/components/button-group',
-      },
-    ],
   },
   plugins: [
     {

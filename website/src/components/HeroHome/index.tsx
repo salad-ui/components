@@ -9,7 +9,8 @@ export const HeroHome: React.FC = () => {
 
       <div>
         <div>What is it?</div>- opinionated - cohesive - composible - accessible
-        - consistent - built with react - themable - fast
+        - consistent - built with react - themable - rapid design/development -
+        tree-shakable - code-splittable
       </div>
 
       <div>

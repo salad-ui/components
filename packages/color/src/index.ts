@@ -1,23 +1,32 @@
-import {get} from 'lodash-es';
-import {StyledProps, css} from 'styled-components';
+import {StyledProps} from 'styled-components';
+import {get as getPathFromObject} from 'lodash-es';
+import {map} from '@salad-ui/breakpoint';
 
-export const getColor = (name: string) => <P>({theme}: StyledProps<P>) => {
-  const value = get(theme.color, name);
+export type Color = 'primary.main' | 'primary.light' | 'primary.dark' | string;
+
+export const get = (name: Color) => <P>({theme}: StyledProps<P>) => {
+  const value = getPathFromObject(theme.color, name);
   if (value === undefined) {
     console.error(`Color "${name}" cannot be found on the theme`);
     return 'inherit';
   }
   return value;
 };
-export const color = (name: string) =>
-  css`
-    color: ${getColor(name)};
-  `;
-export const backgroundColor = (name: string) =>
-  css`
-    background-color: ${getColor(name)};
-  `;
-export const borderColor = (name: string) =>
-  css`
-    border-color: ${getColor(name)};
-  `;
+
+const createMixin = (prop: string) => {
+  return (name: Color) => {
+    return <P>(props: StyledProps<P>) => {
+      return map(name, n => {
+        return {[prop]: get(n)(props)};
+      });
+    };
+  };
+};
+
+export const color = createMixin('color');
+export const backgroundColor = createMixin('backgroundColor');
+export const borderColor = createMixin('borderColor');
+export const borderTopColor = createMixin('borderTopColor');
+export const borderRightColor = createMixin('borderRightColor');
+export const borderBottomColor = createMixin('borderBottomColor');
+export const borderLeftColor = createMixin('borderLeftColor');
