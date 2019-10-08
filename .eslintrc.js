@@ -12,10 +12,6 @@ module.exports = {
         allowHigherOrderFunctions: true,
       },
     ],
-
-    // TODO: prettier should be looking after formatting
-    indent: 'off',
-    '@typescript-eslint/indent': 'off',
   },
   reportUnusedDisableDirectives: true,
 };

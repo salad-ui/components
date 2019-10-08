@@ -8,6 +8,7 @@
     "dist"
   ],
   "dependencies": {
+    "@salad-ui/breakpoint": "^0.1.0",
     "@types/lodash-es": "^4.17.3",
     "lodash-es": "^4.17.15"
   },

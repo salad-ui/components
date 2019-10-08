@@ -1,8 +1,8 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import {Title} from '@salad-ui/typography';
+import {Title, body} from '@salad-ui/typography';
 import {m, p, ml, mr, mt} from '@salad-ui/spacing';
-import {body} from '@salad-ui/typography';
+
 import {color, backgroundColor, borderColor} from '@salad-ui/color';
 
 export default {

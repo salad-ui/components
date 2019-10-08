@@ -8,8 +8,6 @@ const Breakpoints = styled.ul`
   ${p(0)}
 `;
 
-/* eslint-disable no-unexpected-multiline */
-// incorrect false positive
 const Breakpoint = styled.li<{
   breakpoint: BreakpointName;
   unmatchedColor: string;
@@ -26,7 +24,6 @@ const Breakpoint = styled.li<{
     `}
   `}
 `;
-/* eslint-enable no-unexpected-multiline */
 
 const Name = styled.span`
   flex-basis: 15%;
