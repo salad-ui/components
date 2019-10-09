@@ -2,3 +2,6 @@
 /website/.cache
 /website/public
 /playground/storybook-static
+
+# some kind of a bug with
+/website/src/pages/components/field.mdx
