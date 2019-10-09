@@ -17,14 +17,12 @@ export interface LazyCodeProps {
   scope?: CodeScope;
   language?: string;
   source: string;
-  isEditable?: boolean;
   isPreviewable?: boolean;
 }
 
 const LazyCode: React.FC<LazyCodeProps> = ({
   scope,
   source,
-  isEditable = true,
   isPreviewable = true,
 }) => {
   const {imports, dependencies, code} = parse(source);
@@ -40,7 +38,7 @@ const LazyCode: React.FC<LazyCodeProps> = ({
         <EditorWrapper>
           <Imports>{imports.join('\n')}</Imports>
           <LiveEditor
-            disabled={!isEditable}
+            disabled={!isPreviewable}
             onChange={code => (body.current = code)}
           />
           {isPreviewable && <Error />}
