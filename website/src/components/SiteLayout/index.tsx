@@ -31,7 +31,7 @@ export const SiteLayout: React.FC<SiteLayoutProps> = props => {
           titleTemplate="%s · salad-ui"
         />
         <CodeContext.Provider value={scope}>
-          <ContentWrapper components={components}>
+          <MDXProvider components={components}>
             <Wrapper>
               <Header />
               <BodyWrapper>
@@ -40,7 +40,7 @@ export const SiteLayout: React.FC<SiteLayoutProps> = props => {
               </BodyWrapper>
               <Footer />
             </Wrapper>
-          </ContentWrapper>
+          </MDXProvider>
         </CodeContext.Provider>
       </>
     </Theme>

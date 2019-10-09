@@ -2,28 +2,36 @@
 title: Breakpoint
 ---
 
-import {BreakpointTable} from '../../components/BreakpointTable';
+import styled from 'styled-components';
+import breakpoint, {map} from '@salad-ui/breakpoint';
+import {BreakpointExample} from '../../components/BreakpointExample';
+export const scope = {styled, breakpoint, map};
 
 Practice [mobile-first design](https://bradfrost.com/blog/post/mobile-first-responsive-web-design/).
 
-The screen sizes that we have chosen to design, implement and support are:
+The supported viewport sizes are:
 
-<BreakpointTable />
+<BreakpointExample />
 
-Most utilities and components have properties which can be configured responsively based on the screen size. We also provide a
-number of utilities to apply your own styles at breakpoints.
+Most components and utility functions have properties which can be configured responsively based on the screen size. There are also utility functions to apply your own styles at breakpoints.
 
-# Utilities
+## Installation
+
+```
+npm install @salad-ui/breakpoint
+```
+
+## Usage
 
 ## breakpoint
 
-A utility function used to apply styles at a single breakpoint.
+A utility function that applies styles at a single breakpoint.
 
-```jsx previewable=false
+```jsx inline=false
 import styled from 'styled-components';
 import breakpoint from '@salad-ui/breakpoint';
 
-const Heading = styled.h1`
+const Heading = styled.span`
   ${breakpoint('mobile')`
     color: green;
   `}
@@ -34,20 +42,24 @@ const Heading = styled.h1`
     color: blue;
   `}
 `;
+
+render(<Heading>The quick brown fox jumps over the lazy dog</Heading>);
 ```
 
 ## map
 
-A utility function used to apply styles across multiple breakpoints.
+A utility function that applies styles across multiple breakpoints.
 
-```jsx previewable=false
+```jsx inline=false
 import styled from 'styled-components';
 import {map} from '@salad-ui/breakpoint';
 
-const Heading = styled.h1`
+const Heading = styled.span`
   ${map(
     {mobile: 'red', tablet: 'green', desktop: 'blue'},
     color => `color: ${color};`,
   )}
 `;
+
+render(<Heading>The quick brown fox jumps over the lazy dog</Heading>);
 ```

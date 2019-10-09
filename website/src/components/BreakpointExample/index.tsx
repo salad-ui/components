@@ -42,7 +42,7 @@ const Emoji = ({glyph, label}: {glyph: string; label: string}) => (
   </Icon>
 );
 
-export const BreakpointTable = () => (
+export const BreakpointExample = () => (
   <>
     <Breakpoints>
       <Breakpoint

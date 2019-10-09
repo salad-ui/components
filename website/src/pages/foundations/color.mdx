@@ -2,11 +2,14 @@
 title: Color
 ---
 
+import styled from 'styled-components';
+import {color, borderColor, backgroundColor} from '@salad-ui/color';
 import {
   BackgroundAndSurface,
   PrimaryAndSecondary,
   SuccessWarningAndError,
 } from '../../components/Colors';
+export const scope = {styled, color, borderColor, backgroundColor};
 
 `salad-ui` uses a themable set of color variables in order to cater to support an ecosystem of plugins e.g. Yoast, Woo, etc.
 
@@ -36,11 +39,17 @@ The `success`, `warning` and `error` colors are used sparingly to indicate a suc
 
 Ensure `on<color>` is accessible. See the guide for [Customising the theme](../../guides/customising-the-theme).
 
-## Using the mixins
+## Installation
+
+```bash
+npm install @salad-ui/color
+```
+
+## Usage
 
 `salad-ui` provides a number of mixins for using the color variables. Each mixin can take a single value applied at all breakpoints or a map of values at the desired breakpoint.
 
-```jsx previewable=false
+```jsx inline=false
 import styled from 'styled-components';
 import {color, borderColor, backgroundColor} from '@salad-ui/color';
 
@@ -48,10 +57,14 @@ const Alert = styled.div`
   ${color('error.main')}
   ${borderColor('error.main')}
   ${backgroundColor({mobile: 'surface', desktop: 'backgorund'})}
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 2px;
+  padding: 1em;
 `;
-```
 
-### Mixins for color
+render(<Alert>Danger, Will Robinson!</Alert>);
+```
 
 - `color` - applies color to the text
 - `backgroundColor` - applies color to the background

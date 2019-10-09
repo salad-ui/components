@@ -2,14 +2,32 @@
 title: Layout
 ---
 
+import styled from 'styled-components';
+import {container} from '@salad-ui/container';
+export const scope = {styled, container};
+
 ## Container
 
-Above a certain resolution, the container contains content within a horizontally centered area.
+The container constraints its content to a maximum width of `1200px`, centering it horizontally when the screen is larger.
 
-```jsx previewable=false
-import {Container} from '@salad-ui/container';
+### Installation
 
-<Box backgroundColor="red">
-  <Container>Content goes here</Container>
-</Box>;
+```bash
+npm install @salad-ui/container
 ```
+
+### Usage
+
+```jsx inline=false
+import styled from 'styled-components';
+import {container} from '@salad-ui/container';
+
+const Content = styled.main`
+  ${container}
+  background-color: aliceblue;
+`;
+
+render(<Content>Content goes here</Content>);
+```
+
+> There is also a [`Container` component](/components/container).
