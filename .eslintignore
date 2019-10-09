@@ -4,5 +4,5 @@ node_modules
 /website/public
 /website/gatsby-config.js
 /website/gatsby-node.js
-/playground/storybook-static
+/storybook/storybook-static
 yarn-error.log

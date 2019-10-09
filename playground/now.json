@@ -1,5 +1,0 @@
-{
-  "name": "salad-ui-playground",
-  "alias": ["salad-ui-playground.now.sh"],
-  "routes": [{"src": "^/(.*)", "dest": "/storybook-static/$1"}]
-}

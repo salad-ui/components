@@ -28,12 +28,12 @@ yarn
 > - A NodeJS version manager e.g. [nvm](https://github.com/nvm-sh/nvm)
 > - The [Yarn](https://yarnpkg.com/lang/en/) package manager
 
-## Component playground
+## Component storybook
 
-To start the component playground run:
+To start the component storybook run:
 
 ```
-yarn start:playground
+yarn start:storybook
 ```
 
 Then browse to:

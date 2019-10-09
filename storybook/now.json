@@ -1,0 +1,5 @@
+{
+  "name": "salad-ui-storybook",
+  "alias": ["salad-ui-storybook.now.sh"],
+  "routes": [{"src": "^/(.*)", "dest": "/storybook-static/$1"}]
+}

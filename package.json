@@ -5,6 +5,7 @@
   "workspaces": [
     ".utilities/*",
     "packages/*",
+    "storybook",
     "playground",
     "website"
   ],
@@ -12,6 +13,7 @@
     "workspaces": [
       ".utilities/*",
       "packages/*",
+      "storybook",
       "playground",
       "website"
     ]
@@ -51,8 +53,9 @@
     "build": "lerna run build",
     "test": "jest --config .jestrc.js",
     "test:debug": "node --inspect-brk node_modules/.bin/jest --config .jestrc.js --runInBand",
-    "start:website": "yarn workspace @salad-ui/website run start",
+    "start:storybook": "yarn workspace @salad-ui/storybook run start",
     "start:playground": "yarn workspace @salad-ui/playground run start",
+    "start:website": "yarn workspace @salad-ui/website run start",
     "changeset": "changeset --commit"
   },
   "lint-staged": {

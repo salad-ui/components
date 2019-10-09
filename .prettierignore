@@ -1,7 +1,7 @@
 /packages/*/dist
 /website/.cache
 /website/public
-/playground/storybook-static
+/storybook/storybook-static
 
 # some kind of a bug with
 /website/src/pages/components/field.mdx
