@@ -1,7 +1,12 @@
 ---
 title: Color
 ---
-import {BackgroundAndSurface, PrimaryAndSecondary, SuccessWarningAndError} from '../../components/Colors';
+
+import {
+  BackgroundAndSurface,
+  PrimaryAndSecondary,
+  SuccessWarningAndError,
+} from '../../components/Colors';
 
 `salad-ui` uses a themable set of color variables in order to cater to support an ecosystem of plugins e.g. Yoast, Woo, etc.
 
@@ -11,7 +16,7 @@ The `background` color is used for the background color of the page. Any text on
 
 The `surface` color is usually used to form some kind of a grouping on top of a `background` color. Any text on a `surface` color must use one of the `onSurface` colors.
 
-<BackgroundAndSurface/>
+<BackgroundAndSurface />
 
 ## Primary and Secondary colors
 
@@ -19,18 +24,17 @@ The `primary` color is used for common interface elements like the navigation an
 
 The `secondary` color is used for less common interface elements like buttons. Any text on a `secondary` color must use the `onSecondary` color.
 
-<PrimaryAndSecondary/>
+<PrimaryAndSecondary />
 
 ## Success, Warning and Error colors
 
 The `success`, `warning` and `error` colors are used sparingly to indicate a success, warning or error state (note: color should not be the only indicator of a success, warning or error state). Any text on a `success`, `warning` or `error` color must use the applicable `onSuccess`, `onWarning`, or `onError` color.
 
-<SuccessWarningAndError/>
+<SuccessWarningAndError />
 
 ## Choosing colors for a custom theme
 
 Ensure `on<color>` is accessible. See the guide for [Customising the theme](../../guides/customising-the-theme).
-
 
 ## Using the mixins
 
@@ -45,7 +49,6 @@ const Alert = styled.div`
   ${borderColor('error.main')}
   ${backgroundColor({mobile: 'surface', desktop: 'backgorund'})}
 `;
-
 ```
 
 ### Mixins for color

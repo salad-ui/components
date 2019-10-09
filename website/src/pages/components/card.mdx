@@ -3,21 +3,29 @@ title: Card
 ---
 
 import {Card} from '@salad-ui/card';
-import {Title} from '@salad-ui/typography';
-import {Example, PropTable} from '../../components';
+import {Title, Body} from '@salad-ui/typography';
+export const scope = {Card, Title, Body};
 
-Cards group related information.
+A Card groups related information.
 
-### Example
+## Installation
 
-<Example>
-  <Card>
+```bash
+npm i @salad-ui/card
+```
 
-## Change your site address
+## Usage
 
-Register a new domain or change your site's address.
+```jsx
+import {Card} from '@salad-ui/card';
+import {Title, Body} from '@salad-ui/typography';
 
-  </Card>
-</Example>
+<Card>
+  <Title size="small">Change your site address</Title>
+  <Body>Register a new domain or change your site's address.</Body>
+</Card>;
+```
 
-<PropTable component={Card} />
+## Properties
+
+<Props component={Card} />

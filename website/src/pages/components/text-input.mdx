@@ -3,14 +3,24 @@ title: TextInput
 ---
 
 import {TextInput} from '@salad-ui/text-input';
-import {Example, PropTable} from '../../components';
+export const scope = {TextInput};
 
 Text inputs let users enter data.
 
-### Example
+## Installation
 
-<Example>
-  <TextInput placeholder="john.smith@example.com" isFullWidth/>
-</Example>
+```bash
+npm install @salad-ui/text-input
+```
 
-<PropTable component={TextInput} />
+## Usage
+
+```jsx
+import {TextInput} from '@salad-ui/text-input';
+
+<TextInput placeholder="john.smith@example.com" isFullWidth />;
+```
+
+## Properties
+
+<Props component={TextInput} />

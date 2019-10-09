@@ -3,15 +3,27 @@ title: Body
 ---
 
 import {Body} from '@salad-ui/typography';
-import {Example, PropTable} from '../../components';
+export const scope = {Body};
 
 A basic typography component.
 
-### Example
+## Installation
 
-<Example>
+```bash
+npm install @salad-ui/typography
+```
+
+## Usage
+
+```jsx
+import {Body} from '@salad-ui/typography';
+
+<>
   <Body>The quick brown fox jumps over the lazy dog</Body>
   <Body isSmall>The quick brown fox jumps over the lazy dog</Body>
-</Example>
+</>;
+```
 
-<PropTable component={Body} />
+## Properties
+
+<Props component={Body} />

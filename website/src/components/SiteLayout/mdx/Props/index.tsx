@@ -1,9 +1,13 @@
+/**
+ * The Props component documents a component's props
+ * @example <Props component={Button}/>
+ */
 import * as React from 'react';
-import {Title} from '@salad-ui/typography';
 import {DocGen} from './types';
 import {formatType} from './formatType';
+import {Body} from '@salad-ui/typography';
 import {
-  Props,
+  List,
   Prop,
   PropName,
   PropDetail,
@@ -13,24 +17,22 @@ import {
   PropDescription,
 } from './index.style';
 
-export interface PropTableProps {
+export interface Props {
   component: React.ComponentType;
 }
 
-export const PropTable: React.FC<PropTableProps> = ({component}) => {
+export const Props: React.FC<Props> = ({component}) => {
   // `.__docgenInfo` is a property added by "react-docgen-typescript-loader"
   /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
   const docgenInfo: DocGen = (component as any).__docgenInfo;
-
   if (!docgenInfo || !Object.keys(docgenInfo.props).length) {
-    return <>Component has no props!</>;
+    return <Body isSmall>Component has no props!</Body>;
   }
 
   const {props} = docgenInfo;
   return (
     <>
-      <Title size="medium">Props</Title>
-      <Props>
+      <List>
         {Object.keys(props)
           .filter(name => props[name].name !== 'key')
           .map(name => {
@@ -57,9 +59,9 @@ export const PropTable: React.FC<PropTableProps> = ({component}) => {
               </Prop>
             );
           })}
-      </Props>
+      </List>
     </>
   );
 };
 
-export default PropTable;
+export default Props;

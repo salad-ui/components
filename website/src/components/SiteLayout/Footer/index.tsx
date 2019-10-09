@@ -29,7 +29,7 @@ export const Footer: React.FC = () => {
 const Wrapper = styled.div`
   background: #f8f8f8;
   border-top: 1px solid rgba(0, 0, 0, 0.05);
-  padding: 4em 0;
+  padding: 1em 0;
   font-size: 0.9rem;
 `;
 

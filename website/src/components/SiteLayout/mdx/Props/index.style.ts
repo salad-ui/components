@@ -7,7 +7,7 @@ const codeStyle = `
   background: none;
 `;
 
-export const Props = styled.ul`
+export const List = styled.ul`
   ${m(0)}
   ${p(0)}
   list-style-type: none;

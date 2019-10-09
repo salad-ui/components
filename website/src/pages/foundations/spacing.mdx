@@ -4,21 +4,21 @@ title: Spacing
 
 The spacing values are based on a multiple of 8px. Use the predefined spacing sizes wherever possible.
 
-|Size|Value    |
-|----|---------|
-|`0`   |`0px`  |
-|`0.5` |`4px`  |
-|`1`   |`8px`  |
-|`1.5` |`12px` |
-|`2`   |`16px` |
-|`3`   |`24px` |
-|`4`   |`32px` |
-|`5`   |`40px` |
-|`6`   |`48px` |
+| Size  | Value  |
+| ----- | ------ |
+| `0`   | `0px`  |
+| `0.5` | `4px`  |
+| `1`   | `8px`  |
+| `1.5` | `12px` |
+| `2`   | `16px` |
+| `3`   | `24px` |
+| `4`   | `32px` |
+| `5`   | `40px` |
+| `6`   | `48px` |
 
 ### Using the mixins
 
-`salad-ui` provides a number of mixins for applying spacing values. Each mixin can take a single value applied at 
+`salad-ui` provides a number of mixins for applying spacing values. Each mixin can take a single value applied at
 all breakpoints or a map of values at the desired breakpoint.
 
 ```jsx
@@ -61,8 +61,9 @@ new styled component, you can use\* the [`css` prop](https://medium.com/styled-c
 import {Heading} from '@salad-ui/typography';
 import {marginBottom} from '@salad-ui/spacing';
 
-<Heading size="large" css={marginBottom(3)}>Design System</Heading>
-
+<Heading size="large" css={marginBottom(3)}>
+  Design System
+</Heading>;
 ```
 
 \* The `css` prop requires the `babel-styled-components` plugin.

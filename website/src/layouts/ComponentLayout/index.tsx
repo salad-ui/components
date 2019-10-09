@@ -26,7 +26,10 @@ const ComponentLayout: React.FC = ({children, ...otherProps}) => {
   return (
     <>
       <Helmet title={title} />
-      <SiteLayout sidebar={<SidebarNavigation links={links} />}>
+      <SiteLayout
+        sidebar={<SidebarNavigation links={links} />}
+        gatsby={otherProps}
+      >
         <Title size="large">{title}</Title>
         {children}
       </SiteLayout>

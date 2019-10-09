@@ -3,31 +3,59 @@ title: Link
 ---
 
 import {Link} from '@salad-ui/link';
-import {Example, PropTable} from '../../components';
+import {Body} from '@salad-ui/typography';
+export const scope = {Link, Body};
 
 Links let users take actions and make choices with a single click or tap.
 
-### Example
+## Installation
 
-<Example>
+```bash
+npm i @salad-ui/link
+```
 
-Learn <Link href="https://theoatmeal.com/comics/pony" rel="nofollow">How to Ride a PONY</Link> with The Oatmeal.
+## Usage
 
-Visit our <Link isSubtle href="https://www.nib.com.au/contact-us" rel="nofollow">Contact Us</Link> page to find retail centres, opening hours and more.
+```jsx
+import {Link} from '@salad-ui/link';
+import {Body} from '@salad-ui/link';
 
-A <Link onClick={() => action('foo')}>button that looks like a link</Link>.
-
-</Example>
+<>
+  <Body>
+    Learn{' '}
+    <Link href="https://theoatmeal.com/comics/pony" rel="nofollow">
+      How to Ride a PONY
+    </Link>{' '}
+    with The Oatmeal.
+  </Body>
+  <Body>
+    Visit our{' '}
+    <Link isSubtle href="https://www.nib.com.au/contact-us" rel="nofollow">
+      Contact Us
+    </Link>{' '}
+    page to find retail centres, opening hours and more.
+  </Body>
+  <Body>
+    A <Link onClick={() => action('foo')}>button that looks like a link</Link>.
+  </Body>
+</>;
+```
 
 Avoid using buttons that look like links (`<Link onClick={...}>`) as they may not behave as the user expected i.e. they can't be ctl-clicked and opened in a new tab.
 
-### Usage with ReactRouter, Gatsby and other frameworks that use their own `<Link/>` component
+### Usage with React Router, Gatsby and other frameworks that provide their own `<Link/>` component
 
-```tsx
+SPA frameworks like `react-router` will provide their own `Link` component for navigation between pages of the application.
+
+```jsx previewable=false
 import {Link} from 'react-router-dom';
-import {Link as StyledLink} from '@salad-ui/link'
+import {Link as StyledLink} from '@salad-ui/link';
 
-<Link to="/other-page" component={StyledLink}>Go to the other page!</Link>
+<Link to="/other-page" component={StyledLink}>
+  Go to the other page!
+</Link>;
 ```
 
-<PropTable component={Link} />
+## Properties
+
+<Props component={Link} />

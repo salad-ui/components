@@ -3,16 +3,26 @@ title: Title
 ---
 
 import {Title} from '@salad-ui/typography';
-import {Example, PropTable} from '../../components';
+export const scope = {Title};
 
 A basic typography component.
 
-### Example
+## Installation
 
-<Example>
+```bash
+npm install @salad-ui/typography
+```
+
+## Usage
+
+```jsx
+import {Title} from '@salad-ui/typography';
+
+<>
   <Title size="large">The quick brown fox jumps over the lazy dog</Title>
   <Title size="medium">The quick brown fox jumps over the lazy dog</Title>
   <Title size="small">The quick brown fox jumps over the lazy dog</Title>
-</Example>
+</>;
+```
 
-<PropTable component={Title} />
+<Props component={Title} />

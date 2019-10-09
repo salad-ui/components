@@ -4,16 +4,35 @@ title: Field
 
 import {Field} from '@salad-ui/field';
 import {TextInput} from '@salad-ui/text-input';
-import {Example, PropTable} from '../../components';
+export const scope = {Field, TextInput};
 
 Fields provide users with assistance and feedback as they enter data.
 
-### Example
+## Installation
 
-<Example>
-  <Field label="Email" help={<>We'll contact you from time-to-time with progress on <code>salad-ui</code>.</>}>
-    <TextInput placeholder="john.smith@example.com" isFullWidth/>
-  </Field>
-</Example>
+```bash
+npm i @salad-ui/field
+```
 
-<PropTable component={Field} />
+## Usage
+
+```jsx
+import {Field} from '@salad-ui/field';
+import {TextInput} from '@salad-ui/text-input';
+
+<Field
+  label="Email"
+  help={
+    <>
+      We'll contact you from time-to-time with progress on <code>salad-ui</code>
+      .
+    </>
+  }
+>
+  <TextInput placeholder="john.smith@example.com" isFullWidth />
+</Field>;
+```
+
+## Properties
+
+<Props component={Field} />

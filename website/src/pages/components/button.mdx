@@ -3,25 +3,46 @@ title: Button
 ---
 
 import {Button} from '@salad-ui/button';
-import {Example, PropTable} from '../../components';
+export const scope = {Button};
 
 Buttons let users take actions and make choices with a single click or tap.
 
-### Example
+## Installation
 
-<Example>
-  <Button variant="tertiary" onClick={() => alert('saving')}>Save Draft</Button>{' '}
-  <Button variant="secondary" href="/preview">Preview</Button>{' '}
-  <Button variant="primary" onClick={() => alert('publishing')}>Publish</Button>
-</Example>
-
-### Usage with ReactRouter, Gatsby and other frameworks that use their own `<Link/>` component
-
-```tsx
-import {Link} from 'react-router-dom';
-import {Button} from '@salad-ui/button'
-
-<Link to="/other-page" component={Button}>Perfom the action!</Link>
+```bash
+npm install @salad-ui/button
 ```
 
-<PropTable component={Button} />
+## Usage
+
+```jsx
+import {Button} from '@salad-ui/button';
+<>
+  <Button variant="tertiary" onClick={() => alert('saving')}>
+    Save Draft
+  </Button>{' '}
+  <Button variant="secondary" href="/preview">
+    Preview
+  </Button>{' '}
+  <Button variant="primary" onClick={() => alert('publishing')}>
+    Publish
+  </Button>
+</>;
+```
+
+### Usage with React Router, Gatsby and other frameworks that provide their own `<Link/>` component
+
+SPA frameworks like `react-router` will provide their own `Link` component for navigation between pages of the application.
+
+```jsx previewable=false
+import {Link} from 'react-router-dom';
+import {Button} from '@salad-ui/button';
+
+<Link to="/other-page" component={Button}>
+  Perfom the action!
+</Link>;
+```
+
+## Properties
+
+<Props component={Button} />

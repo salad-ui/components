@@ -12,7 +12,7 @@ title: Getting Started
 
 ### In a bundled application
 
-Each component exists as a seperately isntallable NPM package allowing you to upgrade as desired. 
+Each component exists as a seperately isntallable NPM package allowing you to upgrade as desired.
 Most packages have a peer dependency on `react` and `styled-components` so make sure you install them
 alongside any `@salad-ui/*` packages you choose to use.
 
@@ -43,9 +43,10 @@ export const App = () => {
   const save = () => alert('Saved!');
   return (
     <>
-      <Button variant="primary" onClick={save}>Save</Button>
-    </>  
+      <Button variant="primary" onClick={save}>
+        Save
+      </Button>
+    </>
   );
-}
-
+};
 ```

@@ -3,15 +3,25 @@ title: Subtitle
 ---
 
 import {Subtitle} from '@salad-ui/typography';
-import {Example, PropTable} from '../../components';
+export const scope = {Subtitle};
 
 A basic typography component.
 
-### Example
+## Installation
 
-<Example>
+```bash
+npm install @salad-ui/typography
+```
+
+## Usage
+
+```jsx
+import {Subtitle} from '@salad-ui/typography';
+
+<>
   <Subtitle>The quick brown fox jumps over the lazy dog</Subtitle>
   <Subtitle isSmall>The quick brown fox jumps over the lazy dog</Subtitle>
-</Example>
+</>;
+```
 
-<PropTable component={Subtitle} />
+<Props component={Subtitle} />

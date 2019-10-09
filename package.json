@@ -45,7 +45,7 @@
   },
   "scripts": {
     "clean": "lerna run clean && rm -rf packages/*/dist",
-    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md,mdx}\"",
     "type": "tsc --noEmit",
     "lint": "eslint \"**/*.ts\" \"**/*.tsx\" --fix",
     "build": "lerna run build",
@@ -56,7 +56,7 @@
     "changeset": "changeset --commit"
   },
   "lint-staged": {
-    "**/*.{js,jsx,ts,tsx,md,json}": [
+    "**/*.{js,jsx,ts,tsx,md,mdx,json}": [
       "yarn run format",
       "git add"
     ]
