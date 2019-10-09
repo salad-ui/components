@@ -1,5 +1,6 @@
 import * as React from 'react';
-import {LiveProvider, LiveEditor} from 'react-live';
+// @ts-ignore TODO: submit a PR to react-live types so that onChange doesn't override the onChange from context
+import {LiveProvider, LiveEditor, LiveContext} from 'react-live';
 import copy from 'clipboard-copy';
 import {CodeScope} from './types';
 import {parse} from './parse';
@@ -20,6 +21,26 @@ export interface LazyCodeProps {
   isPreviewable?: boolean;
 }
 
+// TODO: submit a PR to react-live types so that onChange doesn't override the onChange from context
+const Editor = ({
+  isDisabled,
+  onChange,
+}: {
+  isDisabled: boolean;
+  onChange: (code: string) => void;
+}) => {
+  const live = React.useContext<any>(LiveContext);
+  return (
+    <LiveEditor
+      disabled={isDisabled}
+      onChange={code => {
+        live.onChange(code);
+        onChange(code);
+      }}
+    />
+  );
+};
+
 const LazyCode: React.FC<LazyCodeProps> = ({
   scope,
   source,
@@ -27,6 +48,8 @@ const LazyCode: React.FC<LazyCodeProps> = ({
 }) => {
   const {imports, dependencies, code} = parse(source);
   const body = React.useRef(code);
+
+  const handleChange = (code: string) => (body.current = code);
 
   const handleCopy = () =>
     copy(`${imports.join('\n')}\n${body.current}`.trim());
@@ -37,10 +60,7 @@ const LazyCode: React.FC<LazyCodeProps> = ({
         {isPreviewable && <Preview />}
         <EditorWrapper>
           <Imports>{imports.join('\n')}</Imports>
-          <LiveEditor
-            disabled={!isPreviewable}
-            onChange={code => (body.current = code)}
-          />
+          <Editor isDisabled={!isPreviewable} onChange={handleChange} />
           {isPreviewable && <Error />}
           <EditorToolbar>
             <input
