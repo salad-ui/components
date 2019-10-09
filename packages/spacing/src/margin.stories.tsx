@@ -34,11 +34,10 @@ const MarginExample: React.FC<SpacingExampleProps> = ({fn, size, children}) => (
   </MarginOuter>
 );
 
-/* eslint-disable @typescript-eslint/no-explicit-any */
 // Object.keys() always returns a string[]
 const MarginStory = ({fn}: {fn: SpacingFunction}) => (
   <>
-    {((Object.keys(spacings).sort() as any) as Spacing[]).map(spacing => (
+    {((Object.keys(spacings).sort() as unknown) as Spacing[]).map(spacing => (
       <MarginExample key={spacing} fn={fn} size={spacing}>
         {spacing}
       </MarginExample>
@@ -49,7 +48,6 @@ const MarginStory = ({fn}: {fn: SpacingFunction}) => (
     </MarginExample> */}
   </>
 );
-/* eslint-enable @typescript-eslint/no-explicit-any */
 
 export default {
   title: 'foundations/spacing/margin',

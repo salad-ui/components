@@ -36,11 +36,10 @@ const PaddingExample: React.FC<SpacingExampleProps> = ({
   </PaddingOuter>
 );
 
-/* eslint-disable @typescript-eslint/no-explicit-any */
 // Object.keys() always returns a string[]
 const PaddingStory = ({fn}: {fn: SpacingFunction}) => (
   <>
-    {((Object.keys(spacings).sort() as any) as Spacing[]).map(spacing => (
+    {((Object.keys(spacings).sort() as unknown) as Spacing[]).map(spacing => (
       <PaddingExample key={spacing} fn={fn} size={spacing}>
         {spacing}
       </PaddingExample>
@@ -51,7 +50,6 @@ const PaddingStory = ({fn}: {fn: SpacingFunction}) => (
     </PaddingExample> */}
   </>
 );
-/* eslint-enable @typescript-eslint/no-explicit-any */
 
 export default {
   title: 'foundations/spacing/padding',

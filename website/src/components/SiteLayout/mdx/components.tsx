@@ -30,6 +30,7 @@ export const components = {
   ),
 
   p: (props: any) => <Body css={[mt(1), mb(1)]} {...props} />,
+  li: (props: any) => <Body {...props} as="li" />,
 
   code: Code,
 };

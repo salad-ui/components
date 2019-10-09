@@ -26,8 +26,6 @@ export const SidebarWrapper = styled.div`
   width: 150px;
 `;
 
-export const ContentWrapper = styled.div<{isFullWidth: boolean}>`
-  grid-column: ${({isFullWidth}) =>
-    isFullWidth ? `1 / span 4` : `2 / span 3`};
+export const ContentWrapper = styled.div`
   ${fadeIn}
 `;

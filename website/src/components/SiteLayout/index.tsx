@@ -31,18 +31,16 @@ export const SiteLayout: React.FC<SiteLayoutProps> = props => {
           titleTemplate="%s · salad-ui"
         />
         <CodeContext.Provider value={scope}>
-          <MDXProvider components={components}>
+          <ContentWrapper components={components}>
             <Wrapper>
               <Header />
               <BodyWrapper>
                 {sidebar && <SidebarWrapper>{sidebar}</SidebarWrapper>}
-                <ContentWrapper isFullWidth={!sidebar}>
-                  {children}
-                </ContentWrapper>
+                <ContentWrapper>{children}</ContentWrapper>
               </BodyWrapper>
               <Footer />
             </Wrapper>
-          </MDXProvider>
+          </ContentWrapper>
         </CodeContext.Provider>
       </>
     </Theme>

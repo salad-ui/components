@@ -32,21 +32,21 @@ export const spacings: {[s in Spacing]: string} = {
   6: '48px',
 };
 
-const margin = createMargin(map, spacings);
-const marginY = createMarginY(map, spacings);
-const marginX = createMarginX(map, spacings);
-const marginTop = createMarginTop(map, spacings);
-const marginRight = createMarginRight(map, spacings);
-const marginBottom = createMarginBottom(map, spacings);
-const marginLeft = createMarginLeft(map, spacings);
+export const margin = createMargin(map, spacings);
+export const marginY = createMarginY(map, spacings);
+export const marginX = createMarginX(map, spacings);
+export const marginTop = createMarginTop(map, spacings);
+export const marginRight = createMarginRight(map, spacings);
+export const marginBottom = createMarginBottom(map, spacings);
+export const marginLeft = createMarginLeft(map, spacings);
 
-const padding = createPadding(map, spacings);
-const paddingY = createPaddingY(map, spacings);
-const paddingX = createPaddingX(map, spacings);
-const paddingTop = createPaddingTop(map, spacings);
-const paddingRight = createPaddingRight(map, spacings);
-const paddingBottom = createPaddingBottom(map, spacings);
-const paddingLeft = createPaddingLeft(map, spacings);
+export const padding = createPadding(map, spacings);
+export const paddingY = createPaddingY(map, spacings);
+export const paddingX = createPaddingX(map, spacings);
+export const paddingTop = createPaddingTop(map, spacings);
+export const paddingRight = createPaddingRight(map, spacings);
+export const paddingBottom = createPaddingBottom(map, spacings);
+export const paddingLeft = createPaddingLeft(map, spacings);
 
 export {
   margin as m,

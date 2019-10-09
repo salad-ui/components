@@ -76,7 +76,7 @@ const LazyCode: React.FC<LazyCodeProps> = ({
             <CodeSandboxButton
               imports={imports}
               dependencies={dependencies}
-              code={code}
+              code={body.current}
             />
           </EditorToolbar>
         </EditorWrapper>

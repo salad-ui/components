@@ -1,7 +1,12 @@
 import styled from 'styled-components';
 import {LivePreview, LiveError} from 'react-live';
-import {borderColor, borderBottomColor} from '@salad-ui/color';
-import {spacings, px, py} from '@salad-ui/spacing';
+import {
+  borderColor,
+  borderBottomColor,
+  color,
+  backgroundColor,
+} from '@salad-ui/color';
+import {spacings, px, py, p} from '@salad-ui/spacing';
 
 const editorPadding = `10px`;
 
@@ -33,4 +38,8 @@ export const Imports = styled.div`
   padding: 0 ${editorPadding};
 `;
 
-export const Error = styled(LiveError)``;
+export const Error = styled(LiveError)`
+  ${p(1)}
+  ${color('onError')}
+  ${backgroundColor('error.light')}
+`;

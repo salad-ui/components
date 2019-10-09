@@ -2,7 +2,47 @@
 title: Spacing
 ---
 
-The spacing values are based on a multiple of 8px. Use the predefined spacing sizes wherever possible.
+import styled from 'styled-components';
+import {
+  margin,
+  marginX,
+  marginY,
+  marginTop,
+  marginRight,
+  marginBottom,
+  marginLeft,
+  padding,
+  paddingX,
+  paddingY,
+  paddingTop,
+  paddingRight,
+  paddingBottom,
+  paddingLeft,
+} from '@salad-ui/spacing';
+import {SpacingExample} from '../../components/SpacingExample';
+export const scope = {
+  styled,
+  margin,
+  marginX,
+  marginY,
+  marginTop,
+  marginRight,
+  marginBottom,
+  marginLeft,
+  padding,
+  paddingX,
+  paddingY,
+  paddingTop,
+  paddingRight,
+  paddingBottom,
+  paddingLeft,
+};
+
+Spacing values are based on a multiple of `8px`. Use the predefined spacing sizes wherever possible.
+
+<br/>
+<SpacingExample/>
+<br/>
 
 | Size  | Value  |
 | ----- | ------ |
@@ -16,23 +56,28 @@ The spacing values are based on a multiple of 8px. Use the predefined spacing si
 | `5`   | `40px` |
 | `6`   | `48px` |
 
-### Using the mixins
+## Installation
 
-`salad-ui` provides a number of mixins for applying spacing values. Each mixin can take a single value applied at
-all breakpoints or a map of values at the desired breakpoint.
-
-```jsx previewable=false
-import styled from 'styled-components';
-import {paddingX, paddingY} from '@salad-ui/spacing';
-
-const HeroPanel = styled.div`
-  ${paddingX(2)}
-  ${paddingY({mobile: 3, desktop: 6)}
-`;
-
+```bash
+npm install @salad-ui/spacing
 ```
 
-#### Mixins for margin
+## Usage
+
+### Margin
+
+```jsx inline=false
+import styled from 'styled-components';
+import {marginTop, marginRight} from '@salad-ui/spacing';
+
+const Feature = styled.div`
+  ${marginTop(2)}
+  ${marginRight({mobile: 0, desktop: 3})}
+  background-color: gold;
+`;
+
+render(<Feature>The most amazing feature!</Feature>);
+```
 
 - `margin` or `m` - applies margin on all sides
 - `marginX` or `mx` - applies margin on the left and right
@@ -42,7 +87,20 @@ const HeroPanel = styled.div`
 - `marginBottom` or `mb` - applies margin on the bottom
 - `marginLeft` or `ml` - applies margin on the left
 
-#### Mixins for padding
+### Padding
+
+```jsx inline=false
+import styled from 'styled-components';
+import {paddingY, paddingX} from '@salad-ui/spacing';
+
+const Content = styled.div`
+  ${paddingY(2)}
+  ${paddingX({mobile: 0, desktop: 3})}
+  background-color: gold;
+`;
+
+render(<Content>Some very serious copy.</Content>);
+```
 
 - `padding` or `p` - applies padding on all sides
 - `paddingX` or `px` - applies padding on the left and right
@@ -55,7 +113,7 @@ const HeroPanel = styled.div`
 ### Using the `css` prop
 
 There are often times when you will need to apply a one-off spacing value to a component. Rather than create a whole
-new styled component, you can use\* the [`css` prop](https://medium.com/styled-components/announcing-native-support-for-the-css-prop-in-styled-components-245ca5252feb).
+new styled component, you can use\* [`styled-component`'s `css` prop](https://medium.com/styled-components/announcing-native-support-for-the-css-prop-in-styled-components-245ca5252feb).
 
 ```jsx previewable=false
 import {Heading} from '@salad-ui/typography';
