@@ -18,14 +18,12 @@ export const Wrapper = styled.div`
 
 export const BodyWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-row-gap: 20px;
-  grid-column-gap: 20px;
+  grid-template-columns: auto 1fr;
   ${container}
 `;
 
 export const SidebarWrapper = styled.div`
-  min-width: 298px;
+  width: 150px;
 `;
 
 export const ContentWrapper = styled.div<{isFullWidth: boolean}>`

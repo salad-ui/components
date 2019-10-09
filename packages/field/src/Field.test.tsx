@@ -97,7 +97,9 @@ describe('Field', () => {
 
   test('rendered a fieldset and legend for a group component', () => {
     const Input = () => null;
+    /* eslint-disable @typescript-eslint/no-explicit-any */
     (Input as any)[__USE_FIELDSET_PROP] = true;
+    /* eslint-enable @typescript-eslint/no-explicit-any */
     const {container} = render(
       <Theme>
         <Field label={label} help={help} error={error}>

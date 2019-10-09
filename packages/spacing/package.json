@@ -9,7 +9,7 @@
   ],
   "dependencies": {
     "@salad-ui/breakpoint": "^0.1.0",
-    "styled-components-spacing": "^4.0.0-preview.2"
+    "styled-components-spacing": "^4.0.0-preview.3"
   },
   "peerDependencies": {
     "@types/react": "^16.9.2",

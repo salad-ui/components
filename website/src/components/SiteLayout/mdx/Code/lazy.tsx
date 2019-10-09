@@ -18,6 +18,7 @@ export interface LazyCodeProps {
   scope?: CodeScope;
   language?: string;
   source: string;
+  isInline?: boolean;
   isPreviewable?: boolean;
 }
 
@@ -29,7 +30,9 @@ const Editor = ({
   isDisabled: boolean;
   onChange: (code: string) => void;
 }) => {
+  /* eslint-disable @typescript-eslint/no-explicit-any */
   const live = React.useContext<any>(LiveContext);
+  /* eslint-enable @typescript-eslint/no-explicit-any */
   return (
     <LiveEditor
       disabled={isDisabled}
@@ -44,6 +47,7 @@ const Editor = ({
 const LazyCode: React.FC<LazyCodeProps> = ({
   scope,
   source,
+  isInline = true,
   isPreviewable = true,
 }) => {
   const {imports, dependencies, code} = parse(source);
@@ -56,7 +60,7 @@ const LazyCode: React.FC<LazyCodeProps> = ({
 
   return (
     <Wrapper>
-      <LiveProvider scope={scope} code={code}>
+      <LiveProvider scope={scope} code={code} noInline={!isInline}>
         {isPreviewable && <Preview />}
         <EditorWrapper>
           <Imports>{imports.join('\n')}</Imports>

@@ -2,4 +2,124 @@
 title: Typography
 ---
 
-Here be typography
+import styled from 'styled-components';
+import {
+  body,
+  button,
+  caption,
+  overline,
+  subtitle,
+  title,
+} from '@salad-ui/typography';
+import {TypographyExample} from '../../components/TypographyExample';
+export const scope = {styled, body, button, caption, overline, subtitle, title};
+
+Type styles used by the system.
+
+<br/>
+<TypographyExample/>
+<br/>
+
+## Installation
+
+```bash
+npm install @salad-ui/typography
+```
+
+## Usage
+
+### Title
+
+The largest text on the screen, reserved for short, important text or numerals.
+
+```jsx inline=false
+import styled from 'styled-components';
+import {title} from '@salad-ui/typography';
+
+const Text = styled.h1`
+  ${title({size: 'large'})}
+`;
+
+render(<Text>The quick brown fox jumps over the lazy dog</Text>);
+```
+
+> There is also a [`Title` component](/components/title).
+
+### Subttitle
+
+Reserved for medium-emphasis text that is shorter in length.
+
+```jsx inline=false
+import styled from 'styled-components';
+import {subtitle} from '@salad-ui/typography';
+
+const Text = styled.h1`
+  ${subtitle({isSmall: true})}
+`;
+
+render(<Text>The quick brown fox jumps over the lazy dog</Text>);
+```
+
+> There is also a [`Subtitle` component](/components/subtitle).
+
+### Body
+
+Default type style used for long-form writing.
+
+```jsx inline=false
+import styled from 'styled-components';
+import {body} from '@salad-ui/typography';
+
+const Text = styled.h1`
+  ${body({isSmall: true})}
+`;
+
+render(<Text>The quick brown fox jumps over the lazy dog</Text>);
+```
+
+> There is also a [`Body` component](/components/body).
+
+### Button
+
+A call to action used different types of buttons, in tabs and dialogs.
+
+```jsx inline=false
+import styled from 'styled-components';
+import {button} from '@salad-ui/typography';
+
+const Text = styled.h1`
+  ${button()}
+`;
+
+render(<Text>The quick brown fox jumps over the lazy dog</Text>);
+```
+
+### Caption
+
+Used sparingly to annotate imagery and visualizations.
+
+```jsx inline=false
+import styled from 'styled-components';
+import {caption} from '@salad-ui/typography';
+
+const Text = styled.h1`
+  ${caption()}
+`;
+
+render(<Text>The quick brown fox jumps over the lazy dog</Text>);
+```
+
+### Overline
+
+Used sparingly to introduce a headline.
+
+```jsx inline=false
+import styled from 'styled-components';
+import {overline} from '@salad-ui/typography';
+
+const Text = styled.h1`
+  ${overline()}
+`;
+
+render(<Text>The quick brown fox jumps over the lazy dog</Text>);
+```

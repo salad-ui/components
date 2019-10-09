@@ -26,4 +26,4 @@ export const Element = styled.a<ElementProps>`
   :active {
     ${color('secondary.light')};
   }
-` as any;
+`;

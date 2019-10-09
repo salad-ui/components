@@ -3,8 +3,4 @@ export {default as Flexy} from './Flexy';
 export {default as HeroHome} from './HeroHome';
 export {default as NavLink} from './NavLink';
 export {default as Link} from './Link';
-export {default as Props} from './SiteLayout/mdx/Props';
-export {Footer as SiteFooter} from './SiteLayout/Footer';
-export {Header as SiteHeaderNav} from './SiteLayout/Header';
-export {default as Typography} from './Typography';
 export {default as WordPressLogo} from './WordPressLogo';

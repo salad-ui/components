@@ -1,3 +1,3 @@
 export interface CodeScope {
-  [name: string]: any;
+  [name: string]: React.ComponentType;
 }

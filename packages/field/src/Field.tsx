@@ -75,10 +75,12 @@ export const Field = ({
     ...inputProps,
   });
 
+  /* eslint-disable @typescript-eslint/no-explicit-any */
   // decide whether we need to display a fieldset (for grouped inputs like a RadioGroup)
   const useFieldset =
     typeof child.type !== 'string' &&
     (child.type as any)[__USE_FIELDSET_PROP] === true;
+  /* eslint-enable @typescript-eslint/no-explicit-any */
 
   return (
     <Wrapper as={useFieldset ? 'fieldset' : 'div'}>

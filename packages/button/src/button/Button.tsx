@@ -58,7 +58,6 @@ function isAnchorProps(props: ButtonProps): props is ButtonAnchorProps {
 }
 
 // TODO: handle space
-// TODO: handle focus for third-party component???
 
 export const Button: Button = (props: ButtonProps): React.ReactElement => {
   const {before, after, children, isDisabled, ...otherProps} = props;

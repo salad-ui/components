@@ -7,6 +7,7 @@ import {
   createMarginRight,
   createMarginBottom,
   createMarginLeft,
+  createMarginProps,
   createPadding,
   createPaddingX,
   createPaddingY,
@@ -14,6 +15,7 @@ import {
   createPaddingRight,
   createPaddingBottom,
   createPaddingLeft,
+  createPaddingProps,
 } from 'styled-components-spacing';
 
 export type Spacing = 0 | 0.5 | 1 | 1.5 | 2 | 3 | 4 | 5 | 6;
@@ -30,35 +32,55 @@ export const spacings: {[s in Spacing]: string} = {
   6: '48px',
 };
 
-export const m = createMargin(map, spacings);
-export const mx = createMarginX(map, spacings);
-export const my = createMarginY(map, spacings);
-export const mt = createMarginTop(map, spacings);
-export const mr = createMarginRight(map, spacings);
-export const mb = createMarginBottom(map, spacings);
-export const ml = createMarginLeft(map, spacings);
+const margin = createMargin(map, spacings);
+const marginY = createMarginY(map, spacings);
+const marginX = createMarginX(map, spacings);
+const marginTop = createMarginTop(map, spacings);
+const marginRight = createMarginRight(map, spacings);
+const marginBottom = createMarginBottom(map, spacings);
+const marginLeft = createMarginLeft(map, spacings);
 
-export const p = createPadding(map, spacings);
-export const px = createPaddingX(map, spacings);
-export const py = createPaddingY(map, spacings);
-export const pt = createPaddingTop(map, spacings);
-export const pr = createPaddingRight(map, spacings);
-export const pb = createPaddingBottom(map, spacings);
-export const pl = createPaddingLeft(map, spacings);
+const padding = createPadding(map, spacings);
+const paddingY = createPaddingY(map, spacings);
+const paddingX = createPaddingX(map, spacings);
+const paddingTop = createPaddingTop(map, spacings);
+const paddingRight = createPaddingRight(map, spacings);
+const paddingBottom = createPaddingBottom(map, spacings);
+const paddingLeft = createPaddingLeft(map, spacings);
 
 export {
-  m as margin,
-  mx as marginX,
-  my as marginY,
-  mt as marginTop,
-  mr as marginRight,
-  mb as marginBottom,
-  ml as marginLeft,
-  p as padding,
-  px as paddingX,
-  py as paddingY,
-  pt as paddingTop,
-  pr as paddingRight,
-  pb as paddingBottom,
-  pl as paddingLeft,
+  margin as m,
+  marginX as mx,
+  marginY as my,
+  marginTop as mt,
+  marginRight as mr,
+  marginBottom as mb,
+  marginLeft as ml,
+  padding as p,
+  paddingX as px,
+  paddingY as py,
+  paddingTop as pt,
+  paddingRight as pr,
+  paddingBottom as pb,
+  paddingLeft as pl,
 };
+
+export const marginProps = createMarginProps({
+  margin,
+  marginY,
+  marginX,
+  marginTop,
+  marginRight,
+  marginBottom,
+  marginLeft,
+});
+
+export const paddingProps = createPaddingProps({
+  padding,
+  paddingY,
+  paddingX,
+  paddingTop,
+  paddingRight,
+  paddingBottom,
+  paddingLeft,
+});

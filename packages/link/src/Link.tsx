@@ -23,12 +23,11 @@ export interface Link {
   (props: LinkButtonProps): React.ReactElement;
 }
 
-function isAnchorProps(props: any): props is LinkAnchorProps {
+function isAnchorProps(props: LinkProps): props is LinkAnchorProps {
   return (props as LinkAnchorProps).href !== undefined;
 }
 
 // TODO: handle space
-// TODO: handle focus for third-party component???
 
 export const Link: Link = (props: LinkProps): React.ReactElement => {
   // render an anchor

@@ -9,6 +9,7 @@ export * from './types';
 export * from './CodeContext';
 
 export interface CodeProps {
+  inline?: 'true' | 'false';
   previewable?: 'true' | 'false';
   className: string;
   children: string;
@@ -22,6 +23,7 @@ const SimpleCode = ({children}: {children: string}) => (
 );
 
 export const Code: React.FC<CodeProps> = ({
+  inline,
   previewable,
   className = '',
   children,
@@ -39,6 +41,7 @@ export const Code: React.FC<CodeProps> = ({
         scope={scope}
         language={language}
         source={children}
+        isInline={inline !== 'false'}
         isPreviewable={previewable !== 'false'}
       />
     </React.Suspense>
