@@ -11,4 +11,9 @@ module.exports = {
     // ignore node_modules because we expect them to already be transpiled, except for: lodash-es
     '<rootDir>/node_modules/(?!lodash-es)',
   ],
+  globals: {
+    'ts-jest': {
+      tsConfig: 'tsconfig.test.json',
+    },
+  },
 };
