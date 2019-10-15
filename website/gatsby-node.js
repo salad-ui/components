@@ -4,7 +4,7 @@ exports.onCreateWebpackConfig = ({actions}) => {
   // make gatsby use source files for component packages for live updates
   actions.setWebpackConfig({
     resolve: {
-      plugins: [new TsconfigPathsPlugin({configFile: '../tsconfig.json'})],
+      plugins: [new TsconfigPathsPlugin()],
     },
   });
 

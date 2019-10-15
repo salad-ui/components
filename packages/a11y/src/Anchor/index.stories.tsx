@@ -42,12 +42,12 @@ const MyAnchor = ({
 
 export const RenderAsALink = () => (
   <>
-    <MyAnchor href="https://www.example.com/">I'm a &lt;a&gt;</MyAnchor>
+    <MyAnchor href="https://www.example.com/">I&apos;m a &lt;a&gt;</MyAnchor>
   </>
 );
 
 export const RenderAsAButton = () => (
   <>
-    <MyAnchor onClick={action('Clicked!')}>I'm a &lt;button&gt;</MyAnchor>
+    <MyAnchor onClick={action('Clicked!')}>I&apos;m a &lt;button&gt;</MyAnchor>
   </>
 );

@@ -12,21 +12,35 @@ const readFile = util.promisify(fs.readFile);
 const writeFile = util.promisify(fs.writeFile);
 
 const template = ({template}, _opts, {componentName, jsx}) => {
-  const tpl = template.smart({plugins: ['typescript']});
-  return tpl.ast`
+  const src = `
 import * as React from 'react';
 import {IconProps, Icon} from '../Icon';
 
-export const ${componentName} = (iconProps: Omit<IconProps, 'children'>) => {
-  const {...props} = iconProps;
+/* eslint-disable react/no-children-prop */
+export const COMPONENT_NAME = (iconProps: Omit<IconProps, 'children'>) => {
+  const props = {};
   return (
     React.createElement(
       Icon,
-      {children: ${jsx}}
+      {
+        ...iconProps,
+        children: JSX
+      }
     )
   );
 };
-`;
+/* eslint-enable react/no-children-prop */
+  `;
+
+  const tpl = template.smart(src, {
+    plugins: ['typescript'],
+    preserveComments: true,
+  });
+
+  return tpl({
+    COMPONENT_NAME: componentName,
+    JSX: jsx,
+  });
 };
 
 const getComponentName = file => toPascalCase(path.basename(file, '.svg'));
@@ -52,7 +66,7 @@ const convert = async files => {
           icon: true,
           template,
           plugins: [
-            '@svgr/plugin-svgo',
+            // '@svgr/plugin-svgo',
             '@svgr/plugin-jsx',
             '@svgr/plugin-prettier',
           ],

@@ -5,7 +5,7 @@ export interface IconProps {
   role?: string;
   'aria-hidden'?: boolean;
   'aria-labeledby'?: string;
-  'aria-describedby'?: boolean;
+  'aria-describedby'?: string;
   children?: React.ReactNode;
 }
 

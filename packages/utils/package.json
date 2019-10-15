@@ -9,8 +9,6 @@
     "src"
   ],
   "dependencies": {
-    "@salad-ui/typography": "^0.1.0",
-    "@salad-ui/spacing": "^0.1.0",
     "@salad-ui/color": "^0.1.0"
   },
   "peerDependencies": {

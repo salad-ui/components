@@ -1,8 +1,8 @@
 import * as React from 'react';
 import {useUIDSeed} from 'react-uid';
-import { AccordionContext, AccordionContextProps } from './AccordionContext';
-import { AccordionToggle } from './AccordionToggle';
-import { AccordionContent } from './AccordionContent';
+import {AccordionContext, AccordionContextProps} from './AccordionContext';
+import {AccordionToggle} from './AccordionToggle';
+import {AccordionContent} from './AccordionContent';
 
 export interface AccordionStatic {
   Toggle: typeof AccordionToggle;
@@ -18,26 +18,37 @@ export interface AccordionProps {
 
 const convertArrayToMap = (relOrRels: string | string[]) => {
   const rels = Array.isArray(relOrRels) ? relOrRels : [relOrRels];
-  return rels.reduce((relsMap, rel) => ({
-    ...relsMap,
-    [rel]: true
-  }), {});
-}
+  return rels.reduce(
+    (relsMap, rel) => ({
+      ...relsMap,
+      [rel]: true,
+    }),
+    {},
+  );
+};
 
-const findToggleElements = (element: React.RefObject<HTMLElement>): HTMLElement[] => {
+const findToggleElements = (
+  element: React.RefObject<HTMLElement>,
+): HTMLElement[] => {
   if (!element.current) {
     return [];
   }
-  return [].slice.call(element.current.querySelectorAll('[data-accordion-toggle-rel]'));
-}
+  return [].slice.call(
+    element.current.querySelectorAll('[data-accordion-toggle-rel]'),
+  );
+};
 
-export const Accordion: React.FC<AccordionProps> & AccordionStatic = ({expanded, onToggle, children, ...otherProps}) => {
+export const Accordion: React.FC<AccordionProps> & AccordionStatic = ({
+  expanded,
+  onToggle,
+  children,
+  ...otherProps
+}) => {
   const getID = useUIDSeed();
   const element = React.useRef<HTMLElement>(null);
 
   const context = React.useMemo(
     (): AccordionContextProps => ({
-
       getToggleID: rel => getID(`${rel}-toggle`),
       getContentID: rel => getID(`${rel}-content`),
 
@@ -56,7 +67,9 @@ export const Accordion: React.FC<AccordionProps> & AccordionStatic = ({expanded,
 
       getPreviousToggle: (rel: string) => {
         const toggles = findToggleElements(element);
-        const selfIndex = toggles.findIndex(element => element.dataset.accordionToggleRel === rel);
+        const selfIndex = toggles.findIndex(
+          element => element.dataset.accordionToggleRel === rel,
+        );
         if (selfIndex === -1) {
           return undefined;
         }
@@ -65,24 +78,27 @@ export const Accordion: React.FC<AccordionProps> & AccordionStatic = ({expanded,
 
       getNextToggle: (rel: string) => {
         const toggles = findToggleElements(element);
-        const selfIndex = toggles.findIndex(element => element.dataset.accordionToggleRel === rel);
+        const selfIndex = toggles.findIndex(
+          element => element.dataset.accordionToggleRel === rel,
+        );
         if (selfIndex === -1) {
           return undefined;
         }
         return toggles[selfIndex + 1];
       },
-
-    }), 
-    [getID, expanded, onToggle]
+    }),
+    [getID, expanded, onToggle],
   );
-  
+
+  /* eslint-disable @typescript-eslint/no-explicit-any */
   return (
     <AccordionContext.Provider value={context}>
       <div ref={element as React.RefObject<any>} {...otherProps}>
         {children}
       </div>
     </AccordionContext.Provider>
-  )
+  );
+  /* eslint-enable @typescript-eslint/no-explicit-any */
 };
 
 Accordion.Toggle = AccordionToggle;

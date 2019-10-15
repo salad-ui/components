@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Expander } from '../Expander';
+import {Expander} from '../Expander';
 import {useAccordionContext} from './useAccordionContext';
 
 export interface AccordionContentProps {
@@ -7,18 +7,25 @@ export interface AccordionContentProps {
   children?: React.ReactNode;
 }
 
-export const AccordionContent: React.FC<AccordionContentProps> = ({rel, children, ...otherProps}) => {
-  const {getToggleID, getContentID, expanded: isExpanded} = useAccordionContext();
+export const AccordionContent: React.FC<AccordionContentProps> = ({
+  rel,
+  children,
+  ...otherProps
+}) => {
+  const {
+    getToggleID,
+    getContentID,
+    expanded: isExpanded,
+  } = useAccordionContext();
   return (
-    <Expander 
-      {...otherProps}  
+    <Expander
+      {...otherProps}
       isExpanded={Boolean(isExpanded[rel])}
       role="region"
-      id={getContentID(rel)} 
+      id={getContentID(rel)}
       aria-labelledby={getToggleID(rel)}
     >
       {children}
     </Expander>
-  )
+  );
 };
-

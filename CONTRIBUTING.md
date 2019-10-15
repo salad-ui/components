@@ -86,3 +86,7 @@ To run the tests run:
 ```
 yarn test
 ```
+
+## Adding a new package
+
+- add it to `package.json#workspaces`, `lerna.json#workspaces`, `tsconfig.types.json#references`

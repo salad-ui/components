@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { backgroundColor } from '@salad-ui/color';
-import { px } from '@salad-ui/spacing';
+import {backgroundColor} from '@salad-ui/color';
+import {px} from '@salad-ui/spacing';
 
 export const Wrapper = styled.div`
   display: grid;

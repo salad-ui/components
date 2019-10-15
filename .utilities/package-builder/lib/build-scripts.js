@@ -3,7 +3,7 @@ const fs = require('fs-extra');
 const {rollup} = require('rollup');
 const resolve = require('rollup-plugin-node-resolve');
 const commonjs = require('rollup-plugin-commonjs');
-const typescript = require('rollup-plugin-typescript2');
+const babel = require('rollup-plugin-babel');
 const {getSourceDirectory, getBuildDirectory} = require('./build-utilities');
 
 /* Use TSDX instead of this package when it supports monorepos to save repeating configuration in every single package */
@@ -21,6 +21,8 @@ const inputFile = fs.existsSync(`${getSourceDirectory()}/index.tsx`)
   : undefined;
 const outputFile = `${getBuildDirectory()}/index`;
 
+const extensions = ['.ts', '.tsx', '.js', '.jsx'];
+
 // exclude dependencies which may be imported like `uuid` or `uuid/v4`
 const pkg = require(path.resolve('package.json'));
 const deps = [
@@ -37,6 +39,7 @@ function createRollupOptions() {
     plugins: [
       resolve({
         mainFields: ['module', 'main', 'browser'],
+        extensions,
       }),
       commonjs({
         include: /node_modules/,
@@ -57,19 +60,19 @@ function createRollupOptions() {
           ],
         },
       }),
-      typescript({
-        tsconfig: 'tsconfig.json',
-        cacheRoot: `.tsc_cache`,
-        include: ['*.ts+(|x)', '**/*.ts+(|x)'],
-        exclude: ['.stories.ts+(|x)', '.test.ts+(|x)'],
-        tsconfigOverride: {
-          compilerOptions: {
-            declaration: true,
-            target: 'esnext',
-            outDir: buildDirectory,
-            paths: {},
-          },
-        },
+      babel({
+        extensions,
+        include: 'src/**',
+        exclude: 'node_modules/**',
+        presets: [
+          ['@babel/preset-env', {modules: false}],
+          '@babel/preset-react',
+          '@babel/preset-typescript',
+        ],
+        plugins: [
+          '@babel/proposal-class-properties',
+          '@babel/proposal-object-rest-spread',
+        ],
       }),
     ],
   };

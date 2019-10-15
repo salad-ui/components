@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { backgroundColor } from '@salad-ui/color';
+import {backgroundColor} from '@salad-ui/color';
 
 export const Wrapper = styled.nav`
   display: grid;

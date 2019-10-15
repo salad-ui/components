@@ -1,15 +1,9 @@
-import styled, { css } from 'styled-components';
-import { mr, ml, px, p } from '@salad-ui/spacing';
-import { color, backgroundColor } from '@salad-ui/color';
-import { subtitle, body } from '@salad-ui/typography';
-import { DrawerItemVariant } from './types';
+import styled from 'styled-components';
+import {mr, ml, px, p} from '@salad-ui/spacing';
+import {color, backgroundColor} from '@salad-ui/color';
+import {button} from '@salad-ui/typography';
 
-export interface WrapperProps {
-  variant: DrawerItemVariant;
-  isActive?: boolean;
-}
-
-const commonStyle = css`
+export const Wrapper = styled.a`
   display: flex;
   align-items: center;
   width: 100%;
@@ -21,6 +15,7 @@ const commonStyle = css`
   background: none;
   border: none;
   text-decoration: none;
+  ${button()}
 
   :hover {
     ${backgroundColor('primary.light')}
@@ -29,11 +24,6 @@ const commonStyle = css`
   :active {
     ${backgroundColor('primary.dark')}
   }
-
-`;
-
-export const Wrapper = styled.a<WrapperProps>`
-  ${commonStyle}
 `;
 
 export const BeforeWrapper = styled.span`

@@ -1,6 +1,6 @@
-import styled, { css } from 'styled-components';
-import { backgroundColor } from '@salad-ui/color';
-import { AvatarSize } from './types';
+import styled, {css} from 'styled-components';
+import {backgroundColor} from '@salad-ui/color';
+import {AvatarSize} from './types';
 
 export interface WrapperProps {
   $size?: AvatarSize;
@@ -18,7 +18,7 @@ const sizeStyle = ({$size}: WrapperProps) => {
       return undefined;
     }
   }
-}
+};
 
 const style = css<WrapperProps>`
   display: inline-flex;

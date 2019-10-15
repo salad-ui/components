@@ -69,7 +69,7 @@ export const Button: React.FC<ButtonProps> = props => {
   );
 
   return (
-    <A11yButton {...otherProps}>
+    <A11yButton {...otherProps} disabled={isDisabled}>
       {renderProps => (
         <Element {...renderProps} {...styleProps}>
           {content}

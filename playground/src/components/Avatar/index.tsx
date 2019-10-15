@@ -11,14 +11,15 @@ export interface AvatarProps {
 
 // TODO: use `react-render-image` and handle the image 404ing
 
-export const Avatar: React.FC<AvatarProps> = ({alt: label, src: url, size, onClick}) => {
+export const Avatar: React.FC<AvatarProps> = ({
+  alt: label,
+  src: url,
+  size,
+  onClick,
+}) => {
   if (onClick) {
-    return (
-      <ImageButton type="image" src={url} alt={label} $size={'small'}/>
-    );
+    return <ImageButton type="image" src={url} alt={label} $size={'small'} />;
   } else {
-    return (
-      <Image src={url} alt={label} $size={size}/>
-    );
+    return <Image src={url} alt={label} $size={size} />;
   }
 };

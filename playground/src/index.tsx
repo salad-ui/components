@@ -7,8 +7,8 @@ import {App} from './App';
 ReactDOM.render(
   <BrowserRouter>
     <Theme>
-      <App/>
+      <App />
     </Theme>
   </BrowserRouter>,
-  document.getElementById('app')
+  document.getElementById('app'),
 );

@@ -1,7 +1,12 @@
+/packages/*/.tsc_cache
 /packages/*/dist
+/storybook/storybook-static
+/playground/.cache
+/playground/dist
 /website/.cache
 /website/public
-/storybook/storybook-static
+
+report.*.json
 
 # some kind of a bug with
 /website/src/pages/components/field.mdx

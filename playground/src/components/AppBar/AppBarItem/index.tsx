@@ -1,13 +1,12 @@
 import * as React from 'react';
-import { Wrapper, BeforeWrapper, AfterWrapper } from './index.style';
+import {Wrapper, BeforeWrapper, AfterWrapper} from './index.style';
 import {
-  ButtonProps as A11yButtonProps, 
+  ButtonProps as A11yButtonProps,
   Anchor as A11yAnchor,
-  Button as A11yButton
+  Button as A11yButton,
 } from '@salad-ui/a11y';
 
 interface CommonAppBarItemProps {
-
   /**
    * Content displayed before the item children
    */
@@ -25,8 +24,13 @@ interface CommonAppBarItemProps {
 
 export type AppBarItemProps = A11yButtonProps & CommonAppBarItemProps;
 
-export const DrawerItem: React.FC<AppBarItemProps> = ({role = 'link', before, after, children, ...otherProps}) => {
-
+export const DrawerItem: React.FC<AppBarItemProps> = ({
+  role = 'link',
+  before,
+  after,
+  children,
+  ...otherProps
+}) => {
   const content = (
     <>
       {before && <BeforeWrapper>{before}</BeforeWrapper>}
@@ -38,22 +42,14 @@ export const DrawerItem: React.FC<AppBarItemProps> = ({role = 'link', before, af
   if (role === 'link') {
     return (
       <A11yAnchor {...otherProps}>
-        {(renderProps) => (
-          <Wrapper {...renderProps}>
-            {content}
-          </Wrapper>
-        )}
+        {renderProps => <Wrapper {...renderProps}>{content}</Wrapper>}
       </A11yAnchor>
     );
   } else {
     return (
       <A11yButton {...otherProps}>
-        {(renderProps) => (
-          <Wrapper {...renderProps}>
-            {content}
-          </Wrapper>
-        )}
+        {renderProps => <Wrapper {...renderProps}>{content}</Wrapper>}
       </A11yButton>
-    )
+    );
   }
 };

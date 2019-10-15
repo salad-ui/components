@@ -1,14 +1,13 @@
 import * as React from 'react';
-import { DrawerItemVariant } from './types';
-import { Wrapper, BeforeWrapper, AfterWrapper } from './DrawerItem.style';
+import {DrawerItemVariant} from './types';
+import {Wrapper, BeforeWrapper, AfterWrapper} from './DrawerItem.style';
 import {
-  ButtonProps as A11yButtonProps, 
+  ButtonProps as A11yButtonProps,
   Anchor as A11yAnchor,
-  Button as A11yButton
+  Button as A11yButton,
 } from '@salad-ui/a11y';
 
 interface CommonDrawerItemProps {
-
   /**
    * Content displayed before the item children
    */
@@ -33,11 +32,18 @@ interface CommonDrawerItemProps {
 
 export type DrawerItemProps = A11yButtonProps & CommonDrawerItemProps;
 
-export const DrawerItem: React.FC<DrawerItemProps> = ({role = 'link', variant, isActive, before, after, children, ...otherProps}) => {
-  
+export const DrawerItem: React.FC<DrawerItemProps> = ({
+  role = 'link',
+  variant,
+  isActive,
+  before,
+  after,
+  children,
+  ...otherProps
+}) => {
   const styleProps = {
     variant,
-    isActive
+    isActive,
   };
 
   const content = (
@@ -51,7 +57,7 @@ export const DrawerItem: React.FC<DrawerItemProps> = ({role = 'link', variant, i
   if (role === 'link') {
     return (
       <A11yAnchor {...otherProps}>
-        {(renderProps) => (
+        {renderProps => (
           <Wrapper {...renderProps} {...styleProps}>
             {content}
           </Wrapper>
@@ -61,12 +67,12 @@ export const DrawerItem: React.FC<DrawerItemProps> = ({role = 'link', variant, i
   } else {
     return (
       <A11yButton {...otherProps}>
-        {(renderProps) => (
+        {renderProps => (
           <Wrapper {...renderProps} {...styleProps}>
             {content}
           </Wrapper>
         )}
       </A11yButton>
-    )
+    );
   }
 };

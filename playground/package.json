@@ -22,7 +22,7 @@
   },
   "scripts": {
     "start": "webpack-dev-server",
-    "build": "webpack"
+    "build": "webpack --mode=production"
   },
   "license": "GPL-2.0-or-later"
 }

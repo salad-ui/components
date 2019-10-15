@@ -5,4 +5,6 @@ export interface DrawerMenuItemContextProps {
   variant: DrawerItemVariant;
 }
 
-export const DrawerMenuItemContext = React.createContext<DrawerMenuItemContextProps>({variant: 'item'})
+export const DrawerMenuItemContext = React.createContext<
+  DrawerMenuItemContextProps
+>({variant: 'item'});

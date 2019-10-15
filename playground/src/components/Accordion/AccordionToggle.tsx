@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useAccordionContext } from './useAccordionContext';
+import {useAccordionContext} from './useAccordionContext';
 
 interface AccordionToggleRenderFunctionProps {
   ref: React.RefObject<HTMLElement>;
@@ -16,7 +16,10 @@ interface AccordionToggleRenderFunctionMeta {
   isExpanded: boolean;
 }
 
-type AccordionToggleRenderFunction = (props: AccordionToggleRenderFunctionProps, meta: AccordionToggleRenderFunctionMeta) => React.ReactElement;
+type AccordionToggleRenderFunction = (
+  props: AccordionToggleRenderFunctionProps,
+  meta: AccordionToggleRenderFunctionMeta,
+) => React.ReactElement;
 
 export interface AccordionToggleProps {
   rel: string;
@@ -25,9 +28,24 @@ export interface AccordionToggleProps {
   children: React.ReactNode | AccordionToggleRenderFunction;
 }
 
-export const AccordionToggle = ({rel, children, ...otherProps}: AccordionToggleProps): React.ReactElement => {
+export const AccordionToggle = ({
+  rel,
+  children,
+  ...otherProps
+}: AccordionToggleProps): React.ReactElement => {
+  /* eslint-disable @typescript-eslint/no-explicit-any */
   const element = React.useRef<any>(null);
-  const {getToggleID, getContentID, expanded, onToggle, getFirstToggle, getLastToggle, getPreviousToggle, getNextToggle} = useAccordionContext();
+  /* eslint-enable @typescript-eslint/no-explicit-any */
+  const {
+    getToggleID,
+    getContentID,
+    expanded,
+    onToggle,
+    getFirstToggle,
+    getLastToggle,
+    getPreviousToggle,
+    getNextToggle,
+  } = useAccordionContext();
 
   const handleKeyDown = (event: React.KeyboardEvent) => {
     switch (event.key) {
@@ -60,29 +78,24 @@ export const AccordionToggle = ({rel, children, ...otherProps}: AccordionToggleP
         break;
       }
     }
-  }
+  };
 
   const isExpanded = expanded[rel];
 
   const props = {
     ...otherProps,
     ref: element,
-    onClick: () => onToggle(rel), 
+    onClick: () => onToggle(rel),
     onKeyDown: handleKeyDown,
     id: getToggleID(rel),
     'aria-controls': getContentID(rel),
     'aria-expanded': expanded[rel] || false,
-    'data-accordion-toggle-rel': rel
-  }
+    'data-accordion-toggle-rel': rel,
+  };
 
   if (typeof children === 'function') {
     return children(props, {rel, isExpanded});
   }
 
-  return (
-    <button {...props}>
-      {children}
-    </button>
-  );
+  return <button {...props}>{children}</button>;
 };
-

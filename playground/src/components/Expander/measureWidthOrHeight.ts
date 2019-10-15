@@ -1,5 +1,7 @@
-
-export const measureWidthOrHeight = (element: React.RefObject<HTMLDivElement>, property: 'width' | 'height'): number | null => {
+export const measureWidthOrHeight = (
+  element: React.RefObject<HTMLDivElement>,
+  property: 'width' | 'height',
+): number | null => {
   const el = element.current;
   if (!el) {
     return null;
@@ -14,4 +16,4 @@ export const measureWidthOrHeight = (element: React.RefObject<HTMLDivElement>, p
   el.style.display = null; // restore visibility
   el.offsetHeight;
   return parseFloat(widthOrHeight || '0');
-}
+};

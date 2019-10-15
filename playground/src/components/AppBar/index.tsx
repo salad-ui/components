@@ -14,5 +14,5 @@ export const AppBar: React.FC<AppBarProps> = ({logo, left, right}) => {
       {left && <LeftWrapper>{left}</LeftWrapper>}
       {right && <RightWrapper>{right}</RightWrapper>}
     </Wrapper>
-  )
+  );
 };

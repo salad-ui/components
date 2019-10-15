@@ -1,1 +1,1 @@
-export * from './index.style'
+export * from './index.style';

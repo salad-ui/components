@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ExpanderState } from './types';
+import {ExpanderState} from './types';
 
 export interface WrapperProps {
   state: ExpanderState;
@@ -32,7 +32,7 @@ export const Wrapper = styled.div<WrapperProps>`
       case 'collapsed': {
         return {
           display: 'none',
-          [property]: '0px'
+          [property]: '0px',
         };
       }
       case 'expand': {
@@ -52,10 +52,9 @@ export const Wrapper = styled.div<WrapperProps>`
       case 'expanded': {
         return {
           display: 'block',
-          [property]: 'auto'
+          [property]: 'auto',
         };
       }
     }
   }}
-  
 `;

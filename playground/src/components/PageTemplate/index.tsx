@@ -1,5 +1,10 @@
 import * as React from 'react';
-import {Wrapper, HeaderWrapper, LeftWrapper, ContentWrapper} from './index.style';
+import {
+  Wrapper,
+  HeaderWrapper,
+  LeftWrapper,
+  ContentWrapper,
+} from './index.style';
 
 export interface PageTemplateProps {
   children: {
@@ -10,12 +15,14 @@ export interface PageTemplateProps {
   };
 }
 
-export const PageTemplate: React.FC<PageTemplateProps> = ({children: {header, left, content}}) => {
+export const PageTemplate: React.FC<PageTemplateProps> = ({
+  children: {header, left, content},
+}) => {
   return (
     <Wrapper>
       <HeaderWrapper>{header}</HeaderWrapper>
       <LeftWrapper>{left}</LeftWrapper>
       <ContentWrapper>{content}</ContentWrapper>
     </Wrapper>
-  )
+  );
 };

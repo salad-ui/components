@@ -6,7 +6,6 @@ import {Wrapper} from './index.style';
 type FocusOn = 'expand' | 'expanded';
 
 export interface ExpanderProps {
-
   isExpanded: boolean;
   onExpand?: () => void;
   onExpanded?: () => void;
@@ -21,7 +20,7 @@ export interface ExpanderProps {
   'aria-labelledby'?: string;
   'aria-describedby'?: string;
   tabIndex?: number;
-  
+
   children?: React.ReactNode;
 }
 
@@ -35,7 +34,7 @@ export const Expander: React.FC<ExpanderProps> = ({
   focusOn,
   isHorizontal = false,
 
-  children, 
+  children,
   ...otherProps
 }) => {
   const property = isHorizontal ? 'width' : 'height';
@@ -44,27 +43,19 @@ export const Expander: React.FC<ExpanderProps> = ({
   const timeout = React.useRef<number | null>(null);
   const element = React.useRef<HTMLDivElement>(null);
   const widthOrHeight = React.useRef<number | null>(null);
-  const [state, setState] = React.useState<ExpanderState>(isExpanded ? 'expanded' : 'collapsed');
-
-  const handleCollapse = () => {
-    onCollapse && onCollapse();
-  };
-
-  const handleCollapsed = () => {
-    onCollapsed && onCollapsed();
-  };
-
-  const handleExpand = () => {
-    onExpand && onExpand();
-    focusOn === 'expand' && element.current && element.current.focus();
-  };
-
-  const handleExpanded = () => {
-    onExpanded && onExpanded();
-    focusOn === 'expanded' && element.current && element.current.focus();
-  };
+  const [state, setState] = React.useState<ExpanderState>(
+    isExpanded ? 'expanded' : 'collapsed',
+  );
 
   React.useEffect(() => {
+    const handleCollapse = () => {
+      onCollapse && onCollapse();
+    };
+
+    const handleExpand = () => {
+      onExpand && onExpand();
+      focusOn === 'expand' && element.current && element.current.focus();
+    };
 
     // don't try and transition on the first render
     if (!mounted.current) {
@@ -82,7 +73,7 @@ export const Expander: React.FC<ExpanderProps> = ({
 
     // if the `collapse` prop has changed and we're not already in a collapsing state (e.g. first render) then start the transition
     if (!isExpanded) {
-      // measure the expanded width/height of the element in-case the `children` have changed from last time we transitioned 
+      // measure the expanded width/height of the element in-case the `children` have changed from last time we transitioned
       widthOrHeight.current = measureWidthOrHeight(element, property);
       // use `requestAnimationFrame` to prevent react from batching renders so the transition styles are applied correctly
       raf.current = window.requestAnimationFrame(() => {
@@ -90,10 +81,10 @@ export const Expander: React.FC<ExpanderProps> = ({
         handleCollapse();
       });
     }
-    
+
     // if the `collapse` prop has changed and we're not already in an expanding state (e.g. first render) then start the transition
     if (isExpanded) {
-      // measure the expanded width/height of the element in-case the `children` have changed from last time we transitioned 
+      // measure the expanded width/height of the element in-case the `children` have changed from last time we transitioned
       widthOrHeight.current = measureWidthOrHeight(element, property);
       // use `requestAnimationFrame` to prevent react from batching renders so the transition styles are applied correctly
       raf.current = window.requestAnimationFrame(() => {
@@ -101,10 +92,18 @@ export const Expander: React.FC<ExpanderProps> = ({
         handleExpand();
       });
     }
-
-  }, [isExpanded, isHorizontal]);
+  }, [focusOn, isExpanded, isHorizontal, onCollapse, onExpand, property]);
 
   React.useEffect(() => {
+    const handleCollapsed = () => {
+      onCollapsed && onCollapsed();
+    };
+
+    const handleExpanded = () => {
+      onExpanded && onExpanded();
+      focusOn === 'expanded' && element.current && element.current.focus();
+    };
+
     switch (state) {
       case 'collapse': {
         // use `requestAnimationFrame` to prevent react from batching renders so the transition styles are applied correctly
@@ -131,7 +130,7 @@ export const Expander: React.FC<ExpanderProps> = ({
         break;
       }
     }
-  }, [state]);
+  }, [focusOn, onCollapsed, onExpanded, state]);
 
   // unmount the component when `collapsed` (but we need it mounted before we measure in the `expand` state)
   if (!isExpanded && state === 'collapsed') {
@@ -139,11 +138,11 @@ export const Expander: React.FC<ExpanderProps> = ({
   }
 
   return (
-    <Wrapper 
-      ref={element} 
-      state={state} 
-      property={property} 
-      widthOrHeight={widthOrHeight} 
+    <Wrapper
+      ref={element}
+      state={state}
+      property={property}
+      widthOrHeight={widthOrHeight}
       tabIndex={focusOn ? -1 : undefined}
       {...otherProps}
     >

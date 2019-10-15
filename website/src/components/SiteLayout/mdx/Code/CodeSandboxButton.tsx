@@ -61,7 +61,11 @@ ${imports.join('\n')}
 
 export const App = () => (
 ${indent(
-  code.trim().replace(/<>/g, '<React.Fragment>').replace(/<\/>/, '</React.Fragment>').replace(/;(\S)*$/, ''),
+  code
+    .trim()
+    .replace(/<>/g, '<React.Fragment>')
+    .replace(/<\/>/, '</React.Fragment>')
+    .replace(/;(\S)*$/, ''),
   2,
 )}
 );

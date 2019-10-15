@@ -44,12 +44,12 @@ const MyButton = ({
 
 export const RenderAsALink = () => (
   <>
-    <MyButton href="https://www.example.com/">I'm a &lt;a&gt;</MyButton>
+    <MyButton href="https://www.example.com/">I&apos;m a &lt;a&gt;</MyButton>
   </>
 );
 
 export const RenderAsAButton = () => (
   <>
-    <MyButton onClick={action('Clicked!')}>I'm a &lt;button&gt;</MyButton>
+    <MyButton onClick={action('Clicked!')}>I&apos;m a &lt;button&gt;</MyButton>
   </>
 );

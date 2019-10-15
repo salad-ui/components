@@ -1,7 +1,7 @@
-import styled, { css } from 'styled-components';
-import { get } from '@salad-ui/color';
-import { LogoSize } from './types';
-import { Color } from 'csstype';
+import styled, {css} from 'styled-components';
+import {get} from '@salad-ui/color';
+import {LogoSize} from './types';
+import {Color} from 'csstype';
 
 export interface WrapperProps {
   size?: LogoSize;
@@ -20,12 +20,16 @@ const sizeStyle = ({size}: WrapperProps) => {
       return undefined;
     }
   }
-}
+};
 
 export const Wrapper = styled.span<WrapperProps>`
   display: inline-flex;
   & > svg {
     ${sizeStyle}
-    ${({color}) => color && css`fill: ${get(color)};`};
+    ${({color}) =>
+      color &&
+      css`
+        fill: ${get(color)};
+      `};
   }
 `;

@@ -1,8 +1,8 @@
-import styled, { css } from 'styled-components';
-import { mr, ml, px, p } from '@salad-ui/spacing';
-import { color, backgroundColor } from '@salad-ui/color';
-import { subtitle, body } from '@salad-ui/typography';
-import { DrawerItemVariant } from './types';
+import styled, {css} from 'styled-components';
+import {mr, ml, px, p} from '@salad-ui/spacing';
+import {color, backgroundColor} from '@salad-ui/color';
+import {subtitle, body} from '@salad-ui/typography';
+import {DrawerItemVariant} from './types';
 
 export interface WrapperProps {
   variant: DrawerItemVariant;
@@ -29,7 +29,6 @@ const commonStyle = css`
   :active {
     ${backgroundColor('primary.dark')}
   }
-
 `;
 
 const itemVariantStyle = css`
@@ -39,14 +38,15 @@ const itemVariantStyle = css`
 
 const subitemVariantStyle = css<WrapperProps>`
   height: 32px;
-  ${({isActive}) => isActive ? subtitle({isSmall: true}) : body({isSmall: true})}
+  ${({isActive}) =>
+    isActive ? subtitle({isSmall: true}) : body({isSmall: true})}
 `;
 
 export const Wrapper = styled.a<WrapperProps>`
   ${commonStyle}
   ${({variant}) => {
     switch (variant) {
-      case 'item': 
+      case 'item':
         return itemVariantStyle;
       case 'subitem':
         return subitemVariantStyle;
