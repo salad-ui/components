@@ -14,6 +14,14 @@ yarn
 > - A NodeJS version manager e.g. [nvm](https://github.com/nvm-sh/nvm)
 > - The [Yarn](https://yarnpkg.com/lang/en/) package manager
 
+## Setup
+
+After the initial setup of the repository and after pulling the repository you will need to build the system as some packages (e.g. `@salad-ui/icon`) require additional build steps.
+
+```bash
+yarn build
+```
+
 ## Storybook
 
 The storybook is an area to view, develop and test the components in isolation. Stories are [React components](https://storybook.js.org/docs/guides/guide-react/#step-4-write-your-stories) that live in files named `*.stories.tsx` within the package folders.
@@ -75,3 +83,7 @@ We recommend [VS Code](https://code.visualstudio.com/) with the following plugin
 - [Auto Close Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag)
 - [Auto Rename Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag)
 - [SVG Previewer](https://marketplace.visualstudio.com/items?itemName=vitaliymaz.vscode-svg-previewer)
+
+### Versioning and publishing
+
+Versioning packages is carried out automatically using [`changesets`](https://github.com/atlassian/changesets). When you're ready to create a Pull Request, run `yarn create-changeset` and follow the steps shown.

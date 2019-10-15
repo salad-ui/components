@@ -25,6 +25,9 @@ jobs:
         DANGER_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+    - name: 🏗 Building
+      run: .ci/build.sh
+    
     - name: ☑️ Typing...
       run: .ci/check_typing.sh
 
@@ -37,9 +40,6 @@ jobs:
     - name: ☑️ Testing...
       run: .ci/check_tests.sh
 
-    - name: 🏗 Building
-      run: .ci/build.sh
-    
   #   # - name: 📷 Snapshotting
   #   #   run: .ci/snapshot.sh
 
