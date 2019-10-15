@@ -32,7 +32,7 @@ const ColorSquares = styled.ul`
   ${p(0)}
 `;
 
-const ColorVariable = styled.div`
+const ColorVariable = styled.span`
   ${mt(2)}
 `;
 

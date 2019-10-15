@@ -1,0 +1,5 @@
+{
+  "name": "salad-ui-playground",
+  "alias": ["salad-ui-playground.now.sh"],
+  "routes": [{"src": "^/(.*)", "dest": "/dist/$1"}]
+}

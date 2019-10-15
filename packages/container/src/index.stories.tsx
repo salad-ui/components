@@ -8,7 +8,7 @@ export default {
   title: 'components/Container',
 };
 
-const Wrapper = styled.div`
+const Wrapper = styled.span`
   ${container}
   ${body()}
   ${backgroundColor('background')}

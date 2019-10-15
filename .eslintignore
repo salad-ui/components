@@ -1,8 +1,10 @@
 node_modules
 /packages/*/.tsc_cache
 /packages/*/dist
+/website/.cache
 /website/public
 /website/gatsby-config.js
 /website/gatsby-node.js
 /storybook/storybook-static
 yarn-error.log
+

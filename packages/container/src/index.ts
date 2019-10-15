@@ -7,6 +7,6 @@ export const container = `
   margin-right: auto;
 `;
 
-export const Container = styled.div`
+export const Container = styled.span`
   ${container}
 `;

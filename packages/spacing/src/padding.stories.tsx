@@ -9,7 +9,7 @@ interface SpacingExampleProps {
   fn: SpacingFunction;
 }
 
-const PaddingInner = styled.div`
+const PaddingInner = styled.span`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,7 +19,7 @@ const PaddingInner = styled.div`
   background-color: darkviolet;
 `;
 
-const PaddingOuter = styled.div<SpacingExampleProps>`
+const PaddingOuter = styled.span<SpacingExampleProps>`
   margin: 1em;
   display: inline-block;
   background-color: darkorange;

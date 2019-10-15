@@ -1,7 +1,7 @@
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
-const tsconfigPath = '../tsconfig.json';
+const tsconfigPath = './tsconfig.json';
 
 module.exports = ({config}) => {
   // add support for typescript
@@ -24,6 +24,9 @@ module.exports = ({config}) => {
     new TsconfigPathsPlugin({configFile: tsconfigPath}),
   ];
   config.plugins.push(new ForkTsCheckerWebpackPlugin({tsconfig: tsconfigPath}));
-
+  // @see https://github.com/TypeStrong/ts-loader#transpileonly-boolean-defaultfalse
+ config.stats = {
+    warningsFilter: /export .* was not found in/
+  };
   return config;
 };

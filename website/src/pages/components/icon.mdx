@@ -1,0 +1,25 @@
+---
+title: Icon
+---
+
+import {glyphs} from '@salad-ui/icon';
+export const scope = {...glyphs};
+
+Icons indicate concepts to the user.
+
+## Installation
+
+```bash
+npm install @salad-ui/icon
+```
+
+## Usage
+
+```jsx
+import {Cog} from '@salad-ui/icon';
+<>
+  <p><Cog aria-hidden={true}/> Settings</p>
+  <p><Cog role="img" aria-label="Settings"/></p>
+</>;
+```
+

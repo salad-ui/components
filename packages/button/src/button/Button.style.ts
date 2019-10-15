@@ -119,7 +119,7 @@ const variantStyles = ({variant}: {variant: ButtonVariant}) => {
   }
 };
 
-export const Element = styled.button<WrapperProps>`
+export const Element = styled.a<WrapperProps>`
   ${commonStyle}
   ${spacingStyle}
   ${variantStyles}

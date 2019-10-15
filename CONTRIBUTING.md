@@ -42,6 +42,20 @@ Then browse to:
 http://localhost:8000/
 ```
 
+## Component playground
+
+To start the component playground run:
+
+```
+yarn start:playground
+```
+
+Then browse to:
+
+```
+http://localhost:8002/
+```
+
 ## Documentation website
 
 To start the documentation website run:
@@ -53,7 +67,7 @@ yarn start:website
 Then browse to:
 
 ```
-http://localhost:8001/
+http://localhost:8003/
 ```
 
 ## Linting

@@ -9,7 +9,7 @@ interface SpacingExampleProps {
   fn: SpacingFunction;
 }
 
-const MarginInner = styled.div<SpacingExampleProps>`
+const MarginInner = styled.span<SpacingExampleProps>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -20,7 +20,7 @@ const MarginInner = styled.div<SpacingExampleProps>`
   ${({size, fn}) => fn(size)}
 `;
 
-const MarginOuter = styled.div`
+const MarginOuter = styled.span`
   margin: 1em;
   display: inline-block;
   background-color: darkviolet;

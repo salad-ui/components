@@ -3,7 +3,7 @@ import {body, caption} from '@salad-ui/typography';
 import {color} from '@salad-ui/color';
 import {m, mt, mb} from '@salad-ui/spacing';
 
-export const Wrapper = styled.div``;
+export const Wrapper = styled.span``;
 
 export interface MessageProps {
   isError: boolean;
