@@ -1,4 +1,11 @@
 {
   "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@salad-ui/*": ["packages/*/src"]
+    },
+    "noEmit": true
+  },
   "include": ["**/*.test.tsx"]
 }

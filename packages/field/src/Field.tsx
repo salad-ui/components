@@ -33,6 +33,7 @@ export interface FieldProps {
   error?: React.ReactNode;
   /** Whether the field is required. */
   isRequired?: boolean;
+  className?: string;
   children?: React.ReactElement<BasicInputProps | CustomInputProps>;
 }
 
@@ -42,6 +43,7 @@ export const Field = ({
   error,
   isRequired,
   children,
+  ...otherProps
 }: FieldProps) => {
   const seed = useUIDSeed();
   const inputId = seed('input');
@@ -83,7 +85,7 @@ export const Field = ({
   /* eslint-enable @typescript-eslint/no-explicit-any */
 
   return (
-    <Wrapper as={useFieldset ? 'fieldset' : 'div'}>
+    <Wrapper as={useFieldset ? 'fieldset' : 'div'} {...otherProps}>
       <Label
         isError={Boolean(error)}
         id={labelID}

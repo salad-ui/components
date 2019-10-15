@@ -42,6 +42,8 @@ export interface InputProps {
   minLength?: Attributes['minLength'];
   step?: Attributes['step'];
   autoFocus?: Attributes['autoFocus'];
+
+  className?: string;
 }
 
 export const TextInput: React.FC<InputProps> = ({

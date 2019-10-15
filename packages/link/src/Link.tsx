@@ -7,6 +7,7 @@ import {
 
 interface CommonLinkProps {
   isSubtle?: boolean;
+  className?: string;
   children?: React.ReactNode;
 }
 

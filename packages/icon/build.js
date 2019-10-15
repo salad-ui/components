@@ -14,16 +14,15 @@ const writeFile = util.promisify(fs.writeFile);
 const template = ({template}, _opts, {componentName, jsx}) => {
   const src = `
 import * as React from 'react';
-import {IconProps, Icon} from '../Icon';
+import {GlyphProps} from '../types';
+import {Icon} from '../Icon';
 
 /* eslint-disable react/no-children-prop */
-export const COMPONENT_NAME = (iconProps: Omit<IconProps, 'children'>) => {
-  const props = {};
+export const COMPONENT_NAME = (props: GlyphProps) => {
   return (
     React.createElement(
       Icon,
       {
-        ...iconProps,
         children: JSX
       }
     )

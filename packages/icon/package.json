@@ -20,7 +20,8 @@
   },
   "scripts": {
     "build:svg": "node -r esm build.js",
-    "build": "package-builder"
+    "build:bundle": "package-builder",
+    "build": "yarn run build:svg && yarn build:bundle"
   },
   "license": "GPL-2.0-or-later"
 }

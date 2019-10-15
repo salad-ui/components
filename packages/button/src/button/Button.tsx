@@ -37,6 +37,7 @@ interface CommonButtonProps {
    */
   isDisabled?: boolean;
 
+  className?: string;
   children?: React.ReactNode;
 }
 
