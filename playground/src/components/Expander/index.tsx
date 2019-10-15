@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {ExpanderState} from './types';
 import {measureWidthOrHeight} from './measureWidthOrHeight';
-import {Wrapper} from './index.style';
+import {Wrapper} from './index.styles';
 
 type FocusOn = 'expand' | 'expanded';
 

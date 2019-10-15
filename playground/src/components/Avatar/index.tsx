@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {AvatarSize} from './types';
-import {Image, ImageButton} from './index.style';
+import {Image, ImageButton} from './index.styles';
 
 export interface AvatarProps {
   src: string;

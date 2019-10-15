@@ -4,7 +4,7 @@ import {
   ButtonProps as A11yButtonProps,
   Button as A11yButton,
 } from '@salad-ui/a11y';
-import {Element, Before, After} from './Button.style';
+import {Element, Before, After} from './Button.styles';
 
 interface CommonButtonProps {
   /**

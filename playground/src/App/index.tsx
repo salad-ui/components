@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {Switch, Route, Link} from 'react-router-dom';
 import {SettingsPage} from '~pages/SettingsPage';
-import {GlobalStyle} from './index.style';
+import {GlobalStyle} from './index.styles';
 
 export const App = () => (
   <>

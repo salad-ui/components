@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Element} from './Link.style';
+import {Element} from './Link.styles';
 import {
   AnchorProps as A11yAnchorProps,
   Anchor as A11yAnchor,

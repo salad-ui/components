@@ -15,7 +15,7 @@ import {
   PropDefault,
   PropRequired,
   PropDescription,
-} from './index.style';
+} from './index.styles';
 
 export interface Props {
   component: React.ComponentType;

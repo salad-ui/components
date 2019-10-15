@@ -1,15 +1,13 @@
 {
   "extends": "../tsconfig.base.json",
   "compilerOptions": {
+    "noEmit": true,
     "rootDir": "..",
-    "outDir": "./dist",
     "baseUrl": ".",
     "paths": {
       "@salad-ui/*": ["../packages/*/src"],
-      "~*": ["./src/*"]
-    },
-    "composite": true,
-    "noEmit": true
+      "~*": ["src/*"]
+    }
   },
   "include": ["../packages/*/src", "src", "typings"]
 }

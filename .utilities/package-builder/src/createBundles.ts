@@ -1,18 +1,10 @@
-const path = require('path');
-const fs = require('fs-extra');
-const {rollup} = require('rollup');
-const resolve = require('rollup-plugin-node-resolve');
-const commonjs = require('rollup-plugin-commonjs');
-const babel = require('rollup-plugin-babel');
-const {getSourceDirectory, getBuildDirectory} = require('./build-utilities');
-
-/* Use TSDX instead of this package when it supports monorepos to save repeating configuration in every single package */
-
-const buildDirectory = getBuildDirectory();
-const sourceDirectoryRelativeToCurrentDirectory = path.relative(
-  `../..`,
-  './src',
-);
+import path from 'path';
+import fs from 'fs-extra';
+import {rollup} from 'rollup';
+import resolve from 'rollup-plugin-node-resolve';
+import commonjs from 'rollup-plugin-commonjs';
+import babel from 'rollup-plugin-babel';
+import {getSourceDirectory, getBuildDirectory} from './build-utilities';
 
 const inputFile = fs.existsSync(`${getSourceDirectory()}/index.tsx`)
   ? `${getSourceDirectory()}/index.tsx`
@@ -30,7 +22,7 @@ const deps = [
   ...Object.keys(pkg.peerDependencies || {}),
 ];
 const regexps = deps.map(dep => new RegExp(`^${dep}($|\/)`));
-const external = id => regexps.some(regexp => regexp.test(id));
+const external = (id: string) => regexps.some(regexp => regexp.test(id));
 
 function createRollupOptions() {
   return {
@@ -86,25 +78,9 @@ async function createRollupBundles() {
   ]);
 }
 
-async function moveTypescriptTypes() {
-  const nestedTypesDirectory = `${buildDirectory}/${sourceDirectoryRelativeToCurrentDirectory}`;
-  if (!fs.existsSync()) {
-    return;
-  }
-  await fs.copy(nestedTypesDirectory, buildDirectory, {
-    overwrite: true,
-  });
-  await fs.remove(
-    `${buildDirectory}/${
-      sourceDirectoryRelativeToCurrentDirectory.split(path.sep)[0]
-    }`,
-  );
-}
-
-module.exports.bundle = async () => {
+export const createBundles = async () => {
   if (!inputFile) {
     return;
   }
   await createRollupBundles();
-  await moveTypescriptTypes();
 };

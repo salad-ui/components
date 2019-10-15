@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {useUIDSeed} from 'react-uid';
-import {Wrapper, Label, Message} from './Field.style';
+import {Wrapper, Label, Message} from './Field.styles';
 
 /**
  * Hacky property used to determine if an input should be rendered inside a

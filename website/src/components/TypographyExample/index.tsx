@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Wrapper, Title, Subtitle, Body, Button, Overline} from './index.style';
+import {Wrapper, Title, Subtitle, Body, Button, Overline} from './index.styles';
 
 export const TypographyExample = () => (
   <Wrapper>

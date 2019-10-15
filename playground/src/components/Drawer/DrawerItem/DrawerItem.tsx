@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {DrawerItemVariant} from './types';
-import {Wrapper, BeforeWrapper, AfterWrapper} from './DrawerItem.style';
+import {Wrapper, BeforeWrapper, AfterWrapper} from './DrawerItem.styles';
 import {
   ButtonProps as A11yButtonProps,
   Anchor as A11yAnchor,

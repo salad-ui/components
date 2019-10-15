@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Wrapper, LogoWrapper, LeftWrapper, RightWrapper} from './index.style';
+import {Wrapper, LogoWrapper, LeftWrapper, RightWrapper} from './index.styles';
 
 export interface AppBarProps {
   logo?: React.ReactNode;

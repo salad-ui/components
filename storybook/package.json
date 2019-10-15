@@ -22,7 +22,8 @@
     "typescript": "^3.5.3"
   },
   "scripts": {
-    "start": "start-storybook -p 8000",
+    "check:typing": "tsc --project tsconfig.json",
+    "start": "start-storybook -p 8100",
     "build": "build-storybook",
     "snapshot": "percy-storybook --widths=320,1280"
   },

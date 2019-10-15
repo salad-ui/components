@@ -42,7 +42,7 @@ module.exports = {
     warningsFilter: /export .* was not found in/,
   },
   devServer: {
-    port: 8001,
+    port: 8200,
     historyApiFallback: true,
   },
 };

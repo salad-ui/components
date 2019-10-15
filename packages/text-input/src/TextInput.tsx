@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Input} from './TextInput.style';
+import {Input} from './TextInput.styles';
 // import {__USE_FIELDSET_PROP} from '@salad-ui/field';
 
 type Attributes = React.InputHTMLAttributes<HTMLInputElement>;

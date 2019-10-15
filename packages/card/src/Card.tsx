@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Wrapper} from './Card.style';
+import {Wrapper} from './Card.styles';
 
 export interface CardProps {
   className?: string;

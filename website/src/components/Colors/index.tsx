@@ -7,7 +7,7 @@ import {
   ColorShade,
   ColorShadeName,
   ColorShadeValue,
-} from './index.style';
+} from './index.styles';
 
 interface ShadeProps {
   name: string;

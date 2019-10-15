@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {Color} from '@salad-ui/color';
 import {LogoVariant, LogoSize} from './types';
-import {Wrapper} from './index.style';
+import {Wrapper} from './index.styles';
 
 export interface LogoProps {
   variant: LogoVariant;

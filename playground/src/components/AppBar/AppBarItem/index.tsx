@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Wrapper, BeforeWrapper, AfterWrapper} from './index.style';
+import {Wrapper, BeforeWrapper, AfterWrapper} from './index.styles';
 import {
   ButtonProps as A11yButtonProps,
   Anchor as A11yAnchor,

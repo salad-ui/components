@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Wrapper, TopWrapper, BottomWrapper} from './Drawer.style';
+import {Wrapper, TopWrapper, BottomWrapper} from './Drawer.styles';
 
 export interface DrawerProps {
   top: React.ReactNode;

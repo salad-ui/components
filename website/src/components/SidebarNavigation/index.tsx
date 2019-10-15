@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from '../../components';
-import {Wrapper, Nav} from './index.style';
+import {Wrapper, Nav} from './index.styles';
 
 export interface SidebarNavigationLinkProps {
   id: string;

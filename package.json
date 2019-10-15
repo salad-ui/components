@@ -9,14 +9,6 @@
       "storybook",
       "playground",
       "website"
-    ],
-    "nohoist": [
-      "**/gatsby",
-      "gatsby/**",
-      "**/gatsby-*",
-      "gatsby-*/**",
-      "**/*-gatsby",
-      "*-gatsby/**"
     ]
   },
   "devDependencies": {
@@ -49,10 +41,11 @@
   "scripts": {
     "clean": "lerna run clean && rm -rf packages/*/dist packages/*/tsconfig.tsbuildinfo */tsconfig.tsbuildinfo */.cache",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md,mdx}\"",
-    "lint": "eslint \"**/*.ts\" \"**/*.tsx\" --fix",
-    "build:code": "lerna run build",
-    "build:types": "tsc --build tsconfig.types.json",
-    "build": "yarn run build:code && yarn run build:types",
+    "check:typing": "tsc --project tsconfig.json",
+    "check:package:typing": "lerna run check:typing",
+    "check:linting": "eslint \"**/*.ts\" \"**/*.tsx\" --fix",
+    "check": "yarn run check:typing && yarn run check:package:typing && yarn run check:linting",
+    "build": "lerna run build",
     "test": "jest --config .jestrc.js",
     "test:debug": "node --inspect-brk node_modules/.bin/jest --config .jestrc.js --runInBand",
     "start:storybook": "yarn workspace @salad-ui/storybook run start",

@@ -12,7 +12,7 @@ import {
   EditorToolbar,
   Error,
   Imports,
-} from './lazy.style';
+} from './lazy.styles';
 
 export interface LazyCodeProps {
   scope?: CodeScope;
