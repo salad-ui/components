@@ -6,6 +6,7 @@
     "composite": true,
     "emitDeclarationOnly": true
   },
+  "references": [{"path": "../breakpoint"}],
   "include": ["src/**/*.ts", "src/**/*.tsx"],
   "exclude": ["src/**/*.test.tsx", "src/**/*.stories.tsx"]
 }

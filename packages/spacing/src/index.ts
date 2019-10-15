@@ -1,4 +1,4 @@
-import {map} from '@salad-ui/breakpoint';
+import {BreakpointName, map} from '@salad-ui/breakpoint';
 import {
   createMargin,
   createMarginX,
@@ -8,6 +8,7 @@ import {
   createMarginBottom,
   createMarginLeft,
   createMarginProps,
+  MarginProps as GenericMarginProps,
   createPadding,
   createPaddingX,
   createPaddingY,
@@ -16,6 +17,7 @@ import {
   createPaddingBottom,
   createPaddingLeft,
   createPaddingProps,
+  PaddingProps as GenericPaddingProps,
 } from 'styled-components-spacing';
 
 export type Spacing = 0 | 0.5 | 1 | 1.5 | 2 | 3 | 4 | 5 | 6;
@@ -65,6 +67,8 @@ export {
   paddingLeft as pl,
 };
 
+export type MarginProps = GenericMarginProps<BreakpointName, Spacing>;
+
 export const marginProps = createMarginProps({
   margin,
   marginY,
@@ -74,6 +78,8 @@ export const marginProps = createMarginProps({
   marginBottom,
   marginLeft,
 });
+
+export type PaddingProps = GenericPaddingProps<BreakpointName, Spacing>;
 
 export const paddingProps = createPaddingProps({
   padding,

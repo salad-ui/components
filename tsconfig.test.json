@@ -3,7 +3,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@salad-ui/*": ["packages/*/src"]
+      "@salad-ui/*": ["./packages/*/src"]
     },
     "noEmit": true
   },

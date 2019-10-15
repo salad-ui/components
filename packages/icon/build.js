@@ -85,7 +85,7 @@ const index = async files => {
     `${outputDirectory}/index.ts`,
     `
   import * as React from 'react';
-  import {IconProps} from '../Icon';
+  import {GlyphProps} from '../types';
 
 ${files
   .map(
@@ -96,7 +96,7 @@ ${files
 
 ${files.map(file => `export * from './${getComponentName(file)}';`).join('\n')}
 
-export const glyphs: {[name: string]: React.ComponentType<IconProps>} = {
+export const glyphs: {[name: string]: React.ComponentType<GlyphProps>} = {
   ${files.map(file => `${getComponentName(file)}: ${getComponentName(file)}`)}
 };
 
