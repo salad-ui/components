@@ -1,7 +1,7 @@
 {
   "name": "@salad-ui/playground",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "dependencies": {
     "@types/react-router-dom": "^5.1.0",
     "react-router-dom": "^5.1.2"

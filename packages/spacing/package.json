@@ -1,6 +1,6 @@
 {
   "name": "@salad-ui/spacing",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
@@ -8,7 +8,7 @@
     "dist"
   ],
   "dependencies": {
-    "@salad-ui/breakpoint": "^0.1.0",
+    "@salad-ui/breakpoint": "^0.1.1",
     "styled-components-spacing": "^4.0.0-preview.3"
   },
   "peerDependencies": {
@@ -18,7 +18,7 @@
     "styled-components": "^4.4.0"
   },
   "devDependencies": {
-    "@salad-ui/package-builder": "^0.1.0"
+    "@salad-ui/package-builder": "^0.1.1"
   },
   "scripts": {
     "build": "package-builder"

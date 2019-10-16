@@ -1,4 +1,4 @@
-# @design-system-example/website
+# @design-system-example/playground
 
 ## 0.1.1
 
