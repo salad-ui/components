@@ -4,7 +4,7 @@
 
 > ⚠️ This project is an experimental proof-of-concept. Please don't use it it production.
 
-A set of components for building rich user interfaces within wp-admin.
+A set of components for building rich user interfaces within `wp-admin`.
 
 ---
 
@@ -22,7 +22,7 @@ A set of components for building rich user interfaces within wp-admin.
     </tr>
     <tr>
       <td>▶️ <strong>Playground</strong></td>
-      <td><a href="https://salad-ui-storybook.now.sh/">salad-ui-playground.now.sh</a></td>
+      <td><a href="https://salad-ui-playground.now.sh/">salad-ui-playground.now.sh</a></td>
       <td>View and test the components in a life-like application.</td>
     </tr>
     <tr>
