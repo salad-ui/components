@@ -1,8 +1,8 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import {fontFamily, fontWeightNormal} from '../common';
 import {m} from '@salad-ui/spacing';
 import {box, BoxProps} from '@salad-ui/box';
+import {fontFamily, fontWeightNormal} from '../common';
 
 export interface BodyOptions {
   isSmall?: boolean;

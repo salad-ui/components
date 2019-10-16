@@ -1,6 +1,6 @@
 {
   "name": "@salad-ui/components",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
@@ -9,15 +9,15 @@
     "src"
   ],
   "dependencies": {
-    "@salad-ui/button": "^0.1.1",
-    "@salad-ui/card": "^0.1.1",
-    "@salad-ui/field": "^0.1.1",
-    "@salad-ui/text-input": "^0.1.1",
-    "@salad-ui/theme": "^0.1.1",
-    "@salad-ui/typography": "^0.1.1"
+    "@salad-ui/button": "^0.1.3",
+    "@salad-ui/card": "^0.1.3",
+    "@salad-ui/field": "^0.1.3",
+    "@salad-ui/text-input": "^0.1.3",
+    "@salad-ui/theme": "^0.1.3",
+    "@salad-ui/typography": "^0.1.3"
   },
   "devDependencies": {
-    "@salad-ui/package-builder": "^0.1.1"
+    "@salad-ui/package-builder": "^0.1.3"
   },
   "scripts": {
     "build": "package-builder"
