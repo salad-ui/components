@@ -39,7 +39,7 @@
     "typescript": "^3.6.0"
   },
   "scripts": {
-    "clean": "lerna run clean && rm -rf packages/*/dist packages/*/tsconfig.tsbuildinfo */tsconfig.tsbuildinfo */.cache",
+    "clean": "lerna run clean && rm -rf packages/*/dist */.cache",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md,mdx}\"",
     "check:typing": "tsc --project tsconfig.json",
     "check:package:typing": "lerna run check:typing",

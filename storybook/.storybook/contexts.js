@@ -16,10 +16,10 @@ addDecorator(
               ...theme,
               color: {
                 ...theme.color,
-                primary: {
-                  ...theme.color.primary,
+                secondary: {
+                  ...theme.color.secondary,
                   light: '#f283aa',
-                  normal: '#c9356e',
+                  main: '#c9356e',
                   dark: '#700f3b',
                 },
               },

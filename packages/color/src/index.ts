@@ -14,10 +14,11 @@ export const get = (name: Color) => <P>({theme}: StyledProps<P>) => {
 };
 
 const createMixin = (prop: string) => {
-  return (name: Color) => {
+  return (name: Color, transform?: (value: string) => string) => {
     return <P>(props: StyledProps<P>) => {
       return map(name, n => {
-        return {[prop]: get(n)(props)};
+        const value = get(n)(props);
+        return {[prop]: transform ? transform(value) : value};
       });
     };
   };

@@ -1,9 +1,10 @@
 import styled, {css} from 'styled-components';
-import {mr, ml, px} from '@salad-ui/spacing';
+import {transparentize} from 'polished';
+import {mr, ml, px, py} from '@salad-ui/spacing';
 import {button} from '@salad-ui/typography';
 import {color, backgroundColor, borderColor} from '@salad-ui/color';
-import {ButtonVariant} from './types';
 import {focusStyle} from '@salad-ui/utils';
+import {ButtonVariant} from './types';
 
 export interface WrapperProps {
   variant: ButtonVariant;
@@ -12,12 +13,13 @@ export interface WrapperProps {
 }
 
 const commonStyle = css`
+  box-sizing: border-box;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   ${button()}
+  ${py(0)}
   ${px(2)}
-  box-sizing: border-box;
   cursor: pointer;
   border: 0;
   border-radius: 3px;
@@ -25,7 +27,7 @@ const commonStyle = css`
   text-decoration: none;
 
   :focus {
-    ${focusStyle('secondary.light')}
+    ${focusStyle()}
   }
 
   :disabled {
@@ -43,13 +45,11 @@ const primaryStyle = ({isDestructive}: WrapperProps) => css`
   )}
 
   :hover:enabled {
-    ${backgroundColor(
-      isDestructive ? 'error.light' : 'secondary.light',
-    )} /* TODO: opacity */
+    ${backgroundColor(isDestructive ? 'error.light' : 'secondary.light')}
   }
 
   :active:enabled {
-    ${backgroundColor(isDestructive ? 'error.light' : 'secondary.light')}
+    ${backgroundColor(isDestructive ? 'error.dark' : 'secondary.dark')}
   }
 
   :disabled {
@@ -69,7 +69,8 @@ const secondaryStyle = ({isDestructive}: WrapperProps) => css`
     ${borderColor(isDestructive ? 'error.light' : 'secondary.light')}
     ${backgroundColor(
       isDestructive ? 'error.light' : 'secondary.light',
-    )}; /* TODO: opacity 12% */
+      color => transparentize(1 - 0.12, color),
+    )};
   }
 
   :active:enabled {
@@ -77,7 +78,8 @@ const secondaryStyle = ({isDestructive}: WrapperProps) => css`
     ${borderColor(isDestructive ? 'error.dark' : 'secondary.dark')};
     ${backgroundColor(
       isDestructive ? 'error.light' : 'secondary.light',
-    )}; /* TODO: opacity 32% */
+      color => transparentize(1 - 0.32, color),
+    )};
   }
 
   :disabled {
@@ -93,14 +95,16 @@ const tertiaryStyle = ({isDestructive}: WrapperProps) => css`
     ${color(isDestructive ? 'error.light' : 'secondary.light')};
     ${backgroundColor(
       isDestructive ? 'error.light' : 'secondary.light',
-    )}; /* TODO: opacity 12% */
+      color => transparentize(1 - 0.12, color),
+    )};
   }
 
   :active:enabled {
     ${color(isDestructive ? 'error.dark' : 'secondary.dark')};
     ${backgroundColor(
       isDestructive ? 'error.light' : 'secondary.light',
-    )}; /* TODO: opacity 32% */
+      color => transparentize(1 - 0.32, color),
+    )};
   }
 
   :disabled {
