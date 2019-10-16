@@ -8,6 +8,7 @@
     "dist"
   ],
   "dependencies": {
+    "@salad-ui/color": "^0.1.2",
     "@salad-ui/spacing": "^0.1.2"
   },
   "peerDependencies": {

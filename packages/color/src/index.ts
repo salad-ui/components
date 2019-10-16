@@ -40,4 +40,4 @@ export interface ColorProps {
 }
 
 export const colorProps = (props: ColorProps) =>
-  props.color && color(props.color);
+  props.color ? color(props.color) : undefined;
