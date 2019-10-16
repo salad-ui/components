@@ -10,8 +10,6 @@ const compile = (fileNames: string[], options: ts.CompilerOptions) => {
     .getPreEmitDiagnostics(program)
     .concat(emitResult.diagnostics);
 
-  console.log(emitResult);
-
   allDiagnostics.forEach(diagnostic => {
     if (diagnostic.file) {
       let {line, character} = diagnostic.file.getLineAndCharacterOfPosition(

@@ -67,7 +67,7 @@ yarn start:website
 Then browse to:
 
 ```
-http://localhost:8200/
+http://localhost:8300/
 ```
 
 ## Appendices
