@@ -20,9 +20,18 @@ import {Avatar} from '~components/Avatar';
 import {Divider} from '~components/Divider';
 import {Drawer, DrawerMenu, DrawerMenuItemProps} from '~components/Drawer';
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
+// Link isn't very well typed for specifying a component
+const RouterLink = Link as React.ComponentType<any>;
+/* eslint-enable @typescript-eslint/no-explicit-any */
+
 const RouterDrawMenuLink = (props: DrawerMenuItemProps & {to: string}) => (
-  // @ts-ignore
-  <Link {...props} component={DrawerMenu.Item} role="link" variant="subitem" />
+  <RouterLink
+    {...props}
+    component={DrawerMenu.Item}
+    role="link"
+    variant="subitem"
+  />
 );
 
 export const SettingsPage = () => {

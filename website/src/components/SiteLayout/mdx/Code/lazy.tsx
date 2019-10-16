@@ -1,6 +1,8 @@
 import * as React from 'react';
-// @ts-ignore TODO: submit a PR to react-live types so that onChange doesn't override the onChange from context
+/* eslint-disable @typescript-eslint/ban-ts-ignore */
+// @ts-ignore TODO: submit a PR to react-live types so that onChange doesn't override the onChange from the Context
 import {LiveProvider, LiveEditor, LiveContext} from 'react-live';
+/* eslint-enable @typescript-eslint/ban-ts-ignore */
 import copy from 'clipboard-copy';
 import {CodeScope} from './types';
 import {parse} from './parse';
