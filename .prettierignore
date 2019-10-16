@@ -5,6 +5,7 @@
 /playground/dist
 /website/.cache
 /website/public
+/packages/icon/src/glyphs
 
 report.*.json
 
