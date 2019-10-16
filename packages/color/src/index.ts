@@ -1,6 +1,6 @@
 import {StyledProps} from 'styled-components';
 import {get as getPathFromObject} from 'lodash-es';
-import {map} from '@salad-ui/breakpoint';
+import {map, ValueOrValueMap} from '@salad-ui/breakpoint';
 
 export type Color = 'primary.main' | 'primary.light' | 'primary.dark' | string;
 
@@ -14,7 +14,10 @@ export const get = (name: Color) => <P>({theme}: StyledProps<P>) => {
 };
 
 const createMixin = (prop: string) => {
-  return (name: Color, transform?: (value: string) => string) => {
+  return (
+    name: ValueOrValueMap<Color>,
+    transform?: (value: string) => string,
+  ) => {
     return <P>(props: StyledProps<P>) => {
       return map(name, n => {
         const value = get(n)(props);
@@ -31,3 +34,10 @@ export const borderTopColor = createMixin('borderTopColor');
 export const borderRightColor = createMixin('borderRightColor');
 export const borderBottomColor = createMixin('borderBottomColor');
 export const borderLeftColor = createMixin('borderLeftColor');
+
+export interface ColorProps {
+  color?: ValueOrValueMap<Color>;
+}
+
+export const colorProps = (props: ColorProps) =>
+  props.color && color(props.color);

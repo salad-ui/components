@@ -2,7 +2,7 @@ import * as React from 'react';
 import {glyphs} from '.';
 
 export default {
-  title: 'components/icons',
+  title: 'components/Icon',
 };
 
 export const Icons = () => (
