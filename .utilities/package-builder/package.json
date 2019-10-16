@@ -1,7 +1,7 @@
 {
   "name": "@salad-ui/package-builder",
   "private": true,
-  "version": "0.1.2",
+  "version": "0.1.3",
   "bin": {
     "package-builder": "cli.js"
   },

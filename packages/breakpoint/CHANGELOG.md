@@ -1,5 +1,12 @@
 # @salad-ui/breakpoint
 
+## 0.1.3
+
+### Patch Changes
+
+- af654a8: fixed typography's missing dependency on color
+  - 528bed4: added color prop to Title, Subtitle and Body
+
 ## 0.1.2
 
 ### Patch Changes
