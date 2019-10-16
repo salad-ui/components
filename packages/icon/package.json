@@ -1,0 +1,27 @@
+{
+  "name": "@salad-ui/icon",
+  "version": "0.1.0",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {},
+  "peerDependencies": {},
+  "devDependencies": {
+    "@salad-ui/package-builder": "^0.1.0",
+    "@svgr/core": "^4.3.3",
+    "@svgr/plugin-jsx": "^4.3.3",
+    "@svgr/plugin-prettier": "^4.3.2",
+    "@svgr/plugin-svgo": "^4.3.1",
+    "esm": "^3.2.25",
+    "to-pascal-case": "^1.0.0"
+  },
+  "scripts": {
+    "build:svg": "node -r esm build.js",
+    "build:bundle": "package-builder",
+    "build": "yarn run build:svg && yarn build:bundle"
+  },
+  "license": "GPL-2.0-or-later"
+}

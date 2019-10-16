@@ -24,7 +24,7 @@ const Blue = styled.span`
   color: blue;
 `;
 
-const GreaterThanExample = styled.div`
+const GreaterThanExample = styled.span`
   ${style}
   ${breakpoint('mobile')`
     background-color: red;
@@ -37,7 +37,7 @@ const GreaterThanExample = styled.div`
   `}
 `;
 
-const BetweenExample = styled.div`
+const BetweenExample = styled.span`
   ${style}
   background-color: blue;
   ${breakpoint('mobile', 'tablet')`
@@ -48,7 +48,7 @@ const BetweenExample = styled.div`
   `}
 `;
 
-const MapExample = styled.div`
+const MapExample = styled.span`
   ${style}
   ${map(
     {mobile: 'red', tablet: 'green', desktop: 'blue'},

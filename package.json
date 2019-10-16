@@ -2,16 +2,11 @@
   "name": "@salad-ui/components-monorepo",
   "private": true,
   "version": "1.0.0",
-  "workspaces": [
-    ".utilities/*",
-    "packages/*",
-    "playground",
-    "website"
-  ],
-  "bolt": {
-    "workspaces": [
+  "workspaces": {
+    "packages": [
       ".utilities/*",
       "packages/*",
+      "storybook",
       "playground",
       "website"
     ]
@@ -26,7 +21,7 @@
     "@jameslnewell/typescript-config": "^3.0.0",
     "@testing-library/react": "^9.1.3",
     "@types/jest": "^24.0.18",
-    "@types/react": "^16.9.3",
+    "@types/react": "^16.9.6",
     "@types/styled-components": "^4.1.19",
     "danger": "^9.1.8",
     "eslint": "^6.2.1",
@@ -37,23 +32,26 @@
     "lint-staged": "^9.2.3",
     "now": "^16.1.2",
     "prettier": "^1.18.2",
-    "react": "^16.9.0",
+    "react": "^16.10.2",
     "react-dom": "^16.9.0",
     "styled-components": "^4.4.0",
     "ts-jest": "^24.0.2",
     "typescript": "^3.6.0"
   },
   "scripts": {
-    "clean": "lerna run clean && rm -rf packages/*/dist",
+    "clean": "lerna run clean && rm -rf packages/*/dist */.cache",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md,mdx}\"",
-    "type": "tsc --noEmit",
-    "lint": "eslint \"**/*.ts\" \"**/*.tsx\" --fix",
+    "check:typing": "tsc --project tsconfig.json",
+    "check:package:typing": "lerna run check:typing",
+    "check:linting": "eslint \"**/*.ts\" \"**/*.tsx\" --fix",
+    "check": "yarn run check:typing && yarn run check:package:typing && yarn run check:linting",
     "build": "lerna run build",
     "test": "jest --config .jestrc.js",
     "test:debug": "node --inspect-brk node_modules/.bin/jest --config .jestrc.js --runInBand",
-    "start:website": "yarn workspace @salad-ui/website run start",
+    "start:storybook": "yarn workspace @salad-ui/storybook run start",
     "start:playground": "yarn workspace @salad-ui/playground run start",
-    "changeset": "changeset --commit"
+    "start:website": "yarn workspace @salad-ui/website run start",
+    "create-changeset": "changeset --commit"
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx,md,mdx,json}": [

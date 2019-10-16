@@ -1,5 +1,11 @@
 import styled from 'styled-components';
-import {m} from '@salad-ui/spacing';
+import {
+  m,
+  MarginProps,
+  marginProps,
+  PaddingProps,
+  paddingProps,
+} from '@salad-ui/spacing';
 import {fontFamily, fontWeightNormal} from '../common';
 
 export type TitleSize = 'small' | 'medium' | 'large';
@@ -35,7 +41,9 @@ export const title = ({size}: TitleOptions) => `
   letter-spacing: 0;
 `;
 
-export const Title = styled.h1<TitleOptions>`
+export const Title = styled.h1<TitleOptions & MarginProps & PaddingProps>`
   ${m(0)}
   ${title}
+  ${marginProps}
+  ${paddingProps}
 `;

@@ -3,14 +3,22 @@
   "private": true,
   "version": "0.1.1",
   "bin": {
-    "package-builder": "lib/index.js"
+    "package-builder": "cli.js"
   },
   "dependencies": {
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-react": "^7.6.3",
+    "@babel/preset-typescript": "^7.6.0",
+    "@types/fs-extra": "^8.0.0",
+    "esm": "^3.2.25",
+    "fast-glob": "^3.1.0",
     "fs-extra": "^8.1.0",
     "rollup": "^1.22.0",
+    "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-typescript2": "^0.24.3",
+    "ts-node": "^8.4.1",
     "typescript": "^3.5.3"
   },
   "license": "GPL-2.0-or-later"

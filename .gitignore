@@ -10,4 +10,16 @@ node_modules
 .eslintcache
 /packages/*/.tsc_cache
 /packages/*/dist
- 
+
+/storybook/storybook-static
+
+/playground/.cache
+/playground/dist
+
+/website/.cache
+/website/public
+
+yarn-error.log
+
+tsconfig.tsbuildinfo
+report.*.json

@@ -6,7 +6,7 @@ import {
   LogoText,
   TitleLine,
   SubtitleLine,
-} from './index.style';
+} from './index.styles';
 
 export const HeroPanel: React.FC = () => (
   <Wrapper>

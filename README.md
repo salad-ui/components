@@ -17,8 +17,8 @@ A set of components for building rich user interfaces within wp-admin.
     </tr>
     <tr>
       <td>▶️ <strong>Play</strong></td>
-      <td><a href="https://salad-ui-playground.now.sh/">salad-ui-playground.now.sh</a></td>
-      <td>View and test different component states.</td>
+      <td><a href="https://salad-ui-storybook.now.sh/">salad-ui-storybook.now.sh</a></td>
+      <td>View and test different component states in isolation.</td>
     </tr>
     <tr>
       <td>🏗 <strong>Contribute</strong></td>

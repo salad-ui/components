@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Link, Icon, Text} from './index.style';
+import {Link, Icon, Text} from './index.styles';
 export const Logo: React.FC = () => {
   return (
     <>

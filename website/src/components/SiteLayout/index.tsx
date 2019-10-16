@@ -12,7 +12,7 @@ import {
   BodyWrapper,
   SidebarWrapper,
   ContentWrapper,
-} from './index.style';
+} from './index.styles';
 
 export interface SiteLayoutProps {
   gatsby?: {scope?: CodeScope};

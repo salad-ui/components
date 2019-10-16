@@ -1,41 +1,34 @@
 import * as React from 'react';
-import {Element} from './Link.style';
+import {Element} from './Link.styles';
+import {
+  AnchorProps as A11yAnchorProps,
+  Anchor as A11yAnchor,
+} from '@salad-ui/a11y';
 
-interface LinkCommonProps {
+interface CommonLinkProps {
   isSubtle?: boolean;
+  className?: string;
   children?: React.ReactNode;
 }
 
-interface LinkAnchorProps extends LinkCommonProps {
-  href: string;
-  className?: string;
-}
+export type LinkProps = A11yAnchorProps & CommonLinkProps;
 
-interface LinkButtonProps extends LinkCommonProps {
-  onClick: () => void;
-  className?: string;
-}
+export const Link: React.FC<LinkProps> = ({
+  isSubtle,
+  children,
+  ...otherProps
+}): React.ReactElement => {
+  const styleProps = {
+    isSubtle,
+  };
 
-export type LinkProps = LinkAnchorProps | LinkButtonProps;
-
-export interface Link {
-  (props: LinkAnchorProps): React.ReactElement;
-  (props: LinkButtonProps): React.ReactElement;
-}
-
-function isAnchorProps(props: LinkProps): props is LinkAnchorProps {
-  return (props as LinkAnchorProps).href !== undefined;
-}
-
-// TODO: handle space
-
-export const Link: Link = (props: LinkProps): React.ReactElement => {
-  // render an anchor
-  if (isAnchorProps(props)) {
-    const {...otherProps} = props;
-    return <Element {...otherProps} />;
-  }
-
-  // render a button
-  return <Element {...props} role="link" as="button" />;
+  return (
+    <A11yAnchor {...otherProps}>
+      {renderProps => (
+        <Element {...renderProps} {...styleProps}>
+          {children}
+        </Element>
+      )}
+    </A11yAnchor>
+  );
 };

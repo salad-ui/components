@@ -1,7 +1,7 @@
 module.exports = {
   extends: '@jameslnewell/eslint-config/react',
   parserOptions: {
-    project: './tsconfig.json',
+    // project: './tsconfig.lint.json',
   },
   rules: {
     '@typescript-eslint/explicit-function-return-type': [

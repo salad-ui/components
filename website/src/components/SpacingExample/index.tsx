@@ -8,7 +8,7 @@ import {
   MarginInner,
   PaddingOuter,
   PaddingInner,
-} from './index.style';
+} from './index.styles';
 
 const MarginExample: React.FC<SpacingExampleProps> = ({fn, size}) => (
   <MarginOuter>

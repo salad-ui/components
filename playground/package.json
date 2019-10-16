@@ -2,27 +2,28 @@
   "name": "@salad-ui/playground",
   "private": true,
   "version": "0.1.1",
-  "dependencies": {},
+  "dependencies": {
+    "@types/react-router-dom": "^5.1.0",
+    "react-router-dom": "^5.1.2"
+  },
   "devDependencies": {
-    "@babel/core": "^7.5.5",
-    "@percy/storybook": "^3.2.0",
-    "@storybook/addon-actions": "^5.2.1",
-    "@storybook/addon-contexts": "^5.2.1",
-    "@storybook/addon-links": "^5.2.1",
-    "@storybook/addons": "^5.2.1",
-    "@storybook/react": "^5.2.1",
-    "@types/storybook__react": "^4.0.2",
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
     "babel-loader": "^8.0.6",
+    "babel-plugin-styled-components": "^1.10.6",
     "fork-ts-checker-webpack-plugin": "^1.5.0",
-    "react-docgen-typescript-loader": "^3.2.0",
-    "ts-loader": "^6.0.4",
+    "html-webpack-plugin": "^3.2.0",
+    "ts-loader": "^6.2.0",
     "tsconfig-paths-webpack-plugin": "^3.2.0",
-    "typescript": "^3.5.3"
+    "typescript": "^3.6.4",
+    "webpack": "^4.41.0",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.2"
   },
   "scripts": {
-    "start": "start-storybook -p 8000",
-    "build": "build-storybook",
-    "snapshot": "percy-storybook --widths=320,1280"
+    "check:typing": "tsc --project tsconfig.json",
+    "start": "webpack-dev-server",
+    "build": "webpack --mode=production"
   },
   "license": "GPL-2.0-or-later"
 }

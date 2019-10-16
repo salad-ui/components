@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 source ".ci/utils/strict.sh"
 
-yarn run lint
+yarn run check:linting

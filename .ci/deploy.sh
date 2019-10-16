@@ -3,8 +3,8 @@ source ".ci/utils/strict.sh"
 
 if [ "${GITHUB_REF}" == "refs/heads/master" ]; then
     yarn now --token $ZEIT_TOKEN --prod website
-    yarn now --token $ZEIT_TOKEN --prod playground
+    yarn now --token $ZEIT_TOKEN --prod storybook
 else
     yarn now --token $ZEIT_TOKEN website
-    yarn now --token $ZEIT_TOKEN playground
+    yarn now --token $ZEIT_TOKEN storybook
 fi

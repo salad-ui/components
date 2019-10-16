@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Input} from './TextInput.style';
+import {Input} from './TextInput.styles';
 // import {__USE_FIELDSET_PROP} from '@salad-ui/field';
 
 type Attributes = React.InputHTMLAttributes<HTMLInputElement>;
@@ -42,6 +42,8 @@ export interface InputProps {
   minLength?: Attributes['minLength'];
   step?: Attributes['step'];
   autoFocus?: Attributes['autoFocus'];
+
+  className?: string;
 }
 
 export const TextInput: React.FC<InputProps> = ({

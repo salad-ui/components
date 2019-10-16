@@ -1,4 +1,11 @@
 import * as React from 'react';
-import {Wrapper} from './Card.style';
+import {Wrapper} from './Card.styles';
 
-export const Card: React.FC = ({children}) => <Wrapper>{children}</Wrapper>;
+export interface CardProps {
+  className?: string;
+  children?: React.ReactNode;
+}
+
+export const Card: React.FC = ({children, ...otherProps}) => (
+  <Wrapper {...otherProps}>{children}</Wrapper>
+);

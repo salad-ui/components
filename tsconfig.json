@@ -1,11 +1,12 @@
 {
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    /* load source files rather than compile files */
     "baseUrl": ".",
     "paths": {
       "@salad-ui/*": ["packages/*/src"]
-    }
+    },
+    "noEmit": true
   },
-  "include": ["**/*.ts", "**/*.tsx", "**/*.d.ts"]
+  "include": ["**/*.ts", "**/*.tsx", "typings/**/*.d.ts"],
+  "exclude": ["website", "playground", "storybook"]
 }

@@ -1,5 +1,11 @@
 import styled from 'styled-components';
-import {m} from '@salad-ui/spacing';
+import {
+  m,
+  MarginProps,
+  marginProps,
+  PaddingProps,
+  paddingProps,
+} from '@salad-ui/spacing';
 import {fontFamily, fontWeightNormal} from '../common';
 
 export interface BodyOptions {
@@ -27,7 +33,9 @@ export const body = ({isSmall}: BodyOptions = {}) => `
   letter-spacing: 0;
 `;
 
-export const Body = styled.p<BodyOptions>`
+export const Body = styled.p<BodyOptions & MarginProps & PaddingProps>`
   ${m(0)}
   ${body}
+  ${marginProps}
+  ${paddingProps}
 `;
