@@ -6,7 +6,7 @@ import {
   PaddingProps,
   paddingProps,
 } from '@salad-ui/spacing';
-import {ColorProps, colorProps} from '@salad-ui/color/src';
+import {ColorProps, colorProps} from '@salad-ui/color';
 import {fontFamily, fontWeightNormal} from '../common';
 
 export interface BodyOptions {
