@@ -30,7 +30,7 @@ export const Input = styled.input<InputProps>`
   &[aria-invalid="true"] {
     ${color('error.main')}
     ${borderColor('error.main')}
-    ${focusStyle('error.main')}
+    ${focusStyle()}
   }
   
   :focus {
