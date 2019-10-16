@@ -1,5 +1,11 @@
 # @design-system-example/playground
 
+## 0.1.2
+
+### Patch Changes
+
+- f4f0032: renamed a bunch of files, added className props etc
+
 ## 0.1.1
 
 ### Patch Changes

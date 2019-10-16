@@ -1,6 +1,6 @@
 {
   "name": "@salad-ui/container",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
@@ -10,7 +10,7 @@
   "dependencies": {},
   "peerDependencies": {},
   "devDependencies": {
-    "@salad-ui/package-builder": "^0.1.1"
+    "@salad-ui/package-builder": "^0.1.2"
   },
   "scripts": {
     "build": "package-builder"
