@@ -6,6 +6,7 @@ import {
   PaddingProps,
   paddingProps,
 } from '@salad-ui/spacing';
+import {ColorProps, colorProps} from '@salad-ui/color/src';
 import {fontFamily, fontWeightSemibold} from '../common';
 
 export interface SubtitleOptions {
@@ -33,9 +34,12 @@ export const subtitle = ({isSmall}: SubtitleOptions = {}) => `
   letter-spacing: 0;
 `;
 
-export const Subtitle = styled.h1<SubtitleOptions & MarginProps & PaddingProps>`
+export const Subtitle = styled.h1<
+  SubtitleOptions & ColorProps & MarginProps & PaddingProps
+>`
   ${m(0)}
   ${subtitle}
+  ${colorProps}
   ${marginProps}
   ${paddingProps}
 `;
