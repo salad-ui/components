@@ -16,7 +16,7 @@ A set of components for building rich user interfaces within `wp-admin`.
       <td>Learn how to use the components.</td>
     </tr>
     <tr>
-      <td width="125px">📚 <strong>Storybooks</strong></td>
+      <td width="125px">📚 <strong>Storybook</strong></td>
       <td width="200px"><a href="https://salad-ui-storybook.now.sh/">salad-ui-storybook.now.sh</a></td>
       <td>View or test the components in isolation.</td>
     </tr>
