@@ -34,6 +34,7 @@ export const Props: React.FC<Props> = ({component}) => {
     <>
       <List>
         {Object.keys(props)
+          .sort()
           .filter(name => props[name].name !== 'key')
           .map(name => {
             const prop = props[name];

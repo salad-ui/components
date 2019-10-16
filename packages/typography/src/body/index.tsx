@@ -1,13 +1,8 @@
+import * as React from 'react';
 import styled from 'styled-components';
-import {
-  m,
-  MarginProps,
-  marginProps,
-  PaddingProps,
-  paddingProps,
-} from '@salad-ui/spacing';
-import {ColorProps, colorProps} from '@salad-ui/color/src';
 import {fontFamily, fontWeightNormal} from '../common';
+import {m} from '@salad-ui/spacing';
+import {box, BoxProps} from '@salad-ui/box';
 
 export interface BodyOptions {
   isSmall?: boolean;
@@ -34,12 +29,12 @@ export const body = ({isSmall}: BodyOptions = {}) => `
   letter-spacing: 0;
 `;
 
-export const Body = styled.p<
-  BodyOptions & ColorProps & MarginProps & PaddingProps
->`
+export interface BodyProps extends BodyOptions, BoxProps {}
+
+const Element: React.ComponentType<BodyProps> = styled.div<BodyProps>`
   ${m(0)}
   ${body}
-  ${colorProps}
-  ${marginProps}
-  ${paddingProps}
-`;
+  ${box}
+` as React.ComponentType<BodyProps>;
+
+export const Body: React.FC<BodyProps> = props => <Element {...props} />;

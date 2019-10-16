@@ -19,7 +19,7 @@ yarn
 After the initial setup of the repository and after pulling the repository you will need to build the system as some packages (e.g. `@salad-ui/icon`) require additional build steps.
 
 ```bash
-yarn build
+yarn run build
 ```
 
 ## Storybook

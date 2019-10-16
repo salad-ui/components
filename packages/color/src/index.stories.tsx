@@ -60,16 +60,16 @@ export const Color = () => {
         <Title size="large">Secondary</Title>
         <ColorSquares>
           <ColorSquare bg="secondary.main" fg="onSecondary">
-            primary.main
+            secondary.main
           </ColorSquare>
           <ColorSquare bg="secondary.light" fg="onSecondary">
-            primary.light
+            secondary.light
           </ColorSquare>
           <ColorSquare bg="secondary.dark" fg="onSecondary">
-            primary.dark
+            secondary.dark
           </ColorSquare>
           <ColorSquare bg="onSecondary" fg="secondary.main">
-            onPrimary
+            onSecondary
           </ColorSquare>
         </ColorSquares>
       </ColorVariable>
