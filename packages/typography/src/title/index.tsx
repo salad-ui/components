@@ -1,12 +1,7 @@
+import * as React from 'react';
 import styled from 'styled-components';
-import {
-  m,
-  MarginProps,
-  marginProps,
-  PaddingProps,
-  paddingProps,
-} from '@salad-ui/spacing';
-import {ColorProps, colorProps} from '@salad-ui/color';
+import {m} from '@salad-ui/spacing';
+import {box, BoxProps} from '@salad-ui/box';
 import {fontFamily, fontWeightNormal} from '../common';
 
 export type TitleSize = 'small' | 'medium' | 'large';
@@ -42,12 +37,12 @@ export const title = ({size}: TitleOptions) => `
   letter-spacing: 0;
 `;
 
-export const Title = styled.h1<
-  TitleOptions & ColorProps & MarginProps & PaddingProps
->`
+export interface TitleProps extends TitleOptions, BoxProps {}
+
+const Element: React.ComponentType<TitleProps> = styled.div<TitleProps>`
   ${m(0)}
   ${title}
-  ${colorProps}
-  ${marginProps}
-  ${paddingProps}
-`;
+  ${box}
+` as React.ComponentType<TitleProps>;
+
+export const Title: React.FC<TitleProps> = props => <Element {...props} />;

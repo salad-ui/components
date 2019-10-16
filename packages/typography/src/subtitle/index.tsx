@@ -1,12 +1,7 @@
+import * as React from 'react';
 import styled from 'styled-components';
-import {
-  m,
-  MarginProps,
-  marginProps,
-  PaddingProps,
-  paddingProps,
-} from '@salad-ui/spacing';
-import {ColorProps, colorProps} from '@salad-ui/color';
+import {m} from '@salad-ui/spacing';
+import {box, BoxProps} from '@salad-ui/box';
 import {fontFamily, fontWeightSemibold} from '../common';
 
 export interface SubtitleOptions {
@@ -34,12 +29,14 @@ export const subtitle = ({isSmall}: SubtitleOptions = {}) => `
   letter-spacing: 0;
 `;
 
-export const Subtitle = styled.h1<
-  SubtitleOptions & ColorProps & MarginProps & PaddingProps
->`
+export interface SubtitleProps extends SubtitleOptions, BoxProps {}
+
+const Element: React.ComponentType<SubtitleProps> = styled.div<SubtitleProps>`
   ${m(0)}
   ${subtitle}
-  ${colorProps}
-  ${marginProps}
-  ${paddingProps}
-`;
+  ${box}
+` as React.ComponentType<SubtitleProps>;
+
+export const Subtitle: React.FC<SubtitleProps> = props => (
+  <Element {...props} />
+);

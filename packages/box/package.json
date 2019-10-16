@@ -1,23 +1,25 @@
 {
-  "name": "@salad-ui/typography",
-  "version": "0.1.3",
+  "name": "@salad-ui/box",
+  "version": "0.1.0",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "dependencies": {
-    "@salad-ui/box": "^0.1.0",
-    "@salad-ui/color": "^0.1.2",
-    "@salad-ui/spacing": "^0.1.2"
+    "@salad-ui/spacing": "^0.1.2",
+    "@salad-ui/color": "^0.1.2"
   },
   "peerDependencies": {
+    "@types/react": "^16.9.2",
     "@types/styled-components": "^4.1.19",
+    "react": "^16.9.0",
     "styled-components": "^4.4.0"
   },
   "devDependencies": {
-    "@salad-ui/package-builder": "^0.1.3"
+    "@salad-ui/package-builder": "^0.1.2"
   },
   "scripts": {
     "build": "package-builder"

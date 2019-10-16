@@ -17,6 +17,7 @@ const commonStyle = css`
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  vertical-align: middle;
   ${button()}
   ${py(0)}
   ${px(2)}

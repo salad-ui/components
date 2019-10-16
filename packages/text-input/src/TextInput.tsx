@@ -5,11 +5,14 @@ import {Input} from './TextInput.styles';
 type Attributes = React.InputHTMLAttributes<HTMLInputElement>;
 
 export interface InputProps {
-  /** The value */
-  value?: string;
+  onFocus?: () => void;
+  onBlur?: () => void;
 
   /** The change handler. */
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+
+  /** The value */
+  value?: string;
 
   /** The default value */
   defaultValue?: string;

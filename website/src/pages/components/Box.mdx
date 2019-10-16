@@ -1,0 +1,37 @@
+---
+title: Box
+---
+
+import {Box} from '@salad-ui/box';
+import {Container} from '@salad-ui/container';
+import {Title} from '@salad-ui/typography';
+export const scope = {Box, Container, Title};
+
+A generic box component.
+
+## Installation
+
+```bash
+npm install @salad-ui/box
+```
+
+## Usage
+
+Use sparingly when a higher-order component doesn't fullfil your needs.
+
+```jsx
+import {Box} from '@salad-ui/box';
+
+<Box color="onPrimary" backgroundColor="secondary.main">
+  <Container
+    paddingX={{mobile: 2, tablet: 4}}
+    paddingY={{mobile: 4, tablet: 6}}
+  >
+    <Title size="large">The quick brown fox jumps over the lazy dog</Title>
+  </Container>
+</Box>;
+```
+
+## Properties
+
+<Props component={Box} />

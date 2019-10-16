@@ -7,7 +7,9 @@
   "files": [
     "dist"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "@salad-ui/box": "^0.1.0"
+  },
   "peerDependencies": {},
   "devDependencies": {
     "@salad-ui/package-builder": "^0.1.3"
