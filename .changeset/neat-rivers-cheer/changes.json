@@ -1,0 +1,12 @@
+{
+  "releases": [
+    {"name": "@salad-ui/box", "type": "patch"},
+    {"name": "@salad-ui/button", "type": "patch"},
+    {"name": "@salad-ui/icon", "type": "patch"},
+    {"name": "@salad-ui/select-input", "type": "patch"},
+    {"name": "@salad-ui/text-input", "type": "patch"},
+    {"name": "@salad-ui/typography", "type": "patch"},
+    {"name": "@salad-ui/utils", "type": "patch"}
+  ],
+  "dependents": []
+}
