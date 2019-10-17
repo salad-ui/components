@@ -3,12 +3,18 @@ import {transparentize} from 'polished';
 import {mr, ml, px, py} from '@salad-ui/spacing';
 import {button} from '@salad-ui/typography';
 import {color, backgroundColor, borderColor} from '@salad-ui/color';
-import {focusStyle} from '@salad-ui/utils';
+import {
+  compact,
+  focusOutline,
+  fullWidth,
+  disabledCursor,
+} from '@salad-ui/utils';
 import {ButtonVariant} from './types';
 
 export interface WrapperProps {
   variant: ButtonVariant;
   isCompact?: boolean;
+  isFullWidth?: boolean;
   isDestructive?: boolean;
 }
 
@@ -28,16 +34,13 @@ const commonStyle = css`
   text-decoration: none;
 
   :focus {
-    ${focusStyle()}
+    ${focusOutline()}
   }
 
   :disabled {
-    cursor: not-allowed;
+    ${disabledCursor()}
   }
 `;
-
-const spacingStyle = ({isCompact}: WrapperProps) =>
-  isCompact ? `height: 32px;` : `height: 40px;`;
 
 const primaryStyle = ({isDestructive}: WrapperProps) => css`
   ${color(isDestructive ? 'onError' : 'onSecondary')}
@@ -126,7 +129,8 @@ const variantStyles = ({variant}: {variant: ButtonVariant}) => {
 
 export const Element = styled.a<WrapperProps>`
   ${commonStyle}
-  ${spacingStyle}
+  ${compact}
+  ${fullWidth}
   ${variantStyles}
 `;
 

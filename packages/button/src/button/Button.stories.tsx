@@ -35,12 +35,13 @@ const Example = ({
 );
 
 export const Examples = () => (
-  <table>
+  <table style={{width: '100%'}}>
     <tbody>
       <Example title="Normal" />
-      <Example title="isCompact" props={{isCompact: true}} />
-      <Example title="isDestructive" props={{isDestructive: true}} />
-      <Example title="isDisabled" props={{isDisabled: true}} />
+      <Example title="compact" props={{isCompact: true}} />
+      <Example title="full width" props={{isFullWidth: true}} />
+      <Example title="destructive" props={{isDestructive: true}} />
+      <Example title="disabled" props={{isDisabled: true}} />
       <Example
         title="before"
         props={{before: <ChevronLeft aria-hidden={true} />}}

@@ -28,6 +28,11 @@ interface CommonButtonProps {
   isCompact?: boolean;
 
   /**
+   * Renders a full-width button.
+   */
+  isFullWidth?: boolean;
+
+  /**
    * Renders a destructive button.
    */
   isDestructive?: boolean;
@@ -48,6 +53,7 @@ export const Button: React.FC<ButtonProps> = props => {
     after,
     variant,
     isCompact,
+    isFullWidth,
     isDestructive,
     isDisabled,
     children,
@@ -57,6 +63,7 @@ export const Button: React.FC<ButtonProps> = props => {
   const styleProps = {
     variant,
     isCompact,
+    isFullWidth,
     isDestructive,
   };
 

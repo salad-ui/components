@@ -39,7 +39,7 @@ export const title = ({size}: TitleOptions) => `
 
 export interface TitleProps extends TitleOptions, BoxProps {}
 
-const Element: React.ComponentType<TitleProps> = styled.div<TitleProps>`
+const Element = styled.div<TitleProps>`
   ${m(0)}
   ${title}
   ${box}
