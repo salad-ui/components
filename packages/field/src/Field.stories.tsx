@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React from 'react';
+import {text, boolean} from '@storybook/addon-knobs';
 import {Field} from './Field';
 import {TextInput} from '@salad-ui/text-input';
 
@@ -10,31 +11,28 @@ const label = 'Username';
 const help = 'Choose a unique handle to go by.';
 const error = 'Username already taken.';
 
-export const Minimal = () => (
-  <>
-    <Field label={label}>
-      <TextInput />
-    </Field>
-  </>
-);
-
-export const WithHelp = () => (
-  <>
-    <Field label={label} help={help}>
-      <TextInput />
-    </Field>
-  </>
-);
-
-export const WithError: React.FC = () => {
-  const [username, setUsername] = useState('john.smith');
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) =>
-    setUsername(event.target.value);
+export const Demo = () => {
+  const errorKnob = text('error', error);
   return (
-    <>
-      <Field label={label} help={help} error={username && error}>
-        <TextInput value={username} onChange={handleChange} />
-      </Field>
-    </>
+    <Field
+      label={text('label', label)}
+      help={text('help', help)}
+      error={errorKnob}
+      isRequired={boolean('isRequired', false)}
+    >
+      <TextInput isInvalid={Boolean(errorKnob)} />
+    </Field>
   );
 };
+
+export const Help = () => (
+  <Field label={label} help={help}>
+    <TextInput />
+  </Field>
+);
+
+export const Error: React.FC = () => (
+  <Field label={label} help={help} error={error}>
+    <TextInput defaultValue="john.smith" />
+  </Field>
+);

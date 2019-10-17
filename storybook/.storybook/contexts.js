@@ -1,10 +1,10 @@
 import {addDecorator} from '@storybook/react';
 import {withContexts} from '@storybook/addon-contexts/react';
+import {withKnobs} from '@storybook/addon-knobs';
 import {Theme, theme} from '@salad-ui/theme';
 
 // TODO: look into https://github.com/echoulen/storybook-addon-styled-component-theme or https://github.com/storybookjs/storybook/issues/5889 to fix
 // themes breaking on update
-
 addDecorator(
   withContexts([
     {
@@ -33,3 +33,5 @@ addDecorator(
     },
   ]),
 );
+
+addDecorator(withKnobs);
