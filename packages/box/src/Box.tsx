@@ -32,7 +32,7 @@ export interface BoxProps extends BoxOptions {
   children?: React.ReactNode;
 }
 
-const Element: React.ComponentType<BoxProps> = styled.div<BoxProps>`
+const Element = styled.div<BoxProps>`
   ${box}
 ` as React.ComponentType<BoxProps>;
 

@@ -12,34 +12,29 @@ const readFile = util.promisify(fs.readFile);
 const writeFile = util.promisify(fs.writeFile);
 
 const template = ({template}, _opts, {componentName, jsx}) => {
-  const src = `
+  const options = {
+    plugins: ['typescript'],
+    preserveComments: true,
+  };
+
+  return template.smart(options).ast`
 import * as React from 'react';
-import {GlyphProps} from '../types';
+import {GlyphProps} from '../GlyphProps';
 import {Icon} from '../Icon';
 
-/* eslint-disable react/no-children-prop */
-export const COMPONENT_NAME = (props: GlyphProps) => {
+export const ${componentName} = ({color, className, ...props}: GlyphProps) => {
   return (
     React.createElement(
       Icon,
       {
-        children: JSX
+        color,
+        className,
+        children: ${jsx}
       }
     )
   );
 };
-/* eslint-enable react/no-children-prop */
-  `;
-
-  const tpl = template.smart(src, {
-    plugins: ['typescript'],
-    preserveComments: true,
-  });
-
-  return tpl({
-    COMPONENT_NAME: componentName,
-    JSX: jsx,
-  });
+    `;
 };
 
 const getComponentName = file => toPascalCase(path.basename(file, '.svg'));
@@ -64,8 +59,11 @@ const convert = async files => {
         {
           icon: true,
           template,
+          svgoConfig: {
+            removeComments: false,
+          },
           plugins: [
-            // '@svgr/plugin-svgo',
+            '@svgr/plugin-svgo',
             '@svgr/plugin-jsx',
             '@svgr/plugin-prettier',
           ],
@@ -74,7 +72,13 @@ const convert = async files => {
           componentName: getComponentName(file),
         },
       );
-      await writeFile(outputFile, output);
+      await writeFile(
+        outputFile,
+        `
+/* eslint-disable react/no-children-prop */
+${output}
+        `.trim(),
+      );
       console.log(`${sourceFile.padEnd(maxLength)} -> ${outputFile}`);
     }),
   );
@@ -85,7 +89,7 @@ const index = async files => {
     `${outputDirectory}/index.ts`,
     `
   import * as React from 'react';
-  import {GlyphProps} from '../types';
+  import {GlyphProps} from '../GlyphProps';
 
 ${files
   .map(
@@ -105,8 +109,13 @@ export const glyphs: {[name: string]: React.ComponentType<GlyphProps>} = {
 };
 
 (async () => {
-  await mkdir(outputDirectory, {recursive: true});
-  const files = await list();
-  await convert(files);
-  await index(files);
+  try {
+    await mkdir(outputDirectory, {recursive: true});
+    const files = await list();
+    await convert(files);
+    await index(files);
+  } catch (error) {
+    console.error(error);
+    process.exit(1);
+  }
 })();

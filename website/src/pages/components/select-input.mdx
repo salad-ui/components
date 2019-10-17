@@ -1,0 +1,33 @@
+---
+title: SelectInput
+---
+
+import {SelectInput} from '@salad-ui/select-input';
+export const scope = {SelectInput};
+
+Select inputs let users make a choice from a list of options.
+
+## Installation
+
+```bash
+npm install @salad-ui/select-input
+```
+
+## Usage
+
+```jsx
+import {SelectInput} from '@salad-ui/select-input';
+
+<SelectInput>
+  <SelectInput.Option value="1">Under 18 years</SelectInput.Option>
+  <SelectInput.Option value="2">18-24 years</SelectInput.Option>
+  <SelectInput.Option value="3">25-34 years</SelectInput.Option>
+  <SelectInput.Option value="4">35-44 years</SelectInput.Option>
+  <SelectInput.Option value="5">45-54 years</SelectInput.Option>
+  <SelectInput.Option value="6">Over 55 years</SelectInput.Option>
+</SelectInput>;
+```
+
+## Properties
+
+<Props component={SelectInput} />

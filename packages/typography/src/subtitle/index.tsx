@@ -31,7 +31,7 @@ export const subtitle = ({isSmall}: SubtitleOptions = {}) => `
 
 export interface SubtitleProps extends SubtitleOptions, BoxProps {}
 
-const Element: React.ComponentType<SubtitleProps> = styled.div<SubtitleProps>`
+const Element = styled.div<SubtitleProps>`
   ${m(0)}
   ${subtitle}
   ${box}

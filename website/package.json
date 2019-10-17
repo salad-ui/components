@@ -6,6 +6,7 @@
     "nohoist": []
   },
   "dependencies": {
+    "@salad-ui/icon": "^0.1.2",
     "@types/classnames": "2.2.9",
     "@types/lodash": "4.14.138",
     "@types/node": "^12.7.2",

@@ -31,7 +31,7 @@ export const body = ({isSmall}: BodyOptions = {}) => `
 
 export interface BodyProps extends BodyOptions, BoxProps {}
 
-const Element: React.ComponentType<BodyProps> = styled.div<BodyProps>`
+const Element = styled.div<BodyProps>`
   ${m(0)}
   ${body}
   ${box}

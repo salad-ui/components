@@ -4,7 +4,7 @@ import {Input} from './TextInput.styles';
 
 type Attributes = React.InputHTMLAttributes<HTMLInputElement>;
 
-export interface InputProps {
+export interface TextInputProps {
   onFocus?: () => void;
   onBlur?: () => void;
 
@@ -17,13 +17,15 @@ export interface InputProps {
   /** The default value */
   defaultValue?: string;
 
-  /** Whether the value is required. */
-  isRequired?: boolean;
-
   /** Whether the value is invalid. */
   isInvalid?: boolean;
 
-  // size/layout
+  /** Whether the value is required. */
+  isRequired?: boolean;
+
+  /** Whether the value is disabled. */
+  isDisabled?: boolean;
+
   /** Whether to use a more compact input. */
   isCompact?: boolean;
 
@@ -44,24 +46,23 @@ export interface InputProps {
   maxLength?: Attributes['maxLength'];
   minLength?: Attributes['minLength'];
   step?: Attributes['step'];
-  autoFocus?: Attributes['autoFocus'];
 
+  autoFocus?: Attributes['autoFocus'];
   className?: string;
 }
 
-export const TextInput: React.FC<InputProps> = ({
+export const TextInput: React.FC<TextInputProps> = ({
   isInvalid,
   isRequired,
+  isDisabled,
   ...otherProps
 }) => {
   return (
     <Input
       {...otherProps}
-      aria-required={isRequired}
       aria-invalid={isInvalid}
+      aria-required={isRequired}
+      disabled={isDisabled}
     />
   );
 };
-
-// tell Field not to use a group
-// (TextInput as any)[__USE_FIELDSET_PROP] = false;
