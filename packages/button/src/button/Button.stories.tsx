@@ -1,5 +1,6 @@
 import React from 'react';
 import {action} from '@storybook/addon-actions';
+import {text, select, boolean} from '@storybook/addon-knobs';
 import {ButtonProps, Button} from '.';
 import {ChevronLeft, Home} from '@salad-ui/icon';
 
@@ -34,7 +35,21 @@ const Example = ({
   </tr>
 );
 
-export const Examples = () => (
+export const Demo = () => (
+  <Button
+    before={text('before', '')}
+    after={text('after', '')}
+    variant={select('variant', ['primary', 'secondary', 'tertiary'], 'primary')}
+    isCompact={boolean('isCompact', false)}
+    isFullWidth={boolean('isFullWidth', false)}
+    isDestructive={boolean('isDestructive', false)}
+    isDisabled={boolean('isDisabled', false)}
+  >
+    {text('children', 'Click me!')}
+  </Button>
+);
+
+export const Variations = () => (
   <table style={{width: '100%'}}>
     <tbody>
       <Example title="Normal" />
