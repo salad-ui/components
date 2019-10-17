@@ -1,5 +1,11 @@
 # @salad-ui/button
 
+## 0.1.5
+
+### Patch Changes
+
+- 096641e: Added select-input and refactored some styles
+
 ## 0.1.4
 
 ### Patch Changes
