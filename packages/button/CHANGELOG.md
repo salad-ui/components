@@ -1,5 +1,11 @@
 # @salad-ui/button
 
+## 0.1.4
+
+### Patch Changes
+
+- ad57d13: added box and fixed icon positioning for buttons
+
 ## 0.1.3
 
 ### Patch Changes

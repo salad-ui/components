@@ -1,6 +1,6 @@
 {
   "name": "@salad-ui/box",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
@@ -10,7 +10,7 @@
   ],
   "dependencies": {
     "@salad-ui/spacing": "^0.1.2",
-    "@salad-ui/color": "^0.1.2"
+    "@salad-ui/color": "^0.1.4"
   },
   "peerDependencies": {
     "@types/react": "^16.9.2",
