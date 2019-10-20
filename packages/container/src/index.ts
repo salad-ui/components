@@ -10,5 +10,5 @@ export const container = () => `
 `;
 
 export const Container = styled(Box)`
-  ${container}
+  ${container()}
 `;

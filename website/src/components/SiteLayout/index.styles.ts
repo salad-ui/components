@@ -19,7 +19,7 @@ export const Wrapper = styled.div`
 export const BodyWrapper = styled.div`
   display: grid;
   grid-template-columns: auto 1fr;
-  ${container}
+  ${container()}
 `;
 
 export const SidebarWrapper = styled.div`
