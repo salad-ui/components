@@ -1,5 +1,11 @@
 # @salad-ui/text-input
 
+## 0.1.4
+
+### Patch Changes
+
+- 096641e: Added select-input and refactored some styles
+
 ## 0.1.3
 
 ### Patch Changes

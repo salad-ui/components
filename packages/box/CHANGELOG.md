@@ -1,5 +1,11 @@
 # @salad-ui/box
 
+## 0.1.2
+
+### Patch Changes
+
+- 096641e: Added select-input and refactored some styles
+
 ## 0.1.1
 
 ### Patch Changes
