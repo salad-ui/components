@@ -14,7 +14,6 @@ import {
   PropType,
   PropDefault,
   PropRequired,
-  PropDescription,
 } from './index.styles';
 
 export interface Props {
@@ -56,7 +55,9 @@ export const Props: React.FC<Props> = ({component}) => {
                     </>
                   )}
                 </PropDetail>
-                <PropDescription>{prop.description}</PropDescription>
+                <Body isSmall mx={1} my={1}>
+                  {prop.description}
+                </Body>
               </Prop>
             );
           })}

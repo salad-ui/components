@@ -1,7 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import {m} from '@salad-ui/spacing';
-import {box, BoxProps} from '@salad-ui/box';
+import {Box, BoxProps} from '@salad-ui/box';
 import {fontFamily, fontWeightNormal} from '../common';
 
 export type TitleSize = 'small' | 'medium' | 'large';
@@ -39,10 +38,15 @@ export const title = ({size}: TitleOptions) => `
 
 export interface TitleProps extends TitleOptions, BoxProps {}
 
-const Element = styled.div<TitleProps>`
-  ${m(0)}
+const TitleStyle = styled(Box).attrs<Partial<TitleProps>>({
+  $omitProps: ['size'],
+})<TitleProps>`
   ${title}
-  ${box}
-` as React.ComponentType<TitleProps>;
+`;
 
-export const Title: React.FC<TitleProps> = props => <Element {...props} />;
+TitleStyle.defaultProps = {
+  margin: 0,
+  component: 'p',
+};
+
+export const Title: React.FC<TitleProps> = props => <TitleStyle {...props} />;

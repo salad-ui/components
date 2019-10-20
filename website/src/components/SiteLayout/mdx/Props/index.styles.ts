@@ -46,7 +46,3 @@ export const PropRequired = styled.span`
   font-weight: bold;
   border-radius: 3px;
 `;
-
-export const PropDescription = styled.p`
-  ${mx(1)}
-`;

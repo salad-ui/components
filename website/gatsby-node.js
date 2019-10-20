@@ -10,6 +10,7 @@ exports.onCreateWebpackConfig = ({actions}) => {
 
   // make gatsby embed metadata for react components
   actions.setWebpackConfig({
+    devtool: false,
     module: {
       rules: [
         {

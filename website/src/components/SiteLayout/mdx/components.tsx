@@ -1,6 +1,5 @@
 import * as React from 'react';
 import {Title, Body} from '@salad-ui/typography';
-import {mt, mb} from '@salad-ui/spacing';
 import {Props} from './Props';
 import {Code} from './Code';
 
@@ -12,25 +11,73 @@ export const components = {
 
   /* style these components */
 
-  h1: (props: any) => <Title size="large" css={[mt(4), mb(1)]} {...props} />,
-  h2: (props: any) => (
-    <Title size="medium" as="h2" css={[mt(4), mb(1)]} {...props} />
+  h1: (props: any) => (
+    <Title
+      size="large"
+      color="onSurface.main"
+      component="h1"
+      mt={4}
+      mb={2}
+      {...props}
+    />
   ),
+  h2: (props: any) => {
+    return (
+      <Title
+        size="medium"
+        color="onSurface.main"
+        mt={4}
+        mb={2}
+        component="h2"
+        {...props}
+      />
+    );
+  },
   h3: (props: any) => (
-    <Title size="small" as="h3" css={[mt(4), mb(1)]} {...props} />
+    <Title
+      size="small"
+      color="onSurface.main"
+      mt={4}
+      mb={2}
+      component="h3"
+      {...props}
+    />
   ),
   h4: (props: any) => (
-    <Title size="small" as="h4" css={[mt(4), mb(1)]} {...props} />
+    <Title
+      size="small"
+      color="onSurface.main"
+      mt={4}
+      mb={2}
+      component="h4"
+      {...props}
+    />
   ),
   h5: (props: any) => (
-    <Title size="small" as="h5" css={[mt(4), mb(1)]} {...props} />
+    <Title
+      size="small"
+      color="onSurface.main"
+      mt={4}
+      mb={2}
+      component="h5"
+      {...props}
+    />
   ),
   h6: (props: any) => (
-    <Title size="small" as="h6" css={[mt(4), mb(1)]} {...props} />
+    <Title
+      size="small"
+      color="onSurface.main"
+      mt={4}
+      mb={2}
+      component="h6"
+      {...props}
+    />
   ),
 
-  p: (props: any) => <Body css={[mt(1), mb(1)]} {...props} />,
-  li: (props: any) => <Body {...props} as="li" />,
+  p: (props: any) => <Body color="onSurface.subtle" my={1} {...props} />,
+  li: (props: any) => (
+    <Body color="onSurface.subtle" {...props} component="li" />
+  ),
 
   code: Code,
 };

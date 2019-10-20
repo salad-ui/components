@@ -1,15 +1,14 @@
-import styled, {css} from 'styled-components';
-import {box} from '@salad-ui/box';
+import styled from 'styled-components';
+import {Box} from '@salad-ui/box';
 
-export const container = css`
+export const container = () => `
   box-sizing: border-box;
   width: 100%;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  ${box}
 `;
 
-export const Container = styled.div`
+export const Container = styled(Box)`
   ${container}
 `;
