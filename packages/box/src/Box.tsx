@@ -60,7 +60,7 @@ export const box = css<BoxOptions>`
 `;
 
 interface ComponentProps {
-  $omitProps: string[];
+  $omitProps?: string[];
   component?: keyof JSX.IntrinsicElements;
   className?: string;
   children?: React.ReactNode;
