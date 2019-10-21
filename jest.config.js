@@ -1,11 +1,11 @@
 module.exports = {
-  preset: `ts-jest`,
   testMatch: [`**/*.tests.ts?(x)`],
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
+  transform: {
+    '^.+\\.(js|jsx|ts|tsx)$': 'babel-jest',
+  },
   moduleNameMapper: {
     '^@salad-ui/(.*)$': '<rootDir>/packages/$1/src',
-  },
-  transform: {
-    '^.+\\.(js|jsx)$': 'babel-jest',
   },
   transformIgnorePatterns: [
     // ignore node_modules because we expect them to already be transpiled, except for: lodash-es

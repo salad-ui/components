@@ -5,6 +5,7 @@ import {
   ButtonProps as A11yButtonProps,
   Anchor as A11yAnchor,
   Button as A11yButton,
+  useFocusGroupItem,
 } from '@salad-ui/a11y';
 
 interface CommonDrawerItemProps {
@@ -41,6 +42,8 @@ export const DrawerItem: React.FC<DrawerItemProps> = ({
   children,
   ...otherProps
 }) => {
+  const focusGroupItemProps = useFocusGroupItem();
+
   const styleProps = {
     variant,
     isActive,
@@ -58,7 +61,7 @@ export const DrawerItem: React.FC<DrawerItemProps> = ({
     return (
       <A11yAnchor {...otherProps}>
         {renderProps => (
-          <Wrapper {...renderProps} {...styleProps}>
+          <Wrapper {...renderProps} {...styleProps} {...focusGroupItemProps}>
             {content}
           </Wrapper>
         )}
@@ -68,7 +71,7 @@ export const DrawerItem: React.FC<DrawerItemProps> = ({
     return (
       <A11yButton {...otherProps}>
         {renderProps => (
-          <Wrapper {...renderProps} {...styleProps}>
+          <Wrapper {...renderProps} {...styleProps} {...focusGroupItemProps}>
             {content}
           </Wrapper>
         )}

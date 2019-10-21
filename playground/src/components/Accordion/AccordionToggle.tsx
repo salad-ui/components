@@ -2,9 +2,7 @@ import * as React from 'react';
 import {useAccordionContext} from './useAccordionContext';
 
 interface AccordionToggleRenderFunctionProps {
-  ref: React.RefObject<HTMLElement>;
   onClick: () => void;
-  onKeyDown: (event: React.KeyboardEvent) => void;
   id: string;
   'aria-controls': string;
   'aria-expanded': boolean;
@@ -33,60 +31,13 @@ export const AccordionToggle = ({
   children,
   ...otherProps
 }: AccordionToggleProps): React.ReactElement => {
-  /* eslint-disable @typescript-eslint/no-explicit-any */
-  const element = React.useRef<any>(null);
-  /* eslint-enable @typescript-eslint/no-explicit-any */
-  const {
-    getToggleID,
-    getContentID,
-    expanded,
-    onToggle,
-    getFirstToggle,
-    getLastToggle,
-    getPreviousToggle,
-    getNextToggle,
-  } = useAccordionContext();
-
-  const handleKeyDown = (event: React.KeyboardEvent) => {
-    switch (event.key) {
-      case 'Home': {
-        const toggle = getFirstToggle();
-        if (toggle) {
-          toggle.focus();
-        }
-        break;
-      }
-      case 'End': {
-        const toggle = getLastToggle();
-        if (toggle) {
-          toggle.focus();
-        }
-        break;
-      }
-      case 'ArrowUp': {
-        const toggle = getPreviousToggle(rel);
-        if (toggle) {
-          toggle.focus();
-        }
-        break;
-      }
-      case 'ArrowDown': {
-        const toggle = getNextToggle(rel);
-        if (toggle) {
-          toggle.focus();
-        }
-        break;
-      }
-    }
-  };
+  const {getToggleID, getContentID, expanded, onToggle} = useAccordionContext();
 
   const isExpanded = expanded[rel];
 
   const props = {
     ...otherProps,
-    ref: element,
     onClick: () => onToggle(rel),
-    onKeyDown: handleKeyDown,
     id: getToggleID(rel),
     'aria-controls': getContentID(rel),
     'aria-expanded': expanded[rel] || false,

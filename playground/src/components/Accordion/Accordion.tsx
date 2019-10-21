@@ -27,17 +27,6 @@ const convertArrayToMap = (relOrRels: string | string[]) => {
   );
 };
 
-const findToggleElements = (
-  element: React.RefObject<HTMLElement>,
-): HTMLElement[] => {
-  if (!element.current) {
-    return [];
-  }
-  return [].slice.call(
-    element.current.querySelectorAll('[data-accordion-toggle-rel]'),
-  );
-};
-
 export const Accordion: React.FC<AccordionProps> & AccordionStatic = ({
   expanded,
   onToggle,
@@ -51,41 +40,8 @@ export const Accordion: React.FC<AccordionProps> & AccordionStatic = ({
     (): AccordionContextProps => ({
       getToggleID: rel => getID(`${rel}-toggle`),
       getContentID: rel => getID(`${rel}-content`),
-
       expanded: convertArrayToMap(expanded),
       onToggle,
-
-      getFirstToggle: () => {
-        const toggles = findToggleElements(element);
-        return toggles[0];
-      },
-
-      getLastToggle: () => {
-        const toggles = findToggleElements(element);
-        return toggles[toggles.length - 1];
-      },
-
-      getPreviousToggle: (rel: string) => {
-        const toggles = findToggleElements(element);
-        const selfIndex = toggles.findIndex(
-          element => element.dataset.accordionToggleRel === rel,
-        );
-        if (selfIndex === -1) {
-          return undefined;
-        }
-        return toggles[selfIndex - 1];
-      },
-
-      getNextToggle: (rel: string) => {
-        const toggles = findToggleElements(element);
-        const selfIndex = toggles.findIndex(
-          element => element.dataset.accordionToggleRel === rel,
-        );
-        if (selfIndex === -1) {
-          return undefined;
-        }
-        return toggles[selfIndex + 1];
-      },
     }),
     [getID, expanded, onToggle],
   );
