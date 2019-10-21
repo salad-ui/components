@@ -1,7 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import {m} from '@salad-ui/spacing';
-import {box, BoxProps} from '@salad-ui/box';
+import {Box, BoxProps} from '@salad-ui/box';
 import {fontFamily, fontWeightNormal} from '../common';
 
 export interface BodyOptions {
@@ -31,10 +30,15 @@ export const body = ({isSmall}: BodyOptions = {}) => `
 
 export interface BodyProps extends BodyOptions, BoxProps {}
 
-const Element = styled.div<BodyProps>`
-  ${m(0)}
+const BodyStyle = styled(Box).attrs<Partial<BodyProps>>({
+  $omitProps: ['isSmall'],
+})<BodyProps>`
   ${body}
-  ${box}
-` as React.ComponentType<BodyProps>;
+`;
 
-export const Body: React.FC<BodyProps> = props => <Element {...props} />;
+BodyStyle.defaultProps = {
+  margin: 0,
+  component: 'p',
+};
+
+export const Body: React.FC<BodyProps> = props => <BodyStyle {...props} />;
