@@ -1,7 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import {m} from '@salad-ui/spacing';
-import {box, BoxProps} from '@salad-ui/box';
+import {BoxProps, Box} from '@salad-ui/box';
 import {fontFamily, fontWeightSemibold} from '../common';
 
 export interface SubtitleOptions {
@@ -31,12 +30,17 @@ export const subtitle = ({isSmall}: SubtitleOptions = {}) => `
 
 export interface SubtitleProps extends SubtitleOptions, BoxProps {}
 
-const Element = styled.div<SubtitleProps>`
-  ${m(0)}
+const SubtitleStyle = styled(Box).attrs<Partial<SubtitleProps>>({
+  $omitProps: ['isSmall'],
+})<SubtitleProps>`
   ${subtitle}
-  ${box}
-` as React.ComponentType<SubtitleProps>;
+`;
+
+SubtitleStyle.defaultProps = {
+  margin: 0,
+  component: 'p',
+};
 
 export const Subtitle: React.FC<SubtitleProps> = props => (
-  <Element {...props} />
+  <SubtitleStyle {...props} />
 );

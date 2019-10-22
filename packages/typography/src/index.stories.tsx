@@ -19,14 +19,14 @@ const Overline = styled.h1`
 export const example = () => (
   <>
     <Title size="large">Title Large</Title>
-    <Title size="medium" as="h2">
+    <Title size="medium" component="h2">
       Title Medium
     </Title>
-    <Title size="small" as="h3">
+    <Title size="small" component="h3">
       Title Small
     </Title>
     <Subtitle>Subtitle</Subtitle>
-    <Subtitle isSmall as="h2">
+    <Subtitle isSmall component="h2">
       Subtitle Small
     </Subtitle>
     <Body>Body</Body>

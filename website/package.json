@@ -1,7 +1,7 @@
 {
   "name": "@salad-ui/website",
   "private": true,
-  "version": "0.1.4",
+  "version": "0.1.5",
   "workspaces": {
     "nohoist": []
   },

@@ -1,5 +1,11 @@
 # @salad-ui/typography
 
+## 0.1.6
+
+### Patch Changes
+
+- b76bc81: Updated usage of Box
+
 ## 0.1.5
 
 ### Patch Changes

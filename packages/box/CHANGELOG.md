@@ -1,5 +1,11 @@
 # @salad-ui/box
 
+## 0.1.3
+
+### Patch Changes
+
+- b76bc81: Updated usage of Box
+
 ## 0.1.2
 
 ### Patch Changes
