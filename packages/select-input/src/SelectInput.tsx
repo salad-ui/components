@@ -24,11 +24,12 @@ export const SelectInput: React.FC<SelectInputProps> & SelectInputStatic = ({
   isRequired,
   isDisabled,
   isFullWidth,
+  className,
   children,
   ...otherProps
 }) => {
   return (
-    <Wrapper isFullWidth={isFullWidth}>
+    <Wrapper isFullWidth={isFullWidth} className={className}>
       <Select
         {...otherProps}
         isFullWidth={isFullWidth}

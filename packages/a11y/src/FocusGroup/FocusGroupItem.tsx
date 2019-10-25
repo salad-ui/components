@@ -1,14 +1,13 @@
 import * as React from 'react';
-import {useFocusGroupItem} from './useFocusGroupItem';
+import {
+  useFocusGroupItem,
+  UseFocusGroupItemOptions,
+  UseFocusGroupItemResult,
+} from './useFocusGroupItem';
 
-export interface FocusGroupItemRenderProps {
-  ref: React.RefObject<any>;
-  disabled?: boolean;
-  onKeyDown: (event: React.KeyboardEvent<any>) => void;
-}
+export interface FocusGroupItemRenderProps extends UseFocusGroupItemResult {}
 
-export interface FocusGroupItemProps {
-  disabled?: boolean;
+export interface FocusGroupItemProps extends UseFocusGroupItemOptions {
   children: (props: FocusGroupItemRenderProps) => React.ReactElement;
 }
 

@@ -39,7 +39,7 @@ export const title = ({size}: TitleOptions) => `
 export interface TitleProps extends TitleOptions, BoxProps {}
 
 const TitleStyle = styled(Box).attrs<Partial<TitleProps>>({
-  $omitProps: ['size'],
+  propsToOmit: ['size'],
 })<TitleProps>`
   ${title}
 `;

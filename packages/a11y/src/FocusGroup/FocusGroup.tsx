@@ -98,7 +98,7 @@ export const FocusGroup: React.FC<FocusGroupProps> & FocusGroupStatic = ({
         }
       },
     }),
-    [],
+    [orientation],
   );
   return (
     <FocusGroupContext.Provider value={context}>

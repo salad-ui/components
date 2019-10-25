@@ -10,7 +10,8 @@
   ],
   "dependencies": {
     "@salad-ui/spacing": "^0.1.2",
-    "@salad-ui/color": "^0.1.4"
+    "@salad-ui/color": "^0.1.4",
+    "@salad-ui/utils": "^0.1.4"
   },
   "peerDependencies": {
     "@types/react": "^16.9.2",

@@ -22,13 +22,15 @@ import * as React from 'react';
 import {GlyphProps} from '../GlyphProps';
 import {Icon} from '../Icon';
 
-export const ${componentName} = ({color, className, ...props}: GlyphProps) => {
+export const ${componentName} = ({role, 'aria-hidden': ariaHidden, 'aria-labeledby': ariaLabelledby, 'aria-describedby': ariaDescribedby, ...iconProps}: GlyphProps) => {
+  const props = {
+    role, 'aria-hidden': ariaHidden, 'aria-labelledby': ariaLabelledby, 'aria-describedby': ariaDescribedby
+  };
   return (
     React.createElement(
       Icon,
       {
-        color,
-        className,
+        ...iconProps,
         children: ${jsx}
       }
     )

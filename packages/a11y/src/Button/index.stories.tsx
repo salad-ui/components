@@ -4,7 +4,7 @@ import {action} from '@storybook/addon-actions';
 import {ButtonProps, Button} from '.';
 
 export default {
-  title: 'a11y/Button',
+  title: 'utilities/a11y/Button',
 };
 
 const StyledButton = styled.button`

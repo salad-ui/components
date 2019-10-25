@@ -39,10 +39,13 @@ function createRollupOptions() {
         // 😢@see https://github.com/styled-components/styled-components/issues/1654
         namedExports: {
           '../../node_modules/react/index.js': [
+            'Component',
             'cloneElement',
             'createContext',
-            'Component',
             'createElement',
+            'Fragment',
+            'useContext',
+            'useMemo',
           ],
           '../../node_modules/react-dom/index.js': ['render', 'hydrate'],
           '../../node_modules/react-is/index.js': [

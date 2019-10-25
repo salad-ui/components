@@ -5,7 +5,7 @@ import {ButtonProps, Button} from '.';
 import {ChevronLeft, Home} from '@salad-ui/icon';
 
 export default {
-  title: 'components/Button',
+  title: 'components/button/Button',
 };
 
 const Example = ({

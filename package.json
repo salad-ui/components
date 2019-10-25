@@ -31,9 +31,9 @@
     "jest": "^24.9.0",
     "jest-styled-components": "^6.3.3",
     "lerna": "^3.16.4",
-    "lint-staged": "^9.2.3",
     "now": "^16.1.2",
     "prettier": "^1.18.2",
+    "pretty-quick": "^2.0.0",
     "react": "^16.10.2",
     "react-dom": "^16.9.0",
     "styled-components": "^4.4.0",
@@ -54,15 +54,9 @@
     "start:website": "yarn workspace @salad-ui/website run start",
     "create-changeset": "changeset --commit"
   },
-  "lint-staged": {
-    "**/*.{js,jsx,ts,tsx,md,mdx,json}": [
-      "yarn run format",
-      "git add"
-    ]
-  },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "pretty-quick --staged"
     }
   },
   "license": "GPL-2.0-or-later"

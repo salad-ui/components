@@ -13,8 +13,7 @@
     "@types/react": "^16.9.2",
     "@types/styled-components": "^4.1.19",
     "react": "^16.9.0",
-    "styled-components": "^4.4.0",
-    "reakit": "1.0.0-beta.9"
+    "styled-components": "^4.4.0"
   },
   "devDependencies": {
     "@salad-ui/package-builder": "^0.1.3"

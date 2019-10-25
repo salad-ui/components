@@ -1,8 +1,11 @@
 import * as React from 'react';
-import {Wrapper} from './Icon.styles';
 import {ColorProps} from '@salad-ui/color';
+import {MarginProps} from '@salad-ui/spacing';
+import {IconSize} from './types';
+import {Wrapper} from './Icon.styles';
 
-export interface IconProps extends ColorProps {
+export interface IconProps extends ColorProps, MarginProps {
+  size?: IconSize;
   className?: string;
   children?: React.ReactNode;
 }

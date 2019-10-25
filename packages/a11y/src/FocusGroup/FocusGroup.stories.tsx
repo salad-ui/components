@@ -3,7 +3,7 @@ import {action} from '@storybook/addon-actions';
 import {FocusGroup} from '.';
 
 export default {
-  title: 'a11y/FocusGroup',
+  title: 'utilities/a11y/FocusGroup',
 };
 
 export const Horizontal = () => (

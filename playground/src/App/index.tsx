@@ -1,16 +1,21 @@
 import * as React from 'react';
 import {Switch, Route, Link} from 'react-router-dom';
-import {SettingsPage} from '~pages/SettingsPage';
 import {GlobalStyle} from './index.styles';
+
+const SettingsPage = React.lazy(() => import('~pages/SettingsPage'));
+const PluginsPage = React.lazy(() => import('~pages/PluginsPage'));
 
 export const App = () => (
   <>
     <GlobalStyle />
-    <Switch>
-      <Route path="/" exact>
-        <Link to="/settings">Settings</Link>
-      </Route>
-      <Route path="/settings" exact component={SettingsPage} />
-    </Switch>
+    <React.Suspense fallback={null}>
+      <Switch>
+        <Route path="/" exact>
+          <Link to="/settings">Settings</Link>
+        </Route>
+        <Route path="/settings" exact component={SettingsPage} />
+        <Route path="/plugins" exact component={PluginsPage} />
+      </Switch>
+    </React.Suspense>
   </>
 );

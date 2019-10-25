@@ -28,19 +28,20 @@ export const useFocusGroupItem = ({
   // register on mount and unregister on unmount
   // unregister when disabled and register when enabled
   React.useEffect(() => {
-    if (element.current) {
+    const el = element.current;
+    if (el) {
       if (disabled) {
-        unregister(element.current);
+        unregister(el);
       } else {
-        register(element.current);
+        register(el);
       }
     }
     return () => {
-      if (element.current) {
-        unregister(element.current);
+      if (el) {
+        unregister(el);
       }
     };
-  }, [disabled]);
+  }, [disabled, register, unregister]);
 
   const handleKeyDown = (event: React.KeyboardEvent) => {
     switch (event.key) {

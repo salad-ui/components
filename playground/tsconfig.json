@@ -9,5 +9,5 @@
       "~*": ["src/*"]
     }
   },
-  "include": ["../packages/*/src", "src", "typings"]
+  "include": ["../packages/*/src", "src", "typings/**/*.d.ts"]
 }
