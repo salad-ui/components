@@ -2,7 +2,7 @@
 /packages/*/dist
 /storybook/storybook-static
 /playground/.cache
-/playground/dist
+/playground/satic
 /website/.cache
 /website/public
 /packages/icon/src/glyphs
