@@ -4,10 +4,10 @@ import {marginRight} from '@salad-ui/spacing';
 import {SelectInput} from '@salad-ui/select-input';
 import {TextInput} from '@salad-ui/text-input';
 import {Button} from '@salad-ui/button';
-import {Tabs, TabProps} from '@salad-ui/tabs';
+import {Tabs, TabsTabProps} from '@salad-ui/tabs';
 import {Wrapper, TabsWrapper, SearchWrapper} from './index.styles';
 
-interface TabLinkProps extends TabProps {
+interface TabLinkProps extends TabsTabProps {
   navigate: () => void;
 }
 // FIXME: https://github.com/ReactTraining/react-router/issues/7013

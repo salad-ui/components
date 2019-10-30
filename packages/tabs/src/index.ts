@@ -1,2 +1,4 @@
 export * from './Tabs';
-export {TabProps} from './Tab';
+import {TabProps} from './Tab';
+
+export type TabsTabProps = TabProps;
