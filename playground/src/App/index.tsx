@@ -12,7 +12,9 @@ export const App = () => (
       <Switch>
         <Route path="/" exact>
           <Link to="/settings">Settings</Link>
-          <Link to="/plugins/featured">Settings</Link>
+          <br />
+          <Link to="/plugins/featured">Plugins</Link>
+          <br />
         </Route>
         <Route path="/settings" exact component={SettingsPage} />
         <Route path="/plugins" component={PluginsPage} />
