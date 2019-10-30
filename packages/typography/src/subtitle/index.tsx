@@ -31,7 +31,7 @@ export const subtitle = ({isSmall}: SubtitleOptions = {}) => `
 export interface SubtitleProps extends SubtitleOptions, BoxProps {}
 
 const SubtitleStyle = styled(Box).attrs<Partial<SubtitleProps>>({
-  $omitProps: ['isSmall'],
+  propsToOmit: ['isSmall'],
 })<SubtitleProps>`
   ${subtitle}
 `;

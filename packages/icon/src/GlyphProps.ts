@@ -5,5 +5,4 @@ export interface GlyphProps extends IconProps {
   'aria-hidden'?: boolean;
   'aria-labeledby'?: string;
   'aria-describedby'?: string;
-  className?: string;
 }

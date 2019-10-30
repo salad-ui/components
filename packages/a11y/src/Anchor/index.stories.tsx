@@ -4,7 +4,7 @@ import {action} from '@storybook/addon-actions';
 import {AnchorProps, Anchor} from '.';
 
 export default {
-  title: 'a11y/Anchor',
+  title: 'utilities/a11y/Anchor',
 };
 
 const StyledAnchor = styled.button`

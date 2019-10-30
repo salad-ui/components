@@ -31,7 +31,7 @@ export const body = ({isSmall}: BodyOptions = {}) => `
 export interface BodyProps extends BodyOptions, BoxProps {}
 
 const BodyStyle = styled(Box).attrs<Partial<BodyProps>>({
-  $omitProps: ['isSmall'],
+  propsToOmit: ['isSmall'],
 })<BodyProps>`
   ${body}
 `;

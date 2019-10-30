@@ -12,6 +12,7 @@ module.exports = {
         allowHigherOrderFunctions: true,
       },
     ],
+    '@typescript-eslint/no-empty-interface': 1,
   },
   reportUnusedDisableDirectives: true,
 };

@@ -13,6 +13,7 @@ export interface SelectProps {
 export const Wrapper = styled.div<SelectProps>`
   display: inline-flex;
   position: relative;
+  vertical-align: middle;
   ${fullWidth}
 `;
 

@@ -10,6 +10,9 @@ module.exports = {
     extensions: ['.tsx', '.ts', '.js'],
     plugins: [new TsconfigPathsPlugin({configFile: tsconfigPath})],
   },
+  output: {
+    publicPath: '/',
+  },
   module: {
     rules: [
       {
@@ -19,14 +22,12 @@ module.exports = {
             loader: require.resolve('babel-loader'),
             options: {
               cacheDirectory: true,
-              presets: ['@babel/preset-env'],
+              presets: [
+                '@babel/preset-env',
+                '@babel/preset-react',
+                '@babel/preset-typescript',
+              ],
               plugins: ['babel-plugin-styled-components'],
-            },
-          },
-          {
-            loader: require.resolve('ts-loader'),
-            options: {
-              transpileOnly: true,
             },
           },
         ],
@@ -37,7 +38,6 @@ module.exports = {
     new ForkTsCheckerWebpackPlugin({tsconfig: tsconfigPath}),
     new HtmlWebpackPlugin({template: './src/index.html'}),
   ],
-  // @see https://github.com/TypeStrong/ts-loader#transpileonly-boolean-defaultfalse
   stats: {
     warningsFilter: /export .* was not found in/,
   },

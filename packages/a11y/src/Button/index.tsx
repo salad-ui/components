@@ -10,14 +10,14 @@ interface AnchorButtonRenderProps extends CommonButtonRenderProps {
   target?: string;
   rel?: string;
   role: string;
-  onClick?: () => void;
+  onClick?: (event: React.MouseEvent) => void;
   onKeyUp: (event: React.KeyboardEvent<HTMLElement>) => void;
 }
 
 interface ButtonButtonRenderProps extends CommonButtonRenderProps {
   as: 'button';
   disabled?: boolean;
-  onClick?: () => void;
+  onClick?: (event: React.MouseEvent) => void;
 }
 
 export type ButtonRenderProps =
@@ -36,7 +36,7 @@ export interface ButtonProps {
 
   disabled?: boolean;
   className?: string;
-  onClick?: () => void;
+  onClick?: (event: React.MouseEvent) => void;
   children?: React.ReactNode | ButtonRenderFunction;
 }
 

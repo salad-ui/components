@@ -31,7 +31,7 @@ const compile = (fileNames: string[], options: ts.CompilerOptions) => {
   });
 
   if (emitResult.emitSkipped) {
-    throw new Error('Error!');
+    throw new Error('Type errors!');
   }
 };
 
@@ -48,7 +48,7 @@ export const createTypings = async () => {
     module: ts.ModuleKind.CommonJS,
     declaration: true,
     emitDeclarationOnly: true,
-    jsx: 'react',
+    jsx: ts.JsxEmit.React,
     outDir: getBuildDirectory(),
   });
 };
