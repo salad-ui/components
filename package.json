@@ -31,7 +31,7 @@
     "jest": "^24.9.0",
     "jest-styled-components": "^6.3.3",
     "lerna": "^3.16.4",
-    "now": "^16.1.2",
+    "now": "^16.4.4",
     "prettier": "^1.18.2",
     "pretty-quick": "^2.0.0",
     "react": "^16.10.2",

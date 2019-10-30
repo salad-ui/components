@@ -14,7 +14,7 @@ node_modules
 /storybook/storybook-static
 
 /playground/.cache
-/playground/dist
+/playground/static
 
 /website/.cache
 /website/public

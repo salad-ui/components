@@ -1,6 +1,10 @@
 {
+  "version": 2,
   "name": "salad-ui-playground",
   "alias": ["salad-ui-playground.now.sh"],
-  "builds": [{"src": "dist/**", "use": "@now/static"}],
-  "routes": [{"src": "^/(.*)", "dest": "/dist/index.html"}]
+  "builds": [{"src": "static/**", "use": "@now/static"}],
+  "routes": [
+    {"src": "^/(.*\\..*)", "dest": "/static/$1"},
+    {"src": "^/.*", "dest": "/static/index.html"}
+  ]
 }

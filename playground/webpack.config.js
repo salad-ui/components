@@ -1,3 +1,4 @@
+const path = require('path');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -12,6 +13,7 @@ module.exports = {
   },
   output: {
     publicPath: '/',
+    path: path.resolve('static'),
   },
   module: {
     rules: [
