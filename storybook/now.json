@@ -2,5 +2,5 @@
   "name": "salad-ui-storybook",
   "alias": ["salad-ui-storybook.now.sh"],
   "builds": [{"src": "storybook-static/**", "use": "@now/static"}],
-  "routes": [{"src": "^/(.*)", "dest": "/storybook-static/$1"}]
+  "routes": [{"src": "^/(.*)", "dest": "/storybook-static/index.html"}]
 }

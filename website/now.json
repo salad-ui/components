@@ -2,5 +2,5 @@
   "name": "salad-ui",
   "alias": ["salad-ui.now.sh"],
   "builds": [{"src": "public/**", "use": "@now/static"}],
-  "routes": [{"src": "^/(.*)", "dest": "/public/$1"}]
+  "routes": [{"src": "^/(.*)", "dest": "/public/index.html"}]
 }

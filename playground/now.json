@@ -2,5 +2,5 @@
   "name": "salad-ui-playground",
   "alias": ["salad-ui-playground.now.sh"],
   "builds": [{"src": "dist/**", "use": "@now/static"}],
-  "routes": [{"src": "^/(.*)", "dest": "/dist/$1"}]
+  "routes": [{"src": "^/(.*)", "dest": "/dist/index.html"}]
 }
