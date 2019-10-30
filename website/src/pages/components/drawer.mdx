@@ -1,0 +1,89 @@
+---
+title: Drawer
+---
+
+import {Speed, Pencil, ChevronLeft} from '@salad-ui/icon';
+import {Drawer, DrawerMenu} from '@salad-ui/drawer';
+export const scope = {Drawer, DrawerMenu, Speed, Pencil, ChevronLeft};
+
+A navigation drawer.
+
+## Installation
+
+```bash
+npm i @salad-ui/drawer
+```
+
+## Usage
+
+```jsx
+import {Speed, ChevronLeft} from '@salad-ui/icon';
+import {Drawer, DrawerMenu} from '@salad-ui/drawer';
+
+() => {
+  const [expanded, setExpanded] = React.useState([]);
+  const handleToggle = rel =>
+    setExpanded(expanded =>
+      expanded.includes(rel)
+        ? expanded.filter(r => r !== rel)
+        : [...expanded, rel],
+    );
+  return (
+    <Drawer
+      top={
+        <DrawerMenu expanded={expanded} onToggle={handleToggle}>
+          <DrawerMenu.Item
+            role="link"
+            href="/"
+            before={<Speed aria-hidden={true} />}
+          >
+            Dashboard
+          </DrawerMenu.Item>
+          <DrawerMenu.Group
+            before={<Pencil aria-hidden={true} />}
+            label="Posts"
+          >
+            <DrawerMenu.Item role="link" href="#add">
+              Add posts
+            </DrawerMenu.Item>
+            <DrawerMenu.Item role="link" href="#categories">
+              Categories
+            </DrawerMenu.Item>
+            <DrawerMenu.Item role="link" href="#tags">
+              Tags
+            </DrawerMenu.Item>
+          </DrawerMenu.Group>
+        </DrawerMenu>
+      }
+      bottom={
+        <DrawerMenu>
+          <DrawerMenu.Item
+            role="button"
+            before={<ChevronLeft aria-hidden={true} />}
+          >
+            Collapse menu
+          </DrawerMenu.Item>
+        </DrawerMenu>
+      }
+    />
+  );
+};
+```
+
+## Properties
+
+### Drawer
+
+<Props component={Drawer} />
+
+### DrawerMenu
+
+<Props component={DrawerMenu} />
+
+### DrawerMenu.Group
+
+<Props component={DrawerMenu.Group} />
+
+### DrawerMenu.Item
+
+<Props component={DrawerMenu.Item} />

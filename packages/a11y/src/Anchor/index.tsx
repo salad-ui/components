@@ -9,14 +9,14 @@ interface AnchorAnchorRenderProps extends CommonAnchorRenderProps {
   href: string;
   target?: string;
   rel?: string;
-  onClick?: () => void;
+  onClick?: (event: React.MouseEvent) => void;
 }
 
 interface ButtonAnchorRenderProps extends CommonAnchorRenderProps {
   as: 'button';
   role: string;
   disabled?: boolean;
-  onClick?: () => void;
+  onClick?: (event: React.MouseEvent) => void;
   onKeyUp: (event: React.KeyboardEvent<HTMLElement>) => void;
   onKeyDown: (event: React.KeyboardEvent<HTMLElement>) => void;
 }
@@ -37,7 +37,7 @@ export interface AnchorProps {
 
   disabled?: boolean;
   className?: string;
-  onClick?: () => void;
+  onClick?: (event: React.MouseEvent) => void;
   children?: React.ReactNode | AnchorRenderFunction;
 }
 

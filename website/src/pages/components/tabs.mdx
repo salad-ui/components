@@ -1,0 +1,37 @@
+---
+title: Tabs
+---
+
+import {Tabs} from '@salad-ui/tabs';
+export const scope = {Tabs};
+
+A list of tabs.
+
+## Installation
+
+```bash
+npm i @salad-ui/tabs
+```
+
+## Usage
+
+```jsx
+import {Tabs} from '@salad-ui/tabs';
+
+<Tabs>
+  <Tabs.Tab role="link" href="#plugins/featured">Featured</Title>
+  <Tabs.Tab role="link" href="#plugins/popular">Popular</Title>
+  <Tabs.Tab role="link" href="#plugins/recommended">Recommended</Title>
+  <Tabs.Tab role="link" href="#plugins/favorites">Favorites</Title>
+</Card>;
+```
+
+## Properties
+
+### Tabs
+
+<Props component={Tabs} />
+
+### Tabs.Tab
+
+<Props component={Tabs.Tab} />

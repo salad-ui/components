@@ -25,6 +25,7 @@ export const borderedLabel = () => css`
   border-style: solid;
   border-width: 1px;
   box-sizing: border-box;
+  vertical-align: middle;
   ${py(0)}
   ${px(2)}
   ${color('onSurface.main')}

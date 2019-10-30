@@ -14,7 +14,7 @@ export const App = () => (
           <Link to="/settings">Settings</Link>
         </Route>
         <Route path="/settings" exact component={SettingsPage} />
-        <Route path="/plugins" exact component={PluginsPage} />
+        <Route path="/plugins" component={PluginsPage} />
       </Switch>
     </React.Suspense>
   </>

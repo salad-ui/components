@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {Switch, Route} from 'react-router-dom';
 import {Box} from '@salad-ui/box';
 import {PageTemplate} from '~components/PageTemplate';
 import {Header} from './Header';
@@ -20,7 +21,22 @@ const schema = new Schema(() => ({
   description: faker.lorem.paragraph(),
 }));
 
-const plugins = schema.make(4);
+const Plugins = () => {
+  const plugins = schema.make(4);
+  return (
+    <Grid>
+      {plugins.map(plugin => (
+        <PluginCard
+          key={plugin.id}
+          title={plugin.title}
+          author={plugin.author}
+          thumbnail={plugin.thumbnail}
+          description={plugin.description}
+        />
+      ))}
+    </Grid>
+  );
+};
 
 const PluginsPage = () => {
   return (
@@ -29,17 +45,12 @@ const PluginsPage = () => {
         <Box>
           <Header />
           <Navigation />
-          <Grid>
-            {plugins.map(plugin => (
-              <PluginCard
-                key={plugin.id}
-                title={plugin.title}
-                author={plugin.author}
-                thumbnail={plugin.thumbnail}
-                description={plugin.description}
-              />
-            ))}
-          </Grid>
+          <Switch>
+            <Route exact path="/plugins/featured" component={Plugins} />
+            <Route exact path="/plugins/popular" component={Plugins} />
+            <Route exact path="/plugins/recommended" component={Plugins} />
+            <Route exact path="/plugins/favorites" component={Plugins} />
+          </Switch>
         </Box>
       }
     />

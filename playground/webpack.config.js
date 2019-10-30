@@ -10,6 +10,9 @@ module.exports = {
     extensions: ['.tsx', '.ts', '.js'],
     plugins: [new TsconfigPathsPlugin({configFile: tsconfigPath})],
   },
+  output: {
+    publicPath: '/',
+  },
   module: {
     rules: [
       {

@@ -74,7 +74,7 @@ export const NavigationDrawer: React.FC = () => {
         before={<InputHdmi aria-hidden={true} />}
         label="Plugins"
       >
-        <DrawerRouterLink to="/plugins">Add Plugins</DrawerRouterLink>
+        <DrawerRouterLink to="/plugins/featured">Add Plugins</DrawerRouterLink>
       </DrawerMenu.Group>
       <DrawerMenu.Group before={<Users aria-hidden={true} />} label="Users" />
       <DrawerMenu.Group before={<Wrench aria-hidden={true} />} label="Tools" />
