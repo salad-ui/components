@@ -44,9 +44,7 @@ const commonStyle = css`
 
 const primaryStyle = ({isDestructive}: WrapperProps) => css`
   ${color(isDestructive ? 'onError' : 'onSecondary')}
-  ${backgroundColor(
-    isDestructive ? 'error.main' : 'secondary.main',
-  )}
+  ${backgroundColor(isDestructive ? 'error' : 'secondary')}
 
   :hover:enabled {
     ${backgroundColor(isDestructive ? 'error.light' : 'secondary.light')}
@@ -63,8 +61,8 @@ const primaryStyle = ({isDestructive}: WrapperProps) => css`
 `;
 
 const secondaryStyle = ({isDestructive}: WrapperProps) => css`
-  ${color(isDestructive ? 'error.main' : 'secondary.main')}
-  ${borderColor(isDestructive ? 'error.main' : 'secondary.main')};
+  ${color(isDestructive ? 'error' : 'secondary')}
+  ${borderColor(isDestructive ? 'error' : 'secondary')};
   border-style: solid;
   border-width: 1px;
 
@@ -93,7 +91,7 @@ const secondaryStyle = ({isDestructive}: WrapperProps) => css`
 `;
 
 const tertiaryStyle = ({isDestructive}: WrapperProps) => css`
-  ${color(isDestructive ? 'error.main' : 'secondary.main')};
+  ${color(isDestructive ? 'error' : 'secondary')};
 
   :hover:enabled {
     ${color(isDestructive ? 'error.light' : 'secondary.light')};

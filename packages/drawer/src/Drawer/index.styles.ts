@@ -6,7 +6,7 @@ export const Wrapper = styled.nav`
   grid-template-rows: 1fr auto;
   width: 216px;
   ${color('onPrimary')}
-  ${backgroundColor('primary.main')}
+  ${backgroundColor('primary')}
 `;
 
 export const TopWrapper = styled.div``;

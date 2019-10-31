@@ -2,6 +2,7 @@ import React from 'react';
 import {text, select} from '@storybook/addon-knobs';
 import {Spacing, spacings} from '@salad-ui/spacing';
 import {Box} from '.';
+import {ColorName} from '@salad-ui/color';
 
 export default {
   title: 'components/Box',
@@ -20,8 +21,8 @@ const createSpacingKnob = (property: string, defaultValue: OptionKey = '') =>
 export const Demo = () => (
   <>
     <Box
-      color={text('color', 'onSecondary')}
-      backgroundColor={text('backgroundColor', 'secondary.main')}
+      color={text('color', 'onSecondary') as ColorName}
+      backgroundColor={text('backgroundColor', 'secondary') as ColorName}
       margin={createSpacingKnob('margin')}
       marginX={createSpacingKnob('marginX')}
       marginY={createSpacingKnob('marginY')}

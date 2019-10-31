@@ -3,6 +3,7 @@ import {useUID} from 'react-uid';
 import {Accordion} from '@salad-ui/utils';
 import {Context, ContextProps} from '../Context';
 import {DrawerMenuItem} from '../Item';
+import {Wrapper} from './index.styles';
 
 export interface DrawerMenuGroupProps {
   before?: React.ReactNode;
@@ -34,7 +35,9 @@ export const DrawerMenuGroup: React.FC<DrawerMenuGroupProps> = ({
         )}
       </Accordion.Toggle>
       <Context.Provider value={context}>
-        <Accordion.Content rel={rel}>{children}</Accordion.Content>
+        <Accordion.Content rel={rel}>
+          <Wrapper>{children}</Wrapper>
+        </Accordion.Content>
       </Context.Provider>
     </>
   );

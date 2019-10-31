@@ -31,11 +31,11 @@ export const Select = styled.select<SelectProps>`
 
   :-moz-focusring {
     color: transparent;
-    text-shadow: 0 0 0 ${get('onSurface.main')};
+    text-shadow: 0 0 0 ${get('onSurface')};
   }
   &[aria-invalid="true"]:-moz-focusring {
     color: transparent;
-    text-shadow: 0 0 0 ${get('error.main')};
+    text-shadow: 0 0 0 ${get('error')};
   }
 `;
 
@@ -46,5 +46,5 @@ export const Arrow = styled(Triangle)`
   transform: translateY(-50%);
   pointer-events: none;
   ${mr(1)}
-  ${color('onSurface.main')}
+  ${color('onSurface')}
 `;

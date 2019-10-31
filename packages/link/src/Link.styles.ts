@@ -13,7 +13,7 @@ export const Element = styled.a<ElementProps>`
   ${p(0)}
   font-size: inherit;
   font-family: inherit;
-  ${color('secondary.main')};
+  ${color('secondary')};
   border: none;
   cursor: pointer;
   text-decoration: underline;

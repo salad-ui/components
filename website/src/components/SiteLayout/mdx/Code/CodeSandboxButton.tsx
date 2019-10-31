@@ -46,9 +46,9 @@ import { Theme } from "@salad-ui/theme";
 import {App} from './App';
 
 ReactDOM.render(
-  <Theme>
+  <ThemeProvider>
     <App />
-  </Theme>,
+  </ThemeProvider>,
   document.getElementById('app')
 );
 `.trim(),

@@ -1,14 +1,14 @@
 import * as React from 'react';
-import {Theme} from '@salad-ui/theme';
+import {ThemeProvider} from '@salad-ui/theme';
 import {render} from '@testing-library/react';
 import {Link} from './Link';
 
 describe('Link', () => {
   test('it renders an anchor when a href is provided', () => {
     const {getByText} = render(
-      <Theme>
+      <ThemeProvider>
         <Link href="http://example.com">Click me!</Link>
-      </Theme>,
+      </ThemeProvider>,
     );
     const element = getByText('Click me!');
     expect(element.tagName).toEqual('A');
@@ -16,9 +16,9 @@ describe('Link', () => {
 
   test('it renders a button when an onClick is provided', () => {
     const {getByText} = render(
-      <Theme>
+      <ThemeProvider>
         <Link onClick={jest.fn()}>Click me!</Link>
-      </Theme>,
+      </ThemeProvider>,
     );
     const element = getByText('Click me!');
     expect(element.tagName).toEqual('BUTTON');

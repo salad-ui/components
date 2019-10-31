@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Theme} from '@salad-ui/theme';
+import {ThemeProvider} from '@salad-ui/theme';
 import {render} from '@testing-library/react';
 import {Button} from './Button';
 
@@ -8,11 +8,11 @@ const href = 'http://example.com/';
 describe('Button', () => {
   test('it renders an anchor when there is a href and it is not disabled', () => {
     const {getByText} = render(
-      <Theme>
+      <ThemeProvider>
         <Button variant="secondary" href={href} isDisabled={false}>
           Click me!
         </Button>
-      </Theme>,
+      </ThemeProvider>,
     );
     const element = getByText('Click me!');
     expect(element.tagName).toEqual('A');
@@ -20,11 +20,11 @@ describe('Button', () => {
 
   test('it renders a button when there is a href and it is disabled', () => {
     const {getByText} = render(
-      <Theme>
+      <ThemeProvider>
         <Button variant="secondary" href={href} isDisabled>
           Click me!
         </Button>
-      </Theme>,
+      </ThemeProvider>,
     );
     const element = getByText('Click me!');
     expect(element.tagName).toEqual('BUTTON');
@@ -32,11 +32,11 @@ describe('Button', () => {
 
   test('it renders a button when there is no href', () => {
     const {getByText} = render(
-      <Theme>
+      <ThemeProvider>
         <Button variant="secondary" onClick={jest.fn()}>
           Click me!
         </Button>
-      </Theme>,
+      </ThemeProvider>,
     );
     const element = getByText('Click me!');
     expect(element.tagName).toEqual('BUTTON');

@@ -11,7 +11,7 @@ addDecorator(
       title: 'Themes',
       components: [Theme],
       params: [
-        {name: 'Default Theme', props: {theme}, default: true},
+        {name: 'Default Theme', props: {ThemeProvider}, default: true},
         {
           name: 'Pink Theme',
           props: {

@@ -28,8 +28,8 @@ export const borderedLabel = () => css`
   vertical-align: middle;
   ${py(0)}
   ${px(2)}
-  ${color('onSurface.main')}
-  ${borderColor('border.main')}
+  ${color('onSurface')}
+  ${borderColor('border')}
   ${backgroundColor('surface')}
   
   :hover:enabled {
@@ -45,8 +45,8 @@ export const borderedLabel = () => css`
   }
 
   &[aria-invalid="true"] {
-    ${color('error.main')}
-    ${borderColor('error.main')}
+    ${color('error')}
+    ${borderColor('error')}
   }
 
   &[aria-invalid="true"]:hover:enabled {

@@ -1,69 +1,83 @@
-import * as React from 'react';
-import {ThemeProvider, DefaultTheme} from 'styled-components';
+type Color = string;
 
-export const theme: DefaultTheme = {
+export interface Theme {
   color: {
-    border: {
-      main: '#C3C4C7',
-      light: '#DCDCDE',
-      dark: '#8B8E93',
-    },
+    border: Color;
+    'border.light': Color;
+    'border.dark': Color;
+
+    background: Color;
+    onBackground: Color;
+    'onBackground.subtle': Color;
+
+    surface: Color;
+    onSurface: Color;
+    'onSurface.subtle': Color;
+
+    primary: Color;
+    'primary.light': Color;
+    'primary.dark': Color;
+    onPrimary: Color;
+
+    secondary: Color;
+    'secondary.light': Color;
+    'secondary.dark': Color;
+    onSecondary: Color;
+
+    success: Color;
+    'success.light': Color;
+    'success.dark': Color;
+    onSuccess: Color;
+
+    warning: Color;
+    'warning.light': Color;
+    'warning.dark': Color;
+    onWarning: Color;
+
+    error: Color;
+    'error.light': Color;
+    'error.dark': Color;
+    onError: Color;
+  };
+}
+
+export const theme: Theme = {
+  color: {
+    border: '#C3C4C7',
+    'border.light': '#DCDCDE',
+    'border.dark': '#8B8E93',
 
     background: '#F6F7F7',
-    onBackground: {
-      main: '#3C434A',
-      subtle: '#646970',
-    },
+    onBackground: '#3C434A',
+    'onBackground.subtle': '#646970',
 
     surface: '#fff',
-    onSurface: {
-      main: '#3C434A',
-      subtle: '#646970',
-    },
+    onSurface: '#3C434A',
+    'onSurface.subtle': '#646970',
 
-    primary: {
-      main: '#1D2327',
-      light: '#444b4f',
-      dark: '#000000',
-    },
+    primary: '#1D2327',
+    'primary.light': '#444b4f',
+    'primary.dark': '#000000',
     onPrimary: '#fff',
 
-    secondary: {
-      main: '#2271B1',
-      light: '#4B94D8',
-      dark: '#0A4B78',
-    },
+    secondary: '#2271B1',
+    'secondary.light': '#4B94D8',
+    'secondary.dark': '#0A4B78',
     onSecondary: '#fff',
 
-    success: {
-      main: '#008A20',
-      light: '#00BA37',
-      dark: '#005C12',
-    },
+    success: '#008A20',
+    'success.light': '#00BA37',
+    'success.dark': '#005C12',
     onSuccess: '#fff',
 
-    warning: {
-      main: '#907300',
-      light: '#DBAE17',
-      dark: '#5C4B00',
-    },
+    warning: '#907300',
+    'warning.light': '#DBAE17',
+    'warning.dark': '#5C4B00',
     onWarning: '#fff',
 
-    error: {
-      main: '#D63638',
-      light: '#F86368',
-      dark: '#8A2424',
-    },
+    error: '#D63638',
+    'error.light': '#F86368',
+    'error.dark': '#8A2424',
     onError: '#fff',
   },
 };
-
-export interface ThemeProps {
-  theme?: DefaultTheme;
-}
-
-export const Theme: React.FC<ThemeProps> = ({theme: userTheme, children}) => (
-  <ThemeProvider theme={userTheme || theme}>
-    <>{children}</>
-  </ThemeProvider>
-);

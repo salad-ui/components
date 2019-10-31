@@ -39,7 +39,7 @@ export const SelectInput: React.FC<SelectInputProps> & SelectInputStatic = ({
       >
         {children}
       </Select>
-      <Arrow color="onSurface.main" aria-hidden={true} />
+      <Arrow color="onSurface" aria-hidden={true} />
     </Wrapper>
   );
 };

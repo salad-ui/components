@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import breakpoint from '@salad-ui/breakpoint';
 import {grid, unit} from '@salad-ui/grid';
-import {get, backgroundColor} from '@salad-ui/color';
+import {ColorName, get, backgroundColor} from '@salad-ui/color';
 import {marginX, marginBottom, paddingX, paddingY} from '@salad-ui/spacing';
 
 export const Wrapper = styled.nav`
@@ -29,8 +29,11 @@ export const SearchWrapper = styled.div`
   ${marginBottom({mobile: 2, desktop: 0})}
   ${paddingX({mobile: 2, desktop: 1})} 
   ${paddingY({mobile: 0, desktop: 1})}
-  ${backgroundColor({mobile: 'transparent', desktop: 'surface'})}
+  ${backgroundColor({
+    mobile: 'transparent' as ColorName,
+    desktop: 'surface',
+  })} /* FIXME: support other colors */
   ${breakpoint('desktop')`
-    box-shadow: inset 0 -1px 0 0 ${get('border.main')};
+    box-shadow: inset 0 -1px 0 0 ${get('border')};
   `}
 `;

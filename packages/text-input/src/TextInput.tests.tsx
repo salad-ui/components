@@ -1,51 +1,51 @@
 import 'jest-styled-components';
 import * as React from 'react';
-import {Theme} from '@salad-ui/theme';
+import {ThemeProvider} from '@salad-ui/theme';
 import {render} from '@testing-library/react';
 import {TextInput} from './TextInput';
 
 describe('TextInput', () => {
   test('rendered a normal input when isCompact=false', () => {
     const {container} = render(
-      <Theme>
+      <ThemeProvider>
         <TextInput isCompact={false} />
-      </Theme>,
+      </ThemeProvider>,
     );
     expect(container.firstChild).toHaveStyleRule('height', '40px');
   });
 
   test('rendered a compact input when isCompact=true', () => {
     const {container} = render(
-      <Theme>
+      <ThemeProvider>
         <TextInput isCompact={true} />
-      </Theme>,
+      </ThemeProvider>,
     );
     expect(container.firstChild).toHaveStyleRule('height', '32px');
   });
 
   test('rendered a normal input when isFullWidth=false', () => {
     const {container} = render(
-      <Theme>
+      <ThemeProvider>
         <TextInput isFullWidth={false} />
-      </Theme>,
+      </ThemeProvider>,
     );
     expect(container.firstChild).not.toHaveStyleRule('height');
   });
 
   test('rendered a full-width input when isFullWidth=true', () => {
     const {container} = render(
-      <Theme>
+      <ThemeProvider>
         <TextInput isFullWidth={true} />
-      </Theme>,
+      </ThemeProvider>,
     );
     expect(container.firstChild).toHaveStyleRule('width', '100%');
   });
 
   test('rendered a normal input when isInvalid=false', () => {
     const {container} = render(
-      <Theme>
+      <ThemeProvider>
         <TextInput isInvalid={false} />
-      </Theme>,
+      </ThemeProvider>,
     );
     const el = container.firstChild as HTMLInputElement;
     expect(el).not.toBeNull();
@@ -55,9 +55,9 @@ describe('TextInput', () => {
 
   test('rendered an invalid input when isInvalid=true', () => {
     const {container} = render(
-      <Theme>
+      <ThemeProvider>
         <TextInput isInvalid={true} />
-      </Theme>,
+      </ThemeProvider>,
     );
     const el = container.firstChild as HTMLInputElement;
     expect(el).not.toBeNull();

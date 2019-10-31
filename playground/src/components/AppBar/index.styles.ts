@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
   grid-template-columns: auto 1fr auto;
   height: 40px;
   ${px(2)}
-  ${backgroundColor('primary.main')}
+  ${backgroundColor('primary')}
 `;
 
 const wrapperStyle = `
