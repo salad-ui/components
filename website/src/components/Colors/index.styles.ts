@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import {my, ml, p} from '@salad-ui/spacing';
-import {color, backgroundColor, borderColor} from '@salad-ui/color';
+import {color, backgroundColor, borderColor, ColorName} from '@salad-ui/color';
 
 export interface ColorShadeProps {
-  fg: string;
-  bg: string;
+  fg: ColorName;
+  bg: ColorName;
 }
 
 export const ColorShadeName = styled.code``;
@@ -28,7 +28,7 @@ export const Color = styled.div`
   display: inline-flex;
   flex-direction: column;
   width: 280px;
-  ${borderColor('border.main')}
+  ${borderColor('border')}
   border: 1px solid;
   border-radius: 4px;
   overflow: hidden;

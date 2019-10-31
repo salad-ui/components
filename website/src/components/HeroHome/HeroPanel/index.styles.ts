@@ -24,6 +24,6 @@ export const SubtitleLine = styled.div`
   ${mt(1)}
   ${mb(2)}
   ${body()}
-  ${color('onSurface.main')}
+  ${color('onSurface')}
   max-width: 700px;
 `;

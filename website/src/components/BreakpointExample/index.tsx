@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled, {css} from 'styled-components';
 import breakpoint, {BreakpointName} from '@salad-ui/breakpoint';
 import {p, mr} from '@salad-ui/spacing';
-import {color, backgroundColor} from '@salad-ui/color';
+import {color, backgroundColor, ColorName} from '@salad-ui/color';
 
 const Breakpoints = styled.ul`
   ${p(0)}
@@ -10,8 +10,8 @@ const Breakpoints = styled.ul`
 
 const Breakpoint = styled.li<{
   breakpoint: BreakpointName;
-  unmatchedColor: string;
-  matchedColor: string;
+  unmatchedColor?: ColorName;
+  matchedColor: ColorName;
 }>`
   display: flex;
   align-items: center;
@@ -45,22 +45,14 @@ const Emoji = ({glyph, label}: {glyph: string; label: string}) => (
 export const BreakpointExample = () => (
   <>
     <Breakpoints>
-      <Breakpoint
-        breakpoint="mobile"
-        unmatchedColor=""
-        matchedColor="secondary.light"
-      >
+      <Breakpoint breakpoint="mobile" matchedColor="secondary.light">
         <Name>
           <strong>Mobile</strong> &mdash; <code>0px</code>
         </Name>
         <Description>Targetting all devices</Description>
         <Emoji glyph="📱" label="A mobile device." />
       </Breakpoint>
-      <Breakpoint
-        breakpoint="tablet"
-        unmatchedColor=""
-        matchedColor="secondary.main"
-      >
+      <Breakpoint breakpoint="tablet" matchedColor="secondary">
         <Name>
           <strong>Tablet</strong> &mdash; <code>737px</code>
         </Name>
@@ -69,11 +61,7 @@ export const BreakpointExample = () => (
         </Description>
         <Emoji glyph="💻" label="A tablet device." />
       </Breakpoint>
-      <Breakpoint
-        breakpoint="desktop"
-        unmatchedColor=""
-        matchedColor="secondary.dark"
-      >
+      <Breakpoint breakpoint="desktop" matchedColor="secondary.dark">
         <Name>
           <strong>Desktop</strong> &mdash; <code>1195px</code>
         </Name>

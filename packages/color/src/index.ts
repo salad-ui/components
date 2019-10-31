@@ -1,13 +1,15 @@
 import {StyledProps} from 'styled-components';
-import {get as getPathFromObject} from 'lodash-es';
+import {Theme} from '@salad-ui/theme';
 import {map, ValueOrValueMap} from '@salad-ui/breakpoint';
 
-export type Color = 'primary.main' | 'primary.light' | 'primary.dark' | string;
+export type ColorName = keyof Theme['color'];
 
-export const get = (name: Color, transform?: (value: string) => string) => <P>({
+export const get = (name: ColorName, transform?: (value: string) => string) => <
+  P
+>({
   theme,
 }: StyledProps<P>) => {
-  const value: string | undefined = getPathFromObject(theme.color, name);
+  const value: string | undefined = theme.color[name];
   if (value === undefined) {
     console.error(`Color "${name}" cannot be found on the theme`);
     return 'inherit';
@@ -17,7 +19,7 @@ export const get = (name: Color, transform?: (value: string) => string) => <P>({
 
 const createMixin = (prop: string) => {
   return (
-    name: ValueOrValueMap<Color>,
+    name: ValueOrValueMap<ColorName>,
     transform?: (value: string) => string,
   ) => {
     return <P>(props: StyledProps<P>) => {
@@ -39,7 +41,7 @@ export const borderLeftColor = createMixin('borderLeftColor');
 
 export interface ColorProps {
   /** The foreground color. */
-  color?: ValueOrValueMap<Color>;
+  color?: ValueOrValueMap<ColorName>;
 }
 
 export const colorProps = (props: ColorProps) =>
@@ -47,7 +49,7 @@ export const colorProps = (props: ColorProps) =>
 
 export interface BackgroundColorProps {
   /** The background color. */
-  backgroundColor?: ValueOrValueMap<Color>;
+  backgroundColor?: ValueOrValueMap<ColorName>;
 }
 
 export const backgroundColorProps = (props: BackgroundColorProps) =>

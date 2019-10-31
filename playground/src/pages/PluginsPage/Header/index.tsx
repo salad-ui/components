@@ -12,7 +12,7 @@ export const Header = () => (
   >
     <StyledTitle
       size="medium"
-      color="onBackground.main"
+      color="onBackground"
       component="h1"
       marginRight={1.5}
     >

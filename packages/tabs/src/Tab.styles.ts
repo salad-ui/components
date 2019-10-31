@@ -9,15 +9,15 @@ export interface WrapperProps {
 
 const activeStyle = ({isActive}: WrapperProps) => {
   const style = css`
-    ${color('secondary.main')}
-    box-shadow: inset 0 -2px 0 0 ${get('secondary.main')};
+    ${color('secondary')}
+    box-shadow: inset 0 -2px 0 0 ${get('secondary')};
   `;
   if (isActive) {
     return style;
   } else {
     return css`
-      ${color('onSurface.main')}
-      box-shadow: inset 0 -1px 0 0 ${get('border.main')};
+      ${color('onSurface')}
+      box-shadow: inset 0 -1px 0 0 ${get('border')};
 
       /* FIXME: https://github.com/ReactTraining/react-router/issues/7013 */
       &.is-active {

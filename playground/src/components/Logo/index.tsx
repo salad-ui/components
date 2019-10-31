@@ -1,12 +1,12 @@
 import * as React from 'react';
-import {Color} from '@salad-ui/color';
+import {ColorName} from '@salad-ui/color';
 import {LogoVariant, LogoSize} from './types';
 import {Wrapper} from './index.styles';
 
 export interface LogoProps {
   variant: LogoVariant;
   size?: LogoSize;
-  color?: Color;
+  color?: ColorName;
 }
 
 const Simplified = () => (

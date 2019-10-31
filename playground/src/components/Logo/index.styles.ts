@@ -1,11 +1,10 @@
 import styled, {css} from 'styled-components';
-import {get} from '@salad-ui/color';
+import {get, ColorName} from '@salad-ui/color';
 import {LogoSize} from './types';
-import {Color} from 'csstype';
 
 export interface WrapperProps {
   size?: LogoSize;
-  color?: Color;
+  color?: ColorName;
 }
 
 const sizeStyle = ({size}: WrapperProps) => {

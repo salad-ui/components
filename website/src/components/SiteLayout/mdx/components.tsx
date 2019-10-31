@@ -14,7 +14,7 @@ export const components = {
   h1: (props: any) => (
     <Title
       size="large"
-      color="onSurface.main"
+      color="onSurface"
       component="h1"
       mt={4}
       mb={2}
@@ -25,7 +25,7 @@ export const components = {
     return (
       <Title
         size="medium"
-        color="onSurface.main"
+        color="onSurface"
         mt={4}
         mb={2}
         component="h2"
@@ -36,7 +36,7 @@ export const components = {
   h3: (props: any) => (
     <Title
       size="small"
-      color="onSurface.main"
+      color="onSurface"
       mt={4}
       mb={2}
       component="h3"
@@ -46,7 +46,7 @@ export const components = {
   h4: (props: any) => (
     <Title
       size="small"
-      color="onSurface.main"
+      color="onSurface"
       mt={4}
       mb={2}
       component="h4"
@@ -56,7 +56,7 @@ export const components = {
   h5: (props: any) => (
     <Title
       size="small"
-      color="onSurface.main"
+      color="onSurface"
       mt={4}
       mb={2}
       component="h5"
@@ -66,7 +66,7 @@ export const components = {
   h6: (props: any) => (
     <Title
       size="small"
-      color="onSurface.main"
+      color="onSurface"
       mt={4}
       mb={2}
       component="h6"

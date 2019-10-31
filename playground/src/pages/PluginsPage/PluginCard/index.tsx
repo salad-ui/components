@@ -32,7 +32,7 @@ export const PluginCard: React.FC<PluginCardProps> = ({
           </Icon>
         </Unit>
         <Unit size="max">
-          <Title size="small" color="onSurface.main">
+          <Title size="small" color="onSurface">
             {title}
           </Title>
           <Body isSmall>
@@ -46,35 +46,26 @@ export const PluginCard: React.FC<PluginCardProps> = ({
       <Description>{description}</Description>
       <Grid>
         <Unit size={1 / 3}>
-          <Body
-            isSmall
-            color="onSurface.main"
-            display="flex"
-            alignItems="center"
-          >
+          <Body isSmall color="onSurface" display="flex" alignItems="center">
             4.5 <Star size="small" aria-hidden={true} marginLeft={0.5} />
           </Body>
           <Caption>800 reviews</Caption>
         </Unit>
         <Unit size={1 / 3}>
-          <Body isSmall color="onSurface.main">
+          <Body isSmall color="onSurface">
             Last updated
           </Body>
           <Caption>2 weeks ago</Caption>
         </Unit>
         <Unit size={1 / 3}>
-          <Body isSmall color="onSurface.main">
+          <Body isSmall color="onSurface">
             Installs
           </Body>
           <Caption>1+ Million</Caption>
         </Unit>
       </Grid>
       <Body isSmall marginTop={1.5} display="flex" alignItems="center">
-        <CheckCircleOutline
-          size="small"
-          color="success.main"
-          marginRight={0.5}
-        />
+        <CheckCircleOutline size="small" color="success" marginRight={0.5} />
         Compatible with your version of WordPress
       </Body>
       <ButtonGroup isCompact marginTop={2}>

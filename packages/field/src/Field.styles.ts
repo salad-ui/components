@@ -13,8 +13,8 @@ export const Label = styled.label<MessageProps>`
   display: block;
   ${mb(0.5)}
   ${body({isSmall: true})}
-  ${color('onSurface.main')}
-  ${({isError}) => isError && color('error.main')}
+  ${color('onSurface')}
+  ${({isError}) => isError && color('error')}
 `;
 
 export const Message = styled.p<MessageProps>`
@@ -23,5 +23,5 @@ export const Message = styled.p<MessageProps>`
   ${mt(0.5)}
   ${color('onSurface.subtle')}
   ${caption()}
-  ${({isError}) => isError && color('error.main')}
+  ${({isError}) => isError && color('error')}
 `;

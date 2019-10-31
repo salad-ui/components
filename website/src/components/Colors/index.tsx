@@ -1,6 +1,7 @@
 import * as React from 'react';
-import {ThemeContext} from 'styled-components';
 import copy from 'clipboard-copy';
+import {useTheme} from '@salad-ui/theme';
+import {ColorName} from '@salad-ui/color';
 import {
   Colors,
   Color,
@@ -10,14 +11,15 @@ import {
 } from './index.styles';
 
 interface ShadeProps {
-  name: string;
-  value: string;
-  bg: string;
-  fg: string;
+  name: ColorName;
+  bg: ColorName;
+  fg: ColorName;
 }
 
-const Shade = ({name, value, bg, fg}: ShadeProps) => {
+const Shade = ({name, bg, fg}: ShadeProps) => {
+  const theme = useTheme();
   const [isCopied, setCopied] = React.useState<boolean>(false);
+  const value = theme.color[name];
 
   const handleCopy = () => {
     copy(value);
@@ -34,140 +36,69 @@ const Shade = ({name, value, bg, fg}: ShadeProps) => {
 };
 
 interface ForegroundColorProps {
-  name: string;
-  color: string;
-  onName: string;
-  onColor: {
-    main: string;
-    subtle: string;
-  };
+  name: 'background' | 'surface';
+  onName: 'onBackground' | 'onSurface';
 }
 
-const ForegroundColor = ({
-  name,
-  color,
-  onName,
-  onColor,
-}: ForegroundColorProps) => (
+const ForegroundColor = ({name, onName}: ForegroundColorProps) => (
   <Color>
-    <Shade name={name} value={color} fg={`${onName}.main`} bg={name} />
+    <Shade name={name} fg={onName} bg={name} />
     <Shade
-      name={`${onName}.subtle`}
-      value={onColor.subtle}
+      name={`${onName}.subtle` as ColorName}
       fg={name}
-      bg={`${onName}.subtle`}
+      bg={`${onName}.subtle` as ColorName}
     />
-    <Shade
-      name={`${onName}.main`}
-      value={onColor.main}
-      fg={name}
-      bg={`${onName}.main`}
-    />
+    <Shade name={onName} fg={name} bg={onName} />
   </Color>
 );
 
 interface BackgroundColorProps {
-  name: string;
-  color: {
-    main: string;
-    light: string;
-    dark: string;
-  };
-  onName: string;
-  onColor: string;
+  name: 'primary' | 'secondary' | 'success' | 'warning' | 'error';
+  onName: 'onPrimary' | 'onSecondary' | 'onSuccess' | 'onWarning' | 'onError';
 }
 
-const BackgroundColor = ({
-  name,
-  color,
-  onName,
-  onColor,
-}: BackgroundColorProps) => (
+const BackgroundColor = ({name, onName}: BackgroundColorProps) => (
   <Color>
+    <Shade name={name} fg={onName} bg={name} />
     <Shade
-      name={`${name}.light`}
-      value={color.light}
+      name={`${name}.light` as ColorName}
       fg={onName}
-      bg={`${name}.light`}
+      bg={`${name}.light` as ColorName}
     />
+
     <Shade
-      name={`${name}.main`}
-      value={color.main}
+      name={`${name}.dark` as ColorName}
       fg={onName}
-      bg={`${name}.main`}
+      bg={`${name}.dark` as ColorName}
     />
-    <Shade
-      name={`${name}.dark`}
-      value={color.dark}
-      fg={onName}
-      bg={`${name}.dark`}
-    />
-    <Shade name={onName} value={onColor} fg={`${name}.main`} bg={onName} />
+    <Shade name={onName} fg={name} bg={onName} />
   </Color>
 );
 
 export const BackgroundAndSurface = () => {
-  const theme = React.useContext(ThemeContext);
   return (
     <Colors>
-      <ForegroundColor
-        name="background"
-        color={theme.color.background}
-        onName="onBackground"
-        onColor={theme.color.onBackground}
-      />
-      <ForegroundColor
-        name="surface"
-        color={theme.color.surface}
-        onName="onSurface"
-        onColor={theme.color.onSurface}
-      />
+      <ForegroundColor name="background" onName="onBackground" />
+      <ForegroundColor name="surface" onName="onSurface" />
     </Colors>
   );
 };
 
 export const PrimaryAndSecondary = () => {
-  const theme = React.useContext(ThemeContext);
   return (
     <Colors>
-      <BackgroundColor
-        name="primary"
-        color={theme.color.primary}
-        onName="onPrimary"
-        onColor={theme.color.onPrimary}
-      />
-      <BackgroundColor
-        name="secondary"
-        color={theme.color.secondary}
-        onName="onSecondary"
-        onColor={theme.color.onSecondary}
-      />
+      <BackgroundColor name="primary" onName="onPrimary" />
+      <BackgroundColor name="secondary" onName="onSecondary" />
     </Colors>
   );
 };
 
 export const SuccessWarningAndError = () => {
-  const theme = React.useContext(ThemeContext);
   return (
     <Colors>
-      <BackgroundColor
-        name="success"
-        color={theme.color.success}
-        onName="onSuccess"
-        onColor={theme.color.onSuccess}
-      />
-      <BackgroundColor
-        name="warning"
-        color={theme.color.warning}
-        onName="onWarning"
-        onColor={theme.color.onWarning}
-      />
-      <BackgroundColor
-        name="error"
-        color={theme.color.error}
-        onName="onError"
-        onColor={theme.color.onError}
-      />
+      <BackgroundColor name="success" onName="onSuccess" />
+      <BackgroundColor name="warning" onName="onWarning" />
+      <BackgroundColor name="error" onName="onError" />
     </Colors>
   );
 };

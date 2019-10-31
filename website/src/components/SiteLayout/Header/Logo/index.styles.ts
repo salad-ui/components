@@ -13,7 +13,7 @@ export const Link = styled(GatsbyLink)`
 
   &,
   &:hover {
-    ${color('onSurface.main')}
+    ${color('onSurface')}
   }
 `;
 
