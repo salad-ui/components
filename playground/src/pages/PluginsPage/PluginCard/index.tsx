@@ -5,7 +5,7 @@ import {Link} from '@salad-ui/link';
 import {ButtonGroup} from '@salad-ui/button';
 import {CheckCircleOutline, Star, Icon} from '@salad-ui/icon';
 import {Unit, Grid} from '@salad-ui/grid';
-import {Description} from './index.styles';
+import {Description, Detail} from './index.styles';
 
 export interface PluginCardProps {
   title: React.ReactNode;
@@ -45,24 +45,24 @@ export const PluginCard: React.FC<PluginCardProps> = ({
       </Grid>
       <Description>{description}</Description>
       <Grid>
-        <Unit size={1 / 3}>
+        <Detail>
           <Body isSmall color="onSurface" display="flex" alignItems="center">
             4.5 <Star size="small" aria-hidden={true} marginLeft={0.5} />
           </Body>
           <Caption>800 reviews</Caption>
-        </Unit>
-        <Unit size={1 / 3}>
+        </Detail>
+        <Detail>
           <Body isSmall color="onSurface">
             Last updated
           </Body>
           <Caption>2 weeks ago</Caption>
-        </Unit>
-        <Unit size={1 / 3}>
+        </Detail>
+        <Detail>
           <Body isSmall color="onSurface">
             Installs
           </Body>
           <Caption>1+ Million</Caption>
-        </Unit>
+        </Detail>
       </Grid>
       <Body isSmall marginTop={1.5} display="flex" alignItems="center">
         <CheckCircleOutline size="small" color="success" marginRight={0.5} />
