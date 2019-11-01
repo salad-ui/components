@@ -74,15 +74,7 @@ http://localhost:8300/
 
 ### Setting up an <acronym title="Integrated Development Environment">IDE</acronym>
 
-We recommend [VS Code](https://code.visualstudio.com/) with the following plugins:
-
-- [EditorConfig for VS Code](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
-- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-- [MDX](https://marketplace.visualstudio.com/items?itemName=silvenon.mdx)
-- [vscode-styled-components](https://marketplace.visualstudio.com/items?itemName=jpoissonnier.vscode-styled-components)
-- [Auto Close Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag)
-- [Auto Rename Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag)
-- [SVG Previewer](https://marketplace.visualstudio.com/items?itemName=vitaliymaz.vscode-svg-previewer)
+We recommend [VS Code](https://code.visualstudio.com/). After opening `salad-ui` VSCode will recommend a list of plugins to install.
 
 ### Versioning and publishing
 

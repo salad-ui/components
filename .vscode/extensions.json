@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "EditorConfig.EditorConfig",
+    "dbaeumer.vscode-eslint",
+    "silvenon.mdx",
+    "jpoissonnier.vscode-styled-components",
+    "formulahendry.auto-close-tag",
+    "formulahendry.auto-rename-tag",
+    "vitaliymaz.vscode-svg-previewer"
+  ],
+  "unwantedRecommendations": []
+}
