@@ -1,5 +1,11 @@
 # @salad-ui/button
 
+## 0.1.6
+
+### Patch Changes
+
+- 96f6170: Various changes. Not following semver early on.
+
 ## 0.1.5
 
 ### Patch Changes
