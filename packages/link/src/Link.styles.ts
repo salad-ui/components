@@ -17,9 +17,8 @@ export const Element = styled.a<ElementProps>`
   border: none;
   cursor: pointer;
   text-decoration: underline;
-  ${subtle}
-
-  :hover, :focus {
+  ${subtle} :hover,
+  :focus {
     ${color('secondary.dark')};
   }
 
