@@ -18,7 +18,7 @@ export interface WrapperProps {
   isDestructive?: boolean;
 }
 
-const commonStyle = css`
+const commonStyle = css<WrapperProps>`
   box-sizing: border-box;
   display: inline-flex;
   align-items: center;

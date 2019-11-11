@@ -15,9 +15,7 @@ export const Wrapper = styled.a`
   background: none;
   border: none;
   text-decoration: none;
-  ${button()}
-
-  :hover {
+  ${button()} :hover {
     ${backgroundColor('primary.light')}
   }
 
