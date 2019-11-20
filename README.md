@@ -4,7 +4,7 @@
 
 > ⚠️ This project is an experimental proof-of-concept. Please don't use it it production.
 
-A set of components for building rich user interfaces within `wp-admin`.
+A set of components for building rich user interfaces within `wp-admin` as experiemented in [wp-admin-iterations](https://www.figma.com/file/7xhcuCZhQKqgRsgLTof3AY/WP-Admin-Iterations?node-id=41%3A0).
 
 ---
 
